@@ -14,7 +14,7 @@ return [
     'templates' => [
         'cache_dir' => 'data/cache/twig',
         'assets_url' => '/',
-        'assets_version' => null,
+        'assets_version' => '2015-11-04',
         'extension' => 'html.twig',
         'paths' => [
             'app'    => ['resources/templates/app'],

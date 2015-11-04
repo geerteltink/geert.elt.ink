@@ -10,7 +10,7 @@
 .app-hero {
   min-height: 196px;
 
-  background: $footer-bg url("/assets/img/banner-background.jpg?v=${core-version}") no-repeat center center;
+  background: $footer-bg url("/assets/img/banner-background.jpg?v=#{$core-version}") no-repeat center center;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
