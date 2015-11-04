@@ -3,44 +3,52 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="info">
-                <h2>
+    <div class="container-center" style="margin-top:3rem;margin-bottom:3rem;">
+        <div class="media">
+            <div class="media-left">
+                <img class="img-circle" height="96" width="96" src="/assets/img/avatar_8bit.jpg"/>
+            </div>
+            <div class="media-body">
+                <h2 class="media-heading">
                     Geert Eltink
                 </h2>
-                <p>
-                    Building web applications since 1999. Wanna-be open source contributor.
-                    <span class="text-muted">#full-stack #web #developer</span>
+                <p class="h5">
+                    Building web applications since 1999.
                 </p>
-                <blockquote class="blockquote">
-                    <p>Simplicity is the ultimate sophistication.</p>
-                </blockquote>
+                <p class="text-muted">
+                    #full-stack #web #developer
+                </p>
             </div>
         </div>
-        <div class="col-sm-6">
-            <div class="info">
-                <h2>
-                    Get in touch
-                </h2>
-                <div class="row">
-                    <div class="col-sm-4">
-                        <img alt="" class="img-circle" height="128" width="128" src="/assets/img/avatar_8bit.jpg" />
-                    </div>
-                    <div class="col-sm-8">
-                        <ul class="nav">
-                            <li>
-                                <a href="https://twitter.com/xtreamwayz" title="Contact me on Twitter">
-                                    <i class="icon icon-twitter"></i> Twitter
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/xtreamwayz" title="Follow me on GitHub">
-                                    <i class="icon icon-github"></i> GitHub
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+    </div>
+
+    <div class="card-deck-wrapper">
+        <div class="card-deck">
+            <div class="card">
+                <div class="card-block">
+                    <h4 class="card-title">
+                        <i class="icon icon-design"></i>  Design
+                    </h4>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-block">
+                    <h4 class="card-title">
+                        <i class="icon icon-code"></i> Development
+                    </h4>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-block">
+                    <h4 class="card-title">
+                        <i class="icon icon-cloud-upload"></i> Deployment
+                    </h4>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                 </div>
             </div>
         </div>
