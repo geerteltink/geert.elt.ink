@@ -1,0 +1,8 @@
+.idea
+.stacker
+.vagrant
+composer.phar
+composer.lock
+phpunit.xml
+bower_components/
+vendor/
