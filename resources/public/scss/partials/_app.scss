@@ -12,17 +12,16 @@
 
   background: $footer-bg url("/assets/img/banner-background.jpg?v=#{$core-version}") no-repeat center center;
   background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   color: $header-color;
 
   h1 {
     text-transform: uppercase;
+    font-size: 5vw;
   }
 
-  a {
-    color: $header-color;
+  p {
+    font-size: 1.3rem;
+    font-style: italic;
   }
 }
 
