@@ -40,7 +40,7 @@ class CodeAction
 
             $repositories = (string) $apiResponse->getBody();
 
-            $item->set($repositories, 3600);
+            $item->set($repositories, 86400);
         }
 
         $repositories = json_decode($repositories);
