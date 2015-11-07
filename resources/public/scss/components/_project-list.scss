@@ -1,0 +1,23 @@
+.project-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  > li {
+    width: 300px;
+    overflow-x: hidden;
+  }
+}
+
+.project-list-meta {
+  font-size: $font-size-xs;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  color: #999;
+
+  a {
+    color: #999;
+  }
+}

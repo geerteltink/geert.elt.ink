@@ -1,6 +1,5 @@
 <?php
 
-use Zend\ServiceManager\Factory\InvokableFactory;
 use App\Action\ActionFactory;
 
 return [
@@ -10,6 +9,7 @@ return [
         ],
         'factories' => [
             App\Action\HomePageAction::class => ActionFactory::class,
+            App\Action\CodeAction::class => ActionFactory::class,
         ]
     ],
 
@@ -18,6 +18,12 @@ return [
             'name' => 'home',
             'path' => '/',
             'middleware' => App\Action\HomePageAction::class,
+            'allowed_methods' => ['GET'],
+        ],
+        [
+            'name' => 'code',
+            'path' => '/code',
+            'middleware' => App\Action\CodeAction::class,
             'allowed_methods' => ['GET'],
         ],
     ],

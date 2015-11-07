@@ -1,0 +1,48 @@
+{% extends '@layout/default.html.twig' %}
+
+{% block title %}Open Source Code{% endblock %}
+{% block subtitle %}GitHub hosted open source projects I've created{% endblock %}
+
+{% block content %}
+    <ul class="list-unstyled project-list">
+        {% for repo in repos if repo.fork == false %}
+        <li itemscope="" itemtype="http://schema.org/Code">
+            <!--a href="https://travis-ci.org/xtreamwayz/expressive-composer-installer" class="pull-right">
+                <img src="https://travis-ci.org/xtreamwayz/expressive-composer-installer.png" alt="Build status">
+            </a-->
+            <h2 itemprop="name headline" class="h4">
+                <a href="{{ repo.html_url }}" itemprop="url codeRepository">
+                    {{ repo.name }}
+                </a>
+            </h2>
+            <p class="project-list-meta">
+                <span itemprop="programmingLanguage" title="Programming language">
+                    {{ repo.language }}
+                </span> &nbsp;&nbsp;&nbsp;
+                <span itemprop="stars" title="Stargazers">
+                    <a href="{{ repo.html_url }}/stargazers">
+                        <i class="icon icon-star"></i> {{ repo.stargazers_count }}
+                    </a>
+                </span> &nbsp;&nbsp;&nbsp;
+                <span itemprop="forks" title="Forks">
+                    <a href="{{ repo.html_url }}/network">
+                        <i class="icon icon-code-fork"></i> {{ repo.watchers_count }}
+                    </a>
+                </span> &nbsp;&nbsp;&nbsp;
+
+                <span itemprop="issues" title="Issues">
+                    <a href="{{ repo.html_url }}/issues" itemprop="discussionUrl">
+                        <i class="icon icon-exclamation-circle"></i> {{ repo.open_issues }}
+                    </a>
+                </span> &nbsp;&nbsp;&nbsp;
+
+                <time datetime="{{ repo.pushed_at }}" itemprop="dateModified" title="Last updated">
+                    <i class="icon icon-clock-o"></i> {{ repo.pushed_at|date("F jS, Y", "Europe/Amsterdam") }}
+                </time>
+            </p>
+            <p itemprop="description">{{ repo.description }}</p>
+            <hr>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
