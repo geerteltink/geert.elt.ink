@@ -12,6 +12,6 @@ class ActionFactory implements FactoryInterface
     {
         $template = $container->get(TemplateRendererInterface::class);
 
-        return new $requestedName($template);
+        return new $requestedName($container, $template);
     }
 }
