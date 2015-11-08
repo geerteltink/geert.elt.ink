@@ -28,6 +28,12 @@
         "filp/whoops": "^1.1"
     },
     "scripts": {
+        "post-install-cmd": [
+            "rm -f data/cache/app_config.*",
+            "rm -rf data/cache/stash/",
+            "rm -rf data/cache/twig/",
+            "systemctl restart php5-fpm"
+        ],
         "post-update-cmd": [
             "rm -f data/cache/app_config.*",
             "rm -rf data/cache/stash/",
