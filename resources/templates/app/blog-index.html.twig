@@ -1,0 +1,23 @@
+{% extends '@layout/default.html.twig' %}
+
+{% block title %}Blog{% endblock %}
+{% block subtitle %}My thoughts on web development and other stuff I want to share.{% endblock %}
+
+{% block content %}
+    <ul class="timeline" itemscope itemtype="http://schema.org/Blog">
+        {% for post in posts %}
+            <li class="timeline-item" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+                <div class="timeline-item-image"></div>
+                <div class="timeline-item-content">
+                    <h2 itemprop="name headline">
+                        <a href="{{ path('blog.post', {'id': post.id}) }}" itemprop="url">{{ post.title }}</a>
+                    </h2>
+                    <p itemprop="description">{{ post.summary }}</p>
+                    <time class="timeline-item-date" datetime="{{ post.created | date('c', 'UTC') }}" itemprop="datePublished">
+                        {{ post.created | date('F jS, Y', 'UTC') }}
+                    </time>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

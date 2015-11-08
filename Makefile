@@ -58,6 +58,23 @@ build: clean
 	mkdir -p public/assets/fonts
 	mkdir -p public/assets/img
 	mkdir -p public/assets/js
+	$(UGLIFYJS) bower_components/prism/components/prism-core.js \
+				bower_components/prism/components/prism-markup.js \
+				bower_components/prism/components/prism-css.js \
+				bower_components/prism/components/prism-clike.js \
+				bower_components/prism/components/prism-javascript.js \
+				bower_components/prism/components/prism-apacheconf.js \
+				bower_components/prism/components/prism-bash.js \
+				bower_components/prism/components/prism-batch.js \
+				bower_components/prism/components/prism-css-extras.js \
+				bower_components/prism/components/prism-git.js \
+				bower_components/prism/components/prism-nginx.js \
+				bower_components/prism/components/prism-php.js \
+				bower_components/prism/components/prism-scss.js \
+				bower_components/prism/components/prism-sql.js \
+				bower_components/prism/components/prism-twig.js \
+				bower_components/prism/components/prism-yaml.js \
+	            --compress --mangle --output public/assets/js/core.min.js
 	$(SASS) resources/public/scss/core.scss data/build/core.css
 	$(POSTCSS) --use autoprefixer --autoprefixer.browsers "last 2 versions" \
 	           --output data/build/core.prefixed.css data/build/core.css

@@ -4,5 +4,5 @@
 composer.phar
 composer.lock
 phpunit.xml
-bower_components/
-vendor/
+/bower_components/
+/vendor/

@@ -4,6 +4,7 @@
 // Third-party
 @import "vendor/bootstrap";
 @import "vendor/font-awesome";
+@import "vendor/prism";
 
 // Partials
 @import "partials/app";
@@ -12,3 +13,4 @@
 @import "components/article";
 @import "components/container-center";
 @import "components/project-list";
+@import "components/timeline";
