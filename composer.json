@@ -27,6 +27,14 @@
         "squizlabs/php_codesniffer": "^2.3",
         "filp/whoops": "^1.1"
     },
+    "scripts": {
+        "post-update-cmd": [
+            "rm -f data/cache/app_config.*",
+            "rm -rf data/cache/stash/",
+            "rm -rf data/cache/twig/",
+            "systemctl restart php5-fpm"
+        ]
+    },
     "autoload": {
         "psr-4": {
             "App\\": "src/"
