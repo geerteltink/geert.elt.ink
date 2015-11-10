@@ -1,0 +1,32 @@
+<?xml version="1.0"  encoding="UTF-8" ?>
+<project name="testsite" basedir="." default="main">
+    <property name="target.dir" value="/var/www/xtreamwayz.com" />
+
+    <target name="deploy"
+        depends="deploy:code, deploy:vendors, deploy:clean, deploy:restart"
+        description="Deploys the project">
+        <echo>Deployment complete</echo>
+    </target>
+
+    <target name="deploy:code" description="git pull">
+        <echo msg="Updating code" />
+        <exec command="git pull" dir="${target.dir}" passthru="true" />
+    </target>
+
+    <target name="deploy:vendors" description="install vendor packages">
+        <echo msg="Updating vendors" />
+        <exec command="composer install --no-dev --optimize-autoloader" dir="${target.dir}" passthru="true" />
+    </target>
+
+    <target name="deploy:clean" description="clear cache">
+        <echo msg="Clean cache" />
+        <exec command="rm -f ${target.dir}/data/cache/app_config.*" passthru="true" />
+        <exec command="rm -rf ${target.dir}/data/cache/stash/" passthru="true" />
+        <exec command="rm -rf ${target.dir}/data/cache/twig/" passthru="true" />
+    </target>
+
+    <target name="deploy:restart" description="restart php">
+        <echo msg="Restart server" />
+        <exec command="systemctl restart php5-fpm" dir="${target.dir}" passthru="true" />
+    </target>
+</project>
