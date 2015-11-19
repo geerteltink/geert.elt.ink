@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "85ebb8e30654d628953152fd6a91f4bb",
-    "content-hash": "4cd82bd6e9b67f2e534a460945ba24a4",
+    "hash": "f16bb5860bd02d1e053eb38515ce10cf",
+    "content-hash": "eabb11b781f3ed791fc684a9c031372c",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -279,6 +279,83 @@
             "time": "2015-03-09 09:51:07"
         },
         {
+            "name": "monolog/monolog",
+            "version": "1.17.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Seldaek/monolog.git",
+                "reference": "bee7f0dc9c3e0b69a6039697533dca1e845c8c24"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/bee7f0dc9c3e0b69a6039697533dca1e845c8c24",
+                "reference": "bee7f0dc9c3e0b69a6039697533dca1e845c8c24",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "psr/log": "~1.0"
+            },
+            "provide": {
+                "psr/log-implementation": "1.0.0"
+            },
+            "require-dev": {
+                "aws/aws-sdk-php": "^2.4.9",
+                "doctrine/couchdb": "~1.0@dev",
+                "graylog2/gelf-php": "~1.0",
+                "jakub-onderka/php-parallel-lint": "0.9",
+                "php-console/php-console": "^3.1.3",
+                "phpunit/phpunit": "~4.5",
+                "phpunit/phpunit-mock-objects": "2.3.0",
+                "raven/raven": "^0.13",
+                "ruflin/elastica": ">=0.90 <3.0",
+                "swiftmailer/swiftmailer": "~5.3",
+                "videlalvaro/php-amqplib": "~2.4"
+            },
+            "suggest": {
+                "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
+                "doctrine/couchdb": "Allow sending log messages to a CouchDB server",
+                "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
+                "ext-mongo": "Allow sending log messages to a MongoDB server",
+                "graylog2/gelf-php": "Allow sending log messages to a GrayLog2 server",
+                "php-console/php-console": "Allow sending log messages to Google Chrome",
+                "raven/raven": "Allow sending log messages to a Sentry server",
+                "rollbar/rollbar": "Allow sending log messages to Rollbar",
+                "ruflin/elastica": "Allow sending log messages to an Elastic Search server",
+                "videlalvaro/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.16.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Monolog\\": "src/Monolog"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be"
+                }
+            ],
+            "description": "Sends your logs to files, sockets, inboxes, databases and various web services",
+            "homepage": "http://github.com/Seldaek/monolog",
+            "keywords": [
+                "log",
+                "logging",
+                "psr-3"
+            ],
+            "time": "2015-10-14 12:51:02"
+        },
+        {
             "name": "nikic/fast-route",
             "version": "v0.6.0",
             "source": {
@@ -524,6 +601,44 @@
                 "response"
             ],
             "time": "2015-05-04 20:22:00"
+        },
+        {
+            "name": "psr/log",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/log.git",
+                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/fe0936ee26643249e916849d48e3a51d5f5e278b",
+                "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Psr\\Log\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for logging libraries",
+            "keywords": [
+                "log",
+                "psr",
+                "psr-3"
+            ],
+            "time": "2012-12-21 11:40:51"
         },
         {
             "name": "roave/security-advisories",
@@ -796,16 +911,16 @@
         },
         {
             "name": "zendframework/zend-code",
-            "version": "2.5.2",
+            "version": "2.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-code.git",
-                "reference": "a97ef49f82496fabc3b7379b37f6bbff925b58b8"
+                "reference": "2a69bd42bddf9a955f3747af9e06b6d26e7c41ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-code/zipball/a97ef49f82496fabc3b7379b37f6bbff925b58b8",
-                "reference": "a97ef49f82496fabc3b7379b37f6bbff925b58b8",
+                "url": "https://api.github.com/repos/zendframework/zend-code/zipball/2a69bd42bddf9a955f3747af9e06b6d26e7c41ba",
+                "reference": "2a69bd42bddf9a955f3747af9e06b6d26e7c41ba",
                 "shasum": ""
             },
             "require": {
@@ -816,8 +931,7 @@
                 "doctrine/common": ">=2.1",
                 "fabpot/php-cs-fixer": "1.7.*",
                 "phpunit/phpunit": "~4.0",
-                "zendframework/zend-stdlib": "~2.5",
-                "zendframework/zend-version": "~2.5"
+                "zendframework/zend-stdlib": "~2.5"
             },
             "suggest": {
                 "doctrine/common": "Doctrine\\Common >=2.1 for annotation features",
@@ -845,7 +959,7 @@
                 "code",
                 "zf2"
             ],
-            "time": "2015-07-21 22:40:59"
+            "time": "2015-11-18 18:22:37"
         },
         {
             "name": "zendframework/zend-diactoros",
@@ -992,12 +1106,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-expressive.git",
-                "reference": "26b41e2e316299f2dbe85b7cc3ef006687ef70f6"
+                "reference": "06ac73941f5a3e39c688f671971ddd80bb1907f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-expressive/zipball/26b41e2e316299f2dbe85b7cc3ef006687ef70f6",
-                "reference": "26b41e2e316299f2dbe85b7cc3ef006687ef70f6",
+                "url": "https://api.github.com/repos/zendframework/zend-expressive/zipball/06ac73941f5a3e39c688f671971ddd80bb1907f3",
+                "reference": "06ac73941f5a3e39c688f671971ddd80bb1907f3",
                 "shasum": ""
             },
             "require": {
@@ -1052,7 +1166,7 @@
                 "psr",
                 "psr-7"
             ],
-            "time": "2015-10-25 09:55:27"
+            "time": "2015-11-17 21:21:28"
         },
         {
             "name": "zendframework/zend-expressive-fastroute",
@@ -1431,6 +1545,60 @@
                 "instantiate"
             ],
             "time": "2015-06-14 21:17:01"
+        },
+        {
+            "name": "fabfuel/prophiler",
+            "version": "dev-feature/php7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fabfuel/prophiler.git",
+                "reference": "5440784011388929a65cc72dafc1337c07a8907c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fabfuel/prophiler/zipball/5440784011388929a65cc72dafc1337c07a8907c",
+                "reference": "5440784011388929a65cc72dafc1337c07a8907c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4",
+                "psr/log": "~1.0"
+            },
+            "require-dev": {
+                "container-interop/container-interop": "^1.1",
+                "doctrine/orm": "~2.4",
+                "elasticsearch/elasticsearch": "~1.3",
+                "erusev/parsedown": "~1.5",
+                "phalcon/devtools": "1.3.*@dev",
+                "phpmd/phpmd": "~1.0",
+                "phpunit/phpunit": "~4.0",
+                "squizlabs/php_codesniffer": "~1.0"
+            },
+            "suggest": {
+                "fabfuel/mongo": "ORM for Mongo, supports lazy loading, object references, subdocument classes and their collections.",
+                "phalcon/devtools": "This tools provide you useful scripts, helping to develop applications that use with Phalcon."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Fabfuel\\Prophiler\\": "src/"
+                },
+                "classmap": [
+                    "tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Fabian Fuelling",
+                    "email": "fabian@fabfuel.de"
+                }
+            ],
+            "description": "PHP Profiler & Developer Toolbar built for Phalcon",
+            "time": "2015-11-13 18:07:57"
         },
         {
             "name": "filp/whoops",
@@ -2420,7 +2588,8 @@
         "zendframework/zend-expressive": 20,
         "zendframework/zend-expressive-fastroute": 20,
         "zendframework/zend-servicemanager": 20,
-        "zendframework/zend-expressive-twigrenderer": 20
+        "zendframework/zend-expressive-twigrenderer": 20,
+        "fabfuel/prophiler": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
