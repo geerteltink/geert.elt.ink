@@ -5,7 +5,7 @@ summary: Sismo is a lightweight and easy to install continuous testing server wh
 draft: false
 public: true
 created: 2014-11-10T10:00:00+01:00
-updated: 2014-11-10T10:00:00+01:00
+updated: 2015-11-23T18:18:00+01:00
 tags:
     - continuous integration
     - sismo
@@ -24,14 +24,7 @@ SISMO_DATA_PATH "/path/to/sismo/data"
 SISMO_CONFIG_PATH "/path/to/sismo/config.php"
 ```
 
-The same environment variables must also be set in your virtual host configuration. For Apache:
-
-```apacheconf
-SetEnv SISMO_DATA_PATH "/path/to/sismo/data"
-SetEnv SISMO_CONFIG_PATH "/path/to/sismo/config.php"
-```
-
-The config.php file. This is where you manage projects. As you can see I've added a custom notifier (more on that below) and set a default command that checks for composer.json. If it's available it runs composer and triggers phing afterwards. In phing I've coded project specific tests. The idea is to also run the phing tests with Travis CI when code is pushed to github.
+The config.php file. This is where you manage projects. As you can see I've added a custom notifier (more on that below) and set a default command that checks for composer.json. If it's needed it runs composer and triggers makefile afterwards. In the Makefile I've set project specific tests.
 
 ```php
 <?php
@@ -43,7 +36,7 @@ $notifiers = array(
 );
 
 // Set default command: Run composer and phing if there is a composer file
-Sismo\Project::setDefaultCommand('if [ -f composer.json ]; then composer install --dev --prefer-source && ./vendor/bin/phing; fi');
+Sismo\Project::setDefaultCommand('if [ -f composer.json ]; then composer install --dev --prefer-source && make test; fi');
 
 // Initialize projects
 $projects = array();
@@ -70,7 +63,7 @@ php path/to/sismo.php build --force --quiet $SLUG $HASH 2>&1 &
 
 ## Notifications
 
-Ofcourse you want notifications with the test results. Growl for Windows is supported by default in Sismo. However I couldn't get it working. I think I needed to register Sismo with growl but I decided I didn't want to use an extra service anyway. I'm using grunt a lot for building project assets and it has a nice notification system. After digging into their code I found this little hidden gem called toast.exe. It enables you to send notifications from the console whenever needed and without the need to run another system service. So it's perfect to integrate it into a custom notification class.
+Ofcourse you want notifications with the test results. Growl for Windows is supported by default in Sismo. However I couldn't get it working. I think I needed to register Sismo with growl but I decided I didn't want to use an extra service anyway. I'm using nodejs a lot and it has a nice notification system (``node-notifier``). It integrates with the windoews 10 notification center and enables you to send notifications from the console whenever needed. So it's perfect to integrate it into a custom notification class.
 
 ```php
 <?php
@@ -112,7 +105,8 @@ class ToastNotifier extends Notifier
     private function doNotify($status, $title, $message)
     {
         $dir = dirname(__FILE__);
-        $command = sprintf('toast -t "%s" -m "%s" -p "%s/%s"',
+        $command = sprintf('%s -t "%s" -m "%s" -p "%s/%s"',
+            'path/to/nodejs/node_modules/node-notifier/vendor/toaster/toast.exe',
             $title,
             $message,
             $dir,
@@ -122,4 +116,12 @@ class ToastNotifier extends Notifier
         exec($command, $output, $return_var);
     }
 }
+```
+
+## View results
+
+With PHP 5.4+ you can use the Sismo build-in web server to view the build results:
+
+```php
+php sismo.php run localhost:9000
 ```
