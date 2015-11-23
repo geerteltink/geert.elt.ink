@@ -11,15 +11,16 @@ chdir(dirname(__DIR__));
 require 'vendor/autoload.php';
 
 // Start Profiler
-$profiler = new \Fabfuel\Prophiler\Profiler();
+//$profiler = new \Fabfuel\Prophiler\Profiler();
 
 /** @var \Interop\Container\ContainerInterface $container */
 $container = require 'config/container.php';
 
 /** @var \Zend\Expressive\Application $app */
-//$app = $container->get('Zend\Expressive\Application');
-//$app->run();
+$app = $container->get('Zend\Expressive\Application');
+$app->run();
 
+/*
 // Add aggregator
 $profiler->addAggregator(new \Fabfuel\Prophiler\Aggregator\Database\QueryAggregator());
 $profiler->addAggregator(new \Fabfuel\Prophiler\Aggregator\Cache\CacheAggregator());
@@ -51,3 +52,4 @@ $debugMiddleware->pipe(function ($request, $response, $next) use ($app) {
     return $response;
 });
 $debugMiddleware->run();
+*/
