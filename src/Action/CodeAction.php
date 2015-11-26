@@ -29,24 +29,31 @@ class CodeAction
 
         $item = $cache->getItem('github/xtreamwayz/repos');
         $repositories = $item->get();
-        if($item->isMiss())
-        {
+        if ($item->isMiss()) {
             $item->lock();
 
             $client = new HttpClient();
-            $apiResponse = $client->request('GET', 'https://api.github.com/users/xtreamwayz/repos', [
-                'verify' => false
-            ]);
+            $apiResponse = $client->request(
+                'GET',
+                'https://api.github.com/users/xtreamwayz/repos',
+                [
+                    'verify' => false,
+                ]
+            );
 
-            $repositories = (string) $apiResponse->getBody();
-
+            $repositories = (string)$apiResponse->getBody();
             $item->set($repositories, 86400);
         }
 
         $repositories = json_decode($repositories);
 
-        return new HtmlResponse($this->template->render('app::code', [
-            'repos' => $repositories
-        ]));
+        return new HtmlResponse(
+            $this->template->render(
+                'app::code',
+                [
+                    'repos' => $repositories,
+                ]
+            )
+        );
     }
 }

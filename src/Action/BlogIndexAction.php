@@ -31,8 +31,7 @@ class BlogIndexAction
 
         $item = $cache->getItem('posts');
         $posts = $item->get();
-        if($item->isMiss())
-        {
+        if ($item->isMiss()) {
             $item->lock();
 
             $posts = [];
@@ -45,8 +44,13 @@ class BlogIndexAction
             $item->set($posts);
         }
 
-        return new HtmlResponse($this->template->render('app::blog-index', [
-            'posts' => $posts
-        ]));
+        return new HtmlResponse(
+            $this->template->render(
+                'app::blog-index',
+                [
+                    'posts' => $posts,
+                ]
+            )
+        );
     }
 }
