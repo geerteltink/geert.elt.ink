@@ -1,18 +1,18 @@
 {
-  "name": "xtreamwayz.com",
-  "license": "MIT",
-  "private": true,
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "bootstrap": "4.0.0-alpha",
-    "font-awesome": "~4.4",
-    "prism": "~1.3.0",
-    "highlight": "~8.9.1"
-  }
+    "name": "xtreamwayz.com",
+    "license": "MIT",
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "bootstrap": "v4-dev",
+        "font-awesome": "^4.5",
+        "prism": "^1.3",
+        "highlight": "^8.9"
+    }
 }
