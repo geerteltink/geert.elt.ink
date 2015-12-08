@@ -31,18 +31,18 @@
 
         <footer>
             <ul class="list-inline share-social">
-                <li>Share this article:</li>
-                <li>
+                <li class="list-inline-item">Share this article:</li>
+                <li class="list-inline-item">
                     <a href="http://twitter.com/share?url=https://xtreamwayz.com{{ path('blog.post', {'id': post.id}) }}&amp;text={{ post.title | url_encode }}" title="Share on Twitter" target="_blank">
                         <i class="icon icon-twitter-square"></i> Twitter
                     </a>
                 </li>
-                <li>
+                <li class="list-inline-item">
                     <a href="http://www.facebook.com/sharer.php?u=https://xtreamwayz.com{{ path('blog.post', {'id': post.id}) }}&amp;t={{ post.title | url_encode }}" title="Share on Facebook" target="_blank">
                         <i class="icon icon-facebook-square"></i> Facebook
                     </a>
                 </li>
-                <li>
+                <li class="list-inline-item">
                     <a href="https://plus.google.com/share?hl=en&amp;url=https://xtreamwayz.com{{ path('blog.post', {'id': post.id}) }}&amp;title={{ post.title | url_encode }}" title="Share on Google+" target="_blank">
                         <i class="icon icon-google-plus-square"></i> Google+
                     </a>
