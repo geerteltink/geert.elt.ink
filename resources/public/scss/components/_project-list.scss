@@ -1,23 +1,26 @@
 .project-list {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
+    display: flex;
+    flex-direction: row;
 
-  > li {
-    width: 300px;
-    overflow-x: hidden;
-  }
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    > li {
+        overflow-x: hidden;
+
+        width: 300px;
+    }
 }
 
 .project-list-meta {
-  font-size: $font-size-xs;
-  font-weight: bold;
-  text-transform: uppercase;
+    font-size: $font-size-xs;
+    font-weight: bold;
 
-  color: #999;
+    text-transform: uppercase;
 
-  a {
     color: #999;
-  }
+
+    a {
+        color: #999;
+    }
 }

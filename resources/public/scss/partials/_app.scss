@@ -1,63 +1,68 @@
 .app {
-  background: $body-bg;
-  color: $text-color;
+    display: flex;
+    flex-direction: column;
 
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
+    min-height: 100vh;
+
+    color: $text-color;
+    background: $body-bg;
 }
 
 .app-hero {
-  min-height: 196px;
+    min-height: 196px;
 
-  background: $footer-bg url("/assets/img/banner-background.jpg?v=#{$core-version}") no-repeat center center;
-  background-size: cover;
-  color: $header-color;
+    color: $header-color;
+    background: $footer-bg url("/assets/img/banner-background.jpg?v=#{$core-version}") no-repeat center center;
+    background-size: cover;
 
-  h1 {
-    text-transform: uppercase;
-    font-size: 5vw;
-  }
+    h1 {
+        font-size: 3vw;
 
-  p {
-    font-size: 1.3rem;
-    font-style: italic;
-  }
+        text-transform: uppercase;
+    }
+
+    p {
+        font-size: 1.3rem;
+        font-style: italic;
+    }
 }
 
 .app-hero-text {
-  min-height: 160px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+    display: flex;
+
+    min-height: 160px;
+
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .app-content {
-  flex: 1;
-  padding: $spacer 0;
+    padding: $spacer 0;
+
+    flex: 1;
 }
 
 .app-footer {
-  background-color: $footer-bg;
-  color: $footer-color;
+    padding: $spacer 0;
 
-  padding: $spacer 0;
-
-  a,
-  .breadcrumbs,
-  .linklist {
     color: $footer-color;
-  }
+    background-color: $footer-bg;
 
-  p {
-    margin-bottom: 0;
-  }
+    a,
+    .breadcrumbs,
+    .linklist {
+        color: $footer-color;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
 }
 
 .blockquote p {
-  font-style: italic;
+    font-style: italic;
 }
 
 .card-title {
-  color: $ui-primary;
+    color: $ui-primary;
 }
