@@ -1,10 +1,10 @@
 <?php
 
 return [
-    'dependencies' => [
+    'dependencies'        => [
         'invokables' => [
         ],
-        'factories' => [
+        'factories'  => [
         ],
     ],
 
@@ -12,7 +12,7 @@ return [
     'middleware_pipeline' => [
         // An array of middleware to register prior to registration of the
         // routing middleware
-        'pre_routing' => [
+        'pre_routing'  => [
             //[
             // Required:
             //    'middleware' => 'Name of middleware service, or a callable',

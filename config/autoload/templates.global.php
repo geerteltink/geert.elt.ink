@@ -12,14 +12,20 @@ return [
     ],
 
     'templates' => [
-        'cache_dir' => 'data/cache/twig',
-        'assets_url' => '/',
-        'assets_version' => '2015-11-08',
         'extension' => 'html.twig',
-        'paths' => [
+        'paths'     => [
             'app'    => ['resources/templates/app'],
             'layout' => ['resources/templates/layout'],
             'error'  => ['resources/templates/error'],
-        ]
-    ]
+        ],
+    ],
+
+    'twig' => [
+        'cache_dir'      => 'data/cache/twig',
+        'assets_url'     => '/',
+        'assets_version' => '2015-11-08',
+        'extensions'     => [
+            // extension service names or instances
+        ],
+    ],
 ];

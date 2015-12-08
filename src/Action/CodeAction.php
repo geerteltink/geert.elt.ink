@@ -41,7 +41,7 @@ class CodeAction
                 ]
             );
 
-            $repositories = (string)$apiResponse->getBody();
+            $repositories = (string) $apiResponse->getBody();
             $item->set($repositories, 86400);
         }
 

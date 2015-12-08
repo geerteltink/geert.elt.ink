@@ -34,8 +34,13 @@ class BlogPostAction
         $post = $document->getYAML();
         $post['content'] = $document->getContent();
 
-        return new HtmlResponse($this->template->render('app::blog-post', [
-            'post' => $post
-        ]));
+        return new HtmlResponse(
+            $this->template->render(
+                'app::blog-post',
+                [
+                    'post' => $post,
+                ]
+            )
+        );
     }
 }

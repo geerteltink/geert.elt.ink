@@ -27,7 +27,7 @@ class ProfilerMiddleware implements MiddlewareInterface
     public function __construct(Toolbar $toolbar, LoggerInterface $logger)
     {
         $this->toolbar = $toolbar;
-        $this->logger  = $logger;
+        $this->logger = $logger;
     }
 
     /**

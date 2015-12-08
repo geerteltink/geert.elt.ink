@@ -12,9 +12,11 @@ class CacheFactory
     {
         // Create Driver with default options
         $driver = new CacheDriver();
-        $driver->setOptions([
-            'path' => 'data/cache/stash/'
-        ]);
+        $driver->setOptions(
+            [
+                'path' => 'data/cache/stash/',
+            ]
+        );
 
         // Inject the driver into a new Pool object.
         $pool = new CachePool($driver);

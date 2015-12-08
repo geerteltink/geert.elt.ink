@@ -1,7 +1,6 @@
-.idea
-.stacker
-.vagrant
-composer.phar
-phpunit.xml
+/.idea/
+/.stacker/
+/.vagrant/
+/phpunit.xml
 /bower_components/
 /vendor/
