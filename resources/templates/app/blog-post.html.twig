@@ -1,7 +1,7 @@
 {% extends '@layout/default.html.twig' %}
 
 {% block title %}Blog post title{% endblock %}
-{% block subtitle %}Subtitle.{% endblock %}
+{% block subtitle %}{{ post.summary }}{% endblock %}
 
 {% block content %}
     <article itemscope itemtype="http://schema.org/BlogPosting" class="container">
