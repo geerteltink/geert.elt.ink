@@ -65,19 +65,3 @@ class SmokeTest extends \PHPUnit_Framework_TestCase
         ];
     }
 }
-
-/*
-            ['/blog/2013-11-05-hello-world'],
-            ['/blog/2013-12-06-symfony-2-flash-messages'],
-            ['/blog/2014-06-20-jekyll-atom-feed'],
-            ['/blog/2014-10-02-symfony-2-dynamic-router'],
-            ['/blog/2014-11-03-howto-update-teamspeak-3'],
-            ['/blog/2014-11-04-phpunit-selenium-2'],
-            ['/blog/2014-11-10-using-sismo-as-your-local-continuous-integration-server'],
-            ['/blog/2015-01-24-check-git-status-recursively-on-windows'],
-            ['/blog/2015-03-13-grunt-gulp-and-npm'],
-            ['/blog/2015-05-20-git-worklow'],
-            ['/blog/2015-05-21-git-troubleshooting'],
-            ['/blog/2015-06-04-symfony-shibboleth-login-the-easy-way'],
-            ['/blog/2015-09-07-pimple-3-container-interop']
- */
