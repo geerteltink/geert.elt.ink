@@ -14,26 +14,22 @@
     color: $header-color;
     background: $footer-bg url("/assets/img/banner-background.jpg?v=#{$core-version}") no-repeat center center;
     background-size: cover;
+}
 
-    h1 {
-        font-size: 3vw;
+.app-hero-content {
+    margin-left: 2em;
+    margin-right: 2em;
+}
 
-        text-transform: uppercase;
-    }
+.app-hero-title {
+    font-size: 3vw;
 
-    p {
-        font-size: 1.3rem;
-        font-style: italic;
-    }
+    text-transform: uppercase;
 }
 
 .app-hero-text {
-    display: flex;
-
-    min-height: 160px;
-
-    align-items: center;
-    justify-content: flex-start;
+    font-size: 1.1rem;
+    font-style: italic;
 }
 
 .app-content {
