@@ -1,7 +1,7 @@
 ---
 id: 2014-06-20-jekyll-atom-feed
-title: Symfony 2.4 flash messages
-summary: In Symfony 2.4 the session is not always initialized in a template. You need an extra step to detect this.
+title: Jekyll Atom Feed
+summary: A proper atom feed for Jekyll.
 draft: false
 public: true
 created: 2014-06-20T10:00:00+01:00
