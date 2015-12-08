@@ -1,9 +1,9 @@
 <?xml version="1.0"  encoding="UTF-8" ?>
-<project name="testsite" basedir="." default="main">
+<project name="testsite" basedir=".">
     <property name="target.dir" value="/var/www/xtreamwayz.com" />
 
     <target name="deploy"
-        depends="deploy:code, deploy:vendors, deploy:clean, deploy:restart"
+        depends="deploy:code, deploy:vendors, deploy:clean"
         description="Deploys the project">
         <echo>Deployment complete</echo>
     </target>
@@ -23,10 +23,5 @@
         <exec command="rm -f ${target.dir}/data/cache/app_config.*" passthru="true" />
         <exec command="rm -rf ${target.dir}/data/cache/stash/" passthru="true" />
         <exec command="rm -rf ${target.dir}/data/cache/twig/" passthru="true" />
-    </target>
-
-    <target name="deploy:restart" description="restart php">
-        <echo msg="Restart server" />
-        <exec command="systemctl restart php5-fpm" dir="${target.dir}" passthru="true" />
     </target>
 </project>
