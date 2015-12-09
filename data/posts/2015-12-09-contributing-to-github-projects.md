@@ -1,7 +1,7 @@
 ---
 id: 2015-12-09-contributing-to-github-projects
 title: Contributing to a github project
-summary: Keep your github fork in sync
+summary: Keep your github fork in sync.
 draft: false
 public: true
 created: 2015-12-09T21:48:00+01:00
@@ -57,21 +57,21 @@ git push origin master
 Create a branch for a hotfix to the master branch, mentioned in issue #1234.
 
 ```bash
-// Checkout master branch and update upstream first
+# Checkout master branch and update upstream first
 git checkout -b hotfix/1234
 ```
 
 Create a branch for a hotfix to the master branch.
 
 ```bash
-// Checkout master branch and update upstream first
+# Checkout master branch and update upstream first
 git checkout -b hotfix/<issue-that-needs-to-be-fixed>
 ```
 
 Create a branch for a feature to the develop branch or the master branch if there is no develop branch.
 
 ```bash
-// Checkout develop branch and update upstream first
+# Checkout develop branch and update upstream first
 git checkout -b feature/<awesome-feature>
 ```
 
