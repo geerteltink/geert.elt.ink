@@ -5,7 +5,7 @@ summary: Keep your github fork in sync.
 draft: false
 public: true
 created: 2015-12-09T21:48:00+01:00
-updated: 2015-12-09T21:48:00+01:00
+updated: false
 tags:
     - git
     - git-flow
