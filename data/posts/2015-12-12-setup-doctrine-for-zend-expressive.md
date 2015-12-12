@@ -12,7 +12,7 @@ tags:
     - caching
 ---
 
-You want to use doctrine in your Zend Expressive project but don't know where to start? Here is your guide. This
+You want to use doctrine in your Zend Expressive project but don't know where to start? Here is how to do it. This
 guide uses a doctrine factory and a separate cache factory so you can use the doctrine cache for other purposes too.
 
 ## Doctrine Factory
