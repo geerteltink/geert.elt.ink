@@ -240,11 +240,11 @@ if ($cache->contains('my_array')) {
 More info on how to use the cache can be found in the
 [doctrine docs](https://doctrine-orm.readthedocs.org/projects/doctrine-orm/en/latest/reference/caching.html).
 
-## Doctrine from the cli
+## Doctrine Console
 
-Doctrine has very useful commands from the cli. However it doesn't work out of the box. Doctine needs to figure out how
-to setup the entity manager with the right configuration. Fortenatly this is easily done by pcreating ``cli-config.php``
-in the project root.
+The Doctrine Console is a very useful command line interface tool. However it doesn't work out of the box. Doctine
+needs to know how to setup the entity manager with the right configuration. Fortunately this is easily done by
+creating the file ``cli-config.php`` in the project root.
 
 ```php
 <?php // cli-config.php
@@ -264,7 +264,7 @@ return ConsoleRunner::createHelperSet($em);
 ```
 
 This file loads the configuration, setup the container and gets the entity manger which will then be injected in the
-console.
+console. All you need to do now is call the doctrine console.
 
 ```bash
 # List all commands
