@@ -1,7 +1,7 @@
 ---
-id: 2015-12-12-zend-expressive-doctrine-factory
-title: Zend Expressive Doctrine Factory and Cache Factory
-summary: Use doctrine in your zend expressive project.
+id: 2015-12-12-setup-doctrine-for-zend-expressive
+title: How to setup doctrine for zend expressive
+summary: Build a Zend Expressive Doctrine factory and cache driver factory.
 draft: false
 public: true
 created: 2015-12-12T12:00:00+01:00
@@ -265,7 +265,6 @@ return ConsoleRunner::createHelperSet($em);
 
 This file loads the configuration, setup the container and gets the entity manger which will then be injected in the
 console.
-
 
 ```bash
 # List all commands
