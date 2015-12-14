@@ -25,7 +25,6 @@ class BlogIndexAction
 
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $next = null)
     {
-        /** @var \Stash\Pool $cache */
         $cache = $this->container->get('cache');
         $parser = new Parser();
 
