@@ -58,6 +58,18 @@
 {% endblock %}
 
 {% block javascript %}
+    <script>
+         var disqus_config = function () {
+            this.page.url = "https://xtreamwayz.com{{ path('blog.post', {'id': post.id}) }}";
+            this.page.identifier = 'blog:{{ post.id }}';
+         };
+        (function() {
+            var d = document, s = d.createElement('script');
+            s.src = '//xtreamwayz.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
     <script type="text/javascript" src="{{ asset('assets/js/core.min.js') }}"></script>
     <script type="text/javascript">
         (function(){
