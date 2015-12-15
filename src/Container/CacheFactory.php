@@ -8,6 +8,11 @@ use Stash\Pool as CachePool;
 
 class CacheFactory
 {
+    /**
+     * @param ContainerInterface $container
+     *
+     * @return CachePool
+     */
     public function __invoke(ContainerInterface $container)
     {
         // Create Driver with default options

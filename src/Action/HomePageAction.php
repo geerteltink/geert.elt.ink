@@ -11,16 +11,35 @@ use Zend\Expressive\Template\TemplateRendererInterface;
 
 class HomePageAction
 {
+    /**
+     * @var ContainerInterface
+     */
     private $container;
 
+    /**
+     * @var TemplateRendererInterface
+     */
     private $template;
 
+    /**
+     * HomePageAction constructor.
+     *
+     * @param ContainerInterface             $container
+     * @param TemplateRendererInterface|null $template
+     */
     public function __construct(ContainerInterface $container, TemplateRendererInterface $template = null)
     {
         $this->container = $container;
         $this->template = $template;
     }
 
+    /**
+     * @param ServerRequestInterface $request
+     * @param ResponseInterface      $response
+     * @param callable|null          $next
+     *
+     * @return HtmlResponse
+     */
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $next = null)
     {
         return new HtmlResponse($this->template->render('app::home-page'));

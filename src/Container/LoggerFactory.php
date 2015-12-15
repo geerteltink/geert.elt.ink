@@ -8,6 +8,11 @@ use Monolog\Logger;
 
 class LoggerFactory
 {
+    /**
+     * @param ContainerInterface $container
+     *
+     * @return Logger
+     */
     public function __invoke(ContainerInterface $container)
     {
         $logger = new Logger('app');
