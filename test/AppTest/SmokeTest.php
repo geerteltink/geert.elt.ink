@@ -1,6 +1,6 @@
 <?php
 
-namespace AppTest\Action;
+namespace AppTest;
 
 use Prophecy\Argument;
 use Psr\Http\Message\ResponseInterface;
