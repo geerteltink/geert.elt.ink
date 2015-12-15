@@ -4,8 +4,8 @@ title: Using Sismo as Your Personal CI Server on Windows
 summary: Sismo is a lightweight and easy to install continuous testing server which you can use locally and trigger from a git post-commit hook.
 draft: false
 public: true
-created: 2014-11-10T10:00:00+01:00
-updated: 2015-11-23T18:18:00+01:00
+published: 2014-11-10T10:00:00+01:00
+modified: 2015-11-23T18:18:00+01:00
 tags:
     - continuous integration
     - sismo

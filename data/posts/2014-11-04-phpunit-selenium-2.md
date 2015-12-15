@@ -4,8 +4,8 @@ title: PHPunit and Selenium Server 2
 summary: This is the missing manual for phpunit-selenium.
 draft: false
 public: true
-created: 2014-11-04T10:00:00+01:00
-updated: 2015-02-21T12:42:00+01:00
+published: 2014-11-04T10:00:00+01:00
+modified: 2015-02-21T12:42:00+01:00
 tags:
     - PHPUnit
     - Selenium

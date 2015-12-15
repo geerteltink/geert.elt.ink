@@ -10,12 +10,14 @@
                 {{ post.title }}
             </h1>
             <div class="article-meta">
-                Published <time datetime="{{ post.created | date('c', 'UTC') }}" itemprop="datePublished">
-                    {{ post.created | date('F jS, Y', 'UTC') }}
+                Published <time datetime="{{ post.published | date('c', 'UTC') }}" itemprop="datePublished">
+                    {{ post.published | date('F jS, Y', 'UTC') }}
                 </time>
 
-                {% if post.updated %}
-                    (modified <time datetime="{{ post.updated | date('c', 'UTC') }}" itemprop="dateModified">{{ post.updated | date('F jS, Y', 'UTC') }}</time>)
+                {% if post.modified %}
+                    (modified <time datetime="{{ post.modified | date('c', 'UTC') }}" itemprop="dateModified">
+                        {{ post.modified | date('F jS, Y', 'UTC') }}
+                    </time>)
                 {% endif %}
                 in
                 {% for tag in post.tags %}

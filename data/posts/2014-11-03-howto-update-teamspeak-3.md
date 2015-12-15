@@ -4,8 +4,8 @@ title: Howto Update TeamSpeak 3 on Debian
 summary: This is the missing manual for updating TeamSpeak 3 on Debian.
 draft: false
 public: true
-created: 2014-11-03T10:00:00+01:00
-updated: 2015-10-27T16:32:00+01:00
+published: 2014-11-03T10:00:00+01:00
+modified: 2015-10-27T16:32:00+01:00
 tags:
     - TeamSpeak 3
 ---

@@ -4,8 +4,8 @@ title: Jekyll Atom Feed
 summary: A proper atom feed for Jekyll.
 draft: false
 public: true
-created: 2014-06-20T10:00:00+01:00
-updated: 2015-02-21T15:39:00+01:00
+published: 2014-06-20T10:00:00+01:00
+modified: 2015-02-21T15:39:00+01:00
 tags:
     - Jekyll
 ---

@@ -2,8 +2,8 @@
 
 namespace App\Action;
 
+use Domain\Post\PostRepository;
 use Interop\Container\ContainerInterface;
-use Mni\FrontYAML\Parser;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Zend\Diactoros\Response\HtmlResponse;
@@ -43,15 +43,11 @@ class BlogPostAction
      */
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $next = null)
     {
-        $file = sprintf('data/posts/%s.md', $request->getAttribute('id'));
-        if (!is_file($file)) {
+        $postRepository = $this->container->get(PostRepository::class);
+        $post = $postRepository->find($request->getAttribute('id'));
+        if (!$post) {
             return $next($request, $response->withStatus(404), 'Not found');
         }
-
-        $parser = new Parser();
-        $document = $parser->parse(file_get_contents($file));
-        $post = $document->getYAML();
-        $post['content'] = $document->getContent();
 
         return new HtmlResponse(
             $this->template->render(

@@ -4,8 +4,8 @@ title: PhpStorm Container Interop Code Completion
 summary: Easily add code completion for the container-interop in PhpStorm.
 draft: false
 public: true
-created: 2015-12-14T11:00:00+01:00
-updated: false
+published: 2015-12-14T11:00:00+01:00
+modified: false
 tags:
     - phpstorm
     - container-interop

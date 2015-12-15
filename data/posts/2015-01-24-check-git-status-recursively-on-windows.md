@@ -4,8 +4,8 @@ title: Check git status recursively on windows
 summary: Easy command to check all git repo's for changes not committed or pushed in all sub directories.
 draft: false
 public: true
-created: 2015-01-24T10:00:00+01:00
-updated: 2015-02-21T15:42:00+01:00
+published: 2015-01-24T10:00:00+01:00
+modified: 2015-02-21T15:42:00+01:00
 tags:
     - Windows
     - cli

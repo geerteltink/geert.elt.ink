@@ -4,8 +4,8 @@ title: How to setup doctrine for zend expressive
 summary: Build a Zend Expressive Doctrine factory and cache driver factory.
 draft: false
 public: true
-created: 2015-12-12T12:00:00+01:00
-updated: false
+published: 2015-12-12T12:00:00+01:00
+modified: false
 tags:
     - zend expressive
     - doctrine

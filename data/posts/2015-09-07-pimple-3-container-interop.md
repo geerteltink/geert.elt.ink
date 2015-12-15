@@ -4,8 +4,8 @@ title: Container-Interop wrapper for Pimple 3.0
 summary: While the Pimple developers are witing for the PSR it doesn't mean you have too.
 draft: false
 public: true
-created: 2015-06-04T10:00:00+01:00
-updated: 2015-06-05T16:44:00+01:00
+published: 2015-06-04T10:00:00+01:00
+modified: 2015-06-05T16:44:00+01:00
 tags:
     - Pimple
     - Container-Interop

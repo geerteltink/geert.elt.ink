@@ -13,8 +13,9 @@
                         <a href="{{ path('blog.post', {'id': post.id}) }}" itemprop="url">{{ post.title }}</a>
                     </h2>
                     <p itemprop="description">{{ post.summary }}</p>
-                    <time class="timeline-item-date" datetime="{{ post.created | date('c', 'UTC') }}" itemprop="datePublished">
-                        {{ post.created | date('F jS, Y', 'UTC') }}
+                    <time class="timeline-item-date" datetime="{{ post.published | date('c', 'UTC') }}"
+                          itemprop="datePublished">
+                        {{ post.published | date('F jS, Y', 'UTC') }}
                     </time>
                 </div>
             </li>

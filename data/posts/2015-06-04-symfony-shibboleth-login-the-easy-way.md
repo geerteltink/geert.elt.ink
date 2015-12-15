@@ -4,8 +4,8 @@ title: Symfony 2.6 Shibboleth Login - The Easy Way
 summary: Since Symfony 2.6 Shibboleth logins can be added easily with the remote_user security option.
 draft: false
 public: true
-created: 2015-06-04T10:00:00+01:00
-updated: 2015-06-05T16:44:00+01:00
+published: 2015-06-04T10:00:00+01:00
+modified: 2015-06-05T16:44:00+01:00
 tags:
     - Symfony
     - Shibboleth

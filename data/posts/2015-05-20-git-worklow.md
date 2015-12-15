@@ -4,8 +4,8 @@ title: Git Workflow
 summary: A git workflow suitable for large projects.
 draft: false
 public: true
-created: 2015-05-20T10:00:00+01:00
-updated: 2015-10-06T10:40:00+01:00
+published: 2015-05-20T10:00:00+01:00
+modified: 2015-10-06T10:40:00+01:00
 tags:
     - git
 ---

@@ -4,8 +4,8 @@ title: Hello World!
 summary: Hello World! I'm back. Serving this site with GitHub pages with a touch of Jekyll.
 draft: false
 public: true
-created: 2013-11-05T10:00:00+01:00
-updated: false
+published: 2013-11-05T10:00:00+01:00
+modified: false
 tags:
     - GitHub pages
     - Jekyll

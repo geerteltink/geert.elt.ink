@@ -4,8 +4,8 @@ title: Git Troubleshooting
 summary: Some ways to resolve git issues.
 draft: false
 public: true
-created: 2015-05-21T10:00:00+01:00
-updated: 2015-10-08T14:16:00+01:00
+published: 2015-05-21T10:00:00+01:00
+modified: 2015-10-08T14:16:00+01:00
 tags:
     - git
 ---

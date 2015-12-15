@@ -2,14 +2,13 @@
 
 namespace App\Action;
 
+use Domain\Post\PostRepository;
 use Interop\Container\ContainerInterface;
-use Mni\FrontYAML\Parser;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Expressive\Router;
 use Zend\Expressive\Template\TemplateRendererInterface;
-use Zend\Stdlib\Glob;
 
 class BlogIndexAction
 {
@@ -45,19 +44,14 @@ class BlogIndexAction
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $next = null)
     {
         $cache = $this->container->get('cache');
-        $parser = new Parser();
 
         $item = $cache->getItem('posts');
         $posts = $item->get();
         if ($item->isMiss()) {
             $item->lock();
 
-            $posts = [];
-            foreach (Glob::glob('data/posts/*.md', Glob::GLOB_BRACE) as $file) {
-                $document = $parser->parse(file_get_contents($file));
-                $posts[] = $document->getYAML();
-            }
-            $posts = array_reverse($posts);
+            $postRepository = $this->container->get(PostRepository::class);
+            $posts = array_reverse($postRepository->findAll());
 
             $item->set($posts);
         }
