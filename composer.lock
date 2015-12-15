@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fdc085f9f3f129ea3050d1311c16e1ef",
-    "content-hash": "535909c18579c8b44ce186d648bcfd7b",
+    "hash": "836f0ca0b1afb911777e6e90485dffa6",
+    "content-hash": "da5b46c2b4062eb6266e265478fe8fe6",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -1661,6 +1661,57 @@
             "time": "2015-06-14 21:17:01"
         },
         {
+            "name": "etsy/phan",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/etsy/phan.git",
+                "reference": "f673ea8b3ab86d5d9d36ea68290ce816a5b29f2f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/etsy/phan/zipball/f673ea8b3ab86d5d9d36ea68290ce816a5b29f2f",
+                "reference": "f673ea8b3ab86d5d9d36ea68290ce816a5b29f2f",
+                "shasum": ""
+            },
+            "require": {
+                "ext-ast": "*",
+                "ext-sqlite3": "0.7-dev",
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~5.1"
+            },
+            "bin": [
+                "phan"
+            ],
+            "type": "project",
+            "autoload": {
+                "psr-4": {
+                    "Phan\\": "src/Phan"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rasmus Lerdorf"
+                },
+                {
+                    "name": "Andrew S. Morrison"
+                }
+            ],
+            "description": "A static analyzer for PHP",
+            "keywords": [
+                "analyzer",
+                "php",
+                "static"
+            ],
+            "time": "2015-12-14 14:24:47"
+        },
+        {
             "name": "fabfuel/prophiler",
             "version": "dev-feature/php7",
             "source": {
@@ -2970,7 +3021,8 @@
         "roave/security-advisories": 20,
         "zendframework/zend-expressive": 5,
         "zendframework/zend-servicemanager": 20,
-        "fabfuel/prophiler": 20
+        "fabfuel/prophiler": 20,
+        "etsy/phan": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
