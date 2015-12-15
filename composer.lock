@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "836f0ca0b1afb911777e6e90485dffa6",
-    "content-hash": "da5b46c2b4062eb6266e265478fe8fe6",
+    "hash": "515f55d45c79ba886cd35c05e328442d",
+    "content-hash": "3ab2d2c3fe81bafecc9316e7b66c40ec",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -1178,16 +1178,16 @@
         },
         {
             "name": "zendframework/zend-expressive-fastroute",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-expressive-fastroute.git",
-                "reference": "9848c50742de314aa9b2e093a001fc3ce2c80e99"
+                "reference": "455a3db492c207c88f8da2dc7ace190fc288c25a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-expressive-fastroute/zipball/9848c50742de314aa9b2e093a001fc3ce2c80e99",
-                "reference": "9848c50742de314aa9b2e093a001fc3ce2c80e99",
+                "url": "https://api.github.com/repos/zendframework/zend-expressive-fastroute/zipball/455a3db492c207c88f8da2dc7ace190fc288c25a",
+                "reference": "455a3db492c207c88f8da2dc7ace190fc288c25a",
                 "shasum": ""
             },
             "require": {
@@ -1225,7 +1225,7 @@
                 "psr",
                 "psr-7"
             ],
-            "time": "2015-12-07 15:54:57"
+            "time": "2015-12-14 23:12:12"
         },
         {
             "name": "zendframework/zend-expressive-router",
@@ -1712,60 +1712,6 @@
             "time": "2015-12-14 14:24:47"
         },
         {
-            "name": "fabfuel/prophiler",
-            "version": "dev-feature/php7",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/fabfuel/prophiler.git",
-                "reference": "5440784011388929a65cc72dafc1337c07a8907c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/fabfuel/prophiler/zipball/5440784011388929a65cc72dafc1337c07a8907c",
-                "reference": "5440784011388929a65cc72dafc1337c07a8907c",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4",
-                "psr/log": "~1.0"
-            },
-            "require-dev": {
-                "container-interop/container-interop": "^1.1",
-                "doctrine/orm": "~2.4",
-                "elasticsearch/elasticsearch": "~1.3",
-                "erusev/parsedown": "~1.5",
-                "phalcon/devtools": "1.3.*@dev",
-                "phpmd/phpmd": "~1.0",
-                "phpunit/phpunit": "~4.0",
-                "squizlabs/php_codesniffer": "~1.0"
-            },
-            "suggest": {
-                "fabfuel/mongo": "ORM for Mongo, supports lazy loading, object references, subdocument classes and their collections.",
-                "phalcon/devtools": "This tools provide you useful scripts, helping to develop applications that use with Phalcon."
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Fabfuel\\Prophiler\\": "src/"
-                },
-                "classmap": [
-                    "tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Fabian Fuelling",
-                    "email": "fabian@fabfuel.de"
-                }
-            ],
-            "description": "PHP Profiler & Developer Toolbar built for Phalcon",
-            "time": "2015-11-13 18:07:57"
-        },
-        {
             "name": "filp/whoops",
             "version": "1.1.10",
             "source": {
@@ -1822,67 +1768,6 @@
                 "zf2"
             ],
             "time": "2015-06-29 05:42:04"
-        },
-        {
-            "name": "maximebf/debugbar",
-            "version": "v1.11.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/maximebf/php-debugbar.git",
-                "reference": "07741d84d39d10f00551c94284cdefcc69703e77"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/maximebf/php-debugbar/zipball/07741d84d39d10f00551c94284cdefcc69703e77",
-                "reference": "07741d84d39d10f00551c94284cdefcc69703e77",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0",
-                "psr/log": "^1.0",
-                "symfony/var-dumper": "^2.6|^3.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.0|^5.0"
-            },
-            "suggest": {
-                "kriswallsmith/assetic": "The best way to manage assets",
-                "monolog/monolog": "Log using Monolog",
-                "predis/predis": "Redis storage"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.11-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "DebugBar\\": "src/DebugBar/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Maxime Bouroumeau-Fuseau",
-                    "email": "maxime.bouroumeau@gmail.com",
-                    "homepage": "http://maximebf.com"
-                },
-                {
-                    "name": "Barry vd. Heuvel",
-                    "email": "barryvdh@gmail.com"
-                }
-            ],
-            "description": "Debug bar in the browser for php application",
-            "homepage": "https://github.com/maximebf/php-debugbar",
-            "keywords": [
-                "debug",
-                "debugbar"
-            ],
-            "time": "2015-12-10 09:50:24"
         },
         {
             "name": "myclabs/deep-copy",
@@ -2894,125 +2779,6 @@
                 "standards"
             ],
             "time": "2015-12-11 00:12:46"
-        },
-        {
-            "name": "symfony/polyfill-mbstring",
-            "version": "v1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "0b6a8940385311a24e060ec1fe35680e17c74497"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/0b6a8940385311a24e060ec1fe35680e17c74497",
-                "reference": "0b6a8940385311a24e060ec1fe35680e17c74497",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Mbstring\\": ""
-                },
-                "files": [
-                    "bootstrap.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nicolas Grekas",
-                    "email": "p@tchwork.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony polyfill for the Mbstring extension",
-            "homepage": "https://symfony.com",
-            "keywords": [
-                "compatibility",
-                "mbstring",
-                "polyfill",
-                "portable",
-                "shim"
-            ],
-            "time": "2015-11-04 20:28:58"
-        },
-        {
-            "name": "symfony/var-dumper",
-            "version": "v3.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "737e07704cca83f9dd0af926d45ce27eedc25657"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/737e07704cca83f9dd0af926d45ce27eedc25657",
-                "reference": "737e07704cca83f9dd0af926d45ce27eedc25657",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5.9",
-                "symfony/polyfill-mbstring": "~1.0"
-            },
-            "require-dev": {
-                "twig/twig": "~1.20|~2.0"
-            },
-            "suggest": {
-                "ext-symfony_debug": ""
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.0-dev"
-                }
-            },
-            "autoload": {
-                "files": [
-                    "Resources/functions/dump.php"
-                ],
-                "psr-4": {
-                    "Symfony\\Component\\VarDumper\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nicolas Grekas",
-                    "email": "p@tchwork.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony mechanism for exploring and dumping PHP variables",
-            "homepage": "https://symfony.com",
-            "keywords": [
-                "debug",
-                "dump"
-            ],
-            "time": "2015-11-18 13:48:51"
         }
     ],
     "aliases": [],
@@ -3021,7 +2787,6 @@
         "roave/security-advisories": 20,
         "zendframework/zend-expressive": 5,
         "zendframework/zend-servicemanager": 20,
-        "fabfuel/prophiler": 20,
         "etsy/phan": 20
     },
     "prefer-stable": false,
