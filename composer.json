@@ -26,7 +26,8 @@
     "require-dev": {
         "phpunit/phpunit": "^5.0",
         "squizlabs/php_codesniffer": "^2.3",
-        "filp/whoops": "^1.1"
+        "filp/whoops": "^1.1",
+        "etsy/phan": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [
