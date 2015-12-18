@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>{% block title %}XtreamWayz{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="alternate" type="application/atom+xml" title="News Feed" href="{{ path('feed.xml') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/core.min.css') }}"/>
     {% block stylesheets %}{% endblock %}
 </head>
@@ -52,6 +53,12 @@
                     <i class="icon icon-github"></i>
                     <a href="https://github.com/xtreamwayz" title="Follow me on GitHub">
                         GitHub
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <i class="icon icon-rss"></i>
+                    <a href="{{ path('feed.xml') }}" title="XtreamWayz News Feed">
+                        News Feed
                     </a>
                 </li>
             </ul>
