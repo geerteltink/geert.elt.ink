@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/xtreamwayz/xtreamwayz.com.svg?branch=master)](https://travis-ci.org/xtreamwayz/xtreamwayz.com)
 
-xtreamwayz.com is powered by [Expressive](https://github.com/zendframework/zend-expressive) and PSR-7 based middleware.
+xtreamwayz.com is powered by [Expressive](https://github.com/zendframework/zend-expressive) and [PSR-7](http://www.php-fig.org/psr/psr-7/) based [middleware](https://mwop.net/blog/2015-01-08-on-http-middleware-and-psr-7.html).
 
 Other used packages:
 
