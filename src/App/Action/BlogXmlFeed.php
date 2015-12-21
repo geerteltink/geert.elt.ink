@@ -32,7 +32,7 @@ class BlogXmlFeed extends ActionAbstract
 
             $item->set($feed);
         }
-
+        $feed = $this->generateXmlFeed();
         $response->getBody()->write($feed);
 
         return $response->withHeader('Content-Type', 'application/atom+xml');
@@ -77,12 +77,12 @@ class BlogXmlFeed extends ActionAbstract
 
         $rights = $xml->createElement(
             'rights',
-            sprintf('Copyright (c) 2013-%s Geert Eltink. All Rights Reserved.', date('Y'))
+            sprintf('Copyright (c) 2005-%s Geert Eltink. All Rights Reserved.', date('Y'))
         );
         $feed->appendChild($rights);
 
         $postRepository = $this->get(PostRepository::class);
-        $posts = array_reverse($postRepository->findAll());
+        $posts = array_slice(array_reverse($postRepository->findAll()), 0, 5);
         /** @var \Domain\Post\Post $post */
         foreach ($posts as $post) {
             $entry = $xml->createElement('entry');
@@ -107,6 +107,13 @@ class BlogXmlFeed extends ActionAbstract
 
             $entrySummary = $xml->createElement('summary', $post->getSummary());
             $entry->appendChild($entrySummary);
+
+            if ($post->getContent()) {
+                $entryContent = $xml->createElement('content');
+                $entry->appendChild($entryContent);
+                $entryContentData = $xml->createCDATASection($post->getContent());
+                $entryContent->appendChild($entryContentData);
+            }
 
             $entryAuthor = $xml->createElement('author');
             $entry->appendChild($entryAuthor);

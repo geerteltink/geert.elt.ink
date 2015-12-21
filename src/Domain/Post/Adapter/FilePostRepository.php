@@ -52,7 +52,7 @@ class FilePostRepository implements PostRepository
                 $meta['id'],
                 $meta['title'],
                 $meta['summary'],
-                null, // $document->getContent(), // Don't need the content here
+                $document->getContent(),
                 $meta['tags'],
                 $meta['published'],
                 $meta['modified']
