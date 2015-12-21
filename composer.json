@@ -12,6 +12,7 @@
     "require": {
         "roave/security-advisories": "dev-master",
         "zendframework/zend-expressive": "~1.0.0@rc || ^1.0",
+        "zendframework/zend-expressive-helpers": "^1.2",
         "zendframework/zend-expressive-fastroute": "^1.0",
         "zendframework/zend-expressive-twigrenderer": "^1.0",
         "zendframework/zend-stdlib": "^2.7",

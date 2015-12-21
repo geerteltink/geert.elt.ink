@@ -5,37 +5,13 @@ namespace App\Action;
 use DateTime;
 use Domain\Post\PostRepository;
 use DOMDocument;
-use Interop\Container\ContainerInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Expressive\Router;
-use Zend\Expressive\Template\TemplateRendererInterface;
 
-class BlogXmlFeed
+class BlogXmlFeed extends ActionAbstract
 {
-    /**
-     * @var ContainerInterface
-     */
-    private $container;
-
-    /**
-     * @var TemplateRendererInterface
-     */
-    private $template;
-
-    /**
-     * HomePageAction constructor.
-     *
-     * @param ContainerInterface             $container
-     * @param TemplateRendererInterface|null $template
-     */
-    public function __construct(ContainerInterface $container, TemplateRendererInterface $template = null)
-    {
-        $this->container = $container;
-        $this->template = $template;
-    }
-
     /**
      * @param ServerRequestInterface $request
      * @param ResponseInterface      $response
@@ -45,7 +21,7 @@ class BlogXmlFeed
      */
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $next = null)
     {
-        $cache = $this->container->get('cache');
+        $cache = $this->get('cache');
 
         $item = $cache->getItem('xml-feed');
         $feed = $item->get();
@@ -82,17 +58,17 @@ class BlogXmlFeed
 
         $selfLink = $xml->createElement('link');
         $selfLink->setAttribute('type', 'application/atom+xml');
-        $selfLink->setAttribute('href', 'https://xtreamwayz.com/blog/feed.xml'); // TODO: Generate self link
+        $selfLink->setAttribute('href', $this->generateUrl('feed.xml', [], true));
         $selfLink->setAttribute('rel', 'self');
         $feed->appendChild($selfLink);
 
         $alternateLink = $xml->createElement('link');
         $alternateLink->setAttribute('type', 'text/html');
-        $alternateLink->setAttribute('href', 'https://xtreamwayz.com/');
+        $alternateLink->setAttribute('href', $this->generateUrl('home', [], true));
         $alternateLink->setAttribute('rel', 'alternate');
         $feed->appendChild($alternateLink);
 
-        $id = $xml->createElement('id', 'https://xtreamwayz.com/');
+        $id = $xml->createElement('id', $this->generateUrl('home', [], true));
         $feed->appendChild($id);
 
         $generator = $xml->createElement('generator', 'zend-expressive');
@@ -105,7 +81,7 @@ class BlogXmlFeed
         );
         $feed->appendChild($rights);
 
-        $postRepository = $this->container->get(PostRepository::class);
+        $postRepository = $this->get(PostRepository::class);
         $posts = array_reverse($postRepository->findAll());
         /** @var \Domain\Post\Post $post */
         foreach ($posts as $post) {
@@ -115,10 +91,10 @@ class BlogXmlFeed
             $entry->appendChild($entryTitle);
 
             $entryLink = $xml->createElement('link');
-            $entryLink->setAttribute('href', 'https://xtreamwayz.com/blog/'.$post->getId());
+            $entryLink->setAttribute('href', $this->generateUrl('blog.post', ['id' => $post->getId()], true));
             $entry->appendChild($entryLink);
 
-            $entryId = $xml->createElement('id', 'https://xtreamwayz.com/blog/'.$post->getId());
+            $entryId = $xml->createElement('id', $this->generateUrl('blog.post', ['id' => $post->getId()], true));
             $entry->appendChild($entryId);
 
             $entryPublished = $xml->createElement('published', $post->getPublished()->format(DateTime::RFC3339));
@@ -138,7 +114,7 @@ class BlogXmlFeed
             $entryAuthorName = $xml->createElement('name', 'Geert Eltink');
             $entryAuthor->appendChild($entryAuthorName);
 
-            $entryAuthorUri = $xml->createElement('uri', 'https://xtreamwayz.com/');
+            $entryAuthorUri = $xml->createElement('uri', $this->generateUrl('home', [], true));
             $entryAuthor->appendChild($entryAuthorUri);
 
             $feed->appendChild($entry);

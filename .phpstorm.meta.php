@@ -17,5 +17,10 @@ namespace PHPSTORM_META
             "logger" instanceof \Monolog\Logger,
             "" == "@",
         ],
+        \App\Action\ActionAbstract::get('') => [
+            "cache" instanceof \Stash\Pool,
+            "logger" instanceof \Monolog\Logger,
+            "" == "@",
+        ],
     ];
 }
