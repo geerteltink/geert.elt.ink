@@ -110,6 +110,7 @@ class BlogXmlFeed extends ActionAbstract
 
             if ($post->getContent()) {
                 $entryContent = $xml->createElement('content');
+                $entryContent->setAttribute('type', 'html');
                 $entry->appendChild($entryContent);
                 $entryContentData = $xml->createCDATASection($post->getContent());
                 $entryContent->appendChild($entryContentData);
