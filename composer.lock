@@ -644,12 +644,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "d0582cd0c099f11f3939cae5abd21eeb788f54c3"
+                "reference": "8ea5840ad835444627de70a706aabd8c9aa41df8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/d0582cd0c099f11f3939cae5abd21eeb788f54c3",
-                "reference": "d0582cd0c099f11f3939cae5abd21eeb788f54c3",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/8ea5840ad835444627de70a706aabd8c9aa41df8",
+                "reference": "8ea5840ad835444627de70a706aabd8c9aa41df8",
                 "shasum": ""
             },
             "conflict": {
@@ -672,6 +672,7 @@
                 "friendsofsymfony/user-bundle": ">=1.2,<1.3|>=1.3,<1.3.5",
                 "illuminate/auth": ">=4,<4.0.99|>=4.1,<4.1.26",
                 "illuminate/database": ">=4,<4.0.99|>=4.1,<4.1.29",
+                "joomla/session": "<1.3.1",
                 "laravel/framework": ">=4,<4.0.99|>=4.1,<4.1.29",
                 "laravel/socialite": ">=1,<1.0.99|>=2,<2.0.10",
                 "monolog/monolog": ">=1.8,<1.12",
@@ -749,7 +750,7 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "time": "2015-12-12 23:55:26"
+            "time": "2015-12-16 07:10:16"
         },
         {
             "name": "symfony/yaml",
@@ -969,16 +970,16 @@
         },
         {
             "name": "zendframework/zend-diactoros",
-            "version": "1.3.0",
+            "version": "1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-diactoros.git",
-                "reference": "08284cfe5b5d91f64d87911902acaca1b6cff11e"
+                "reference": "9d760c8db53d2fb2cfc4a33d0bfbef4fae4ed797"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/08284cfe5b5d91f64d87911902acaca1b6cff11e",
-                "reference": "08284cfe5b5d91f64d87911902acaca1b6cff11e",
+                "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/9d760c8db53d2fb2cfc4a33d0bfbef4fae4ed797",
+                "reference": "9d760c8db53d2fb2cfc4a33d0bfbef4fae4ed797",
                 "shasum": ""
             },
             "require": {
@@ -1015,7 +1016,7 @@
                 "psr",
                 "psr-7"
             ],
-            "time": "2015-12-15 17:59:11"
+            "time": "2015-12-16 16:29:46"
         },
         {
             "name": "zendframework/zend-escaper",
