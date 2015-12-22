@@ -89,13 +89,6 @@ test:
 	$(PHP) vendor/squizlabs/php_codesniffer/scripts/phpcs
 	$(PHP) vendor/phpunit/phpunit/phpunit
 
-# TARGET:phan               Run Phan tests
-.PHONY: phan
-phan:
-	$(info ... Running Phan tests)
-	/d/usr/git/usr/bin/find -type f -name *.php > data/phan.in
-	vendor/bin/phan -3 vendor/ -f data/phan.in -o data/phan.out
-
 # TARGET:coverage           Generate code coverage report
 .PHONY: coverage
 coverage:
