@@ -2,26 +2,20 @@ language: php
 
 sudo: false
 
-cache:
-  directories:
-    - $HOME/.composer/cache
-    - vendor
-
 matrix:
+  fast_finish: true
   include:
-    - php: hhvm
     - php: 5.6
       env:
         - EXECUTE_CS_CHECK=true
     - php: 7.0
-  fast_finish: true
 
 before_install:
   - if [[ $EXECUTE_TEST_COVERALLS != 'true' ]]; then phpenv config-rm xdebug.ini || return 0 ; fi
   - composer self-update
 
 install:
-  - travis_retry composer install --no-interaction --ignore-platform-reqs --prefer-source --no-scripts
+  - composer install --no-interaction --ignore-platform-reqs --prefer-source --no-scripts
   - composer info -i
 
 script:
