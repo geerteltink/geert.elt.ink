@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "501752551785bba47b0e44d92ad0a60e",
-    "content-hash": "613dc6f34ddfd800d262a43e661de75d",
+    "hash": "b0627a2abf3506602b3b98ef394c8ad1",
+    "content-hash": "6381b85168e4d74ccaf1576bb2b808dd",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -1230,16 +1230,16 @@
         },
         {
             "name": "zendframework/zend-expressive-helpers",
-            "version": "1.2.0",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-expressive-helpers.git",
-                "reference": "2cbb515874ec06a2b367e4a47040c3e7cc250378"
+                "reference": "a432e53dcbebc745d87d843d68b90fc5685b9298"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-expressive-helpers/zipball/2cbb515874ec06a2b367e4a47040c3e7cc250378",
-                "reference": "2cbb515874ec06a2b367e4a47040c3e7cc250378",
+                "url": "https://api.github.com/repos/zendframework/zend-expressive-helpers/zipball/a432e53dcbebc745d87d843d68b90fc5685b9298",
+                "reference": "a432e53dcbebc745d87d843d68b90fc5685b9298",
                 "shasum": ""
             },
             "require": {
@@ -1282,7 +1282,7 @@
                 "psr",
                 "psr-7"
             ],
-            "time": "2015-12-08 21:14:56"
+            "time": "2015-12-22 16:19:41"
         },
         {
             "name": "zendframework/zend-expressive-router",
@@ -1443,6 +1443,66 @@
                 "twig"
             ],
             "time": "2015-12-07 16:21:03"
+        },
+        {
+            "name": "zendframework/zend-feed",
+            "version": "2.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zendframework/zend-feed.git",
+                "reference": "f76da2bbba414ebf3bb00c81e9fdd65b04c66a7f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zendframework/zend-feed/zipball/f76da2bbba414ebf3bb00c81e9fdd65b04c66a7f",
+                "reference": "f76da2bbba414ebf3bb00c81e9fdd65b04c66a7f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5",
+                "zendframework/zend-escaper": "~2.5",
+                "zendframework/zend-stdlib": "~2.5"
+            },
+            "require-dev": {
+                "fabpot/php-cs-fixer": "1.7.*",
+                "phpunit/phpunit": "~4.0",
+                "psr/http-message": "^1.0",
+                "zendframework/zend-cache": "~2.5",
+                "zendframework/zend-db": "~2.5",
+                "zendframework/zend-http": "~2.5",
+                "zendframework/zend-validator": "~2.5"
+            },
+            "suggest": {
+                "psr/http-message": "PSR-7 ^1.0, if you wish to use Zend\\Feed\\Reader\\Http\\Psr7ResponseDecorator",
+                "zendframework/zend-cache": "Zend\\Cache component, for optionally caching feeds between requests",
+                "zendframework/zend-db": "Zend\\Db component, for use with PubSubHubbub",
+                "zendframework/zend-http": "Zend\\Http for PubSubHubbub, and optionally for use with Zend\\Feed\\Reader",
+                "zendframework/zend-servicemanager": "Zend\\ServiceManager component, for easily extending ExtensionManager implementations",
+                "zendframework/zend-validator": "Zend\\Validator component, for validating feeds and Atom entries in the Writer subcomponent"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.6-dev",
+                    "dev-develop": "2.7-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Zend\\Feed\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "provides functionality for consuming RSS and Atom feeds",
+            "homepage": "https://github.com/zendframework/zend-feed",
+            "keywords": [
+                "feed",
+                "zf2"
+            ],
+            "time": "2015-11-24 15:38:00"
         },
         {
             "name": "zendframework/zend-hydrator",
@@ -1723,12 +1783,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/etsy/phan.git",
-                "reference": "f673ea8b3ab86d5d9d36ea68290ce816a5b29f2f"
+                "reference": "213777c218e328f2de9693924cab1d5a14d4086f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/etsy/phan/zipball/f673ea8b3ab86d5d9d36ea68290ce816a5b29f2f",
-                "reference": "f673ea8b3ab86d5d9d36ea68290ce816a5b29f2f",
+                "url": "https://api.github.com/repos/etsy/phan/zipball/213777c218e328f2de9693924cab1d5a14d4086f",
+                "reference": "213777c218e328f2de9693924cab1d5a14d4086f",
                 "shasum": ""
             },
             "require": {
@@ -1737,6 +1797,7 @@
                 "php": ">=7.0"
             },
             "require-dev": {
+                "phpdocumentor/phpdocumentor": "dev-master",
                 "phpunit/phpunit": "~5.1"
             },
             "bin": [
@@ -1766,7 +1827,7 @@
                 "php",
                 "static"
             ],
-            "time": "2015-12-14 14:24:47"
+            "time": "2015-12-21 21:32:22"
         },
         {
             "name": "filp/whoops",
