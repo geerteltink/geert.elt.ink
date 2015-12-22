@@ -5,21 +5,28 @@ sudo: false
 cache:
   directories:
     - $HOME/.composer/cache
+    - vendor
 
-php:
-  - 5.6
-  - 7.0
-  - hhvm
+matrix:
+  include:
+    - php: hhvm
+    - php: 5.6
+      env:
+        - EXECUTE_CS_CHECK=true
+    - php: 7.0
+  fast_finish: true
 
 before_install:
-  - travis_retry composer self-update && composer --version
+  - if [[ $EXECUTE_TEST_COVERALLS != 'true' ]]; then phpenv config-rm xdebug.ini || return 0 ; fi
+  - composer self-update
 
 install:
-  - travis_retry composer install --no-interaction --ignore-platform-reqs --prefer-source
+  - travis_retry composer install --no-interaction
+  - composer info -i
 
 script:
-  - ./vendor/bin/phpunit
-  - if [[ $TRAVIS_PHP_VERSION == '5.6' ]]; then ./vendor/bin/phpcs ; fi
+  - if [[ $EXECUTE_TEST_COVERALLS != 'true' ]]; then ./vendor/bin/phpunit ; fi
+  - if [[ $EXECUTE_CS_CHECK == 'true' ]]; then ./vendor/bin/phpcs ; fi
 
 notifications:
   email: true
