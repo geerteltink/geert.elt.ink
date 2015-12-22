@@ -47,7 +47,7 @@ class BlogXmlFeed extends ActionAbstract
         $feed->setAttribute('xml:lang', 'en-US');
         $xml->appendChild($feed);
 
-        $title = $xml->createElement('title', 'XtreamWayz');
+        $title = $xml->createElement('title', 'xtreamwayz');
         $feed->appendChild($title);
 
         $subtitle = $xml->createElement('subtitle', 'A web developer\'s playground, notes and thoughts.');
