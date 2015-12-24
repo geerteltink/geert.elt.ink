@@ -44,7 +44,7 @@ namespace PHPSTORM_META
 }
 ```
 
-The magic happens here: ``"" == "@"``. It tries to resolve anything to a valid class. So now you can this:
+The magic happens here: ``"" == "@"``. It tries to resolve anything to a valid class. So now you can do this:
 
 ```php
 $template = $container->get(Zend\Expressive\Template\TemplateRendererInterface::class);
