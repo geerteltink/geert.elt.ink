@@ -15,9 +15,7 @@
                 </time>
 
                 {% if post.modified %}
-                    (modified <time datetime="{{ post.modified | date('c', 'UTC') }}" itemprop="dateModified">
-                        {{ post.modified | date('F jS, Y', 'UTC') }}
-                    </time>)
+                    (modified <time datetime="{{ post.modified | date('c', 'UTC') }}" itemprop="dateModified">{{ post.modified | date('F jS, Y', 'UTC') }}</time>)
                 {% endif %}
                 in
                 {% for tag in post.tags %}
