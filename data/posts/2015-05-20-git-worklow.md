@@ -28,11 +28,11 @@ There are 3 supporting branches: [feature/*](#feature-branches), [release/*](#re
 
 To help with the workflow and save typing commands, predefined git-flow commands can be installed from [gitflow](https://github.com/petervanderdoes/gitflow). Although gitflow is faster, I think it's better to use the manual commands so you learn / know what is actually going on. It might help when troubleshooting in case a gitflow command gives an error.
 
-## Versioning
+## Versioning {#versioning}
 
 For versioning [Semantic Versioning](http://semver.org/) is used. This means `<major>.<minor>.<patch>`.
 
-## Commit Messages
+## Commit Messages {#commit-messages}
 
 The first line should be a short summary, followed by an empty line and a detailed explanatory. If the summary contains (closes #1) or (fixes #1), it auto closes issue #1 when merged into the default (master) branch. To reference to an issue use "Partially fix issue #1".
 
@@ -60,7 +60,7 @@ The first line should be a short summary, followed by an empty line and a detail
 
 ## Git flow branches
 
-### Feature Branches
+### Feature Branches {#feature-branches}
 
 * May branch off from: `develop`
 * Must merge back into: `develop`
@@ -87,7 +87,7 @@ git branch -d feature/[branch-name]
 // ... Test new feature in the develop branch
 ```
 
-### Release Branches
+### Release Branches {#release-branches}
 
 * May branch off from: `develop`
 * Must merge back into: `develop` and `master`
@@ -127,7 +127,7 @@ git push origin :release/[x.x.x]
 git branch -d release/[x.x.x]
 ```
 
-### Hotfix Branches
+### Hotfix Branches {#hotfix-branches}
 
 * May branch off from: `master`
 * Must merge back into: `develop` and `master`
