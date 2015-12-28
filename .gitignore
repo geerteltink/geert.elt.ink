@@ -1,6 +1,3 @@
-/.idea/
-/.stacker/
-/.vagrant/
 /phpunit.xml
 /bower_components/
 /vendor/
