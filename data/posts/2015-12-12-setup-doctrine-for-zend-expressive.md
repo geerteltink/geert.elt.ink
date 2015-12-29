@@ -183,7 +183,6 @@ Everything is ready and registered in the container. To access doctrine you need
 namespace App\Action;
 
 use Doctrine\ORM\EntityManager;
-use Interop\Container\ContainerInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Zend\Diactoros\Response\HtmlResponse;
@@ -191,21 +190,19 @@ use Zend\Expressive\Template\TemplateRendererInterface;
 
 class IndexAction
 {
-    private $container;
+    private $em;
 
     private $template;
 
-    public function __construct(ContainerInterface $container, TemplateRendererInterface $template)
+    public function __construct(EntityManager $em, TemplateRendererInterface $template)
     {
-        $this->container = $container;
+        $this->em = $em;
         $this->template = $template;
     }
 
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $next = null)
     {
-        /** @var EntityManager $em */
-        $em = $this->container->get(EntityManager::class);
-        $userRepository = $em->getRepository('App\Domain\User\User');
+        $userRepository = $this->em->getRepository('App\Domain\User\User');
         $users = $userRepository->findAll();
 
         return new HtmlResponse($this->template->render('app::index'));
@@ -218,6 +215,7 @@ class IndexAction
 Because the cache driver has been setup in its own factory, it can now be used whenever you need to cache something.
 
 ```php
+<?php
 use Doctrine\Common\Cache\Cache;
 
 /** @var Cache $cache */
