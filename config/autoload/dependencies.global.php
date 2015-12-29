@@ -1,5 +1,6 @@
 <?php
 
+use Stash\Pool as Cache;
 use Zend\Expressive;
 
 return [
@@ -9,7 +10,7 @@ return [
         ],
         'factories'  => [
             Expressive\Application::class => Expressive\Container\ApplicationFactory::class,
-            'cache'                       => App\Container\CacheFactory::class,
+            Cache::class                  => App\Container\CacheFactory::class,
             'logger'                      => App\Container\LoggerFactory::class,
         ],
     ],

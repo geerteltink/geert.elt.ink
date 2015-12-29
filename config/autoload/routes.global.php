@@ -1,18 +1,14 @@
 <?php
 
-use App\Action\ActionFactory;
-
 return [
     'dependencies' => [
-        'invokables' => [
+        'invokables'         => [
             Zend\Expressive\Router\RouterInterface::class => Zend\Expressive\Router\FastRouteRouter::class,
         ],
-        'factories'  => [
-            App\Action\HomePageAction::class  => ActionFactory::class,
-            App\Action\BlogIndexAction::class => ActionFactory::class,
-            App\Action\BlogPostAction::class  => ActionFactory::class,
-            App\Action\BlogXmlFeed::class     => ActionFactory::class,
-            App\Action\CodeAction::class      => ActionFactory::class,
+        'factories'          => [
+        ],
+        'abstract_factories' => [
+            App\Action\AbstractActionFactory::class,
         ],
     ],
 
@@ -38,7 +34,7 @@ return [
         [
             'name'            => 'feed.xml',
             'path'            => '/blog/feed.xml',
-            'middleware'      => App\Action\BlogXmlFeed::class,
+            'middleware'      => App\Action\BlogXmlFeedAction::class,
             'allowed_methods' => ['GET'],
         ],
         [

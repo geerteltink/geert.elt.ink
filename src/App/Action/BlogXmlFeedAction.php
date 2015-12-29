@@ -5,12 +5,40 @@ namespace App\Action;
 use Domain\Post\PostRepository;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use Stash\Pool as Cache;
 use Zend\Diactoros\Response\HtmlResponse;
+use Zend\Expressive\Helper\ServerUrlHelper;
+use Zend\Expressive\Helper\UrlHelper;
 use Zend\Expressive\Router;
+use Zend\Expressive\Template\TemplateRendererInterface;
 use Zend\Feed\Writer\Feed;
 
-class BlogXmlFeed extends ActionAbstract
+class BlogXmlFeedAction
 {
+    private $template;
+
+    private $cache;
+
+    private $postRepository;
+
+    private $urlHelper;
+
+    private $serverUrlHelper;
+
+    public function __construct(
+        TemplateRendererInterface $template,
+        Cache $cache,
+        PostRepository $postRepository,
+        UrlHelper $urlHelper,
+        ServerUrlHelper $serverUrlHelper
+    ) {
+        $this->template = $template;
+        $this->cache = $cache;
+        $this->postRepository = $postRepository;
+        $this->urlHelper = $urlHelper;
+        $this->serverUrlHelper = $serverUrlHelper;
+    }
+
     /**
      * @param ServerRequestInterface $request
      * @param ResponseInterface      $response
@@ -20,9 +48,7 @@ class BlogXmlFeed extends ActionAbstract
      */
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $next = null)
     {
-        $cache = $this->get('cache');
-
-        $item = $cache->getItem('xml-feed');
+        $item = $this->cache->getItem('xml-feed');
         $feed = $item->get();
         if ($item->isMiss()) {
             $item->lock();
@@ -54,8 +80,7 @@ class BlogXmlFeed extends ActionAbstract
         $feed->setDescription('A web developer\'s playground, notes and thoughts.');
         $feed->setId($this->generateUrl('home', [], true));
 
-        $postRepository = $this->get(PostRepository::class);
-        $posts = array_slice(array_reverse($postRepository->findAll()), 0, 5);
+        $posts = array_slice(array_reverse($this->postRepository->findAll()), 0, 5);
         /** @var \Domain\Post\Post $post */
         foreach ($posts as $post) {
             $entry = $feed->createEntry();
@@ -80,5 +105,21 @@ class BlogXmlFeed extends ActionAbstract
         }
 
         return $feed->export('atom');
+    }
+
+    public function generateUrl($route = null, array $params = [], $absoluteUrl = false)
+    {
+        $url = $this->urlHelper->generate($route, $params);
+
+        if ($absoluteUrl !== true) {
+            return $url;
+        }
+
+        return $this->generateServerUrl($url);
+    }
+
+    public function generateServerUrl($path = null)
+    {
+        return $this->serverUrlHelper->generate($path);
     }
 }

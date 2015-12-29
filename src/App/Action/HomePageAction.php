@@ -6,9 +6,17 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Expressive\Router;
+use Zend\Expressive\Template\TemplateRendererInterface;
 
-class HomePageAction extends ActionAbstract
+class HomePageAction
 {
+    private $template;
+
+    public function __construct(TemplateRendererInterface $template)
+    {
+        $this->template = $template;
+    }
+
     /**
      * @param ServerRequestInterface $request
      * @param ResponseInterface      $response
@@ -18,6 +26,6 @@ class HomePageAction extends ActionAbstract
      */
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $next = null)
     {
-        return new HtmlResponse($this->render('app::home-page'));
+        return new HtmlResponse($this->template->render('app::home-page'));
     }
 }

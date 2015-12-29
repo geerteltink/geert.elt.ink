@@ -5,11 +5,26 @@ namespace App\Action;
 use Domain\Post\PostRepository;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use Stash\Pool as Cache;
 use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Expressive\Router;
+use Zend\Expressive\Template\TemplateRendererInterface;
 
-class BlogIndexAction extends ActionAbstract
+class BlogIndexAction
 {
+    private $template;
+
+    private $cache;
+
+    private $postRepository;
+
+    public function __construct(TemplateRendererInterface $template, Cache $cache, PostRepository $postRepository)
+    {
+        $this->template = $template;
+        $this->cache = $cache;
+        $this->postRepository = $postRepository;
+    }
+
     /**
      * @param ServerRequestInterface $request
      * @param ResponseInterface      $response
@@ -19,21 +34,16 @@ class BlogIndexAction extends ActionAbstract
      */
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $next = null)
     {
-        $cache = $this->get('cache');
-
-        $item = $cache->getItem('posts');
+        $item = $this->cache->getItem('posts');
         $posts = $item->get();
         if ($item->isMiss()) {
             $item->lock();
-
-            $postRepository = $this->get(PostRepository::class);
-            $posts = array_reverse($postRepository->findAll());
-
+            $posts = array_reverse($this->postRepository->findAll());
             $item->set($posts);
         }
 
         return new HtmlResponse(
-            $this->render(
+            $this->template->render(
                 'app::blog-index',
                 [
                     'posts' => $posts,

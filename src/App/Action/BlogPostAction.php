@@ -7,9 +7,20 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Expressive\Router;
+use Zend\Expressive\Template\TemplateRendererInterface;
 
-class BlogPostAction extends ActionAbstract
+class BlogPostAction
 {
+    private $template;
+
+    private $postRepository;
+
+    public function __construct(TemplateRendererInterface $template, PostRepository $postRepository)
+    {
+        $this->template = $template;
+        $this->postRepository = $postRepository;
+    }
+
     /**
      * @param ServerRequestInterface $request
      * @param ResponseInterface      $response
@@ -19,14 +30,13 @@ class BlogPostAction extends ActionAbstract
      */
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $next = null)
     {
-        $postRepository = $this->get(PostRepository::class);
-        $post = $postRepository->find($request->getAttribute('id'));
-        if (!$post) {
+        $post = $this->postRepository->find($request->getAttribute('id'));
+        if (! $post) {
             return $next($request, $response->withStatus(404), 'Not found');
         }
 
         return new HtmlResponse(
-            $this->render(
+            $this->template->render(
                 'app::blog-post',
                 [
                     'post' => $post,
