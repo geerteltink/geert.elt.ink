@@ -65,6 +65,8 @@ class BlogXmlFeed extends ActionAbstract
             $entry->setDateCreated($post->getPublished());
             if ($post->getModified()) {
                 $entry->setDateModified($post->getModified());
+            } else {
+                $entry->setDateModified($post->getPublished());
             }
             $entry->setDescription($post->getSummary());
             $entry->setContent($post->getContent());
