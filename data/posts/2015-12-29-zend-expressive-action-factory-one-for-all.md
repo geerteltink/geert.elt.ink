@@ -5,7 +5,7 @@ summary: Use one action factory for all zend xpressive actions.
 draft: false
 public: true
 published: 2015-12-29T17:47:00+01:00
-modified: false
+modified: 2015-12-30T09:55:00+01:00
 tags:
     - zend-expressive
     - dependency injection
@@ -15,6 +15,13 @@ tags:
 I know, it's better to write factories in stead of magical dependency injection. But some people are lazy, me included,
 when it comes to repeating code over and over. In this case I'm talking about zend-expressive actions. When a project
 grows you might end up with as much factories as actions. This probably goes for every PSR-7 oriented framework.
+
+<blockquote class="blockquote">
+    <p class="m-b-0">
+        *NOTE:* There is even a better solution using an
+        <a href="https://xtreamwayz.com/blog/2015-12-30-psr7-abstract-action-factory-one-for-all">abstract factory</a>.
+    </p>
+</blockquote>
 
 A very simple action class might look like this:
 
