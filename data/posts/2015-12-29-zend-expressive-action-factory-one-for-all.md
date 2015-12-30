@@ -61,10 +61,10 @@ In the dependency container you get something like this:
 Now can you imagine if you have 20 action classes and you need to write as many factories to inject the template
 renderer or anything else they all have in common? It would be nice to write just one factory for all actions. Luckily
 this is possible. And it's pretty easy as well. In this example I have chosen for
-[zend-servicemanager 3](https://github.com/zendframework/zend-servicemanager/tree/develop). On the time of writing it's
+[zend-servicemanager 3](https://github.com/zendframework/zend-servicemanager/tree/develop). At the time of writing it's
 still living in the develop branch. But it's fast, usable and it has a nice feature: FactoryInterface.
 
-> A factory is an callable object that is able to create an object. It is given the instance of the service locator,
+> A factory is a callable object that is able to create an object. It is given the instance of the service locator,
 the requested name of the class you want to create, and any additional options that could be used to configure the
 instance state.
 
