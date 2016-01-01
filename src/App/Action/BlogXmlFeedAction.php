@@ -2,10 +2,10 @@
 
 namespace App\Action;
 
+use Doctrine\Common\Cache\Cache;
 use Domain\Post\PostRepository;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use Doctrine\Common\Cache\Cache;
 use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Expressive\Helper\ServerUrlHelper;
 use Zend\Expressive\Helper\UrlHelper;
@@ -48,16 +48,17 @@ class BlogXmlFeedAction
      */
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $next = null)
     {
-        if ($this->cache->contains('blog.xml.feed')) {
-            $feed = $this->cache->fetch('blog.xml.feed');
+        if ($this->cache->contains('blog:xml-feed')) {
+            $feed = $this->cache->fetch('blog:xml-feed');
         } else {
             $feed = $this->generateXmlFeed();
-            $this->cache->save('blog.xml.feed', $feed);
+            $this->cache->save('blog:xml-feed', $feed);
         }
 
         $response->getBody()->write($feed);
 
-        return $response->withHeader('Content-Type', 'application/atom+xml');
+        return $response->withHeader('Content-Type', 'application/atom+xml')
+                        ->withHeader('Cache-Control', ['public', 'max-age=3600']);
     }
 
     public function generateXmlFeed()

@@ -34,20 +34,17 @@ class BlogIndexAction
      */
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $next = null)
     {
-        if ($this->cache->contains('blog.posts')) {
-            $posts = $this->cache->fetch('blog.posts');
+        if ($this->cache->contains('blog:posts')) {
+            $posts = $this->cache->fetch('blog:posts');
         } else {
             $posts = array_reverse($this->postRepository->findAll());
-            $this->cache->save('blog.posts', $posts);
+            $this->cache->save('blog:posts', $posts);
         }
 
-        return new HtmlResponse(
-            $this->template->render(
-                'app::blog-index',
-                [
-                    'posts' => $posts,
-                ]
-            )
-        );
+        return new HtmlResponse($this->template->render('app::blog-index', [
+            'posts' => $posts
+        ]), 200, [
+            'Cache-Control' => ['public', 'max-age=3600']
+        ]);
     }
 }

@@ -8,9 +8,10 @@ return [
             Helper\ServerUrlHelper::class => Helper\ServerUrlHelper::class,
         ],
         'factories'  => [
-            Helper\UrlHelper::class           => Helper\UrlHelperFactory::class,
-            Helper\UrlHelperMiddleware::class => Helper\UrlHelperMiddlewareFactory::class,
-            Helper\ServerUrlMiddleware::class => Helper\ServerUrlMiddlewareFactory::class,
+            Helper\UrlHelper::class               => Helper\UrlHelperFactory::class,
+            Helper\UrlHelperMiddleware::class     => Helper\UrlHelperMiddlewareFactory::class,
+            Helper\ServerUrlMiddleware::class     => Helper\ServerUrlMiddlewareFactory::class,
+            App\Middleware\CacheMiddleware::class => App\Middleware\CacheMiddlewareFactory::class,
         ],
     ],
 
@@ -19,6 +20,7 @@ return [
         // An array of middleware to register prior to registration of the
         // routing middleware
         'pre_routing'  => [
+            ['middleware' => App\Middleware\CacheMiddleware::class],
             ['middleware' => Helper\UrlHelperMiddleware::class],
             ['middleware' => Helper\ServerUrlMiddleware::class],
         ],
