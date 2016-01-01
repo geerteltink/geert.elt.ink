@@ -21,7 +21,8 @@
     <target name="deploy:clean" description="clear cache">
         <echo msg="Clean cache" />
         <exec command="rm -f ${target.dir}/data/cache/app_config.*" passthru="true" />
-        <exec command="rm -rf ${target.dir}/data/cache/stash/" passthru="true" />
+        <exec command="rm -rf ${target.dir}/data/cache/doctrine/" passthru="true" />
         <exec command="rm -rf ${target.dir}/data/cache/twig/" passthru="true" />
+        <exec command="rm -rf ${target.dir}/data/cache/stash/" passthru="true" />
     </target>
 </project>

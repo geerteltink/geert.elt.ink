@@ -5,7 +5,7 @@ namespace App\Action;
 use Domain\Post\PostRepository;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use Stash\Pool as Cache;
+use Doctrine\Common\Cache\Cache;
 use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Expressive\Helper\ServerUrlHelper;
 use Zend\Expressive\Helper\UrlHelper;
@@ -48,14 +48,11 @@ class BlogXmlFeedAction
      */
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $next = null)
     {
-        $item = $this->cache->getItem('xml-feed');
-        $feed = $item->get();
-        if ($item->isMiss()) {
-            $item->lock();
-
+        if ($this->cache->contains('blog.xml.feed')) {
+            $feed = $this->cache->fetch('blog.xml.feed');
+        } else {
             $feed = $this->generateXmlFeed();
-
-            $item->set($feed);
+            $this->cache->save('blog.xml.feed', $feed);
         }
 
         $response->getBody()->write($feed);

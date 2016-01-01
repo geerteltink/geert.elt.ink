@@ -24,7 +24,8 @@
         "phing/phing": "^2.12",
         "monolog/monolog": "^1.17",
         "michelf/php-markdown": "^1.6",
-        "symfony/yaml": "^3.0"
+        "symfony/yaml": "^3.0",
+        "doctrine/cache": "^1.6"
     },
     "require-dev": {
         "phpunit/phpunit": "^5.0",
@@ -34,13 +35,15 @@
     "scripts": {
         "post-install-cmd": [
             "rm -f data/cache/app_config.*",
-            "rm -rf data/cache/stash/",
-            "rm -rf data/cache/twig/"
+            "rm -rf data/cache/doctrine/",
+            "rm -rf data/cache/twig/",
+            "rm -rf data/cache/stash/"
         ],
         "post-update-cmd": [
             "rm -f data/cache/app_config.*",
-            "rm -rf data/cache/stash/",
-            "rm -rf data/cache/twig/"
+            "rm -rf data/cache/doctrine/",
+            "rm -rf data/cache/twig/",
+            "rm -rf data/cache/stash/"
         ],
         "check": [
             "@cs",
