@@ -223,7 +223,7 @@ $cache = $container->get(Cache::class);
 
 if ($cache->contains('my_array')) {
     // Fetching the cached data
-    $array = $cacheDriver->fetch('my_array');
+    $array = $cache->fetch('my_array');
 } else {
     // Example data
     $array = array(
@@ -231,7 +231,7 @@ if ($cache->contains('my_array')) {
         'key2' => 'value2'
     );
     // Save data to the cache
-    $cacheDriver->save('my_array', $array);
+    $cache->save('my_array', $array);
 }
 ```
 
