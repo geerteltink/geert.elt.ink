@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0f33d39137eb1a5b3491d8b2a2acc717",
-    "content-hash": "3708330c14b66faf3668838eb0319be8",
+    "hash": "11ad6b7a6f13a78354f46a636602db38",
+    "content-hash": "4af0b73e5baff2d7a7ce9bb3338651e1",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -850,60 +850,6 @@
             "time": "2015-12-26 13:39:53"
         },
         {
-            "name": "tedivm/stash",
-            "version": "v0.13.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/tedious/Stash.git",
-                "reference": "3489b13bad93c81a898fcb1054ae954575e1a7b6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/tedious/Stash/zipball/3489b13bad93c81a898fcb1054ae954575e1a7b6",
-                "reference": "3489b13bad93c81a898fcb1054ae954575e1a7b6",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.4|^7.0"
-            },
-            "require-dev": {
-                "fabpot/php-cs-fixer": "^1.9",
-                "phpunit/phpunit": "4.7.*",
-                "satooshi/php-coveralls": "1.0.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Stash\\": "src/Stash/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Robert Hafner",
-                    "email": "tedivm@tedivm.com"
-                },
-                {
-                    "name": "Josh Hall-Bachner",
-                    "email": "charlequin@gmail.com"
-                }
-            ],
-            "description": "The place to keep your cache.",
-            "homepage": "http://github.com/tedious/Stash",
-            "keywords": [
-                "apc",
-                "cache",
-                "caching",
-                "memcached",
-                "redis",
-                "sessions"
-            ],
-            "time": "2015-12-29 00:07:05"
-        },
-        {
             "name": "twig/twig",
             "version": "v1.23.1",
             "source": {
@@ -1279,16 +1225,16 @@
         },
         {
             "name": "zendframework/zend-expressive-helpers",
-            "version": "1.3.0",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-expressive-helpers.git",
-                "reference": "7a4685984726f867d3805d6de354adaa8ab67378"
+                "reference": "c98e7e2e16a79cf703b7cb1564bd8a33a5cfee7f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-expressive-helpers/zipball/7a4685984726f867d3805d6de354adaa8ab67378",
-                "reference": "7a4685984726f867d3805d6de354adaa8ab67378",
+                "url": "https://api.github.com/repos/zendframework/zend-expressive-helpers/zipball/c98e7e2e16a79cf703b7cb1564bd8a33a5cfee7f",
+                "reference": "c98e7e2e16a79cf703b7cb1564bd8a33a5cfee7f",
                 "shasum": ""
             },
             "require": {
@@ -1310,8 +1256,8 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.3-dev",
-                    "dev-develop": "1.4-dev"
+                    "dev-master": "1.4-dev",
+                    "dev-develop": "1.5-dev"
                 }
             },
             "autoload": {
@@ -1331,7 +1277,7 @@
                 "psr",
                 "psr-7"
             ],
-            "time": "2015-12-22 20:34:17"
+            "time": "2016-01-01 16:11:39"
         },
         {
             "name": "zendframework/zend-expressive-router",
