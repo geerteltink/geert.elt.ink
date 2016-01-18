@@ -57,7 +57,7 @@ class AbstractActionFactory implements AbstractFactoryInterface
      *
      * @return bool
      */
-    public function canCreateServiceWithName(ContainerInterface $container, $requestedName)
+    public function canCreate(ContainerInterface $container, $requestedName)
     {
         // Only accept Action classes
         if (substr($requestedName, -6) == 'Action') {
