@@ -26,7 +26,9 @@ class HomePageAction
      */
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $next = null)
     {
-        return new HtmlResponse($this->template->render('app::home-page'), 200, [
+        return new HtmlResponse($this->template->render('app::home-page', [
+            'request' => $request,
+        ]), 200, [
             'Cache-Control' => ['public', 'max-age=3600']
         ]);
     }

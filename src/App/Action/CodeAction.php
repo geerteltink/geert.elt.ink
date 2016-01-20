@@ -50,6 +50,7 @@ class CodeAction
 
         return new HtmlResponse($this->template->render('app::code', [
             'repos' => $repositories,
+            'request' => $request,
         ]), 200, [
             'Cache-Control' => ['public', 'max-age=3600']
         ]);

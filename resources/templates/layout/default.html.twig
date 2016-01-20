@@ -12,15 +12,17 @@
     <meta name="twitter:site" content="@xtreamwayz" />
     <meta name="twitter:title" content="{{ block('title') }}" />
     <meta name="twitter:description" content="{{ block('subtitle') }}" />
-    <meta name="twitter:image" content="https://xtreamwayz.com/assets/img/avatar_8bit.jpg" />
+    <meta name="twitter:image" content="{{ asset('assets/img/avatar_8bit.jpg') }}" />
 
+    {% if request is defined %}
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://xtreamwayz.com/" />
+    <meta property="og:url" content="{{ request.uri }}" />
     <meta property="og:title" content="{{ block('title') }}" />
     <meta property="og:description" content="{{ block('subtitle') }}" />
-    <meta property="og:image" content="https://xtreamwayz.com/assets/img/avatar_8bit.jpg" />
+    <meta property="og:image" content="{{ asset('assets/img/avatar_8bit.jpg') }}" />
     <meta property="og:site_name" content="xtreamwayz" />
     <meta property="fb:admins" content="641699917" />
+    {% endif %}
 
     <link rel="alternate" type="application/atom+xml" title="News Feed" href="{{ path('feed.xml') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/core.min.css') }}" />

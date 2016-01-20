@@ -37,6 +37,7 @@ class BlogPostAction
 
         return new HtmlResponse($this->template->render('app::blog-post', [
             'post' => $post,
+            'request' => $request,
         ]), 200, [
             'Cache-Control' => ['public', 'max-age=3600']
         ]);

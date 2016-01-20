@@ -42,7 +42,8 @@ class BlogIndexAction
         }
 
         return new HtmlResponse($this->template->render('app::blog-index', [
-            'posts' => $posts
+            'posts' => $posts,
+            'request' => $request,
         ]), 200, [
             'Cache-Control' => ['public', 'max-age=3600']
         ]);
