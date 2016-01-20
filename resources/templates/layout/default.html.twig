@@ -1,82 +1,98 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{% block title %}xtreamwayz{% endblock %}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="alternate" type="application/atom+xml" title="News Feed" href="{{ path('feed.xml') }}"/>
-    <link rel="stylesheet" href="{{ asset('assets/css/core.min.css') }}"/>
+    <meta name="description" content="{% block subtitle %}A web developers playground, notes, and thoughts.{% endblock %}" />
+    <meta name="Author" content="Geert Eltink" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@xtreamwayz" />
+    <meta name="twitter:title" content="{{ block('title') }}" />
+    <meta name="twitter:description" content="{{ block('subtitle') }}" />
+    <meta name="twitter:image" content="/assets/img/avatar_8bit.jpg" />
+
+    <link rel="alternate" type="application/atom+xml" title="News Feed" href="{{ path('feed.xml') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/core.min.css') }}" />
     {% block stylesheets %}{% endblock %}
 </head>
 <body class="app" itemscope itemtype="http://schema.org/WebPage">
-    <header>
-        <nav class="navbar navbar-light container" itemscope itemtype="http://schema.org/SiteNavigationElement">
-            <ul class="nav navbar-nav">
-                <li itemprop="url">
-                    <a class="navbar-brand" href="{{ path('home') }}" itemprop="name">XTREAMWAYZ</a>
-                </li>
-                <li class="nav-item" itemprop="url">
-                    <a class="nav-link" href="{{ path('blog') }}" itemprop="name">Blog</a>
-                </li>
-                <li class="nav-item" itemprop="url">
-                    <a class="nav-link" href="{{ path('code') }}" itemprop="name">Code</a>
-                </li>
-                <li class="nav-item" itemprop="url">
-                    <a class="nav-link" href="https://twitter.com/xtreamwayz" itemprop="name">Contact</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <nav class="navbar navbar-light container" itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <ul class="nav navbar-nav">
+            <li itemprop="url">
+                <a class="navbar-brand" href="{{ path('home') }}" itemprop="name">XTREAMWAYZ</a>
+            </li>
+            <li class="nav-item" itemprop="url">
+                <a class="nav-link" href="{{ path('blog') }}" itemprop="name">Blog</a>
+            </li>
+            <li class="nav-item" itemprop="url">
+                <a class="nav-link" href="{{ path('code') }}" itemprop="name">Code</a>
+            </li>
+            <li class="nav-item" itemprop="url">
+                <a class="nav-link" href="https://twitter.com/xtreamwayz" itemprop="name">Contact</a>
+            </li>
+        </ul>
+    </nav>
+</header>
 
-    <div class="app-hero container-center" itemscope itemtype="http://schema.org/WPHeader">
-        <div class="app-hero-content text-xs-center">
-            <h1 class="app-hero-title" itemprop="headline">{{ block('title') }}</h1>
-            <p class="app-hero-text" itemprop="description">{% block subtitle %}{% endblock %}</p>
-        </div>
+<div class="app-hero container-center" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="app-hero-content text-xs-center">
+        <h1 class="app-hero-title" itemprop="headline">{{ block('title') }}</h1>
+        <p class="app-hero-text" itemprop="description">{{ block('subtitle') }}</p>
     </div>
+</div>
 
-    <div class="app-content">
-        <main class="container" itemscope itemprop="mainContentOfPage">
-            {% block content %}{% endblock %}
-        </main>
+<div class="app-content">
+    <main class="container" itemscope itemprop="mainContentOfPage">
+        {% block content %}{% endblock %}
+    </main>
+</div>
+
+<footer class="app-footer" itemscope itemtype="http://schema.org/WPFooter">
+    <div class="container">
+        <ul class="list-inline text-xs-center pull-md-left">
+            <li class="list-inline-item">
+                <i class="icon icon-twitter"></i>
+                <a href="https://twitter.com/xtreamwayz" title="Contact me on Twitter">
+                    @xtreamwayz
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <i class="icon icon-github"></i>
+                <a href="https://github.com/xtreamwayz" title="Follow me on GitHub">
+                    GitHub
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <i class="icon icon-rss"></i>
+                <a href="{{ path('feed.xml') }}" title="xtreamwayz Blog Feed">
+                    Blog Feed
+                </a>
+            </li>
+        </ul>
+        <p class="pull-md-right text-xs-center text-md-right">
+            &copy; 2005 - {{ "now"|date("Y") }} by Geert Eltink. All rights reserved.
+        </p>
     </div>
-
-    <footer class="app-footer" itemscope itemtype="http://schema.org/WPFooter">
-        <div class="container">
-            <ul class="list-inline text-xs-center pull-md-left">
-                <li class="list-inline-item">
-                    <i class="icon icon-twitter"></i>
-                    <a href="https://twitter.com/xtreamwayz" title="Contact me on Twitter">
-                        @xtreamwayz
-                    </a>
-                </li>
-                <li class="list-inline-item">
-                    <i class="icon icon-github"></i>
-                    <a href="https://github.com/xtreamwayz" title="Follow me on GitHub">
-                        GitHub
-                    </a>
-                </li>
-                <li class="list-inline-item">
-                    <i class="icon icon-rss"></i>
-                    <a href="{{ path('feed.xml') }}" title="xtreamwayz Blog Feed">
-                        Blog Feed
-                    </a>
-                </li>
-            </ul>
-            <p class="pull-md-right text-xs-center text-md-right">
-                &copy; 2005 - {{ "now"|date("Y") }} by Geert Eltink. All rights reserved.
-            </p>
-        </div>
-    </footer>
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        ga('create', 'UA-56579105-2', 'auto');
-        ga('send', 'pageview');
-    </script>
-    {% block javascript %}{% endblock %}
+</footer>
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-56579105-2', 'auto');
+    ga('send', 'pageview');
+</script>
+{% block javascript %}{% endblock %}
 </body>
 </html>
