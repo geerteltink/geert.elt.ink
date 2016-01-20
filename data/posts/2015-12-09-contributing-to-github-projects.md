@@ -77,6 +77,22 @@ git checkout -b feature/<awesome-feature>
 
 Time to start coding...
 
+## Rebase PR
+
+Once in a while the code changed before the pull request is merged. You will be asked to rebase the the PR. What you
+need to do is update the master or develop branch as explained above. And after that checkout the hotfix or feature
+and rebase it to the master or develop branch, followed by pushing the changes.
+
+```bash
+# Update master or develop
+git checkout hotfix/1234
+git rebase master
+git push -f origin
+```
+
+You probably get a "Updates were rejected because the tip of your current branch is behind" error. In that case
+use ``git push -f`` to force the new changes.
+
 ## Create the PR
 
 To create a PR you need to push your branch to the origin remote and then press some buttons on GitHub.
@@ -91,4 +107,4 @@ Usually on the forked project page in github, a green button shows up for compar
 
 - [Contributing to Zend Framework projects](https://github.com/zendframework/zend-expressive-skeleton/blob/master/CONTRIBUTING.md)
 - [Beginners guide to contributing to a GitHub project](http://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/)
-- [Beginners guid to rebasing your pr](http://akrabat.com/the-beginners-guide-to-rebasing-your-pr/)
+- [Beginners guide to rebasing your pr](http://akrabat.com/the-beginners-guide-to-rebasing-your-pr/)
