@@ -14,16 +14,22 @@ class CacheMiddleware implements MiddlewareInterface
      */
     protected $cache;
 
-    public function __construct(Cache $cache)
+    /**
+     * @var bool
+     */
+    protected $debug;
+
+    public function __construct(Cache $cache, $debug = false)
     {
         $this->cache = $cache;
+        $this->debug = $debug;
     }
 
     public function __invoke(Request $request, Response $response, callable $next = null)
     {
         $cachedResponse = $this->getCachedResponse($request, $response);
 
-        if (null !== $cachedResponse) {
+        if (null !== $cachedResponse && $this->debug !== true) {
             return $cachedResponse;
         }
 
