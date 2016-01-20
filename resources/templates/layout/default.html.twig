@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -9,38 +9,40 @@
     <link rel="stylesheet" href="{{ asset('assets/css/core.min.css') }}"/>
     {% block stylesheets %}{% endblock %}
 </head>
-<body class="app">
+<body class="app" itemscope itemtype="http://schema.org/WebPage">
     <header>
-        <nav class="navbar navbar-light container">
-            <a class="navbar-brand" href="{{ path('home') }}">XTREAMWAYZ</a>
-            <ul class="nav navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('blog') }}">Blog</a>
+        <nav class="navbar navbar-light container" itemscope itemtype="http://schema.org/SiteNavigationElement">
+            <ul class="nav navbar-nav" itemprop="url">
+                <li>
+                    <a class="navbar-brand" href="{{ path('home') }}" itemprop="name">XTREAMWAYZ</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('code') }}">Code</a>
+                <li class="nav-item" itemprop="url">
+                    <a class="nav-link" href="{{ path('blog') }}" itemprop="name">Blog</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://twitter.com/xtreamwayz">Contact</a>
+                <li class="nav-item" itemprop="url">
+                    <a class="nav-link" href="{{ path('code') }}" itemprop="name">Code</a>
+                </li>
+                <li class="nav-item" itemprop="url">
+                    <a class="nav-link" href="https://twitter.com/xtreamwayz" itemprop="name">Contact</a>
                 </li>
             </ul>
         </nav>
     </header>
 
-    <div class="app-hero container-center">
+    <div class="app-hero container-center" itemscope itemtype="http://schema.org/WPHeader">
         <div class="app-hero-content text-xs-center">
-            <h1 class="app-hero-title">{{ block('title') }}</h1>
-            <p class="app-hero-text">{% block subtitle %}{% endblock %}</p>
+            <h1 class="app-hero-title" itemprop="headline">{{ block('title') }}</h1>
+            <p class="app-hero-text" itemprop="description">{% block subtitle %}{% endblock %}</p>
         </div>
     </div>
 
     <div class="app-content">
-        <main class="container">
+        <main class="container" itemscope itemprop="mainContentOfPage">
             {% block content %}{% endblock %}
         </main>
     </div>
 
-    <footer class="app-footer">
+    <footer class="app-footer" itemscope itemtype="http://schema.org/WPFooter">
         <div class="container">
             <ul class="list-inline text-xs-center pull-md-left">
                 <li class="list-inline-item">
