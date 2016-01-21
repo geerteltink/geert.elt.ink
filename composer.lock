@@ -1112,16 +1112,16 @@
         },
         {
             "name": "zendframework/zend-expressive",
-            "version": "1.0.0rc6",
+            "version": "1.0.0rc7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-expressive.git",
-                "reference": "15989203504173e4f2ff3a624de6e7472d1308f5"
+                "reference": "f66f533a3bf2d09561882ece8be0cd7c21ae2fdb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-expressive/zipball/15989203504173e4f2ff3a624de6e7472d1308f5",
-                "reference": "15989203504173e4f2ff3a624de6e7472d1308f5",
+                "url": "https://api.github.com/repos/zendframework/zend-expressive/zipball/f66f533a3bf2d09561882ece8be0cd7c21ae2fdb",
+                "reference": "f66f533a3bf2d09561882ece8be0cd7c21ae2fdb",
                 "shasum": ""
             },
             "require": {
@@ -1178,7 +1178,7 @@
                 "psr",
                 "psr-7"
             ],
-            "time": "2016-01-18 20:39:56"
+            "time": "2016-01-21 15:26:30"
         },
         {
             "name": "zendframework/zend-expressive-fastroute",
@@ -1396,12 +1396,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xtreamwayz/zend-expressive-twigrenderer.git",
-                "reference": "b29b5848747b7be797769509fe56a957e5f280a3"
+                "reference": "bac666ca8457a5aeae238de0cfefbb2712d1d41f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xtreamwayz/zend-expressive-twigrenderer/zipball/b29b5848747b7be797769509fe56a957e5f280a3",
-                "reference": "b29b5848747b7be797769509fe56a957e5f280a3",
+                "url": "https://api.github.com/repos/xtreamwayz/zend-expressive-twigrenderer/zipball/bac666ca8457a5aeae238de0cfefbb2712d1d41f",
+                "reference": "bac666ca8457a5aeae238de0cfefbb2712d1d41f",
                 "shasum": ""
             },
             "require": {
@@ -1467,7 +1467,7 @@
             "support": {
                 "source": "https://github.com/xtreamwayz/zend-expressive-twigrenderer/tree/feature/globals"
             },
-            "time": "2016-01-21 14:57:35"
+            "time": "2016-01-21 15:22:51"
         },
         {
             "name": "zendframework/zend-feed",
