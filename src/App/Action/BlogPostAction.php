@@ -35,11 +35,15 @@ class BlogPostAction
             return $next($request, $response->withStatus(404), 'Not found');
         }
 
-        return new HtmlResponse($this->template->render('app::blog-post', [
-            'post' => $post,
-            'request' => $request,
-        ]), 200, [
-            'Cache-Control' => ['public', 'max-age=3600']
-        ]);
+        return new HtmlResponse(
+            $this->template->render(
+                'app::blog-post',
+                [
+                    'post' => $post,
+                ]
+            ), 200, [
+            'Cache-Control' => ['public', 'max-age=3600'],
+        ]
+        );
     }
 }

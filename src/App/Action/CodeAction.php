@@ -2,10 +2,10 @@
 
 namespace App\Action;
 
+use Doctrine\Common\Cache\Cache;
 use GuzzleHttp\Client as HttpClient;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use Doctrine\Common\Cache\Cache;
 use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Expressive\Router;
 use Zend\Expressive\Template\TemplateRendererInterface;
@@ -48,11 +48,15 @@ class CodeAction
 
         $repositories = json_decode($repositories);
 
-        return new HtmlResponse($this->template->render('app::code', [
-            'repos' => $repositories,
-            'request' => $request,
-        ]), 200, [
-            'Cache-Control' => ['public', 'max-age=3600']
-        ]);
+        return new HtmlResponse(
+            $this->template->render(
+                'app::code',
+                [
+                    'repos' => $repositories,
+                ]
+            ), 200, [
+                'Cache-Control' => ['public', 'max-age=3600'],
+            ]
+        );
     }
 }

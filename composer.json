@@ -9,13 +9,19 @@
             "homepage": "https://xtreamwayz.github.io/"
         }
     ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/xtreamwayz/zend-expressive-twigrenderer"
+        }
+    ],
     "require": {
         "php": "^5.5 || ^7.0",
         "roave/security-advisories": "dev-master",
         "zendframework/zend-expressive": "~1.0.0@rc || ^1.0",
         "zendframework/zend-expressive-helpers": "^2.0",
         "zendframework/zend-expressive-fastroute": "^1.0",
-        "zendframework/zend-expressive-twigrenderer": "^1.0",
+        "zendframework/zend-expressive-twigrenderer": "dev-feature/use-helpers",
         "zendframework/zend-stdlib": "^2.7",
         "zendframework/zend-servicemanager": "^3.0",
         "zendframework/zend-feed": "^2.6",

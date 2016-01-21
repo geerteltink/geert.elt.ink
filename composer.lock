@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5f94cc85fcbcb185a60b6d63843621f7",
-    "content-hash": "39712b34c9bc03736d05bed66b74a0a4",
+    "hash": "b0c129ed66c7b84c42510bdaac820df9",
+    "content-hash": "7625d9a730d744743a3d4d63835d7222",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -1392,23 +1392,23 @@
         },
         {
             "name": "zendframework/zend-expressive-twigrenderer",
-            "version": "1.0.0",
+            "version": "dev-feature/use-helpers",
             "source": {
                 "type": "git",
-                "url": "https://github.com/zendframework/zend-expressive-twigrenderer.git",
-                "reference": "abbee49713a5dd9245751453dd57539572f5d3e5"
+                "url": "https://github.com/xtreamwayz/zend-expressive-twigrenderer.git",
+                "reference": "8798edc170b6a3fb1c2f4afafd787d224415f367"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-expressive-twigrenderer/zipball/abbee49713a5dd9245751453dd57539572f5d3e5",
-                "reference": "abbee49713a5dd9245751453dd57539572f5d3e5",
+                "url": "https://api.github.com/repos/xtreamwayz/zend-expressive-twigrenderer/zipball/8798edc170b6a3fb1c2f4afafd787d224415f367",
+                "reference": "8798edc170b6a3fb1c2f4afafd787d224415f367",
                 "shasum": ""
             },
             "require": {
                 "container-interop/container-interop": "^1.1",
                 "php": ">=5.5",
                 "twig/twig": "^1.19",
-                "zendframework/zend-expressive-router": "^1.0",
+                "zendframework/zend-expressive-helpers": "^1.1 || ^2.0",
                 "zendframework/zend-expressive-template": "^1.0"
             },
             "require-dev": {
@@ -1432,7 +1432,26 @@
                     "Zend\\Expressive\\Twig\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "ZendTest\\Expressive\\Twig\\": "test/"
+                }
+            },
+            "scripts": {
+                "check": [
+                    "@cs",
+                    "@test"
+                ],
+                "cs": [
+                    "phpcs"
+                ],
+                "cs-fix": [
+                    "phpcbf"
+                ],
+                "test": [
+                    "phpunit"
+                ]
+            },
             "license": [
                 "BSD-3-Clause"
             ],
@@ -1445,7 +1464,10 @@
                 "psr-7",
                 "twig"
             ],
-            "time": "2015-12-07 16:21:03"
+            "support": {
+                "source": "https://github.com/xtreamwayz/zend-expressive-twigrenderer/tree/feature/use-helpers"
+            },
+            "time": "2016-01-21 13:36:28"
         },
         {
             "name": "zendframework/zend-feed",
@@ -2775,16 +2797,16 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "2.5.0",
+            "version": "2.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "e4fb41d5d0387d556e2c25534d630b3cce90ea67"
+                "reference": "6731851d6aaf1d0d6c58feff1065227b7fda3ba8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/e4fb41d5d0387d556e2c25534d630b3cce90ea67",
-                "reference": "e4fb41d5d0387d556e2c25534d630b3cce90ea67",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/6731851d6aaf1d0d6c58feff1065227b7fda3ba8",
+                "reference": "6731851d6aaf1d0d6c58feff1065227b7fda3ba8",
                 "shasum": ""
             },
             "require": {
@@ -2802,7 +2824,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.0.x-dev"
+                    "dev-master": "2.x-dev"
                 }
             },
             "autoload": {
@@ -2848,14 +2870,15 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2015-12-11 00:12:46"
+            "time": "2016-01-19 23:39:10"
         }
     ],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
         "roave/security-advisories": 20,
-        "zendframework/zend-expressive": 5
+        "zendframework/zend-expressive": 5,
+        "zendframework/zend-expressive-twigrenderer": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

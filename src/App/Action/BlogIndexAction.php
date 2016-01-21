@@ -2,10 +2,10 @@
 
 namespace App\Action;
 
+use Doctrine\Common\Cache\Cache;
 use Domain\Post\PostRepository;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use Doctrine\Common\Cache\Cache;
 use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Expressive\Router;
 use Zend\Expressive\Template\TemplateRendererInterface;
@@ -41,11 +41,15 @@ class BlogIndexAction
             $this->cache->save('blog:posts', $posts);
         }
 
-        return new HtmlResponse($this->template->render('app::blog-index', [
-            'posts' => $posts,
-            'request' => $request,
-        ]), 200, [
-            'Cache-Control' => ['public', 'max-age=3600']
-        ]);
+        return new HtmlResponse(
+            $this->template->render(
+                'app::blog-index',
+                [
+                    'posts' => $posts,
+                ]
+            ), 200, [
+            'Cache-Control' => ['public', 'max-age=3600'],
+        ]
+        );
     }
 }
