@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b0c129ed66c7b84c42510bdaac820df9",
-    "content-hash": "7625d9a730d744743a3d4d63835d7222",
+    "hash": "6eaf21728b2f14258285fd54a789d6c9",
+    "content-hash": "87cd72b9cfa726262d57d511c46d30a0",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -1392,21 +1392,21 @@
         },
         {
             "name": "zendframework/zend-expressive-twigrenderer",
-            "version": "dev-feature/use-helpers",
+            "version": "dev-feature/globals",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xtreamwayz/zend-expressive-twigrenderer.git",
-                "reference": "8798edc170b6a3fb1c2f4afafd787d224415f367"
+                "reference": "b29b5848747b7be797769509fe56a957e5f280a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xtreamwayz/zend-expressive-twigrenderer/zipball/8798edc170b6a3fb1c2f4afafd787d224415f367",
-                "reference": "8798edc170b6a3fb1c2f4afafd787d224415f367",
+                "url": "https://api.github.com/repos/xtreamwayz/zend-expressive-twigrenderer/zipball/b29b5848747b7be797769509fe56a957e5f280a3",
+                "reference": "b29b5848747b7be797769509fe56a957e5f280a3",
                 "shasum": ""
             },
             "require": {
                 "container-interop/container-interop": "^1.1",
-                "php": ">=5.5",
+                "php": "^5.5 || ^7.0",
                 "twig/twig": "^1.19",
                 "zendframework/zend-expressive-helpers": "^1.1 || ^2.0",
                 "zendframework/zend-expressive-template": "^1.0"
@@ -1465,9 +1465,9 @@
                 "twig"
             ],
             "support": {
-                "source": "https://github.com/xtreamwayz/zend-expressive-twigrenderer/tree/feature/use-helpers"
+                "source": "https://github.com/xtreamwayz/zend-expressive-twigrenderer/tree/feature/globals"
             },
-            "time": "2016-01-21 13:36:28"
+            "time": "2016-01-21 14:57:35"
         },
         {
             "name": "zendframework/zend-feed",

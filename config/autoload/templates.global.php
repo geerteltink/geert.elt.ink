@@ -25,7 +25,11 @@ return [
         'assets_url'     => '/',
         'assets_version' => '2015-12-08',
         'extensions'     => [
-            // extension service names or instances
+            // Extension service names or instances
+        ],
+        'globals' => [
+            // Global variables passed to twig templates
+            'ga_tracking' => 'UA-56579105-2',
         ],
     ],
 ];
