@@ -49,12 +49,11 @@ class CodeAction
         $repositories = json_decode($repositories);
 
         return new HtmlResponse(
-            $this->template->render(
-                'app::code',
-                [
-                    'repos' => $repositories,
-                ]
-            ), 200, [
+            $this->template->render('app::code', [
+                'repos' => $repositories,
+            ]),
+            200,
+            [
                 'Cache-Control' => ['public', 'max-age=3600'],
             ]
         );

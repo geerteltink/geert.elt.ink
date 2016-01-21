@@ -42,14 +42,13 @@ class BlogIndexAction
         }
 
         return new HtmlResponse(
-            $this->template->render(
-                'app::blog-index',
-                [
-                    'posts' => $posts,
-                ]
-            ), 200, [
-            'Cache-Control' => ['public', 'max-age=3600'],
-        ]
+            $this->template->render('app::blog-index', [
+                'posts' => $posts,
+            ]),
+            200,
+            [
+                'Cache-Control' => ['public', 'max-age=3600'],
+            ]
         );
     }
 }

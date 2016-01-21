@@ -82,6 +82,12 @@ build: clean
 	cp bower_components/font-awesome/fonts/* public/assets/fonts/
 	cp resources/public/img/* public/assets/img/
 
+# TARGET:fix                Run PHP Code Beautifier and Fixer
+.PHONY: fix
+fix:
+	$(info ... Fixing code)
+	$(PHP) vendor/squizlabs/php_codesniffer/scripts/phpcbf
+
 # TARGET:test               Run unit tests
 .PHONY: test
 test:

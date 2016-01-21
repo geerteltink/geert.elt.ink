@@ -67,12 +67,10 @@ class BlogXmlFeedAction
         $feed->setTitle('xtreamwayz');
         $feed->setLink($this->generateUrl('home', [], true));
         $feed->setFeedLink($this->generateUrl('feed.xml', [], true), 'atom');
-        $feed->addAuthor(
-            [
-                'name' => 'Geert Eltink',
-                'uri'  => 'https://xtreamwayz.com',
-            ]
-        );
+        $feed->addAuthor([
+            'name' => 'Geert Eltink',
+            'uri'  => 'https://xtreamwayz.com',
+        ]);
         $feed->setDateModified(time());
         $feed->setCopyright(sprintf('Copyright (c) 2005-%s Geert Eltink. All Rights Reserved.', date('Y')));
         $feed->setDescription('A web developer\'s playground, notes and thoughts.');
@@ -93,12 +91,10 @@ class BlogXmlFeedAction
             }
             $entry->setDescription($post->getSummary());
             $entry->setContent($post->getContent());
-            $entry->addAuthor(
-                [
-                    'name' => 'Geert Eltink',
-                    'uri'  => 'https://xtreamwayz.com',
-                ]
-            );
+            $entry->addAuthor([
+                'name' => 'Geert Eltink',
+                'uri'  => 'https://xtreamwayz.com',
+            ]);
             $feed->addEntry($entry);
         }
 
