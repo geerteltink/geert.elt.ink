@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6eaf21728b2f14258285fd54a789d6c9",
-    "content-hash": "87cd72b9cfa726262d57d511c46d30a0",
+    "hash": "d2ae0d46c4b7956134672fe7607fe4f4",
+    "content-hash": "5e122712cde6fc9d7d794a50782bd1d5",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -1392,16 +1392,16 @@
         },
         {
             "name": "zendframework/zend-expressive-twigrenderer",
-            "version": "dev-feature/globals",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/xtreamwayz/zend-expressive-twigrenderer.git",
-                "reference": "bac666ca8457a5aeae238de0cfefbb2712d1d41f"
+                "url": "https://github.com/zendframework/zend-expressive-twigrenderer.git",
+                "reference": "e8493e82b29fb4f5ecba856f3da5358e319d2331"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xtreamwayz/zend-expressive-twigrenderer/zipball/bac666ca8457a5aeae238de0cfefbb2712d1d41f",
-                "reference": "bac666ca8457a5aeae238de0cfefbb2712d1d41f",
+                "url": "https://api.github.com/repos/zendframework/zend-expressive-twigrenderer/zipball/e8493e82b29fb4f5ecba856f3da5358e319d2331",
+                "reference": "e8493e82b29fb4f5ecba856f3da5358e319d2331",
                 "shasum": ""
             },
             "require": {
@@ -1423,8 +1423,8 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev",
-                    "dev-develop": "1.1-dev"
+                    "dev-master": "1.1-dev",
+                    "dev-develop": "1.2-dev"
                 }
             },
             "autoload": {
@@ -1432,26 +1432,7 @@
                     "Zend\\Expressive\\Twig\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "ZendTest\\Expressive\\Twig\\": "test/"
-                }
-            },
-            "scripts": {
-                "check": [
-                    "@cs",
-                    "@test"
-                ],
-                "cs": [
-                    "phpcs"
-                ],
-                "cs-fix": [
-                    "phpcbf"
-                ],
-                "test": [
-                    "phpunit"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause"
             ],
@@ -1464,10 +1445,7 @@
                 "psr-7",
                 "twig"
             ],
-            "support": {
-                "source": "https://github.com/xtreamwayz/zend-expressive-twigrenderer/tree/feature/globals"
-            },
-            "time": "2016-01-21 15:22:51"
+            "time": "2016-01-21 16:02:35"
         },
         {
             "name": "zendframework/zend-feed",
@@ -2877,8 +2855,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "roave/security-advisories": 20,
-        "zendframework/zend-expressive": 5,
-        "zendframework/zend-expressive-twigrenderer": 20
+        "zendframework/zend-expressive": 5
     },
     "prefer-stable": false,
     "prefer-lowest": false,
