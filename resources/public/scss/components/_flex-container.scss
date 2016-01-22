@@ -1,0 +1,39 @@
+/**
+
+The height must be set on its parent element.
+Multiple child elements must be wrapped in a div.
+
+<body style="height:98vh;">
+    <main class="flex-container">
+        <div>
+            <h1>h1</h1>
+            <p>text</p>
+        </div>
+    </main>
+</body>
+
+<div class="flex-container" style="height:25vh;">
+    <div class="flex-row">
+        <h2 class="flex-item">Thank you!</h2>
+        <p class="flex-item">
+            Your message has been sent!
+        </p>
+    </div>
+</div>
+*/
+.flex-container {
+    display: flex;
+
+    height: 100%;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-row {
+    width: auto;
+}
+
+.flex-item {
+    text-align: center;
+}
