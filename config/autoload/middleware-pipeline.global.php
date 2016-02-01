@@ -13,6 +13,7 @@ return [
             Helper\UrlHelperMiddleware::class     => Helper\UrlHelperMiddlewareFactory::class,
             Helper\UrlHelper::class               => Helper\UrlHelperFactory::class,
             App\Middleware\CacheMiddleware::class => App\Middleware\CacheMiddlewareFactory::class,
+            PSR7Session\Http\SessionMiddleware::class => App\Middleware\SessionMiddlewareFactory::class
         ],
     ],
 
@@ -46,6 +47,7 @@ return [
                 // - bootstrapping
                 // - pre-conditions
                 // - modifications to outgoing responses
+                PSR7Session\Http\SessionMiddleware::class,
                 Helper\ServerUrlMiddleware::class,
             ],
             'priority'   => PHP_INT_MAX,

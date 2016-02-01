@@ -4,12 +4,13 @@ namespace App\Action;
 
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use PSR7Session\Http\SessionMiddleware;
+use Swift_Mailer;
+use Swift_Message;
 use Xtreamwayz\HTMLFormValidator\FormFactory;
 use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Expressive\Router;
 use Zend\Expressive\Template\TemplateRendererInterface;
-use Swift_Mailer;
-use Swift_Message;
 
 class ContactAction
 {
@@ -35,18 +36,34 @@ class ContactAction
      */
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $next = null)
     {
-        $form = FormFactory::fromHtml($this->template->render('app::contact-form'));
+        /* @var \PSR7Session\Session\SessionInterface $session */
+        $session = $request->getAttribute(SessionMiddleware::SESSION_ATTRIBUTE);
+
+        // Generate csrf token
+        if (!$session->get('csrf')) {
+            $session->set('csrf', md5(uniqid(rand(), true)));
+        }
+
+        // Generate form and inject csrf token
+        $form = FormFactory::fromHtml($this->template->render('app::contact-form', [
+            'token' => $session->get('csrf')
+        ]));
+
+        // Get request data
         $data = $request->getParsedBody() ?: [];
 
         if ($request->getMethod() !== 'POST') {
+            // Display form
             return new HtmlResponse($this->template->render('app::contact', [
                 'form' => $form->asString(),
             ]), 200);
         }
 
+        // Validate form
         $validationResult = $form->validate($data);
 
         if (!$validationResult->isValid()) {
+            // Display form and inject error messages and submitted values
             return new HtmlResponse($this->template->render('app::contact', [
                 'form' => $form->asString($validationResult),
             ]), 200);

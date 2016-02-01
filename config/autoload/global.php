@@ -22,4 +22,14 @@ return [
         'to'        => '', // Email address to send the contact emails to
         'from'      => '', // Email address to send the contact emails from
     ],
+
+    'session' => [
+        'psr7' => [
+            'signature_key'    => '',
+            'verification_key' => '',
+            'cookie_name'      => 'slsession',
+            'cookie_secure'    => false, // false on purpose, unless you have https locally
+            'expiration_time'  => 1200, // 20 minutes
+        ],
+    ],
 ];

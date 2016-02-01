@@ -38,5 +38,7 @@
              data-sitekey="{{ recaptcha_pub_key }}" data-theme="light"></div>
     </div>
 
+    <input type="hidden" name="token" value="{{ token }}" data-validators="identical{token:{{ token }}" required />
+
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
