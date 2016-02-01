@@ -6,10 +6,12 @@ xtreamwayz.com is powered by [Expressive](https://github.com/zendframework/zend-
 
 Other used packages:
 
-- [zendframework/zend-servicemanager](https://github.com/zendframework/zend-servicemanager) dependency container (3.0.x@dev).
+- [zendframework/zend-servicemanager](https://github.com/zendframework/zend-servicemanager) dependency container.
 - [nikic/FastRoute](https://github.com/nikic/FastRoute) router.
 - [twigphp/Twig](https://github.com/nikic/FastRoute) template engine.
-- [guzzlehttp/guzzle](https://github.com/guzzlehttp/guzzle) for grabbing repository data from GitHub.
-- [tedivm/stash](https://github.com/tedious/Stash) for caching.
-- [phing/phing](https://github.com/phing/phing) for building and deployment.
+- [doctrine/cache](https://github.com/doctrine/cache) for caching.
 - [monolog/monolog](https://github.com/monolog/monolog) for logging.
+- [ocramius/psr7-session](https://github.com/Ocramius/PSR7Session) for storage-less PSR-7 session support.
+- [xtreamwayz/html-form-validator](https://github.com/xtreamwayz/html-form-validator) for form validation.
+- [guzzlehttp/guzzle](https://github.com/guzzlehttp/guzzle) for grabbing repository data from GitHub.
+- [phing/phing](https://github.com/phing/phing) for building and deployment.
