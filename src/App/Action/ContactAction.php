@@ -54,10 +54,10 @@ class ContactAction
 
         // Create the message
         $message = Swift_Message::newInstance()
-            ->setFrom($data['email'], $data['name'])
+            ->setFrom($this->config['from'])
             ->setReplyTo($data['email'], $data['name'])
             ->setTo($this->config['to'])
-            ->setSubject($data['body'])
+            ->setSubject('[xtreamwayz-contact] ' . $data['subject'])
             ->setBody($data['body']);
 
         if ($this->config['transport']['debug'] !== true) {

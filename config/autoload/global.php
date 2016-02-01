@@ -18,6 +18,7 @@ return [
             'class'   => 'sendmail',
             'options' => [],
         ],
-        'to'        => '',
+        'to'        => '', // Email address to send the contact emails to
+        'from'      => '', // Email address to send the contact emails from
     ],
 ];
