@@ -1,0 +1,12 @@
+{% extends '@layout/default.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+{% block subtitle %}Leave a message.{% endblock %}
+
+{% block content %}
+    {{ form|raw }}
+{% endblock %}
+
+{% block javascript %}
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+{% endblock %}

@@ -23,12 +23,10 @@ return [
     'twig' => [
         'cache_dir'      => 'data/cache/twig',
         'assets_url'     => '/',
-        'assets_version' => '2015-12-08',
+        'assets_version' => '20160122',
         'extensions'     => [
-            // Extension service names or instances
         ],
         'globals' => [
-            // Global variables passed to twig templates
             'ga_tracking' => 'UA-56579105-2',
         ],
     ],

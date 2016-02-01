@@ -6,6 +6,7 @@ return [
             Zend\Expressive\Router\RouterInterface::class => Zend\Expressive\Router\FastRouteRouter::class,
         ],
         'factories'          => [
+            App\Action\ContactAction::class => App\Action\ContactActionFactory::class,
         ],
         'abstract_factories' => [
             App\Action\AbstractActionFactory::class,
@@ -42,6 +43,12 @@ return [
             'path'            => '/code',
             'middleware'      => App\Action\CodeAction::class,
             'allowed_methods' => ['GET'],
+        ],
+        [
+            'name'            => 'contact',
+            'path'            => '/contact',
+            'middleware'      => App\Action\ContactAction::class,
+            'allowed_methods' => ['GET', 'POST'],
         ],
     ],
 ];

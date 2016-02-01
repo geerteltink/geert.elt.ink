@@ -40,13 +40,13 @@
                 <a class="nav-link" href="{{ path('code') }}" itemprop="name">Code</a>
             </li>
             <li class="nav-item" itemprop="url">
-                <a class="nav-link" href="https://twitter.com/xtreamwayz" itemprop="name">Contact</a>
+                <a class="nav-link" href="{{ path('contact') }}" itemprop="name">Contact</a>
             </li>
         </ul>
     </nav>
 </header>
 
-<div class="app-hero container-center" itemscope itemtype="http://schema.org/WPHeader">
+<div class="app-hero flex-container" itemscope itemtype="http://schema.org/WPHeader">
     <div class="app-hero-content text-xs-center">
         <h1 class="app-hero-title" itemprop="headline">{{ block('title') }}</h1>
         <p class="app-hero-text" itemprop="description">{{ block('subtitle') }}</p>
