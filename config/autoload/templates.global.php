@@ -24,10 +24,7 @@ return [
         'cache_dir'      => 'data/cache/twig',
         'assets_url'     => '/',
         'assets_version' => '20160122',
-        'extensions'     => [
-        ],
-        'globals' => [
-            'ga_tracking' => 'UA-56579105-2',
-        ],
+        'extensions'     => [],
+        'globals'        => [],
     ],
 ];

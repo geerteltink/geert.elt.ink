@@ -9,6 +9,7 @@ return [
         'globals' => [
             'recaptcha_pub_key'  => '',
             'recaptcha_priv_key' => '',
+            //'ga_tracking'      => '',
         ],
     ],
 
