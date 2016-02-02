@@ -18,7 +18,7 @@
     "require": {
         "php": "^7.0",
         "roave/security-advisories": "dev-master",
-        "zendframework/zend-expressive": "~1.0.0@rc || ^1.0",
+        "zendframework/zend-expressive": "^1.0",
         "zendframework/zend-expressive-helpers": "^2.0",
         "zendframework/zend-expressive-fastroute": "^1.0",
         "zendframework/zend-expressive-twigrenderer": "^1.1",
@@ -33,6 +33,7 @@
         "swiftmailer/swiftmailer": "^5.4",
         "ocramius/proxy-manager": "^1.0",
         "ocramius/psr7-session": "^1.0",
+        "ocramius/package-versions": "^1.0",
         "xtreamwayz/html-form-validator": "dev-master",
         "monolog/monolog": "^1.17",
         "phing/phing": "^2.12"

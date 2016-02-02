@@ -5,7 +5,7 @@ summary: Build a Zend Expressive Doctrine factory and cache driver factory.
 draft: false
 public: true
 published: 2015-12-12T12:00:00+01:00
-modified: false
+modified: 2016-02-02T21:41:00+01:00
 tags:
     - zend expressive
     - doctrine
@@ -14,6 +14,14 @@ tags:
 
 You want to use doctrine in your Zend Expressive project but don't know where to start? Here is how to do it. This
 guide uses a doctrine factory and a separate cache factory so you can use the doctrine cache for other purposes too.
+
+## Installing Doctrine
+
+Thanx to composer this is really easy.
+
+```bash
+$ composer require doctrine/orm
+```
 
 ## Doctrine Factory
 
@@ -242,10 +250,10 @@ More info on how to use the cache can be found in the
 
 The Doctrine Console is a very useful command line interface tool. However it doesn't work out of the box. Doctine
 needs to know how to setup the entity manager with the right configuration. Fortunately this is easily done by
-creating the file ``cli-config.php`` in the project root.
+creating the file ``cli-config.php`` in the config dir.
 
 ```php
-<?php // cli-config.php
+<?php // config/cli-config.php
 
 use Doctrine\ORM\Tools\Console\ConsoleRunner;
 use Doctrine\ORM\EntityManager;
@@ -266,7 +274,7 @@ console. All you need to do now is call the doctrine console.
 
 ```bash
 # List all commands
-php vendor/bin/doctrine list
+$ php vendor/bin/doctrine list
 ```
 
 More info about how to use the doctrine console can be found on the

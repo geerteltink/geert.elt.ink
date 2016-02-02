@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "dc6c9b8096962936056c307c3214248f",
-    "content-hash": "51ebfd895b71266a1d182cd485e1a3b5",
+    "hash": "bf2d0497edf906f39d87846fe6801327",
+    "content-hash": "f0dafefac1b805a39a72b707d555adba",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -555,6 +555,53 @@
                 "routing"
             ],
             "time": "2015-12-20 19:50:12"
+        },
+        {
+            "name": "ocramius/package-versions",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Ocramius/PackageVersions.git",
+                "reference": "56253310fb94b3086fa123f5f3e7ab76723594aa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Ocramius/PackageVersions/zipball/56253310fb94b3086fa123f5f3e7ab76723594aa",
+                "reference": "56253310fb94b3086fa123f5f3e7ab76723594aa",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0",
+                "php": "~7.0"
+            },
+            "require-dev": {
+                "composer/composer": "^1.0.0-ALPHA8@ALPHA",
+                "phpunit/phpunit": "^5.0"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "PackageVersions\\Installer",
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PackageVersions\\": "src/PackageVersions"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marco Pivetta",
+                    "email": "ocramius@gmail.com"
+                }
+            ],
+            "description": "Composer plugin that provides efficient querying for installed package versions (no runtime IO)",
+            "time": "2016-02-02 17:50:05"
         },
         {
             "name": "ocramius/proxy-manager",
@@ -1139,12 +1186,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xtreamwayz/html-form-validator.git",
-                "reference": "20af7d99e840666abd4cfb7258742cc5232e0f26"
+                "reference": "2bdb63e1ab8eddd2bd3079ce2fea51cf42dcf5bd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xtreamwayz/html-form-validator/zipball/20af7d99e840666abd4cfb7258742cc5232e0f26",
-                "reference": "20af7d99e840666abd4cfb7258742cc5232e0f26",
+                "url": "https://api.github.com/repos/xtreamwayz/html-form-validator/zipball/2bdb63e1ab8eddd2bd3079ce2fea51cf42dcf5bd",
+                "reference": "2bdb63e1ab8eddd2bd3079ce2fea51cf42dcf5bd",
                 "shasum": ""
             },
             "require": {
@@ -1196,7 +1243,7 @@
                 "source": "https://github.com/xtreamwayz/html-form-validator/tree/master",
                 "issues": "https://github.com/xtreamwayz/html-form-validator/issues"
             },
-            "time": "2016-01-31 16:41:09"
+            "time": "2016-02-02 17:55:04"
         },
         {
             "name": "zendframework/zend-code",
@@ -1679,16 +1726,16 @@
         },
         {
             "name": "zendframework/zend-expressive-twigrenderer",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-expressive-twigrenderer.git",
-                "reference": "e8493e82b29fb4f5ecba856f3da5358e319d2331"
+                "reference": "02f644ebb6a2afbe8d5561176895c2dccda281a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-expressive-twigrenderer/zipball/e8493e82b29fb4f5ecba856f3da5358e319d2331",
-                "reference": "e8493e82b29fb4f5ecba856f3da5358e319d2331",
+                "url": "https://api.github.com/repos/zendframework/zend-expressive-twigrenderer/zipball/02f644ebb6a2afbe8d5561176895c2dccda281a3",
+                "reference": "02f644ebb6a2afbe8d5561176895c2dccda281a3",
                 "shasum": ""
             },
             "require": {
@@ -1732,7 +1779,7 @@
                 "psr-7",
                 "twig"
             ],
-            "time": "2016-01-21 16:02:35"
+            "time": "2016-02-01 17:53:19"
         },
         {
             "name": "zendframework/zend-feed",
@@ -2025,16 +2072,16 @@
         },
         {
             "name": "zendframework/zend-servicemanager",
-            "version": "3.0.2",
+            "version": "3.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-servicemanager.git",
-                "reference": "6f04717464357635b17640178d3b093e1a3a09f5"
+                "reference": "654eaec084d053c832beca10a53af078afca423e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-servicemanager/zipball/6f04717464357635b17640178d3b093e1a3a09f5",
-                "reference": "6f04717464357635b17640178d3b093e1a3a09f5",
+                "url": "https://api.github.com/repos/zendframework/zend-servicemanager/zipball/654eaec084d053c832beca10a53af078afca423e",
+                "reference": "654eaec084d053c832beca10a53af078afca423e",
                 "shasum": ""
             },
             "require": {
@@ -2073,7 +2120,7 @@
                 "servicemanager",
                 "zf"
             ],
-            "time": "2016-01-24 23:27:49"
+            "time": "2016-02-02 14:13:42"
         },
         {
             "name": "zendframework/zend-stdlib",
@@ -2759,16 +2806,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "5.1.6",
+            "version": "5.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "72e92139712e868c3888ed4dd4d3c3eb365b1bb7"
+                "reference": "d0f7ae467dcbe7a6ad050540c9d1d39a7aefff26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/72e92139712e868c3888ed4dd4d3c3eb365b1bb7",
-                "reference": "72e92139712e868c3888ed4dd4d3c3eb365b1bb7",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/d0f7ae467dcbe7a6ad050540c9d1d39a7aefff26",
+                "reference": "d0f7ae467dcbe7a6ad050540c9d1d39a7aefff26",
                 "shasum": ""
             },
             "require": {
@@ -2829,7 +2876,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-01-29 09:19:36"
+            "time": "2016-02-02 09:03:29"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -3382,13 +3429,12 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "roave/security-advisories": 20,
-        "zendframework/zend-expressive": 5,
         "xtreamwayz/html-form-validator": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^5.5 || ^7.0"
+        "php": "^7.0"
     },
     "platform-dev": []
 }
