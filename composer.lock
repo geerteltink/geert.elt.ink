@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b542035c5f8d19b77bf34e19a1aad1fe",
-    "content-hash": "f30a0654050e569d1548beea5d2029ae",
+    "hash": "6864ac1aea642763a44a79242e0f968d",
+    "content-hash": "da9c8fc8d3640afa0a03b8f644acb227",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -557,117 +557,6 @@
             "time": "2015-12-20 19:50:12"
         },
         {
-            "name": "ocramius/package-versions",
-            "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Ocramius/PackageVersions.git",
-                "reference": "56253310fb94b3086fa123f5f3e7ab76723594aa"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Ocramius/PackageVersions/zipball/56253310fb94b3086fa123f5f3e7ab76723594aa",
-                "reference": "56253310fb94b3086fa123f5f3e7ab76723594aa",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.0",
-                "php": "~7.0"
-            },
-            "require-dev": {
-                "composer/composer": "^1.0.0-ALPHA8@ALPHA",
-                "phpunit/phpunit": "^5.0"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "class": "PackageVersions\\Installer",
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "PackageVersions\\": "src/PackageVersions"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Marco Pivetta",
-                    "email": "ocramius@gmail.com"
-                }
-            ],
-            "description": "Composer plugin that provides efficient querying for installed package versions (no runtime IO)",
-            "time": "2016-02-02 17:50:05"
-        },
-        {
-            "name": "ocramius/proxy-manager",
-            "version": "2.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Ocramius/ProxyManager.git",
-                "reference": "40e205f0a371777ebf297593abd881ad11199548"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Ocramius/ProxyManager/zipball/40e205f0a371777ebf297593abd881ad11199548",
-                "reference": "40e205f0a371777ebf297593abd881ad11199548",
-                "shasum": ""
-            },
-            "require": {
-                "ocramius/package-versions": "^1.0",
-                "php": "~7.0",
-                "zendframework/zend-code": "~3.0"
-            },
-            "require-dev": {
-                "couscous/couscous": "^1.4.0",
-                "ext-phar": "*",
-                "phpunit/phpunit": "^5.1.3",
-                "squizlabs/php_codesniffer": "^2.5.0"
-            },
-            "suggest": {
-                "ocramius/generated-hydrator": "To have very fast object to array to object conversion for ghost objects",
-                "zendframework/zend-json": "To have the JsonRpc adapter (Remote Object feature)",
-                "zendframework/zend-soap": "To have the Soap adapter (Remote Object feature)",
-                "zendframework/zend-xmlrpc": "To have the XmlRpc adapter (Remote Object feature)"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "ProxyManager\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Marco Pivetta",
-                    "email": "ocramius@gmail.com",
-                    "homepage": "http://ocramius.github.io/"
-                }
-            ],
-            "description": "A library providing utilities to generate, instantiate and generally operate with Object Proxies",
-            "homepage": "https://github.com/Ocramius/ProxyManager",
-            "keywords": [
-                "aop",
-                "lazy loading",
-                "proxy",
-                "proxy pattern",
-                "service proxies"
-            ],
-            "time": "2016-01-30 09:38:56"
-        },
-        {
             "name": "ocramius/psr7-session",
             "version": "1.0.2",
             "source": {
@@ -1183,24 +1072,24 @@
         },
         {
             "name": "xtreamwayz/html-form-validator",
-            "version": "dev-master",
+            "version": "0.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xtreamwayz/html-form-validator.git",
-                "reference": "2bdb63e1ab8eddd2bd3079ce2fea51cf42dcf5bd"
+                "reference": "e6458b9dd3a6e8bbedac805e20a8ceb928caeb32"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xtreamwayz/html-form-validator/zipball/2bdb63e1ab8eddd2bd3079ce2fea51cf42dcf5bd",
-                "reference": "2bdb63e1ab8eddd2bd3079ce2fea51cf42dcf5bd",
+                "url": "https://api.github.com/repos/xtreamwayz/html-form-validator/zipball/e6458b9dd3a6e8bbedac805e20a8ceb928caeb32",
+                "reference": "e6458b9dd3a6e8bbedac805e20a8ceb928caeb32",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.5.9 || ^7.0",
-                "zendframework/zend-filter": "^2.5",
+                "php": "^7.0",
+                "zendframework/zend-filter": "^2.6",
                 "zendframework/zend-i18n": "^2.5",
                 "zendframework/zend-inputfilter": "^2.5",
-                "zendframework/zend-servicemanager": "^2.6 || ^3.0",
+                "zendframework/zend-servicemanager": "^3.0",
                 "zendframework/zend-validator": "^2.5"
             },
             "require-dev": {
@@ -1213,23 +1102,7 @@
                     "Xtreamwayz\\HTMLFormValidator\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Xtreamwayz\\HTMLFormValidatorTest\\": "test/"
-                }
-            },
-            "scripts": {
-                "check": [
-                    "@cs",
-                    "@test"
-                ],
-                "cs": [
-                    "php vendor/squizlabs/php_codesniffer/scripts/phpcs"
-                ],
-                "test": [
-                    "php vendor/phpunit/phpunit/phpunit"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1240,64 +1113,7 @@
                 }
             ],
             "homepage": "https://github.com/xtreamwayz/html-form-validator",
-            "support": {
-                "source": "https://github.com/xtreamwayz/html-form-validator/tree/master",
-                "issues": "https://github.com/xtreamwayz/html-form-validator/issues"
-            },
-            "time": "2016-02-02 17:55:04"
-        },
-        {
-            "name": "zendframework/zend-code",
-            "version": "3.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/zendframework/zend-code.git",
-                "reference": "09405eb04b7199733219cbf1f0803883a7bab842"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-code/zipball/09405eb04b7199733219cbf1f0803883a7bab842",
-                "reference": "09405eb04b7199733219cbf1f0803883a7bab842",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.5 || ^7.0",
-                "zendframework/zend-eventmanager": "^2.6 || ^3.0"
-            },
-            "require-dev": {
-                "doctrine/annotations": "~1.0",
-                "ext-phar": "*",
-                "phpunit/phpunit": "^4.8.21",
-                "squizlabs/php_codesniffer": "^2.5",
-                "zendframework/zend-stdlib": "~2.7"
-            },
-            "suggest": {
-                "doctrine/annotations": "Doctrine\\Common\\Annotations >=1.0 for annotation features",
-                "zendframework/zend-stdlib": "Zend\\Stdlib component"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.0-dev",
-                    "dev-develop": "3.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Zend\\Code\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "provides facilities to generate arbitrary code using an object oriented interface",
-            "homepage": "https://github.com/zendframework/zend-code",
-            "keywords": [
-                "code",
-                "zf2"
-            ],
-            "time": "2016-01-26 17:57:25"
+            "time": "2016-02-08 10:29:49"
         },
         {
             "name": "zendframework/zend-diactoros",
@@ -1392,60 +1208,6 @@
                 "zf2"
             ],
             "time": "2015-06-03 14:05:37"
-        },
-        {
-            "name": "zendframework/zend-eventmanager",
-            "version": "3.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/zendframework/zend-eventmanager.git",
-                "reference": "8c9917f1595ff260f289439bdeb1f46500c65d62"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-eventmanager/zipball/8c9917f1595ff260f289439bdeb1f46500c65d62",
-                "reference": "8c9917f1595ff260f289439bdeb1f46500c65d62",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.5 || ^7.0"
-            },
-            "require-dev": {
-                "athletic/athletic": "^0.1",
-                "container-interop/container-interop": "^1.1.0",
-                "phpunit/phpunit": "~4.0",
-                "squizlabs/php_codesniffer": "^2.0",
-                "zendframework/zend-stdlib": "^2.7.3"
-            },
-            "suggest": {
-                "container-interop/container-interop": "^1.1.0, to use the lazy listeners feature",
-                "zendframework/zend-stdlib": "^2.7.3, to use the FilterChain feature"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.0-dev",
-                    "dev-develop": "3.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Zend\\EventManager\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "Trigger and listen to events within a PHP application",
-            "homepage": "https://github.com/zendframework/zend-eventmanager",
-            "keywords": [
-                "event",
-                "eventmanager",
-                "events",
-                "zf2"
-            ],
-            "time": "2016-01-12 23:27:48"
         },
         {
             "name": "zendframework/zend-expressive",
@@ -3436,8 +3198,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "roave/security-advisories": 20,
-        "xtreamwayz/html-form-validator": 20
+        "roave/security-advisories": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
