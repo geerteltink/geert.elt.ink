@@ -1072,16 +1072,16 @@
         },
         {
             "name": "xtreamwayz/html-form-validator",
-            "version": "0.1.0",
+            "version": "0.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xtreamwayz/html-form-validator.git",
-                "reference": "e6458b9dd3a6e8bbedac805e20a8ceb928caeb32"
+                "reference": "93c356f6ebc830652a828675f5eaa8d23914fb2d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xtreamwayz/html-form-validator/zipball/e6458b9dd3a6e8bbedac805e20a8ceb928caeb32",
-                "reference": "e6458b9dd3a6e8bbedac805e20a8ceb928caeb32",
+                "url": "https://api.github.com/repos/xtreamwayz/html-form-validator/zipball/93c356f6ebc830652a828675f5eaa8d23914fb2d",
+                "reference": "93c356f6ebc830652a828675f5eaa8d23914fb2d",
                 "shasum": ""
             },
             "require": {
@@ -1090,9 +1090,11 @@
                 "zendframework/zend-i18n": "^2.5",
                 "zendframework/zend-inputfilter": "^2.5",
                 "zendframework/zend-servicemanager": "^3.0",
+                "zendframework/zend-uri": "^2.5",
                 "zendframework/zend-validator": "^2.5"
             },
             "require-dev": {
+                "codeception/aspect-mock": "*",
                 "phpunit/phpunit": "^5.0",
                 "squizlabs/php_codesniffer": "^2.3"
             },
@@ -1113,7 +1115,7 @@
                 }
             ],
             "homepage": "https://github.com/xtreamwayz/html-form-validator",
-            "time": "2016-02-08 10:29:49"
+            "time": "2016-02-09 11:09:08"
         },
         {
             "name": "zendframework/zend-diactoros",
@@ -1607,16 +1609,16 @@
         },
         {
             "name": "zendframework/zend-filter",
-            "version": "2.6.0",
+            "version": "2.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-filter.git",
-                "reference": "8682c12e9870c431cf29cbb7010627f3fa88dec8"
+                "reference": "202014ee64e2aae23140a1719f6d362a602713ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-filter/zipball/8682c12e9870c431cf29cbb7010627f3fa88dec8",
-                "reference": "8682c12e9870c431cf29cbb7010627f3fa88dec8",
+                "url": "https://api.github.com/repos/zendframework/zend-filter/zipball/202014ee64e2aae23140a1719f6d362a602713ed",
+                "reference": "202014ee64e2aae23140a1719f6d362a602713ed",
                 "shasum": ""
             },
             "require": {
@@ -1659,7 +1661,7 @@
                 "filter",
                 "zf2"
             ],
-            "time": "2016-02-04 19:52:41"
+            "time": "2016-02-08 18:02:37"
         },
         {
             "name": "zendframework/zend-hydrator",
@@ -1993,6 +1995,53 @@
                 "psr-7"
             ],
             "time": "2015-10-09 20:16:34"
+        },
+        {
+            "name": "zendframework/zend-uri",
+            "version": "2.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zendframework/zend-uri.git",
+                "reference": "fe6c7f4c8d9037fe551898a538a2b6d39483f572"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zendframework/zend-uri/zipball/fe6c7f4c8d9037fe551898a538a2b6d39483f572",
+                "reference": "fe6c7f4c8d9037fe551898a538a2b6d39483f572",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.23",
+                "zendframework/zend-escaper": "~2.5",
+                "zendframework/zend-validator": "~2.5"
+            },
+            "require-dev": {
+                "fabpot/php-cs-fixer": "1.7.*",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.5-dev",
+                    "dev-develop": "2.6-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Zend\\Uri\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "a component that aids in manipulating and validating » Uniform Resource Identifiers (URIs)",
+            "homepage": "https://github.com/zendframework/zend-uri",
+            "keywords": [
+                "uri",
+                "zf2"
+            ],
+            "time": "2015-06-03 15:32:03"
         },
         {
             "name": "zendframework/zend-validator",
@@ -2568,16 +2617,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "5.2.2",
+            "version": "5.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "64c37805098cfe42a1aaf4838b60c654377ec4a9"
+                "reference": "6fdb1d3004ebc7071c4ac62f2881d67c5c11fb59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/64c37805098cfe42a1aaf4838b60c654377ec4a9",
-                "reference": "64c37805098cfe42a1aaf4838b60c654377ec4a9",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/6fdb1d3004ebc7071c4ac62f2881d67c5c11fb59",
+                "reference": "6fdb1d3004ebc7071c4ac62f2881d67c5c11fb59",
                 "shasum": ""
             },
             "require": {
@@ -2589,7 +2638,7 @@
                 "myclabs/deep-copy": "~1.3",
                 "php": ">=5.6",
                 "phpspec/prophecy": "^1.3.1",
-                "phpunit/php-code-coverage": "~3.1",
+                "phpunit/php-code-coverage": "~3.0",
                 "phpunit/php-file-iterator": "~1.4",
                 "phpunit/php-text-template": "~1.2",
                 "phpunit/php-timer": ">=1.0.6",
@@ -2638,7 +2687,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-02-07 05:04:03"
+            "time": "2016-02-08 12:15:53"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
