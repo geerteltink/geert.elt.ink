@@ -61,7 +61,8 @@ class SmokeTest extends \PHPUnit_Framework_TestCase
         return [
             ['/'],
             ['/blog'],
-            ['/code'],
+            //['/code'],
+            ['/contact'],
         ];
     }
 }
