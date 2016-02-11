@@ -66,7 +66,7 @@ class CacheMiddleware implements MiddlewareInterface
 
     private function cacheResponse(Request $request, Response $response)
     {
-        if ('GET' !== $request->getMethod() || ! $response->hasHeader('Cache-Control')) {
+        if ('GET' !== $request->getMethod() || !$response->hasHeader('Cache-Control')) {
             return;
         }
 
