@@ -3,8 +3,8 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label class="form-control-label" for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Your name"
-                       data-reuse-submitted-value="true" required="required"
+                <input type="text" id="name" name="name" placeholder="Your name" required
+                       data-reuse-submitted-value="true" data-filters="stringtrim|striptags"
                        class="form-control" />
             </div>
         </div>
@@ -20,15 +20,15 @@
 
     <div class="form-group">
         <label class="form-control-label" for="subject">Subject</label>
-        <input type="text" id="subject" name="subject" placeholder="Subject"
-               data-reuse-submitted-value="true" required
+        <input type="text" id="subject" name="subject" placeholder="Subject" required
+               data-reuse-submitted-value="true" data-filters="stringtrim|striptags"
                class="form-control" />
     </div>
 
     <div class="form-group">
         <label class="form-control-label" for="body">Message</label>
-        <textarea id="body" name="body" rows="5"
-                  data-reuse-submitted-value="true" required
+        <textarea id="body" name="body" rows="5" required
+                  data-reuse-submitted-value="true"
                   class="form-control" placeholder="Message"></textarea>
     </div>
 

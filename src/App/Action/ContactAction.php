@@ -48,9 +48,6 @@ class ContactAction
             'token' => $session->get('csrf')
         ]));
 
-        // Get request data
-        $data = $request->getParsedBody() ?: [];
-
         if ($request->getMethod() !== 'POST') {
             // Display form
             return new HtmlResponse($this->template->render('app::contact', [
@@ -59,14 +56,16 @@ class ContactAction
         }
 
         // Validate form
-        $validationResult = $form->validate($data);
-
+        $validationResult = $form->validate($request->getParsedBody());
         if (!$validationResult->isValid()) {
             // Display form and inject error messages and submitted values
             return new HtmlResponse($this->template->render('app::contact', [
                 'form' => $form->asString($validationResult),
             ]), 200);
         }
+
+        // Get filter submitted values
+        $data = $validationResult->getValidValues();
 
         // Create the message
         $message = Swift_Message::newInstance()
