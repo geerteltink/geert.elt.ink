@@ -9,7 +9,6 @@ use Swift_Mailer;
 use Swift_Message;
 use Xtreamwayz\HTMLFormValidator\FormFactory;
 use Zend\Diactoros\Response\HtmlResponse;
-use Zend\Expressive\Router;
 use Zend\Expressive\Template\TemplateRendererInterface;
 
 class ContactAction

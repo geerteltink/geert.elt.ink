@@ -31,7 +31,7 @@ class BlogPostAction
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $next = null)
     {
         $post = $this->postRepository->find($request->getAttribute('id'));
-        if (! $post) {
+        if (!$post) {
             return $next($request, $response->withStatus(404), 'Not found');
         }
 

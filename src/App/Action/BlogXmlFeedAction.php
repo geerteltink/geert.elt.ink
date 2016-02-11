@@ -9,7 +9,6 @@ use Psr\Http\Message\ServerRequestInterface;
 use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Expressive\Helper\ServerUrlHelper;
 use Zend\Expressive\Helper\UrlHelper;
-use Zend\Expressive\Router;
 use Zend\Expressive\Template\TemplateRendererInterface;
 use Zend\Feed\Writer\Feed;
 
@@ -101,6 +100,9 @@ class BlogXmlFeedAction
         return $feed->export('atom');
     }
 
+    /**
+     * @param string $route
+     */
     public function generateUrl($route = null, array $params = [], $absoluteUrl = false)
     {
         $url = $this->urlHelper->generate($route, $params);
@@ -112,6 +114,9 @@ class BlogXmlFeedAction
         return $this->generateServerUrl($url);
     }
 
+    /**
+     * @param string $path
+     */
     public function generateServerUrl($path = null)
     {
         return $this->serverUrlHelper->generate($path);
