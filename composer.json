@@ -28,7 +28,7 @@
         "swiftmailer/swiftmailer": "^5.4",
         "monolog/monolog": "^1.17",
         "phing/phing": "^2.12",
-        "xtreamwayz/html-form-validator": "^0.1"
+        "xtreamwayz/html-form-validator": "^0.2"
     },
     "require-dev": {
         "phpunit/phpunit": "^5.0",
