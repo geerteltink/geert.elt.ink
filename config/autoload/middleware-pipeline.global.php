@@ -9,11 +9,12 @@ return [
             Helper\ServerUrlHelper::class => Helper\ServerUrlHelper::class,
         ],
         'factories'  => [
-            Helper\ServerUrlMiddleware::class     => Helper\ServerUrlMiddlewareFactory::class,
-            Helper\UrlHelperMiddleware::class     => Helper\UrlHelperMiddlewareFactory::class,
-            Helper\UrlHelper::class               => Helper\UrlHelperFactory::class,
-            App\Middleware\CacheMiddleware::class => App\Middleware\CacheMiddlewareFactory::class,
-            PSR7Session\Http\SessionMiddleware::class => App\Middleware\SessionMiddlewareFactory::class
+            Helper\ServerUrlMiddleware::class           => Helper\ServerUrlMiddlewareFactory::class,
+            Helper\UrlHelperMiddleware::class           => Helper\UrlHelperMiddlewareFactory::class,
+            Helper\UrlHelper::class                     => Helper\UrlHelperFactory::class,
+            App\Middleware\CacheMiddleware::class       => App\Middleware\CacheMiddlewareFactory::class,
+            PSR7Session\Http\SessionMiddleware::class   => App\Middleware\SessionMiddlewareFactory::class,
+            App\Middleware\ErrorLoggerMiddleware::class => App\Middleware\ErrorLoggerMiddlewareFactory::class,
         ],
     ],
 
@@ -70,7 +71,7 @@ return [
 
         'error' => [
             'middleware' => [
-                // Add error middleware here.
+                App\Middleware\ErrorLoggerMiddleware::class,
             ],
             'error'      => true,
             'priority'   => -10000,

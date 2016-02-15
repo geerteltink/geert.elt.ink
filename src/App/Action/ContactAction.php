@@ -2,6 +2,7 @@
 
 namespace App\Action;
 
+use Monolog\Logger;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use PSR7Session\Http\SessionMiddleware;
@@ -15,13 +16,21 @@ class ContactAction
 {
     private $template;
 
+    private $logger;
+
     private $mailer;
 
     private $config;
 
-    public function __construct(TemplateRendererInterface $template, Swift_Mailer $mailer, array $config)
-    {
+    public function __construct(
+        TemplateRendererInterface $template,
+        Logger $logger,
+        Swift_Mailer $mailer,
+        array
+        $config
+    ) {
         $this->template = $template;
+        $this->logger = $logger;
         $this->mailer = $mailer;
         $this->config = $config;
     }
@@ -45,7 +54,7 @@ class ContactAction
 
         // Generate form and inject csrf token
         $form = FormFactory::fromHtml($this->template->render('app::contact-form', [
-            'token' => $session->get('csrf')
+            'token' => $session->get('csrf'),
         ]));
 
         if ($request->getMethod() !== 'POST') {
@@ -67,16 +76,21 @@ class ContactAction
         // Get filter submitted values
         $data = $validationResult->getValidValues();
 
+        $this->logger->info('Sending contact mail to {from} <{email}> with subject "{subject}": {body}', $data);
+
         // Create the message
         $message = Swift_Message::newInstance()
-            ->setFrom($this->config['from'])
-            ->setReplyTo($data['email'], $data['name'])
-            ->setTo($this->config['to'])
-            ->setSubject('[xtreamwayz-contact] ' . $data['subject'])
-            ->setBody($data['body']);
+                                ->setFrom($this->config['from'])
+                                ->setReplyTo($data['email'], $data['name'])
+                                ->setTo($this->config['to'])
+                                ->setSubject('[xtreamwayz-contact] ' . $data['subject'])
+                                ->setBody($data['body']);
 
         if ($this->config['transport']['debug'] !== true) {
-            $this->mailer->send($message);
+            $sent = $this->mailer->send($message);
+            if ($sent == 0) {
+                $this->logger->error('Failed to send contact email.');
+            }
         }
 
         // Display thank you page
