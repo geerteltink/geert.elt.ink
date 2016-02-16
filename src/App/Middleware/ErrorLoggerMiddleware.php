@@ -20,10 +20,10 @@ class ErrorLoggerMiddleware implements ErrorMiddlewareInterface
     {
         if ($error instanceof \Exception) {
             $this->logger->error('Error ({code}): {message} in {file}:{line}', [
-                'code' => $error->getCode(),
+                'code'    => $error->getCode(),
                 'message' => $error->getMessage(),
-                'file' => $error->getFile(),
-                'line' => $error->getLine()
+                'file'    => $error->getFile(),
+                'line'    => $error->getLine(),
             ]);
         }
 

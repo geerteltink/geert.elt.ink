@@ -11,7 +11,7 @@ class CacheMiddlewareFactory implements FactoryInterface
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $config = $container->has('config') ? $container->get('config') : [];
-        $debug  = array_key_exists('debug', $config) ? (bool) $config['debug'] : false;
+        $debug = array_key_exists('debug', $config) ? (bool)$config['debug'] : false;
 
         /** @var Cache $cache */
         $cache = $container->get(Cache::class);

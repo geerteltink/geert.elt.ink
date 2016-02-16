@@ -29,20 +29,22 @@ class CacheMiddleware implements MiddlewareInterface
     {
         $cachedResponse = $this->getCachedResponse($request, $response);
 
-        if (null !== $cachedResponse && $this->debug !== true) {
+        if (null !== $cachedResponse) {
             return $cachedResponse;
         }
 
         $response = $next($request, $response);
 
-        $this->cacheResponse($request, $response);
+        if ($this->debug !== true) {
+            $this->cacheResponse($request, $response);
+        }
 
         return $response;
     }
 
     private function getCacheKey(Request $request)
     {
-        return 'http-cache:'.$request->getUri()->getPath();
+        return 'http-cache:' . $request->getUri()->getPath();
     }
 
     private function getCachedResponse(Request $request, Response $response)
@@ -83,7 +85,7 @@ class CacheMiddleware implements MiddlewareInterface
                     $this->getCacheKey($request),
                     [
                         'headers' => $response->getHeaders(),
-                        'body'    => (string) $response->getBody(),
+                        'body'    => (string)$response->getBody(),
                     ],
                     intval($parts[1])
                 );

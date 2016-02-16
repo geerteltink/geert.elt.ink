@@ -2,12 +2,12 @@
 
 namespace AppTest;
 
+use DOMDocument;
 use Prophecy\Argument;
 use Psr\Http\Message\ResponseInterface;
 use Zend\Diactoros\Response;
 use Zend\Diactoros\ServerRequest;
 use Zend\Expressive\Application;
-use DOMDocument;
 
 class BlogXmlFeedActionTest extends \PHPUnit_Framework_TestCase
 {
