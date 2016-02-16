@@ -64,7 +64,7 @@ class ContactAction
         }
 
         // Validate form
-        $validationResult = $form->validate($request->getParsedBody());
+        $validationResult = $form->validate((array) $request->getParsedBody());
         if (!$validationResult->isValid()) {
             // Display form and inject error messages and submitted values
             return new HtmlResponse($this->template->render('app::contact', [
