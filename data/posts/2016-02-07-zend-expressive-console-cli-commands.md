@@ -5,7 +5,7 @@ summary: Use Symfony console for your zend-expressive console commands.
 draft: false
 public: true
 published: 2016-02-07T11:40:00+01:00
-modified: false
+modified: 2016-02-16T12:25:00+01:00
 tags:
     - zend-expressive
     - console
@@ -75,7 +75,8 @@ And that's about it. You've got a working console.
 
 But what is a console without a command. Let's re-create the example
 [greet command](http://symfony.com/doc/current/cookbook/console/console_command.html) from the Symfony cookbook.
-First up is the command itself.
+First up is the command itself. To get a better idea of what you really can do, a logger is injected to log the
+executed command.
 
 ```php
 <?php // src/App/Command/GreetCommand.php
@@ -87,15 +88,18 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
+use Monolog\Logger;
 
 class GreetCommand extends Command
 {
+    private $logger;
+
     /**
      * Constructor
      */
-    public function __construct()
+    public function __construct(Logger $logger)
     {
-        // Handle dependencies here
+        $this->logger = $logger;
 
         parent::__construct();
     }
@@ -138,11 +142,14 @@ class GreetCommand extends Command
         }
 
         $output->writeln($text);
+        
+        $this->logger->info('GreetCommand triggered', ['name' => $name]);
     }
 }
 ```
 
-Most likely dependencies are needed, which are injected with a factory.
+Most likely dependencies are needed, which are injected with a factory. In this example an instance of Monolog is 
+injected.
 
 ```php
 <?php // src/App/Command/GreetCommandFactory.php
@@ -150,14 +157,15 @@ Most likely dependencies are needed, which are injected with a factory.
 namespace App\Command;
 
 use Interop\Container\ContainerInterface;
+use Monolog\Logger;
 
 class GreetCommandFactory
 {
     public function __invoke(ContainerInterface $container)
     {
-        // Get dependencies from the container and inject into the command constructor
-
-        return new GreetCommand();
+        return new GreetCommand(
+            $container->get(Logger::class)
+        );
     }
 }
 ```
