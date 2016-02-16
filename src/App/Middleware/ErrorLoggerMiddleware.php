@@ -2,16 +2,16 @@
 
 namespace App\Middleware;
 
-use Monolog\Logger;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
+use Psr\Log\LoggerInterface;
 use Zend\Stratigility\ErrorMiddlewareInterface;
 
 class ErrorLoggerMiddleware implements ErrorMiddlewareInterface
 {
     private $logger;
 
-    public function __construct(Logger $logger)
+    public function __construct(LoggerInterface $logger)
     {
         $this->logger = $logger;
     }

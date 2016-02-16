@@ -10,7 +10,7 @@ return [
         'factories'  => [
             Expressive\Application::class      => Expressive\Container\ApplicationFactory::class,
             Doctrine\Common\Cache\Cache::class => App\Container\CacheFactory::class,
-            Monolog\Logger::class              => App\Container\LoggerFactory::class,
+            Psr\Log\LoggerInterface::class     => App\Container\LoggerFactory::class,
             Swift_Mailer::class                => App\Container\MailTransportFactory::class,
         ],
     ],

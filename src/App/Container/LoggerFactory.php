@@ -7,22 +7,23 @@ use Monolog\Handler\SlackHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 use Monolog\Processor\PsrLogMessageProcessor;
+use Psr\Log\LoggerInterface;
 
 class LoggerFactory
 {
     /**
      * @param ContainerInterface $container
      *
-     * @return Logger
+     * @return LoggerInterface
      */
     public function __invoke(ContainerInterface $container)
     {
         $config = $container->get('config');
 
         $logger = new Logger('app', [
-            new StreamHandler('data/log/app.log', Logger::INFO)
+            new StreamHandler('data/log/app.log', Logger::INFO),
         ], [
-            new PsrLogMessageProcessor()
+            new PsrLogMessageProcessor(),
         ]);
 
         if (isset($config['monolog']['slack'])) {

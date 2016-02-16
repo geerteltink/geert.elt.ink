@@ -2,9 +2,9 @@
 
 namespace App\Action;
 
-use Monolog\Logger;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use Psr\Log\LoggerInterface;
 use PSR7Session\Http\SessionMiddleware;
 use Swift_Mailer;
 use Swift_Message;
@@ -24,10 +24,9 @@ class ContactAction
 
     public function __construct(
         TemplateRendererInterface $template,
-        Logger $logger,
+        LoggerInterface $logger,
         Swift_Mailer $mailer,
-        array
-        $config
+        array $config
     ) {
         $this->template = $template;
         $this->logger = $logger;
