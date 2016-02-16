@@ -42,7 +42,7 @@ class SmokeTest extends \PHPUnit_Framework_TestCase
      * @group        functional
      * @dataProvider urlProvider
      */
-    public function testPageIsSuccessful($url)
+    public function testPageIsSuccessful($statusCode, $url)
     {
         /** @var \Interop\Container\ContainerInterface $container */
         $container = require 'config/container.php';
@@ -53,16 +53,17 @@ class SmokeTest extends \PHPUnit_Framework_TestCase
         /** @var ResponseInterface $response */
         $response = $app($request, new Response());
 
-        $this->assertEquals(200, $response->getStatusCode());
+        $this->assertEquals($statusCode, $response->getStatusCode());
     }
 
     public function urlProvider()
     {
         return [
-            ['/'],
-            ['/blog'],
-            //['/code'],
-            ['/contact'],
+            [200, '/'],
+            [200, '/blog'],
+            //[200, '/code'],
+            [200, '/contact'],
+            [404, '/404'],
         ];
     }
 }
