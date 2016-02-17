@@ -36,23 +36,12 @@
         "filp/whoops": "^2.0"
     },
     "scripts": {
-        "post-install-cmd": [
-            "rm -f data/cache/app_config.*",
-            "rm -rf data/cache/doctrine/",
-            "rm -rf data/cache/twig/"
-        ],
-        "post-update-cmd": [
-            "rm -f data/cache/app_config.*",
-            "rm -rf data/cache/doctrine/",
-            "rm -rf data/cache/twig/"
-        ],
         "check": [
             "@cs",
             "@test"
         ],
-        "cs": "php vendor/squizlabs/php_codesniffer/scripts/phpcs",
-        "test": "php vendor/phpunit/phpunit/phpunit",
-        "serve": "php -S 0.0.0.0:8000 -t public/"
+        "cs": "php vendor/squizlabs/php_codesniffer/scripts/phpcs --standard=./build/phpunit.xml.dist",
+        "test": "php vendor/phpunit/phpunit/phpunit --configuration ./build/phpunit.xml.dist"
     },
     "autoload": {
         "psr-4": {
