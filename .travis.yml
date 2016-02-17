@@ -24,7 +24,7 @@ install:
 
 script:
   - if [[ $EXECUTE_TEST_COVERALLS != 'true' ]]; then ./vendor/bin/phpunit --configuration ./build/phpunit.xml.dist ; fi
-  - if [[ $EXECUTE_CS_CHECK == 'true' ]]; then ./vendor/bin/phpcs --standard=./build/phpunit.xml.dist ; fi
+  - if [[ $EXECUTE_CS_CHECK == 'true' ]]; then ./vendor/bin/phpcs --standard=./build/phpcs.xml ; fi
 
 notifications:
   email: false
