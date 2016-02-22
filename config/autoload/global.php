@@ -16,7 +16,7 @@ return [
     'mail' => [
         'transport' => [
             'debug'   => false,
-            'class'   => 'sendmail',
+            'class'   => Zend\Mail\Transport\SendMail::class,
             'options' => [],
         ],
         'to'        => '', // Email address to send the contact emails to

@@ -6,12 +6,12 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Log\LoggerInterface;
 use PSR7Session\Http\SessionMiddleware;
-use Swift_Mailer;
-use Swift_Message;
 use Xtreamwayz\HTMLFormValidator\FormFactory;
 use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Expressive\Template\TemplateRendererInterface;
 use Zend\InputFilter\Factory as InputFilterFactory;
+use Zend\Mail\Message;
+use Zend\Mail\Transport\TransportInterface;
 
 class ContactAction
 {
@@ -19,23 +19,23 @@ class ContactAction
 
     private $inputFilterFactory;
 
-    private $logger;
+    private $mailTransport;
 
-    private $mailer;
+    private $logger;
 
     private $config;
 
     public function __construct(
         TemplateRendererInterface $template,
         InputFilterFactory $inputFilterFactory,
+        TransportInterface $mailTransport,
         LoggerInterface $logger,
-        Swift_Mailer $mailer,
         array $config
     ) {
         $this->template = $template;
         $this->inputFilterFactory = $inputFilterFactory;
+        $this->mailTransport = $mailTransport;
         $this->logger = $logger;
-        $this->mailer = $mailer;
         $this->config = $config;
     }
 
@@ -83,15 +83,15 @@ class ContactAction
         $this->logger->info('Sending contact mail to {from} <{email}> with subject "{subject}": {body}', $data);
 
         // Create the message
-        $message = Swift_Message::newInstance()
-                                ->setFrom($this->config['from'])
-                                ->setReplyTo($data['email'], $data['name'])
-                                ->setTo($this->config['to'])
-                                ->setSubject('[xtreamwayz-contact] ' . $data['subject'])
-                                ->setBody($data['body']);
+        $message = new Message();
+        $message->setFrom($this->config['from'])
+                ->setReplyTo($data['email'], $data['name'])
+                ->setTo($this->config['to'])
+                ->setSubject('[xtreamwayz-contact] ' . $data['subject'])
+                ->setBody($data['body']);
 
         if ($this->config['transport']['debug'] !== true) {
-            $sent = $this->mailer->send($message);
+            $sent = $this->mailTransport->send($message);
             if ($sent == 0) {
                 $this->logger->error('Failed to send contact email.');
             }
