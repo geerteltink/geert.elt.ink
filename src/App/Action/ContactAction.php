@@ -11,10 +11,13 @@ use Swift_Message;
 use Xtreamwayz\HTMLFormValidator\FormFactory;
 use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Expressive\Template\TemplateRendererInterface;
+use Zend\InputFilter\Factory as InputFilterFactory;
 
 class ContactAction
 {
     private $template;
+
+    private $inputFilterFactory;
 
     private $logger;
 
@@ -24,11 +27,13 @@ class ContactAction
 
     public function __construct(
         TemplateRendererInterface $template,
+        InputFilterFactory $inputFilterFactory,
         LoggerInterface $logger,
         Swift_Mailer $mailer,
         array $config
     ) {
         $this->template = $template;
+        $this->inputFilterFactory = $inputFilterFactory;
         $this->logger = $logger;
         $this->mailer = $mailer;
         $this->config = $config;
@@ -52,9 +57,9 @@ class ContactAction
         }
 
         // Generate form and inject csrf token
-        $form = FormFactory::fromHtml($this->template->render('app::contact-form', [
+        $form = new FormFactory($this->template->render('app::contact-form', [
             'token' => $session->get('csrf'),
-        ]));
+        ]), [], $this->inputFilterFactory);
 
         if ($request->getMethod() !== 'POST') {
             // Display form
@@ -73,7 +78,7 @@ class ContactAction
         }
 
         // Get filter submitted values
-        $data = $validationResult->getValidValues();
+        $data = $validationResult->getValues();
 
         $this->logger->info('Sending contact mail to {from} <{email}> with subject "{subject}": {body}', $data);
 
