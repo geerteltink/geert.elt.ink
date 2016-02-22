@@ -32,7 +32,7 @@ class LoggerFactory
                 $config['monolog']['slack']['channel'],
                 $config['monolog']['slack']['name']
             );
-            $slackHandler->setLevel(Logger::ERROR);
+            $slackHandler->setLevel(Logger::NOTICE);
             $logger->pushHandler($slackHandler);
         }
 

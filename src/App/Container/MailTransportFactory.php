@@ -36,6 +36,9 @@ class MailTransportFactory
 
                 return new Transport\File($options);
 
+            case Transport\InMemory::class:
+                return new Transport\InMemory();
+
             default:
                 throw new RuntimeException(sprintf('Unknown mail transport type "%s"', $class));
         }

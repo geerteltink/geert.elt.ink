@@ -80,7 +80,7 @@ class ContactAction
         // Get filter submitted values
         $data = $validationResult->getValues();
 
-        $this->logger->info('Sending contact mail to {from} <{email}> with subject "{subject}": {body}', $data);
+        $this->logger->notice('Sending contact mail to {from} <{email}> with subject "{subject}": {body}', $data);
 
         // Create the message
         $message = new Message();
@@ -90,12 +90,7 @@ class ContactAction
                 ->setSubject('[xtreamwayz-contact] ' . $data['subject'])
                 ->setBody($data['body']);
 
-        if ($this->config['transport']['debug'] !== true) {
-            $sent = $this->mailTransport->send($message);
-            if ($sent == 0) {
-                $this->logger->error('Failed to send contact email.');
-            }
-        }
+        $this->mailTransport->send($message);
 
         // Display thank you page
         return new HtmlResponse($this->template->render('app::contact-thank-you'), 200);
