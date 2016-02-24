@@ -1024,16 +1024,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xtreamwayz/html-form-validator.git",
-                "reference": "ad427a69d02dbaa51ff58658507ada5af5889517"
+                "reference": "1a9f1913960032c115a8695e18aa38388d0cd58a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xtreamwayz/html-form-validator/zipball/ad427a69d02dbaa51ff58658507ada5af5889517",
-                "reference": "ad427a69d02dbaa51ff58658507ada5af5889517",
+                "url": "https://api.github.com/repos/xtreamwayz/html-form-validator/zipball/1a9f1913960032c115a8695e18aa38388d0cd58a",
+                "reference": "1a9f1913960032c115a8695e18aa38388d0cd58a",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.0",
+                "psr/http-message": "^1.0",
                 "zendframework/zend-filter": "^2.6",
                 "zendframework/zend-i18n": "^2.6",
                 "zendframework/zend-inputfilter": "^2.6",
@@ -1064,7 +1065,7 @@
                 }
             ],
             "homepage": "https://github.com/xtreamwayz/html-form-validator",
-            "time": "2016-02-22 08:13:11"
+            "time": "2016-02-24 07:30:47"
         },
         {
             "name": "zendframework/zend-crypt",

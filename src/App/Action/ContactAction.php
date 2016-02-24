@@ -61,38 +61,31 @@ class ContactAction
             'token' => $session->get('csrf'),
         ]), [], $this->inputFilterFactory);
 
-        if ($request->getMethod() !== 'POST') {
-            // Display form
-            return new HtmlResponse($this->template->render('app::contact', [
-                'form' => $form->asString(),
-            ]), 200);
-        }
-
         // Validate form
-        $validationResult = $form->validate((array) $request->getParsedBody());
-        if (!$validationResult->isValid()) {
-            // Display form and inject error messages and submitted values
-            return new HtmlResponse($this->template->render('app::contact', [
-                'form' => $form->asString($validationResult),
-            ]), 200);
+        $validationResult = $form->validateRequest($request);
+        if ($validationResult->isValid()) {
+            // Get filter submitted values
+            $data = $validationResult->getValues();
+
+            $this->logger->notice('Sending contact mail to {from} <{email}> with subject "{subject}": {body}', $data);
+
+            // Create the message
+            $message = new Message();
+            $message->setFrom($this->config['from'])
+                    ->setReplyTo($data['email'], $data['name'])
+                    ->setTo($this->config['to'])
+                    ->setSubject('[xtreamwayz-contact] ' . $data['subject'])
+                    ->setBody($data['body']);
+
+            $this->mailTransport->send($message);
+
+            // Display thank you page
+            return new HtmlResponse($this->template->render('app::contact-thank-you'), 200);
         }
 
-        // Get filter submitted values
-        $data = $validationResult->getValues();
-
-        $this->logger->notice('Sending contact mail to {from} <{email}> with subject "{subject}": {body}', $data);
-
-        // Create the message
-        $message = new Message();
-        $message->setFrom($this->config['from'])
-                ->setReplyTo($data['email'], $data['name'])
-                ->setTo($this->config['to'])
-                ->setSubject('[xtreamwayz-contact] ' . $data['subject'])
-                ->setBody($data['body']);
-
-        $this->mailTransport->send($message);
-
-        // Display thank you page
-        return new HtmlResponse($this->template->render('app::contact-thank-you'), 200);
+        // Display form and inject error messages and submitted values
+        return new HtmlResponse($this->template->render('app::contact', [
+            'form' => $form->asString($validationResult),
+        ]), 200);
     }
 }
