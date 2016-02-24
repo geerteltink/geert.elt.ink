@@ -76,7 +76,7 @@ class AbstractActionFactory implements AbstractFactoryInterface
 ```
 
 As you can see, the code is almost the same as what I did before with the ActionFactory. However it now extends an
-``AbstractFactoryInterface`` and it has this ``canCreateServiceWithName`` method.
+``AbstractFactoryInterface`` and it has this ``canCreate`` method.
 
 To register the factory you need to add this line:
 
@@ -110,7 +110,7 @@ In case you used the expressive-skeleton, remove these two lines from ``routes.g
 
 While trying to get homepage, under the hood the container (still zend-servicemanager) is looking for the
 ``HomePageAction`` class at the usual locations. But since it's not registered with the container, it falls back to
-this abstract factory. In its ``canCreateServiceWithName`` method it tells the container it can handle all classes
+this abstract factory. In its ``canCreate`` method it tells the container it can handle all classes
 ending with ``Action``. After that the abstract factory returns the Action class with the right dependencies.
 
 There might be a downside though. Since the servicemanager checks if unregistered classes can be handled by a
