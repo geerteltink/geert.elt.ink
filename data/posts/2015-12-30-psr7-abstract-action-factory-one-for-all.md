@@ -5,7 +5,7 @@ summary: Use one abstract action factory for all PSR-7 actions.
 draft: false
 public: true
 published: 2015-12-30T09:54:00+01:00
-modified: false
+modified: 2016-02-24T08:34:00+01:00
 tags:
     - zend-expressive
     - dependency injection
@@ -63,7 +63,7 @@ class AbstractActionFactory implements AbstractFactoryInterface
         return $reflection->newInstanceArgs($dependencies);
     }
 
-    public function canCreateServiceWithName(ContainerInterface $container, $requestedName)
+    public function canCreate(ContainerInterface $container, $requestedName)
     {
         // Only accept Action classes
         if (substr($requestedName, -6) == 'Action') {
