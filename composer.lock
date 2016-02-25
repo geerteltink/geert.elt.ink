@@ -1024,12 +1024,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xtreamwayz/html-form-validator.git",
-                "reference": "1a9f1913960032c115a8695e18aa38388d0cd58a"
+                "reference": "e42852833c492c7317e98fa637015b60859fd514"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xtreamwayz/html-form-validator/zipball/1a9f1913960032c115a8695e18aa38388d0cd58a",
-                "reference": "1a9f1913960032c115a8695e18aa38388d0cd58a",
+                "url": "https://api.github.com/repos/xtreamwayz/html-form-validator/zipball/e42852833c492c7317e98fa637015b60859fd514",
+                "reference": "e42852833c492c7317e98fa637015b60859fd514",
                 "shasum": ""
             },
             "require": {
@@ -1065,7 +1065,7 @@
                 }
             ],
             "homepage": "https://github.com/xtreamwayz/html-form-validator",
-            "time": "2016-02-24 07:30:47"
+            "time": "2016-02-25 09:28:16"
         },
         {
             "name": "zendframework/zend-crypt",
@@ -1882,16 +1882,16 @@
         },
         {
             "name": "zendframework/zend-mail",
-            "version": "2.6.0",
+            "version": "2.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-mail.git",
-                "reference": "6dc8a3a262c9d70889ec846124482db3edab9b39"
+                "reference": "3311e163de28dc3b41dfba642939132a16336143"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-mail/zipball/6dc8a3a262c9d70889ec846124482db3edab9b39",
-                "reference": "6dc8a3a262c9d70889ec846124482db3edab9b39",
+                "url": "https://api.github.com/repos/zendframework/zend-mail/zipball/3311e163de28dc3b41dfba642939132a16336143",
+                "reference": "3311e163de28dc3b41dfba642939132a16336143",
                 "shasum": ""
             },
             "require": {
@@ -1905,7 +1905,11 @@
             "require-dev": {
                 "fabpot/php-cs-fixer": "1.7.*",
                 "phpunit/phpunit": "~4.0",
-                "zendframework/zend-config": "^2.6"
+                "zendframework/zend-config": "^2.6",
+                "zendframework/zend-servicemanager": "^2.7.5 || ^3.0.3"
+            },
+            "suggest": {
+                "zendframework/zend-servicemanager": "^2.7.5 || ^3.0.3 when using SMTP to deliver messages"
             },
             "type": "library",
             "extra": {
@@ -1929,7 +1933,7 @@
                 "mail",
                 "zf2"
             ],
-            "time": "2016-02-18 14:26:31"
+            "time": "2016-02-24 22:32:05"
         },
         {
             "name": "zendframework/zend-math",

@@ -59,7 +59,7 @@ class ContactAction
         // Generate form and inject csrf token
         $form = new FormFactory($this->template->render('app::contact-form', [
             'token' => $session->get('csrf'),
-        ]), [], $this->inputFilterFactory);
+        ]), $this->inputFilterFactory);
 
         // Validate form
         $validationResult = $form->validateRequest($request);
