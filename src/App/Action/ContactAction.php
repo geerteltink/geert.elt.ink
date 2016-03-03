@@ -53,7 +53,7 @@ class ContactAction
 
         // Generate csrf token
         if (!$session->get('csrf')) {
-            $session->set('csrf', md5(uniqid(rand(), true)));
+            $session->set('csrf', md5(random_bytes(32)));
         }
 
         // Generate form and inject csrf token
