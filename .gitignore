@@ -1,8 +1,4 @@
 /phpunit.xml
-/build/lint.cache
-/build/pdepend/
-/build/logs/
-/build/coverage/
-/build/api/
+/build/
 /node_modules/
 /vendor/
