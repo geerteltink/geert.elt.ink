@@ -15,16 +15,15 @@ matrix:
         - EXECUTE_CS_CHECK=true
 
 before_install:
-  - if [[ $EXECUTE_TEST_COVERALLS != 'true' ]]; then phpenv config-rm xdebug.ini || return 0 ; fi
   - composer self-update
 
 install:
-  - composer install --no-interaction --prefer-source
+  - travis_retry composer install --no-interaction --prefer-source
   - composer info -i
 
 script:
-  - if [[ $EXECUTE_TEST_COVERALLS != 'true' ]]; then ./vendor/bin/phpunit --configuration ./build/phpunit.xml.dist ; fi
-  - if [[ $EXECUTE_CS_CHECK == 'true' ]]; then ./vendor/bin/phpcs --standard=./build/phpcs.xml ; fi
+  - vendor/bin/phpcs
+  - vendor/bin/phpunit --disallow-test-output --report-useless-tests --coverage-clover build/logs/clover.xml
 
 notifications:
   email: false
