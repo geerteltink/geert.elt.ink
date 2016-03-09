@@ -58,28 +58,25 @@ build: clean
 	mkdir -p public/assets/fonts
 	mkdir -p public/assets/img
 	mkdir -p public/assets/js
-	$(UGLIFYJS) bower_components/prism/components/prism-core.js \
-				bower_components/prism/components/prism-markup.js \
-				bower_components/prism/components/prism-css.js \
-				bower_components/prism/components/prism-clike.js \
-				bower_components/prism/components/prism-javascript.js \
-				bower_components/prism/components/prism-apacheconf.js \
-				bower_components/prism/components/prism-bash.js \
-				bower_components/prism/components/prism-batch.js \
-				bower_components/prism/components/prism-css-extras.js \
-				bower_components/prism/components/prism-git.js \
-				bower_components/prism/components/prism-nginx.js \
-				bower_components/prism/components/prism-php.js \
-				bower_components/prism/components/prism-scss.js \
-				bower_components/prism/components/prism-sql.js \
-				bower_components/prism/components/prism-twig.js \
-				bower_components/prism/components/prism-yaml.js \
-	            --compress --mangle --output public/assets/js/core.min.js
+	$(UGLIFYJS) node_modules/prismjs/components/prism-core.js \
+				node_modules/prismjs/components/prism-markup.js \
+				node_modules/prismjs/components/prism-css.js \
+				node_modules/prismjs/components/prism-javascript.js \
+				node_modules/prismjs/components/prism-apacheconf.js \
+				node_modules/prismjs/components/prism-bash.js \
+				node_modules/prismjs/components/prism-batch.js \
+				node_modules/prismjs/components/prism-css-extras.js \
+				node_modules/prismjs/components/prism-php.js \
+				node_modules/prismjs/components/prism-scss.js \
+				node_modules/prismjs/components/prism-sql.js \
+				node_modules/prismjs/components/prism-twig.js \
+				node_modules/prismjs/components/prism-yaml.js \
+	            --compress --mangle --screw-ie8 --output public/assets/js/core.min.js
 	$(SASS) resources/public/scss/core.scss data/build/core.css
 	$(POSTCSS) --use autoprefixer --autoprefixer.browsers "last 2 versions" \
 	           --output data/build/core.prefixed.css data/build/core.css
 	$(UGLIFYCSS) data/build/core.prefixed.css > public/assets/css/core.min.css
-	cp bower_components/font-awesome/fonts/* public/assets/fonts/
+	cp node_modules/font-awesome/fonts/* public/assets/fonts/
 	cp resources/public/img/* public/assets/img/
 
 # TARGET:fix                Run PHP Code Beautifier and Fixer

@@ -4,5 +4,5 @@
 /build/logs/
 /build/coverage/
 /build/api/
-/bower_components/
+/node_modules/
 /vendor/
