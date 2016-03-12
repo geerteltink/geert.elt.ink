@@ -6,40 +6,21 @@
 
 code[class*="language-"],
 pre[class*="language-"] {
-    font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
-    line-height: 1.5;
-
     text-align: left;
     white-space: pre;
     word-spacing: normal;
     word-wrap: normal;
     word-break: normal;
-    -moz-tab-size: 4;
-      -o-tab-size: 4;
-         tab-size: 4;
-    -webkit-hyphens: none;
-       -moz-hyphens: none;
-            hyphens: none;
+    tab-size: 4;
+    hyphens: none;
 
     color: black;
-    text-shadow: 0 1px white;
 
     direction: ltr;
-        -ms-hyphens: none;
-}
-
-pre[class*="language-"]::-moz-selection,
-pre[class*="language-"] ::-moz-selection,
-code[class*="language-"]::-moz-selection,
-code[class*="language-"] ::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
 }
 
 pre[class*="language-"]::selection,
-pre[class*="language-"] ::selection,
-code[class*="language-"]::selection,
-code[class*="language-"] ::selection {
+code[class*="language-"]::selection {
     background: #b3d4fc;
     text-shadow: none;
 }
@@ -54,8 +35,6 @@ code[class*="language-"] ::selection {
 /* Code blocks */
 pre[class*="language-"] {
     overflow: auto;
-
-    margin: .5em 0;
     padding: 1em;
 }
 
