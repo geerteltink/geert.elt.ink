@@ -10,7 +10,6 @@ PHP := $(shell which php)
 PHPDBG := $(shell which phpdbg)
 COMPOSER := $(shell which composer)
 NPM := $(shell which npm)
-BOWER := $(shell which bower)
 SASS := $(shell which node-sass)
 POSTCSS := $(shell which postcss)
 UGLIFYCSS := $(shell which uglifycss)
@@ -27,7 +26,6 @@ all: help
 .PHONY: install
 install:
 	$(info ... Installing utilities)
-	$(NPM) install -g bower
 	$(NPM) install -g node-sass
 	$(NPM) install -g postcss-cli
 	$(NPM) install -g autoprefixer
@@ -39,7 +37,7 @@ install:
 .PHONY: update
 update:
 	$(info ... Updating assets & dependencies)
-	$(BOWER) update
+	$(NPM) update
 	$(COMPOSER) update
 
 # TARGET:clean              Clean up before building
@@ -55,14 +53,12 @@ build: clean
 	$(info ... Building assets)
 	mkdir -p data/build
 	mkdir -p public/assets/css
-	mkdir -p public/assets/fonts
 	mkdir -p public/assets/img
 	mkdir -p public/assets/js
 	$(SASS) resources/public/scss/core.scss data/build/core.css
 	$(POSTCSS) --use autoprefixer --autoprefixer.browsers "last 2 versions" \
 	           --output data/build/core.prefixed.css data/build/core.css
 	$(UGLIFYCSS) data/build/core.prefixed.css > public/assets/css/core.min.css
-	cp node_modules/font-awesome/fonts/* public/assets/fonts/
 	cp resources/public/img/* public/assets/img/
 
 # TARGET:fix                Run PHP Code Beautifier and Fixer
@@ -91,7 +87,7 @@ debug:
 	$(info PHP          $(PHP))
 	$(info PHPDBG       $(PHPDBG))
 	$(info COMPOSER     $(COMPOSER))
-	$(info BOWER        $(BOWER))
+	$(info NPM          $(NPM))
 	$(info SASS         $(SASS))
 	$(info POSTCSS      $(POSTCSS))
 	$(info UGLIFYCSS    $(UGLIFYCSS))
