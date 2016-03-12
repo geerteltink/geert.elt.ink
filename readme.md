@@ -17,3 +17,4 @@ Other used packages:
 - [xtreamwayz/html-form-validator](https://github.com/xtreamwayz/html-form-validator) for form validation.
 - [guzzlehttp/guzzle](https://github.com/guzzlehttp/guzzle) for grabbing repository data from GitHub.
 - [phing/phing](https://github.com/phing/phing) for building and deployment.
+- svg icons.

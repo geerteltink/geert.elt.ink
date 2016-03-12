@@ -65,19 +65,25 @@
     <div class="container">
         <ul class="list-inline text-xs-center pull-md-left">
             <li class="list-inline-item">
-                <i class="icon icon-twitter"></i>
+                <svg class="icon icon-twitter">
+                    <use xlink:href="{{ asset('assets/img/icons.svg') }}#icon-twitter"></use>
+                </svg>
                 <a href="https://twitter.com/xtreamwayz" title="Contact me on Twitter">
                     @xtreamwayz
                 </a>
             </li>
             <li class="list-inline-item">
-                <i class="icon icon-github"></i>
+                <svg class="icon icon-github">
+                    <use xlink:href="{{ asset('assets/img/icons.svg') }}#icon-github"></use>
+                </svg>
                 <a href="https://github.com/xtreamwayz" title="Follow me on GitHub">
                     GitHub
                 </a>
             </li>
             <li class="list-inline-item">
-                <i class="icon icon-rss"></i>
+                <svg class="icon icon-rss">
+                    <use xlink:href="{{ asset('assets/img/icons.svg') }}#icon-rss"></use>
+                </svg>
                 <a href="{{ path('feed.xml') }}" title="xtreamwayz Blog Feed">
                     Blog Feed
                 </a>

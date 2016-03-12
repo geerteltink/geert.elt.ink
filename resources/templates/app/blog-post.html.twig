@@ -10,17 +10,30 @@
                 {{ post.title }}
             </h1>
             <div class="article-meta">
-                Published <time datetime="{{ post.published | date('c', 'UTC') }}" itemprop="datePublished">
+                <svg class="icon icon-clock">
+                    <use xlink:href="{{ asset('assets/img/icons.svg') }}#icon-clock"></use>
+                </svg>
+                <time datetime="{{ post.published | date('c', 'UTC') }}" itemprop="datePublished">
                     {{ post.published | date('F jS, Y', 'UTC') }}
                 </time>
 
                 {% if post.modified %}
-                    (modified <time datetime="{{ post.modified | date('c', 'UTC') }}" itemprop="dateModified">{{ post.modified | date('F jS, Y', 'UTC') }}</time>)
+                    &nbsp;
+                    <svg class="icon icon-sync">
+                        <use xlink:href="{{ asset('assets/img/icons.svg') }}#icon-sync"></use>
+                    </svg>
+                    <time datetime="{{ post.modified | date('c', 'UTC') }}" itemprop="dateModified">{{ post.modified | date('F jS, Y', 'UTC') }}</time>
                 {% endif %}
-                in
-                {% for tag in post.tags %}
-                    <span itemprop="keywords">{{ tag }}</span>{% if loop.last == false %},{% else %}.{% endif %}
-                {% endfor %}
+
+                {% if post.tags %}
+                    &nbsp;
+                    <svg class="icon icon-tag">
+                        <use xlink:href="{{ asset('assets/img/icons.svg') }}#icon-tag"></use>
+                    </svg>
+                    {% for tag in post.tags %}
+                        <span itemprop="keywords">{{ tag }}</span>{% if loop.last == false %},{% else %}.{% endif %}
+                    {% endfor %}
+                {% endif %}
             </div>
             <hr/>
         </header>
@@ -34,17 +47,26 @@
                 <li class="list-inline-item">Share this article:</li>
                 <li class="list-inline-item">
                     <a href="http://twitter.com/share?url=https://xtreamwayz.com{{ path('blog.post', {'id': post.id}) }}&amp;text={{ post.title | url_encode }}" title="Share on Twitter" target="_blank">
-                        <i class="icon icon-twitter-square"></i> Twitter
+                        <svg class="icon icon-twitter-square">
+                            <use xlink:href="{{ asset('assets/img/icons.svg') }}#icon-twitter-square"></use>
+                        </svg>
+                        Twitter
                     </a>
                 </li>
                 <li class="list-inline-item">
                     <a href="http://www.facebook.com/sharer.php?u=https://xtreamwayz.com{{ path('blog.post', {'id': post.id}) }}&amp;t={{ post.title | url_encode }}" title="Share on Facebook" target="_blank">
-                        <i class="icon icon-facebook-square"></i> Facebook
+                        <svg class="icon icon-facebook-square">
+                            <use xlink:href="{{ asset('assets/img/icons.svg') }}#icon-facebook-square"></use>
+                        </svg>
+                        Facebook
                     </a>
                 </li>
                 <li class="list-inline-item">
                     <a href="https://plus.google.com/share?hl=en&amp;url=https://xtreamwayz.com{{ path('blog.post', {'id': post.id}) }}&amp;title={{ post.title | url_encode }}" title="Share on Google+" target="_blank">
-                        <i class="icon icon-google-plus-square"></i> Google+
+                        <svg class="icon icon-google-plus-square">
+                            <use xlink:href="{{ asset('assets/img/icons.svg') }}#icon-google-plus-square"></use>
+                        </svg>
+                        Google+
                     </a>
                 </li>
             </ul>
