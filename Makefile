@@ -55,6 +55,8 @@ build: clean
 	mkdir -p public/assets/css
 	mkdir -p public/assets/img
 	mkdir -p public/assets/js
+	$(UGLIFYJS) node_modules/svgxuse/svgxuse.js \
+	            --compress --mangle --screw-ie8 --output public/assets/js/core.min.js
 	$(SASS) resources/public/scss/core.scss data/build/core.css
 	$(POSTCSS) --use autoprefixer --autoprefixer.browsers "last 2 versions" \
 	           --output data/build/core.prefixed.css data/build/core.css

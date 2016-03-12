@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.2",
-    "jquery": "^3.0.0-beta1"
+    "jquery": "^3.0.0-beta1",
+    "svgxuse": "^1.1.14"
   }
 }
