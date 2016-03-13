@@ -13,9 +13,8 @@ namespace PHPSTORM_META
 {
     $STATIC_METHOD_TYPES = [
         \Interop\Container\ContainerInterface::get('') => [
-            "cache" instanceof \Stash\Pool,
-            "logger" instanceof \Monolog\Logger,
-            "" == "@",
+            'config' instanceof \ArrayObject,
+            '' == '@',
         ],
     ];
 }
