@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'debug' => false,
+    'debug' => true,
 
-    'config_cache_enabled' => true,
+    'config_cache_enabled' => false,
 
     'twig' => [
         'globals' => [
@@ -15,12 +15,12 @@ return [
 
     'mail' => [
         'transport' => [
-            'debug'   => false,
-            'class'   => Zend\Mail\Transport\Sendmail::class,
+            'debug'   => true,
+            'class'   => Zend\Mail\Transport\InMemory::class,
             'options' => [],
         ],
-        'to'        => '', // Email address to send the contact emails to
-        'from'      => '', // Email address to send the contact emails from
+        'to'        => 'me@example.com', // Email address to send the contact emails to
+        'from'      => 'someone@example.com', // Email address to send the contact emails from
     ],
 
     'session' => [

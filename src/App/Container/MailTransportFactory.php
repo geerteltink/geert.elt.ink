@@ -20,7 +20,7 @@ class MailTransportFactory
         $class = $config['class'];
         $options = $config['options'];
         switch ($class) {
-            case Transport\SendMail::class:
+            case Transport\Sendmail::class:
             case 'sendmail':
                 return new Transport\Sendmail();
 
