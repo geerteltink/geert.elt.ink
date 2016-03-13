@@ -28,7 +28,7 @@ You may not reuse anything therein without permission:
 
 * [data/posts/](/data/posts)
 * [resources/public/img/](resources/public/img)
-* [public/img/](public/img)
+* [public/assets/img/](public/assets/img)
 
 All other files and directories are licensed under the [MIT](http://www.opensource.org/licenses/mit-license.php)
 unless explicitly stated.
