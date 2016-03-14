@@ -21,8 +21,8 @@ class SessionMiddlewareFactory implements FactoryInterface
             $options['signature_key'],
             $options['verification_key'],
             SetCookie::create($options['cookie_name'])
-                     ->withSecure($options['cookie_secure'])
-                     ->withHttpOnly(true),
+                ->withSecure($options['cookie_secure'])
+                ->withHttpOnly(true),
             new Parser(),
             $options['expiration_time']
         );

@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Action;
+namespace App\Frontend\Action;
 
+use App\Domain\Post\PostRepository;
 use Doctrine\Common\Cache\Cache;
-use Domain\Post\PostRepository;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Zend\Diactoros\Response\HtmlResponse;
@@ -57,7 +57,7 @@ class BlogXmlFeedAction
         $response->getBody()->write($feed);
 
         return $response->withHeader('Content-Type', 'application/atom+xml')
-                        ->withHeader('Cache-Control', ['public', 'max-age=3600']);
+            ->withHeader('Cache-Control', ['public', 'max-age=3600']);
     }
 
     public function generateXmlFeed()
@@ -102,6 +102,10 @@ class BlogXmlFeedAction
 
     /**
      * @param string $route
+     * @param array  $params
+     * @param bool   $absoluteUrl
+     *
+     * @return string
      */
     public function generateUrl($route = null, array $params = [], $absoluteUrl = false)
     {
@@ -116,6 +120,8 @@ class BlogXmlFeedAction
 
     /**
      * @param string $path
+     *
+     * @return string
      */
     public function generateServerUrl($path = null)
     {

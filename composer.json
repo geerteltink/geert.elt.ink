@@ -35,6 +35,16 @@
         "squizlabs/php_codesniffer": "^2.3",
         "filp/whoops": "^2.0"
     },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AppTest\\": "test/"
+        }
+    },
     "scripts": {
         "check": [
             "@cs",
@@ -43,17 +53,5 @@
         "cs": "php vendor/squizlabs/php_codesniffer/scripts/phpcs",
         "test": "php vendor/phpunit/phpunit/phpunit --no-coverage",
         "coverage": "phpdbg -qrr vendor/phpunit/phpunit/phpunit"
-    },
-    "autoload": {
-        "psr-4": {
-            "App\\": "src/App/",
-            "Domain\\": "src/Domain/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "AppTest\\": "test/AppTest/",
-            "DomainTest\\": "test/DomainTest/"
-        }
     }
 }

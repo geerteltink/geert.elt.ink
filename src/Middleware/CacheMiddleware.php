@@ -42,11 +42,6 @@ class CacheMiddleware implements MiddlewareInterface
         return $response;
     }
 
-    private function getCacheKey(Request $request)
-    {
-        return 'http-cache:' . $request->getUri()->getPath();
-    }
-
     private function getCachedResponse(Request $request, Response $response)
     {
         if ('GET' !== $request->getMethod()) {
@@ -66,6 +61,11 @@ class CacheMiddleware implements MiddlewareInterface
         return $response;
     }
 
+    private function getCacheKey(Request $request)
+    {
+        return 'http-cache:' . $request->getUri()->getPath();
+    }
+
     private function cacheResponse(Request $request, Response $response)
     {
         if ('GET' !== $request->getMethod() || !$response->hasHeader('Cache-Control')) {
@@ -80,14 +80,14 @@ class CacheMiddleware implements MiddlewareInterface
 
         foreach ($cacheControl as $value) {
             $parts = explode('=', $value);
-            if (count($parts) == 2 && 'max-age' === $parts[0]) {
+            if (count($parts) === 2 && 'max-age' === $parts[0]) {
                 $this->cache->save(
                     $this->getCacheKey($request),
                     [
                         'headers' => $response->getHeaders(),
-                        'body'    => (string)$response->getBody(),
+                        'body'    => (string) $response->getBody(),
                     ],
-                    intval($parts[1])
+                    (int) $parts[1]
                 );
 
                 return;

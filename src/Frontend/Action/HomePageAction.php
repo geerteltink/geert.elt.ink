@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Action;
+namespace App\Frontend\Action;
 
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -26,7 +26,7 @@ class HomePageAction
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $next = null)
     {
         return new HtmlResponse($this->template->render('app::home-page'), 200, [
-            'Cache-Control' => ['public', 'max-age=3600']
+            'Cache-Control' => ['public', 'max-age=3600'],
         ]);
     }
 }

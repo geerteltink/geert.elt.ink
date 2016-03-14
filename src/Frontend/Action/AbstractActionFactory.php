@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Action;
+namespace App\Frontend\Action;
 
 use Interop\Container\ContainerInterface;
 use Interop\Container\Exception\ContainerException;
@@ -30,7 +30,7 @@ class AbstractActionFactory implements AbstractFactoryInterface
         $reflection = new ReflectionClass($requestedName);
         // Get the constructor
         $constructor = $reflection->getConstructor();
-        if (is_null($constructor)) {
+        if (null === $constructor) {
             // There is no constructor, just return a new class
             return new $requestedName;
         }
@@ -60,7 +60,7 @@ class AbstractActionFactory implements AbstractFactoryInterface
     public function canCreate(ContainerInterface $container, $requestedName)
     {
         // Only accept Action classes
-        if (substr($requestedName, -6) == 'Action') {
+        if (substr($requestedName, -6) === 'Action') {
             return true;
         }
 

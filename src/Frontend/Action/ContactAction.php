@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Action;
+namespace App\Frontend\Action;
 
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -72,10 +72,10 @@ class ContactAction
             // Create the message
             $message = new Message();
             $message->setFrom($this->config['from'])
-                    ->setReplyTo($data['email'], $data['name'])
-                    ->setTo($this->config['to'])
-                    ->setSubject('[xtreamwayz-contact] ' . $data['subject'])
-                    ->setBody($data['body']);
+                ->setReplyTo($data['email'], $data['name'])
+                ->setTo($this->config['to'])
+                ->setSubject('[xtreamwayz-contact] ' . $data['subject'])
+                ->setBody($data['body']);
 
             $this->mailTransport->send($message);
 

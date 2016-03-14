@@ -9,7 +9,4 @@ $dependencies = $config['dependencies'];
 // Inject config as a service
 $dependencies['services']['config'] = $config;
 
-// Build container
-$container = new ServiceManager($dependencies);
-
-return $container;
+return new ServiceManager($dependencies);

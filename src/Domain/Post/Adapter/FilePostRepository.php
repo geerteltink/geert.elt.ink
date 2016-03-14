@@ -1,9 +1,9 @@
 <?php
 
-namespace Domain\Post\Adapter;
+namespace App\Domain\Post\Adapter;
 
-use Domain\Post\Post;
-use Domain\Post\PostRepository;
+use App\Domain\Post\Post;
+use App\Domain\Post\PostRepository;
 use Michelf\MarkdownExtra as MarkdownParser;
 use Symfony\Component\Yaml\Parser as YamlParser;
 use Zend\Stdlib\Glob;

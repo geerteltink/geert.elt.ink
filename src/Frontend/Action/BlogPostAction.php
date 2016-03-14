@@ -1,26 +1,23 @@
 <?php
 
-namespace App\Action;
+namespace App\Frontend\Action;
 
-use Doctrine\Common\Cache\Cache;
-use Domain\Post\PostRepository;
+use App\Domain\Post\PostRepository;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Zend\Diactoros\Response\HtmlResponse;
+use Zend\Expressive\Router;
 use Zend\Expressive\Template\TemplateRendererInterface;
 
-class BlogIndexAction
+class BlogPostAction
 {
     private $template;
 
-    private $cache;
-
     private $postRepository;
 
-    public function __construct(TemplateRendererInterface $template, Cache $cache, PostRepository $postRepository)
+    public function __construct(TemplateRendererInterface $template, PostRepository $postRepository)
     {
         $this->template = $template;
-        $this->cache = $cache;
         $this->postRepository = $postRepository;
     }
 
@@ -33,16 +30,14 @@ class BlogIndexAction
      */
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $next = null)
     {
-        if ($this->cache->contains('blog:posts')) {
-            $posts = $this->cache->fetch('blog:posts');
-        } else {
-            $posts = array_reverse($this->postRepository->findAll());
-            $this->cache->save('blog:posts', $posts);
+        $post = $this->postRepository->find($request->getAttribute('id'));
+        if (!$post) {
+            return $next($request, $response->withStatus(404), 'Not found');
         }
 
         return new HtmlResponse(
-            $this->template->render('app::blog-index', [
-                'posts' => $posts,
+            $this->template->render('app::blog-post', [
+                'post' => $post,
             ]),
             200,
             [

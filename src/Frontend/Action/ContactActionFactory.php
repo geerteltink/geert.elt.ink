@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Action;
+namespace App\Frontend\Action;
 
 use Interop\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
