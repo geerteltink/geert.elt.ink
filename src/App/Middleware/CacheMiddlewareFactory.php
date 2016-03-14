@@ -12,7 +12,7 @@ class CacheMiddlewareFactory implements FactoryInterface
     {
         $config = $container->has('config') ? $container->get('config') : [];
         $debug = array_key_exists('debug', $config) ? (bool)$config['debug'] : false;
-        
+
         $cache = $container->get(Cache::class);
 
         return new CacheMiddleware($cache, $debug);
