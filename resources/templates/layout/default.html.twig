@@ -33,7 +33,12 @@
     <nav class="navbar navbar-light container" itemscope itemtype="http://schema.org/SiteNavigationElement">
         <ul class="nav navbar-nav">
             <li itemprop="url">
-                <a class="navbar-brand" href="{{ path('home') }}" itemprop="name">XTREAMWAYZ</a>
+                <a class="navbar-brand" href="{{ path('home') }}" itemprop="name">
+                    <svg class="icon icon-rss" style="color:#ff4f00;font-size:20px;">
+                        <use xlink:href="{{ asset('assets/img/icons.svg') }}#logo"></use>
+                    </svg>
+                    XTREAMWAYZ
+                </a>
             </li>
             <li class="nav-item" itemprop="url">
                 <a class="nav-link" href="{{ path('blog') }}" itemprop="name">Blog</a>

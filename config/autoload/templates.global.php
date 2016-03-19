@@ -23,7 +23,7 @@ return [
     'twig' => [
         'cache_dir'      => 'data/cache/twig',
         'assets_url'     => '/',
-        'assets_version' => '20160312',
+        'assets_version' => '20160319',
         'extensions'     => [],
         'globals'        => [],
     ],
