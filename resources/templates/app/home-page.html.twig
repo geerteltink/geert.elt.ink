@@ -13,12 +13,11 @@
                 <h2 class="media-heading">
                     Geert Eltink
                 </h2>
-                <p class="h5">
-                    Web developer since 1999.
-                    Challenged by refactoring legacy code.
-                    Loves to work with PHP and JavaScript.
-                    Available for hire.
-                </p>
+                <ul class="list-unstyled h5">
+                    <li>Web developer since 1999.</li>
+                    <li>Challenged by refactoring legacy code.</li>
+                    <li>Loves to work with PHP and JavaScript.</li>
+                </ul>
                 <p class="text-muted">
                     #full-stack #web #developer
                 </p>
@@ -30,8 +29,11 @@
         <div class="card-deck">
             <div class="card">
                 <div class="card-block">
-                    <h4 class="card-title">
-                        <i class="icon icon-design"></i> Design
+                    <h4 class="card-title text-xs-center">
+                        <svg class="icon icon-rss">
+                            <use xlink:href="{{ asset('assets/img/icons.svg') }}#icon-design"></use>
+                        </svg>
+                        Design
                     </h4>
                     <p class="card-text">
                         Great looking designs will be created which will meet your expectations. On a regular basis
@@ -42,8 +44,11 @@
             </div>
             <div class="card">
                 <div class="card-block">
-                    <h4 class="card-title">
-                        <i class="icon icon-code"></i> Development
+                    <h4 class="card-title text-xs-center">
+                        <svg class="icon icon-rss">
+                            <use xlink:href="{{ asset('assets/img/icons.svg') }}#icon-code"></use>
+                        </svg>
+                        Development
                     </h4>
                     <p class="card-text">
                         Whether it's the front-end, back-end or both, we will use the latest industry standards and
@@ -53,8 +58,11 @@
             </div>
             <div class="card">
                 <div class="card-block">
-                    <h4 class="card-title">
-                        <i class="icon icon-cloud-upload"></i> Deployment
+                    <h4 class="card-title text-xs-center">
+                        <svg class="icon icon-rss">
+                            <use xlink:href="{{ asset('assets/img/icons.svg') }}#icon-upload"></use>
+                        </svg>
+                        Deployment
                     </h4>
                     <p class="card-text">
                         We can deploy the code for you, setup the server for you and even maintain it. Also
