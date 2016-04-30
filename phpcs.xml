@@ -2,11 +2,10 @@
 <ruleset name="PSR2 coding standard">
     <description>PSR2 coding standard</description>
 
-    <!-- display progress -->
+    <!-- settings -->
     <arg value="p"/>
-    <arg name="colors"/>
 
-    <!-- inherit rules from: -->
+    <!-- rules -->
     <rule ref="PSR2"/>
     <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
     <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace">
