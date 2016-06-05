@@ -27,7 +27,6 @@
         "symfony/yaml": "^3.0",
         "doctrine/cache": "^1.6",
         "monolog/monolog": "^1.17",
-        "phing/phing": "^2.12",
         "xtreamwayz/html-form-validator": "1.0.x-dev"
     },
     "require-dev": {
