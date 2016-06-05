@@ -50,6 +50,7 @@ build: clean
 	cp resources/public/img/* public/assets/img/
 
 test:
+	composer validate --no-check-publish
 	vendor/bin/phpcs
 	vendor/bin/phpunit --report-useless-tests
 
