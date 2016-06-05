@@ -9,8 +9,13 @@
     "url": "git+https://github.com/xtreamwayz/xtreamwayz.com.git"
   },
   "dependencies": {
+    "autoprefixer": "^6.3.6",
     "bootstrap": "^4.0.0-alpha.2",
-    "jquery": "^3.0.0-beta1",
-    "svgxuse": "^1.1.14"
+    "jquery": "^3.0.0-rc1",
+    "node-sass": "^3.7.0",
+    "postcss-cli": "^2.5.2",
+    "svgxuse": "^1.1.14",
+    "uglify-js": "^2.6.2",
+    "uglifycss": "0.0.20"
   }
 }
