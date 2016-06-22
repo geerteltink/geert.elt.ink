@@ -2,7 +2,7 @@
 
 namespace App\Frontend\Action;
 
-use App\Domain\Post\PostRepository;
+use App\Domain\Post\PostRepositoryInterface;
 use Doctrine\Common\Cache\Cache;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -23,7 +23,7 @@ class BlogXmlFeedAction
 
     public function __construct(
         Cache $cache,
-        PostRepository $postRepository,
+        PostRepositoryInterface $postRepository,
         UrlHelper $urlHelper,
         ServerUrlHelper $serverUrlHelper
     ) {

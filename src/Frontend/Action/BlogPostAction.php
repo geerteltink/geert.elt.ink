@@ -2,7 +2,7 @@
 
 namespace App\Frontend\Action;
 
-use App\Domain\Post\PostRepository;
+use App\Domain\Post\PostRepositoryInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Zend\Diactoros\Response\HtmlResponse;
@@ -14,9 +14,9 @@ class BlogPostAction
 
     private $postRepository;
 
-    public function __construct(TemplateRendererInterface $template, PostRepository $postRepository)
+    public function __construct(TemplateRendererInterface $template, PostRepositoryInterface $postRepository)
     {
-        $this->template = $template;
+        $this->template       = $template;
         $this->postRepository = $postRepository;
     }
 
