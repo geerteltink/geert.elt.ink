@@ -6,7 +6,6 @@ use App\Domain\Post\PostRepository;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Zend\Diactoros\Response\HtmlResponse;
-use Zend\Expressive\Router;
 use Zend\Expressive\Template\TemplateRendererInterface;
 
 class BlogPostAction
