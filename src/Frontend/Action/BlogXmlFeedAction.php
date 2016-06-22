@@ -9,13 +9,10 @@ use Psr\Http\Message\ServerRequestInterface;
 use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Expressive\Helper\ServerUrlHelper;
 use Zend\Expressive\Helper\UrlHelper;
-use Zend\Expressive\Template\TemplateRendererInterface;
 use Zend\Feed\Writer\Feed;
 
 class BlogXmlFeedAction
 {
-    private $template;
-
     private $cache;
 
     private $postRepository;
@@ -25,16 +22,14 @@ class BlogXmlFeedAction
     private $serverUrlHelper;
 
     public function __construct(
-        TemplateRendererInterface $template,
         Cache $cache,
         PostRepository $postRepository,
         UrlHelper $urlHelper,
         ServerUrlHelper $serverUrlHelper
     ) {
-        $this->template = $template;
-        $this->cache = $cache;
-        $this->postRepository = $postRepository;
-        $this->urlHelper = $urlHelper;
+        $this->cache           = $cache;
+        $this->postRepository  = $postRepository;
+        $this->urlHelper       = $urlHelper;
         $this->serverUrlHelper = $serverUrlHelper;
     }
 
@@ -76,7 +71,7 @@ class BlogXmlFeedAction
         $feed->setId($this->generateUrl('home', [], true));
 
         $posts = array_slice(array_reverse($this->postRepository->findAll()), 0, 5);
-        /** @var \Domain\Post\Post $post */
+        /** @var \App\Domain\Post\Post $post */
         foreach ($posts as $post) {
             $entry = $feed->createEntry();
             $entry->setTitle($post->getTitle());
