@@ -2,7 +2,7 @@
 
 namespace App\Domain\Post;
 
-interface PostRepository
+interface PostRepositoryInterface
 {
     /**
      * @param $id

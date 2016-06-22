@@ -5,7 +5,7 @@ use Zend\Expressive;
 return [
     'dependencies' => [
         'invokables' => [
-            App\Domain\Post\PostRepository::class => App\Domain\Post\Adapter\FilePostRepository::class,
+            App\Domain\Post\PostRepositoryInterface::class => App\Domain\Post\Adapter\FilePostRepository::class,
         ],
         'factories'  => [
             Expressive\Application::class                 => Expressive\Container\ApplicationFactory::class,

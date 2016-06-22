@@ -3,12 +3,12 @@
 namespace App\Domain\Post\Adapter;
 
 use App\Domain\Post\Post;
-use App\Domain\Post\PostRepository;
+use App\Domain\Post\PostRepositoryInterface;
 use Michelf\MarkdownExtra as MarkdownParser;
 use Symfony\Component\Yaml\Parser as YamlParser;
 use Zend\Stdlib\Glob;
 
-class FilePostRepository implements PostRepository
+class FilePostRepository implements PostRepositoryInterface
 {
     /**
      * @var YamlParser

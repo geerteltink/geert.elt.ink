@@ -1,5 +1,6 @@
 {
     "name": "xtreamwayz/xtreamwayz.com",
+    "description": "Source code behind xtreamwayz.com",
     "type": "project",
     "homepage": "https://github.com/xtreamwayz/xtreamwayz.com",
     "license": "MIT",
