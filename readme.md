@@ -23,11 +23,11 @@ Other used packages:
 
 ## Application Architecture
 
-- Presentation -> Holds everything that interacts with other systems. (Controller, view, form, api)
-- Application -> The thin layer that connects clients from outside to your Domain through http requests, API...
-- Domain -> Business logic.
-- Infrastructure -> Consists if everything that exists independently of the app: external libs, db engine, messaging...
-- Factory -> Collection of factories.
+- src/Presentation -> Holds everything that interacts with other systems. (Controller, view, form, api)
+- src/Application -> The thin layer that connects clients from outside to your Domain through http requests, API...
+- src/Domain -> Business logic.
+- src/Infrastructure -> Consists of everything that exists independently of the app: external libs, db engine, messaging...
+- src/Factory -> Collection of factories.
 
 ## License and Copyright
 
