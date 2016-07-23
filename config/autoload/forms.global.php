@@ -1,11 +1,12 @@
 <?php
 
+use Xtreamwayz\HTMLFormValidator\InputFilterFactory;
+use Xtreamwayz\HTMLFormValidator\Validator;
+
 return [
     'dependencies' => [
-        'invokables' => [
-        ],
-        'factories'  => [
-            Zend\InputFilter\Factory::class => Xtreamwayz\HTMLFormValidator\InputFilterFactory::class,
+        'factories' => [
+            Zend\InputFilter\Factory::class => InputFilterFactory::class,
         ],
     ],
 
@@ -13,7 +14,7 @@ return [
         'validators' => [
             // Attach custom validators or override standard validators
             'invokables' => [
-                'recaptcha' => Xtreamwayz\HTMLFormValidator\Validator\RecaptchaValidator::class,
+                'recaptcha' => Validator\RecaptchaValidator::class,
             ],
         ],
         'filters'    => [

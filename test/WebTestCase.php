@@ -4,7 +4,6 @@ namespace AppTest;
 
 use Interop\Container\ContainerInterface;
 use Lcobucci\JWT\Builder;
-use Prophecy\Argument;
 use Psr\Http\Message\ResponseInterface;
 use PSR7Session\Http\SessionMiddleware;
 use PSR7Session\Session\DefaultSessionData;
@@ -42,10 +41,10 @@ class WebTestCase extends \PHPUnit_Framework_TestCase
         $config = require __DIR__ . '/../config/config.php';
 
         // Override config settings
-        $config['debug'] = true;
+        $config['debug']                = true;
         $config['config_cache_enabled'] = false;
 
-        $dependencies = $config['dependencies'];
+        $dependencies                       = $config['dependencies'];
         $dependencies['services']['config'] = $config;
 
         // Build container

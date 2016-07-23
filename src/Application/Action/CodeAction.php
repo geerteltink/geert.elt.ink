@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Frontend\Action;
+namespace App\Application\Action;
 
 use Doctrine\Common\Cache\Cache;
 use GuzzleHttp\Client as HttpClient;
@@ -18,7 +18,7 @@ class CodeAction
     public function __construct(TemplateRendererInterface $template, Cache $cache)
     {
         $this->template = $template;
-        $this->cache = $cache;
+        $this->cache    = $cache;
     }
 
     /**
@@ -33,8 +33,8 @@ class CodeAction
         if ($this->cache->contains('github:xtreamwayz-repos')) {
             $repositories = $this->cache->fetch('github:xtreamwayz-repos');
         } else {
-            $client = new HttpClient();
-            $apiResponse = $client->request(
+            $client       = new HttpClient();
+            $apiResponse  = $client->request(
                 'GET',
                 'https://api.github.com/users/xtreamwayz/repos',
                 [

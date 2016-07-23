@@ -10,15 +10,15 @@ class Post
 
     private $title;
 
-    private $summary = null;
+    private $summary;
 
-    private $content = null;
+    private $content;
 
     private $tags = [];
 
-    private $published = null;
+    private $published;
 
-    private $modified = null;
+    private $modified;
 
     public function __construct(
         $id,
@@ -29,11 +29,11 @@ class Post
         $published = 'now',
         $modified = null
     ) {
-        $this->id = $id;
-        $this->title = $title;
+        $this->id      = $id;
+        $this->title   = $title;
         $this->summary = $summary;
         $this->content = $content;
-        $this->tags = $tags;
+        $this->tags    = $tags;
 
         if (is_numeric($published)) {
             $this->published = (new DateTime())->setTimestamp($published);

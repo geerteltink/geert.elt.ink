@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Container;
+namespace App\Infrastructure\Log;
 
 use Interop\Container\ContainerInterface;
 use Monolog\Handler\SlackHandler;

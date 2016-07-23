@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Container;
+namespace App\Infrastructure\Mail;
 
 use Interop\Container\ContainerInterface;
 use RuntimeException;
@@ -15,9 +15,9 @@ class MailTransportFactory
      */
     public function __invoke(ContainerInterface $container)
     {
-        $config = $container->get('config');
-        $config = $config['mail']['transport'];
-        $class = $config['class'];
+        $config  = $container->get('config');
+        $config  = $config['mail']['transport'];
+        $class   = $config['class'];
         $options = $config['options'];
         switch ($class) {
             case Transport\Sendmail::class:

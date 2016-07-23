@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Container;
+namespace App\Infrastructure\Cache;
 
 use Doctrine\Common\Cache\FilesystemCache;
 use Interop\Container\ContainerInterface;

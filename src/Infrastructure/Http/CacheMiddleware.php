@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Middleware;
+namespace App\Infrastructure\Http;
 
 use Doctrine\Common\Cache\Cache;
 use Psr\Http\Message\ResponseInterface as Response;
@@ -73,7 +73,7 @@ class CacheMiddleware implements MiddlewareInterface
         }
 
         $cacheControl = $response->getHeader('Cache-Control');
-        $abortTokens = ['private', 'no-cache', 'no-store'];
+        $abortTokens  = ['private', 'no-cache', 'no-store'];
         if (count(array_intersect($abortTokens, $cacheControl)) > 0) {
             return;
         }
