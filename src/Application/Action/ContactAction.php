@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Frontend\Action;
+namespace App\Application\Action;
 
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -32,11 +32,11 @@ class ContactAction
         LoggerInterface $logger,
         array $config
     ) {
-        $this->template = $template;
+        $this->template           = $template;
         $this->inputFilterFactory = $inputFilterFactory;
-        $this->mailTransport = $mailTransport;
-        $this->logger = $logger;
-        $this->config = $config;
+        $this->mailTransport      = $mailTransport;
+        $this->logger             = $logger;
+        $this->config             = $config;
     }
 
     /**

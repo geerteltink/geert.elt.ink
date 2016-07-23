@@ -24,15 +24,16 @@ class FilePostRepository implements PostRepositoryInterface
 
     public function __construct()
     {
-        $this->yamlParser = new YamlParser();
+        $this->yamlParser     = new YamlParser();
         $this->markdownParser = new MarkdownParser();
+
         $this->markdownParser->code_class_prefix = 'language-';
 
         $this->regex = '~^('
-            .implode('|', array_map('preg_quote', ['---'])) # $matches[1] start separator
-            ."){1}[\r\n|\n]*(.*?)[\r\n|\n]+("               # $matches[2] between separators
-            .implode('|', array_map('preg_quote', ['---'])) # $matches[3] end separator
-            ."){1}[\r\n|\n]*(.*)$~s";                       # $matches[4] document content
+            . implode('|', array_map('preg_quote', ['---'])) # $matches[1] start separator
+            . "){1}[\r\n|\n]*(.*?)[\r\n|\n]+("               # $matches[2] between separators
+            . implode('|', array_map('preg_quote', ['---'])) # $matches[3] end separator
+            . "){1}[\r\n|\n]*(.*)$~s";                       # $matches[4] document content
     }
 
     /**
@@ -68,7 +69,7 @@ class FilePostRepository implements PostRepositoryInterface
         }
 
         $meta = trim($matches[2]) !== '' ? $this->yamlParser->parse(trim($matches[2])) : null;
-        $str = ltrim($matches[4]);
+        $str  = ltrim($matches[4]);
 
         return new Post(
             $meta['id'],

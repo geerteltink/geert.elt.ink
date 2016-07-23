@@ -3,9 +3,7 @@
 namespace AppTest\App;
 
 use AppTest\WebTestCase;
-use Prophecy\Argument;
 use Psr\Http\Message\ResponseInterface;
-use Zend\Diactoros\Response;
 
 class BlogPostsSmokeTest extends WebTestCase
 {

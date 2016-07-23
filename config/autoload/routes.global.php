@@ -1,15 +1,21 @@
 <?php
 
+use App\Application\Action;
+use Zend\Expressive\Router\FastRouteRouter;
+use Zend\Expressive\Router\RouterInterface;
+use Zend\ServiceManager\Factory\InvokableFactory;
+
 return [
     'dependencies' => [
-        'invokables'         => [
-            Zend\Expressive\Router\RouterInterface::class => Zend\Expressive\Router\FastRouteRouter::class,
+        'aliases'            => [
+            RouterInterface::class => FastRouteRouter::class,
         ],
         'factories'          => [
-            App\Frontend\Action\ContactAction::class => App\Frontend\Action\ContactActionFactory::class,
+            Action\ContactAction::class => Action\ContactActionFactory::class,
+            FastRouteRouter::class      => InvokableFactory::class,
         ],
         'abstract_factories' => [
-            App\Frontend\Action\AbstractActionFactory::class,
+            Action\AbstractActionFactory::class,
         ],
     ],
 
@@ -17,37 +23,37 @@ return [
         [
             'name'            => 'home',
             'path'            => '/',
-            'middleware'      => App\Frontend\Action\HomePageAction::class,
+            'middleware'      => Action\HomePageAction::class,
             'allowed_methods' => ['GET'],
         ],
         [
             'name'            => 'blog',
             'path'            => '/blog',
-            'middleware'      => App\Frontend\Action\BlogIndexAction::class,
+            'middleware'      => Action\BlogIndexAction::class,
             'allowed_methods' => ['GET'],
         ],
         [
             'name'            => 'blog.post',
             'path'            => '/blog/{id:[0-9a-zA-z\-]+}',
-            'middleware'      => App\Frontend\Action\BlogPostAction::class,
+            'middleware'      => Action\BlogPostAction::class,
             'allowed_methods' => ['GET'],
         ],
         [
             'name'            => 'feed.xml',
             'path'            => '/blog/feed.xml',
-            'middleware'      => App\Frontend\Action\BlogXmlFeedAction::class,
+            'middleware'      => Action\BlogXmlFeedAction::class,
             'allowed_methods' => ['GET'],
         ],
         [
             'name'            => 'code',
             'path'            => '/code',
-            'middleware'      => App\Frontend\Action\CodeAction::class,
+            'middleware'      => Action\CodeAction::class,
             'allowed_methods' => ['GET'],
         ],
         [
             'name'            => 'contact',
             'path'            => '/contact',
-            'middleware'      => App\Frontend\Action\ContactAction::class,
+            'middleware'      => Action\ContactAction::class,
             'allowed_methods' => ['GET', 'POST'],
         ],
     ],

@@ -21,6 +21,14 @@ Other used packages:
 - [phing/phing](https://github.com/phing/phing) for building and deployment.
 - [pure svg icons](https://icomoon.io/).
 
+## Application Architecture
+
+- Presentation -> Holds everything that interacts with other systems. (Controller, view, form, api)
+- Application -> The thin layer that connects clients from outside to your Domain through http requests, API...
+- Domain -> Business logic.
+- Infrastructure -> Consists if everything that exists independently of the app: external libs, db engine, messaging...
+- Factory -> Collection of factories.
+
 ## License and Copyright
 
 Following files, directories and their contents are copyrighted by Geert Eltink unless explicitly stated otherwise.

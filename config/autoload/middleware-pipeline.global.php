@@ -1,20 +1,26 @@
 <?php
 
+use App\Infrastructure\Http\CacheMiddleware;
+use App\Infrastructure\Http\CacheMiddlewareFactory;
+use App\Infrastructure\Http\SessionMiddlewareFactory;
+use App\Infrastructure\Log\ErrorLoggerMiddleware;
+use App\Infrastructure\Log\ErrorLoggerMiddlewareFactory;
+use PSR7Session\Http\SessionMiddleware;
 use Zend\Expressive\Container\ApplicationFactory;
 use Zend\Expressive\Helper;
+use Zend\ServiceManager\Factory\InvokableFactory;
 
 return [
     'dependencies'        => [
-        'invokables' => [
-            Helper\ServerUrlHelper::class => Helper\ServerUrlHelper::class,
-        ],
-        'factories'  => [
-            Helper\ServerUrlMiddleware::class           => Helper\ServerUrlMiddlewareFactory::class,
-            Helper\UrlHelperMiddleware::class           => Helper\UrlHelperMiddlewareFactory::class,
-            Helper\UrlHelper::class                     => Helper\UrlHelperFactory::class,
-            App\Middleware\CacheMiddleware::class       => App\Middleware\CacheMiddlewareFactory::class,
-            PSR7Session\Http\SessionMiddleware::class   => App\Middleware\SessionMiddlewareFactory::class,
-            App\Middleware\ErrorLoggerMiddleware::class => App\Middleware\ErrorLoggerMiddlewareFactory::class,
+        'factories' => [
+            Helper\ServerUrlHelper::class     => InvokableFactory::class,
+            Helper\ServerUrlMiddleware::class => Helper\ServerUrlMiddlewareFactory::class,
+            Helper\UrlHelperMiddleware::class => Helper\UrlHelperMiddlewareFactory::class,
+            Helper\UrlHelper::class           => Helper\UrlHelperFactory::class,
+
+            CacheMiddleware::class       => CacheMiddlewareFactory::class,
+            SessionMiddleware::class     => SessionMiddlewareFactory::class,
+            ErrorLoggerMiddleware::class => ErrorLoggerMiddlewareFactory::class,
         ],
     ],
 
@@ -22,8 +28,7 @@ return [
     'middleware_pipeline' => [
         'always' => [
             'middleware' => [
-                // Middleware for bootstrapping, pre-conditions and modifications to outgoing responses
-                PSR7Session\Http\SessionMiddleware::class,
+                SessionMiddleware::class,
                 Helper\ServerUrlMiddleware::class,
             ],
             'priority'   => PHP_INT_MAX,
@@ -32,9 +37,8 @@ return [
         'routing' => [
             'middleware' => [
                 ApplicationFactory::ROUTING_MIDDLEWARE,
-                App\Middleware\CacheMiddleware::class,
+                CacheMiddleware::class,
                 Helper\UrlHelperMiddleware::class,
-                // Routing based Middleware for authentication, validation, etc.
                 ApplicationFactory::DISPATCH_MIDDLEWARE,
             ],
             'priority'   => 1,
@@ -42,7 +46,7 @@ return [
 
         'error' => [
             'middleware' => [
-                App\Middleware\ErrorLoggerMiddleware::class,
+                ErrorLoggerMiddleware::class,
             ],
             'error'      => true,
             'priority'   => -10000,

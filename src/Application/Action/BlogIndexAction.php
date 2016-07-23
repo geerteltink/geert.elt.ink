@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Frontend\Action;
+namespace App\Application\Action;
 
 use App\Domain\Post\PostRepositoryInterface;
 use Doctrine\Common\Cache\Cache;
@@ -22,8 +22,8 @@ class BlogIndexAction
         Cache $cache,
         PostRepositoryInterface $postRepository
     ) {
-        $this->template = $template;
-        $this->cache = $cache;
+        $this->template       = $template;
+        $this->cache          = $cache;
         $this->postRepository = $postRepository;
     }
 

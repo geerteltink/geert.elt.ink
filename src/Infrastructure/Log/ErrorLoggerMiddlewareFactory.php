@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Middleware;
+namespace App\Infrastructure\Log;
 
 use Interop\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;

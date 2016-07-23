@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Frontend\Action;
+namespace App\Application\Action;
 
 use Interop\Container\ContainerInterface;
 use Interop\Container\Exception\ContainerException;
@@ -36,7 +36,7 @@ class AbstractActionFactory implements AbstractFactoryInterface
         }
 
         // Get the parameters
-        $parameters = $constructor->getParameters();
+        $parameters   = $constructor->getParameters();
         $dependencies = [];
         foreach ($parameters as $parameter) {
             // Get the parameter class

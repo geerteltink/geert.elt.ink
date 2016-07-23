@@ -4,9 +4,7 @@ namespace AppTest\App;
 
 use AppTest\WebTestCase;
 use DOMDocument;
-use Prophecy\Argument;
 use Psr\Http\Message\ResponseInterface;
-use Zend\Diactoros\Response;
 
 class BlogXmlFeedActionTest extends WebTestCase
 {
