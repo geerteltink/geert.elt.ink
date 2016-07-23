@@ -1,9 +1,46 @@
-{% extends '@layout/default.html.twig' %}
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>{{ status }} {{ reason }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        body{font-family:"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif;background-color:#111}
+        .background{position:absolute;top:0;right:0;bottom:0;left:0}
+        .background-error{color:#191919;z-index:1;font-weight:700;font-size:50vw;text-shadow:0 1px 1px #555}
+        .background-explanation{color:#aaa;z-index:10}
+        .background-explanation a,.background-explanation h2{color:#f5f5f5}
+        .background-explanation h2{font-size:4vw}
+        .flex-container{display:-webkit-box;display:-ms-flexbox;display:flex;height:100%;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+        .flex-row{width:auto}
+        .flex-item{text-align:center}
+    </style>
+</head>
+<body>
+    <div class="background background-error">
+        <div class="flex-container">
+            <div class="flex-row">
+                <div class="flex-item">
+                    {{ status }}
+                </div>
+            </div>
+        </div>
+    </div>
 
-{% block title %}{{ status }} {{ reason }}{% endblock %}
-
-{% block content %}
-    <h1>Oops!</h1>
-    <h2>This is awkward.</h2>
-    <p>We encountered a {{ status }} {{ reason }} error.</p>
-{% endblock %}
+    <div class="background background-explanation">
+        <div class="flex-container">
+            <div class="flex-row">
+                <h1 class="flex-item">{{ status }} {{ reason }}</h1>
+                <h2 class="flex-item">Oops! The server is having troubles.</h2>
+                <p class="flex-item">
+                    We’re aware of the problem and are fixing it. Thanks for your patience.
+                </p>
+                <p class="flex-item">
+                    In the mean time, check out our <a href="{{ path('home') }}">home page</a> instead.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
