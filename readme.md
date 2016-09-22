@@ -1,8 +1,8 @@
 # xtreamwayz.com
 
 [![Build Status](https://travis-ci.org/xtreamwayz/xtreamwayz.com.svg?branch=master)](https://travis-ci.org/xtreamwayz/xtreamwayz.com)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/xtreamwayz/xtreamwayz.com/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/xtreamwayz/xtreamwayz.com/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/xtreamwayz/xtreamwayz.com/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/xtreamwayz/xtreamwayz.com/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/xtreamwayz/xtreamwayz.com/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/xtreamwayz/xtreamwayz.com/?branch=master)
 
 xtreamwayz.com is powered by [Expressive](https://github.com/zendframework/zend-expressive) and
 [PSR-7](http://www.php-fig.org/psr/psr-7/) based

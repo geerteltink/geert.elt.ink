@@ -7,23 +7,20 @@ cache:
     - $HOME/.composer/cache
     - vendor
 
-matrix:
-  fast_finish: true
-  include:
-    - php: 7.0
-      env:
-        - EXECUTE_CS_CHECK=true
-
-before_install:
-  - composer self-update
+php:
+  - 7.0
 
 install:
   - travis_retry composer install --no-interaction --prefer-source
   - composer info -i
 
 script:
-  - vendor/bin/phpcs
-  - vendor/bin/phpunit --disallow-test-output --report-useless-tests --coverage-clover build/logs/clover.xml
+  - ./vendor/bin/phpcs
+  - ./vendor/bin/phpunit --disallow-test-output --report-useless-tests --coverage-clover ./clover.xml
+
+after_script:
+  - wget https://scrutinizer-ci.com/ocular.phar
+  - php ocular.phar code-coverage:upload --format=php-clover ./clover.xml
 
 notifications:
   email: false
