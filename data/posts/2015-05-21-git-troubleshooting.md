@@ -10,6 +10,7 @@ tags:
     - git
 ---
 
+* [Force LF line endings instead of CR+LF](#force-lf-line-endings)
 * [Stage changes and new files](#stage-changes-and-new-files)
 * [Commit changes](#commit-changes)
 * [Fix last commit](#fix-last-commit)
@@ -25,6 +26,22 @@ tags:
 * [Resetting files](#resetting-files)
 * [Cleanup tracked files (after editing .gitignore)](#cleanup-tracked-files)
 * [Trigger hooks and ci tests](#trigger-hooks-and-ci-tests)
+
+## Force LF line endings instead of CR+LF {#force-lf-line-endings}
+
+Although there tons of different opinions on stackoverflow, this is the one that works for me:
+
+```bash
+git config --global core.eol lf
+git config --global core.autocrlf input
+```
+
+If you have an existing repo already checked out with the CRLF line endings, you can fix it easily:
+
+```bash
+git rm -rf --cached .
+git reset --hard HEAD
+```
 
 ## Stage changes and new files {#stage-changes-and-new-files}
 
