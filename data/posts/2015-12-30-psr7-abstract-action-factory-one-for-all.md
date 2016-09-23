@@ -5,7 +5,7 @@ summary: Use one abstract action factory for all PSR-7 actions.
 draft: false
 public: true
 published: 2015-12-30T09:54:00+01:00
-modified: 2016-02-24T08:34:00+01:00
+modified: 2016-09-23T16:53:00+01:00
 tags:
     - zend-expressive
     - dependency injection
@@ -25,7 +25,8 @@ it. I was pretty happy with the solution and then I got this
     <footer class="blockquote-footer">Abdul Malik Ikhsan (@samsonasik)</footer>
 </blockquote>
 
-After some more info I decided to try it out and it's actually pretty brilliant.
+After some more research I decided to try it out and it's actually pretty brilliant. Zend ServiceManger 3 is needed
+for this.
 
 ```php
 <?php
@@ -119,6 +120,3 @@ have a good performance.
 
 At the time of writing this solution is used for this site and it's
 [open source](https://github.com/xtreamwayz/xtreamwayz.com).
-
-This example is based on zend-servicemanager 3, which is still in development. The stable 2.x version has it as well
-and you can do the same with some minor changes.
