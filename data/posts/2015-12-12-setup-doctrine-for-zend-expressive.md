@@ -5,19 +5,28 @@ summary: Build a Zend Expressive Doctrine factory and cache driver factory.
 draft: false
 public: true
 published: 2015-12-12T12:00:00+01:00
-modified: 2016-02-02T21:41:00+01:00
+modified: 2016-10-05T21:02:00+01:00
 tags:
     - zend expressive
     - doctrine
     - caching
 ---
 
+<blockquote class="blockquote">
+    <p class="m-b-0">
+        *NOTE:* This post was written in the time there was no good solution available to add Doctrine to Expressive.
+        Fortunately there is
+        <a href="https://github.com/DASPRiD/container-interop-doctrine">container-interop-doctrine</a>. 
+        It makes setting up Doctrine a lot easier.
+    </p>
+</blockquote>
+
 You want to use doctrine in your Zend Expressive project but don't know where to start? Here is how to do it. This
 guide uses a doctrine factory and a separate cache factory so you can use the doctrine cache for other purposes too.
 
 ## Installing Doctrine
 
-Thanx to composer this is really easy.
+Thanks to composer this is easy.
 
 ```bash
 $ composer require doctrine/orm
