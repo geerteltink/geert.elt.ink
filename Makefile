@@ -16,7 +16,9 @@ init: init-dir
 	fi;
 
 init-dir:
-	mkdir -p data/{cache,import,log}
+	mkdir -p data/cache
+	mkdir -p data/import
+	mkdir -p data/log
 	mkdir -p public/uploads
 
 update:
