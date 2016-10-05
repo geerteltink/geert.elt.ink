@@ -5,7 +5,7 @@ summary: Easily add code completion for the container-interop in PhpStorm.
 draft: false
 public: true
 published: 2015-12-14T11:00:00+01:00
-modified: false
+modified: 2016-10-05T22:06:00+01:00
 tags:
     - phpstorm
     - container-interop
@@ -37,8 +37,13 @@ namespace PHPSTORM_META
 {
     $STATIC_METHOD_TYPES = [
         \Interop\Container\ContainerInterface::get('') => [
-            "logger" instanceof \Monolog\Logger,
-            "" == "@",
+            'logger' instanceof \Psr\Log\LoggerInterface,
+            '' == '@',
+        ],
+   
+        // Add code completion for PSR-7 requests attributes like PSR-7 Storage-less HTTP Session 
+        \Psr\Http\Message\ServerRequestInterface::getAttribute('') => [
+            \PSR7Session\Http\SessionMiddleware::SESSION_ATTRIBUTE instanceof \PSR7Session\Session\SessionInterface,
         ],
     ];
 }
@@ -52,7 +57,7 @@ $template->render('app::home-page');
 ```
 
 This does not work for custom strings like ``"logger"``. You need to add those manually like this:
-``"logger" instanceof \Monolog\Logger``. Once it is added you also have auto completion for that:
+``"logger" instanceof \Psr\Log\LoggerInterface``. Once it is added you also have auto completion for that:
 
 ```php
 $logger = $this->container->get('logger');

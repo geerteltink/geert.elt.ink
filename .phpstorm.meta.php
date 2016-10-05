@@ -14,7 +14,12 @@ namespace PHPSTORM_META
     $STATIC_METHOD_TYPES = [
         \Interop\Container\ContainerInterface::get('') => [
             'config' instanceof \ArrayObject,
+            'logger' instanceof \Psr\Log\LoggerInterface,
             '' == '@',
+        ],
+
+        \Psr\Http\Message\ServerRequestInterface::getAttribute('') => [
+            \PSR7Session\Http\SessionMiddleware::SESSION_ATTRIBUTE instanceof \PSR7Session\Session\SessionInterface,
         ],
     ];
 }
