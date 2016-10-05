@@ -10,6 +10,8 @@
                 {{ post.title }}
             </h1>
             <div class="article-meta">
+                <a href="#disqus_thread" data-disqus-identifier="blog:{{ post.id }}">Comments</a> &nbsp;
+
                 <svg class="icon icon-clock">
                     <use xlink:href="{{ asset('assets/img/icons.svg') }}#icon-clock"></use>
                 </svg>
@@ -22,7 +24,8 @@
                     <svg class="icon icon-sync">
                         <use xlink:href="{{ asset('assets/img/icons.svg') }}#icon-sync"></use>
                     </svg>
-                    <time datetime="{{ post.modified | date('c', 'UTC') }}" itemprop="dateModified">{{ post.modified | date('F jS, Y', 'UTC') }}</time>
+                    <time datetime="{{ post.modified | date('c', 'UTC') }}"
+                          itemprop="dateModified">{{ post.modified | date('F jS, Y', 'UTC') }}</time>
                 {% endif %}
 
                 {% if post.tags %}
@@ -35,7 +38,7 @@
                     {% endfor %}
                 {% endif %}
             </div>
-            <hr/>
+            <hr />
         </header>
 
         <div class="content" itemprop="text">
@@ -46,7 +49,8 @@
             <ul class="list-inline share-social">
                 <li class="list-inline-item">Share this article:</li>
                 <li class="list-inline-item">
-                    <a href="http://twitter.com/share?url=https://xtreamwayz.com{{ path('blog.post', {'id': post.id}) }}&amp;text={{ post.title | url_encode }}" title="Share on Twitter" target="_blank">
+                    <a href="http://twitter.com/share?url=https://xtreamwayz.com{{ path('blog.post', {'id': post.id}) }}&amp;text={{ post.title | url_encode }}"
+                       title="Share on Twitter" target="_blank">
                         <svg class="icon icon-twitter-square">
                             <use xlink:href="{{ asset('assets/img/icons.svg') }}#icon-twitter-square"></use>
                         </svg>
@@ -54,7 +58,8 @@
                     </a>
                 </li>
                 <li class="list-inline-item">
-                    <a href="http://www.facebook.com/sharer.php?u=https://xtreamwayz.com{{ path('blog.post', {'id': post.id}) }}&amp;t={{ post.title | url_encode }}" title="Share on Facebook" target="_blank">
+                    <a href="http://www.facebook.com/sharer.php?u=https://xtreamwayz.com{{ path('blog.post', {'id': post.id}) }}&amp;t={{ post.title | url_encode }}"
+                       title="Share on Facebook" target="_blank">
                         <svg class="icon icon-facebook-square">
                             <use xlink:href="{{ asset('assets/img/icons.svg') }}#icon-facebook-square"></use>
                         </svg>
@@ -62,7 +67,8 @@
                     </a>
                 </li>
                 <li class="list-inline-item">
-                    <a href="https://plus.google.com/share?hl=en&amp;url=https://xtreamwayz.com{{ path('blog.post', {'id': post.id}) }}&amp;title={{ post.title | url_encode }}" title="Share on Google+" target="_blank">
+                    <a href="https://plus.google.com/share?hl=en&amp;url=https://xtreamwayz.com{{ path('blog.post', {'id': post.id}) }}&amp;title={{ post.title | url_encode }}"
+                       title="Share on Google+" target="_blank">
                         <svg class="icon icon-google-plus-square">
                             <use xlink:href="{{ asset('assets/img/icons.svg') }}#icon-google-plus-square"></use>
                         </svg>
@@ -71,42 +77,46 @@
                 </li>
             </ul>
 
-            <hr/>
+            <hr />
             <div id="disqus_thread"></div>
         </footer>
     </article>
 {% endblock %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/github-gist.min.css" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/github-gist.min.css" />
 {% endblock %}
 
 {% block javascript %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 
+    <script id="dsq-count-scr" src="https://xtreamwayz.disqus.com/count.js" async></script>
     <script>
-         var disqus_config = function () {
+        var disqus_config = function() {
             this.page.url = "https://xtreamwayz.com{{ path('blog.post', {'id': post.id}) }}";
             this.page.identifier = 'blog:{{ post.id }}';
-         };
+            this.page.title = '{{ post.title }}';
+        };
         (function() {
             var d = document, s = d.createElement('script');
-            s.src = '//xtreamwayz.disqus.com/embed.js';
+            s.src = 'https://xtreamwayz.disqus.com/embed.js';
             s.setAttribute('data-timestamp', +new Date());
             (d.head || d.body).appendChild(s);
         })();
     </script>
 
     <script type="text/javascript">
-        (function(){
+        (function() {
             var gists = document.getElementsByTagName('gist');
+
             function embed(id, file, i, tag) {
-                window['gist_embed_'+i] = function(gist) {
+                window['gist_embed_' + i] = function(gist) {
                     console.log(gist);
-                    if (!document.getElementById('gist_css_'+id)) {
+                    if (!document.getElementById('gist_css_' + id)) {
                         var css = document.createElement('link');
-                        css.id = 'gist_css_'+id;
+                        css.id = 'gist_css_' + id;
                         css.rel = 'stylesheet';
                         css.href = gist.stylesheet;
                         document.head.appendChild(css);
@@ -115,20 +125,21 @@
                     tmp.innerHTML = gist.div;
                     tag.parentNode.replaceChild(tmp.firstChild, tag);
                 };
-                var url = 'https://gist.github.com/'+id+'.json?callback=gist_embed_'+i;
-                if(file) {
-                    url += '&file='+file;
+                var url = 'https://gist.github.com/' + id + '.json?callback=gist_embed_' + i;
+                if (file) {
+                    url += '&file=' + file;
                 }
                 var script = document.createElement('script');
                 script.type = 'text/javascript';
                 script.src = url;
                 document.head.appendChild(script);
             }
-            for(var i=0; i<gists.length; i++) {
+
+            for (var i = 0; i < gists.length; i++) {
                 var id = gists[i].getAttribute('data-id');
                 var file = gists[i].getAttribute('data-file');
-                if(id) {
-                    gists[i].innerHTML = '<a href="https://gist.github.com/'+id+'">Loading gist...</a>';
+                if (id) {
+                    gists[i].innerHTML = '<a href="https://gist.github.com/' + id + '">Loading gist...</a>';
                     embed(id, file, i, gists[i]);
                 }
             }
