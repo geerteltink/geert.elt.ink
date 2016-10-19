@@ -1,6 +1,6 @@
 <?php
 
-use App\Application\Action;
+use App\Http\Action;
 use Zend\Expressive\Router\FastRouteRouter;
 use Zend\Expressive\Router\RouterInterface;
 use Zend\ServiceManager\Factory\InvokableFactory;

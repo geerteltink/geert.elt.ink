@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Application\Action;
+namespace App\Http\Action;
 
 use Doctrine\Common\Cache\Cache;
 use GuzzleHttp\Client as HttpClient;

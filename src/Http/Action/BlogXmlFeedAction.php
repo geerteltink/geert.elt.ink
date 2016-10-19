@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Application\Action;
+namespace App\Http\Action;
 
 use App\Domain\Post\PostRepositoryInterface;
 use Doctrine\Common\Cache\Cache;
