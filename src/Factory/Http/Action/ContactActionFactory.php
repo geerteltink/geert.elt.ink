@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Action;
+namespace App\Factory\Http\Action;
 
+use App\Http\Action\ContactAction;
 use Interop\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
 use Zend\Expressive\Template\TemplateRendererInterface;

@@ -1,10 +1,10 @@
 <?php
 
+use App\Factory\Infrastructure\Http\CacheMiddlewareFactory;
+use App\Factory\Infrastructure\Http\SessionMiddlewareFactory;
+use App\Factory\Infrastructure\Log\ErrorLoggerMiddlewareFactory;
 use App\Infrastructure\Http\CacheMiddleware;
-use App\Infrastructure\Http\CacheMiddlewareFactory;
-use App\Infrastructure\Http\SessionMiddlewareFactory;
 use App\Infrastructure\Log\ErrorLoggerMiddleware;
-use App\Infrastructure\Log\ErrorLoggerMiddlewareFactory;
 use PSR7Session\Http\SessionMiddleware;
 use Zend\Expressive\Container\ApplicationFactory;
 use Zend\Expressive\Helper;

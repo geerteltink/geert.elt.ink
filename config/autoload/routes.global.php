@@ -11,11 +11,11 @@ return [
             RouterInterface::class => FastRouteRouter::class,
         ],
         'factories'          => [
-            Action\ContactAction::class => Action\ContactActionFactory::class,
+            Action\ContactAction::class => App\Factory\Http\Action\ContactActionFactory::class,
             FastRouteRouter::class      => InvokableFactory::class,
         ],
         'abstract_factories' => [
-            Action\AbstractActionFactory::class,
+            App\Http\AbstractActionFactory::class,
         ],
     ],
 

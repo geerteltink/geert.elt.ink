@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Action;
+namespace App\Http;
 
 use Interop\Container\ContainerInterface;
 use Interop\Container\Exception\ContainerException;

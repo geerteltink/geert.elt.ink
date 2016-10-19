@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Infrastructure\Http;
+namespace App\Factory\Infrastructure\Http;
 
 use Dflydev\FigCookies\SetCookie;
 use Interop\Container\ContainerInterface;

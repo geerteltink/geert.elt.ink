@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Infrastructure\Log;
+namespace App\Factory\Infrastructure\Log;
 
+use App\Infrastructure\Log\ErrorLoggerMiddleware;
 use Interop\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
 use Zend\ServiceManager\Factory\FactoryInterface;

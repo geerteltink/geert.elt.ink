@@ -2,9 +2,9 @@
 
 use App\Domain\Post\Adapter\FilePostRepository;
 use App\Domain\Post\PostRepositoryInterface;
-use App\Infrastructure\Cache\CacheFactory;
-use App\Infrastructure\Log\LoggerFactory;
-use App\Infrastructure\Mail\MailTransportFactory;
+use App\Factory\Infrastructure\Cache\CacheFactory;
+use App\Factory\Infrastructure\Log\LoggerFactory;
+use App\Factory\Infrastructure\Mail\MailTransportFactory;
 use Zend\Expressive;
 use Zend\ServiceManager\Factory\InvokableFactory;
 

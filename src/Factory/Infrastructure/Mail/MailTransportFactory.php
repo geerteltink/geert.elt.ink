@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Infrastructure\Mail;
+namespace App\Factory\Infrastructure\Mail;
 
 use Interop\Container\ContainerInterface;
 use RuntimeException;
@@ -12,6 +12,7 @@ class MailTransportFactory
      * @param ContainerInterface $container
      *
      * @return Transport\TransportInterface
+     * @throws \RuntimeException
      */
     public function __invoke(ContainerInterface $container)
     {
