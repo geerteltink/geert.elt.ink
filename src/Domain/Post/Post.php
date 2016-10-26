@@ -66,7 +66,7 @@ class Post
 
         if (is_numeric($modified)) {
             $this->modified = (new DateTime())->setTimestamp($modified);
-        } elseif ($modified !== false || $modified !== null) {
+        } elseif ($modified !== false && $modified !== null) {
             $this->modified = new DateTime($modified);
         }
     }
