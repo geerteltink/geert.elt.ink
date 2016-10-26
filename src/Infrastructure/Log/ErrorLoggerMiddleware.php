@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace App\Infrastructure\Log;
 
 use Psr\Http\Message\ResponseInterface as Response;
@@ -16,7 +18,7 @@ class ErrorLoggerMiddleware implements ErrorMiddlewareInterface
         $this->logger = $logger;
     }
 
-    public function __invoke($error, Request $request, Response $response, callable $next = null)
+    public function __invoke($error, Request $request, Response $response, callable $next = null): Response
     {
         if ($error instanceof \Exception) {
             $this->logger->error('Error ({code}): {message} in {file}:{line}', [

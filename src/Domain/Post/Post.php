@@ -1,30 +1,53 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace App\Domain\Post;
 
 use DateTime;
 
 class Post
 {
+    /**
+     * @var string
+     */
     private $id;
 
+    /**
+     * @var string
+     */
     private $title;
 
+    /**
+     * @var null|string
+     */
     private $summary;
 
+    /**
+     * @var null|string
+     */
     private $content;
 
-    private $tags = [];
+    /**
+     * @var array
+     */
+    private $tags;
 
+    /**
+     * @var DateTime
+     */
     private $published;
 
+    /**
+     * @var null|DateTime
+     */
     private $modified;
 
     public function __construct(
-        $id,
-        $title,
-        $summary = null,
-        $content = null,
+        string $id,
+        string $title,
+        string $summary = null,
+        string $content = null,
         array $tags = [],
         $published = 'now',
         $modified = null
@@ -48,12 +71,12 @@ class Post
         }
     }
 
-    public function getId()
+    public function getId(): string
     {
         return $this->id;
     }
 
-    public function getTitle()
+    public function getTitle(): string
     {
         return $this->title;
     }
@@ -68,7 +91,7 @@ class Post
         return $this->content;
     }
 
-    public function getPublished()
+    public function getPublished(): DateTime
     {
         return $this->published;
     }
@@ -78,7 +101,7 @@ class Post
         return $this->modified;
     }
 
-    public function getTags()
+    public function getTags(): array
     {
         return $this->tags;
     }

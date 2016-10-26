@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace App\Http\Action;
 
-use Psr\Http\Message\ResponseInterface;
-use Psr\Http\Message\ServerRequestInterface;
+use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Log\LoggerInterface;
 use PSR7Session\Http\SessionMiddleware;
 use Xtreamwayz\HTMLFormValidator\FormFactory;
@@ -12,8 +14,9 @@ use Zend\Expressive\Template\TemplateRendererInterface;
 use Zend\InputFilter\Factory as InputFilterFactory;
 use Zend\Mail\Message;
 use Zend\Mail\Transport\TransportInterface;
+use Zend\Stratigility\MiddlewareInterface;
 
-class ContactAction
+class ContactAction implements MiddlewareInterface
 {
     private $template;
 
@@ -40,19 +43,21 @@ class ContactAction
     }
 
     /**
-     * @param ServerRequestInterface $request
-     * @param ResponseInterface      $response
-     * @param callable|null          $next
+     * @param Request       $request
+     * @param Response      $response
+     * @param callable|null $next
      *
-     * @return HtmlResponse
+     * @return Response
+     *
+     * @throws \InvalidArgumentException
      */
-    public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $next = null)
+    public function __invoke(Request $request, Response $response, callable $next = null): Response
     {
         /* @var \PSR7Session\Session\SessionInterface $session */
         $session = $request->getAttribute(SessionMiddleware::SESSION_ATTRIBUTE);
 
         // Generate csrf token
-        if (!$session->get('csrf')) {
+        if (! $session->get('csrf')) {
             $session->set('csrf', md5(random_bytes(32)));
         }
 

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace AppTest;
 
 use Interop\Container\ContainerInterface;
@@ -64,9 +66,18 @@ class WebTestCase extends \PHPUnit_Framework_TestCase
      * @param array|null $sessionData
      *
      * @return ResponseInterface
+     *
+     * @throws \BadMethodCallException
+     * @throws \Interop\Container\Exception\NotFoundException
+     * @throws \Interop\Container\Exception\ContainerException
+     * @throws \InvalidArgumentException
      */
-    protected function handleRequest(string $method, string $uri, array $parameters = null, array $sessionData = null)
-    {
+    protected function handleRequest(
+        string $method,
+        string $uri,
+        array $parameters = null,
+        array $sessionData = null
+    ): ResponseInterface {
         // Create request
         $request = (new ServerRequest())
             ->withMethod($method)

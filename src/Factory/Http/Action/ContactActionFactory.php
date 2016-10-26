@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace App\Factory\Http\Action;
 
 use App\Http\Action\ContactAction;
@@ -11,7 +13,7 @@ use Zend\Mail\Transport\TransportInterface;
 
 class ContactActionFactory
 {
-    public function __invoke(ContainerInterface $container)
+    public function __invoke(ContainerInterface $container): ContactAction
     {
         return new ContactAction(
             $container->get(TemplateRendererInterface::class),

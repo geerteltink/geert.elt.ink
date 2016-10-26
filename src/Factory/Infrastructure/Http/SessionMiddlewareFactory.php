@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace App\Factory\Infrastructure\Http;
 
 use Dflydev\FigCookies\SetCookie;
@@ -11,7 +13,7 @@ use Zend\ServiceManager\Factory\FactoryInterface;
 
 class SessionMiddlewareFactory implements FactoryInterface
 {
-    public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
+    public function __invoke(ContainerInterface $container, $requestedName, array $options = null): SessionMiddleware
     {
         $config  = $container->has('config') ? $container->get('config') : [];
         $options = $config['session']['psr7'];

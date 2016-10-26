@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace App\Infrastructure\Http;
 
 use Doctrine\Common\Cache\Cache;
@@ -19,13 +21,13 @@ class CacheMiddleware implements MiddlewareInterface
      */
     protected $debug;
 
-    public function __construct(Cache $cache, $debug = false)
+    public function __construct(Cache $cache, bool $debug = false)
     {
         $this->cache = $cache;
         $this->debug = $debug;
     }
 
-    public function __invoke(Request $request, Response $response, callable $next = null)
+    public function __invoke(Request $request, Response $response, callable $next = null): Response
     {
         $cachedResponse = $this->getCachedResponse($request, $response);
 
@@ -61,14 +63,14 @@ class CacheMiddleware implements MiddlewareInterface
         return $response;
     }
 
-    private function getCacheKey(Request $request)
+    private function getCacheKey(Request $request): string
     {
         return 'http-cache:' . $request->getUri()->getPath();
     }
 
     private function cacheResponse(Request $request, Response $response)
     {
-        if ('GET' !== $request->getMethod() || !$response->hasHeader('Cache-Control')) {
+        if ('GET' !== $request->getMethod() || ! $response->hasHeader('Cache-Control')) {
             return;
         }
 

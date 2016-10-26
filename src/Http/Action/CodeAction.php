@@ -1,15 +1,18 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace App\Http\Action;
 
 use Doctrine\Common\Cache\Cache;
 use GuzzleHttp\Client as HttpClient;
-use Psr\Http\Message\ResponseInterface;
-use Psr\Http\Message\ServerRequestInterface;
+use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Message\ServerRequestInterface as Request;
 use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Expressive\Template\TemplateRendererInterface;
+use Zend\Stratigility\MiddlewareInterface;
 
-class CodeAction
+class CodeAction implements MiddlewareInterface
 {
     private $template;
 
@@ -22,13 +25,15 @@ class CodeAction
     }
 
     /**
-     * @param ServerRequestInterface $request
-     * @param ResponseInterface      $response
-     * @param callable|null          $next
+     * @param Request       $request
+     * @param Response      $response
+     * @param callable|null $next
      *
-     * @return HtmlResponse
+     * @return Response
+     *
+     * @throws \InvalidArgumentException
      */
-    public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $next = null)
+    public function __invoke(Request $request, Response $response, callable $next = null): Response
     {
         if ($this->cache->contains('github:xtreamwayz-repos')) {
             $repositories = $this->cache->fetch('github:xtreamwayz-repos');

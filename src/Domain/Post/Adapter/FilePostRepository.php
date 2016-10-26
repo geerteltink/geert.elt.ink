@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace App\Domain\Post\Adapter;
 
 use App\Domain\Post\Post;
@@ -39,10 +41,10 @@ class FilePostRepository implements PostRepositoryInterface
     /**
      * @inheritdoc
      */
-    public function find($id)
+    public function find($id): Post
     {
         $file = sprintf('data/posts/%s.md', $id);
-        if (!is_file($file)) {
+        if (! is_file($file)) {
             return null;
         }
 
@@ -52,7 +54,7 @@ class FilePostRepository implements PostRepositoryInterface
     /**
      * @inheritdoc
      */
-    public function findAll()
+    public function findAll(): array
     {
         $posts = [];
         foreach (Glob::glob('data/posts/*.md', Glob::GLOB_BRACE) as $file) {
@@ -62,9 +64,9 @@ class FilePostRepository implements PostRepositoryInterface
         return $posts;
     }
 
-    private function parse($str)
+    private function parse($str): Post
     {
-        if (!preg_match($this->regex, $str, $matches) === 1) {
+        if (! preg_match($this->regex, $str, $matches) === 1) {
             throw new \DomainException('Invalid markdown format');
         }
 

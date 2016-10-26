@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace App\Factory\Infrastructure\Http;
 
 use App\Infrastructure\Http\CacheMiddleware;
@@ -9,7 +11,7 @@ use Zend\ServiceManager\Factory\FactoryInterface;
 
 class CacheMiddlewareFactory implements FactoryInterface
 {
-    public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
+    public function __invoke(ContainerInterface $container, $requestedName, array $options = null): CacheMiddleware
     {
         $config = $container->has('config') ? $container->get('config') : [];
         $debug  = array_key_exists('debug', $config) ? (bool) $config['debug'] : false;

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace App\Factory\Infrastructure\Mail;
 
 use Interop\Container\ContainerInterface;
@@ -12,9 +14,12 @@ class MailTransportFactory
      * @param ContainerInterface $container
      *
      * @return Transport\TransportInterface
+     *
+     * @throws \Interop\Container\Exception\NotFoundException
+     * @throws \Interop\Container\Exception\ContainerException
      * @throws \RuntimeException
      */
-    public function __invoke(ContainerInterface $container)
+    public function __invoke(ContainerInterface $container): Transport\TransportInterface
     {
         $config  = $container->get('config');
         $config  = $config['mail']['transport'];

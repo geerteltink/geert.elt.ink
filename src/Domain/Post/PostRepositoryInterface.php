@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace App\Domain\Post;
 
 interface PostRepositoryInterface
@@ -9,10 +11,10 @@ interface PostRepositoryInterface
      *
      * @return Post|null
      */
-    public function find($id);
+    public function find($id): Post;
 
     /**
      * @return array|Post[]
      */
-    public function findAll();
+    public function findAll(): array;
 }

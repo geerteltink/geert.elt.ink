@@ -1,17 +1,19 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace App\Http\Action;
 
 use App\Domain\Post\PostRepositoryInterface;
 use Doctrine\Common\Cache\Cache;
-use Psr\Http\Message\ResponseInterface;
-use Psr\Http\Message\ServerRequestInterface;
-use Zend\Diactoros\Response\HtmlResponse;
+use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Message\ServerRequestInterface as Request;
 use Zend\Expressive\Helper\ServerUrlHelper;
 use Zend\Expressive\Helper\UrlHelper;
 use Zend\Feed\Writer\Feed;
+use Zend\Stratigility\MiddlewareInterface;
 
-class BlogXmlFeedAction
+class BlogXmlFeedAction implements MiddlewareInterface
 {
     private $cache;
 
@@ -34,13 +36,15 @@ class BlogXmlFeedAction
     }
 
     /**
-     * @param ServerRequestInterface $request
-     * @param ResponseInterface      $response
-     * @param callable|null          $next
+     * @param Request       $request
+     * @param Response      $response
+     * @param callable|null $next
      *
-     * @return HtmlResponse
+     * @return Response
+     *
+     * @throws \InvalidArgumentException
      */
-    public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $next = null)
+    public function __invoke(Request $request, Response $response, callable $next = null): Response
     {
         if ($this->cache->contains('blog:xml-feed')) {
             $feed = $this->cache->fetch('blog:xml-feed');

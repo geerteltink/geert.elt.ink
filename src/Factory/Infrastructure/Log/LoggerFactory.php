@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace App\Factory\Infrastructure\Log;
 
 use Interop\Container\ContainerInterface;
@@ -15,8 +17,14 @@ class LoggerFactory
      * @param ContainerInterface $container
      *
      * @return LoggerInterface
+     *
+     * @throws \Interop\Container\Exception\NotFoundException
+     * @throws \Interop\Container\Exception\ContainerException
+     * @throws \Exception
+     * @throws \InvalidArgumentException
+     * @throws \Monolog\Handler\MissingExtensionException
      */
-    public function __invoke(ContainerInterface $container)
+    public function __invoke(ContainerInterface $container): LoggerInterface
     {
         $config = $container->get('config');
 
