@@ -48,6 +48,11 @@ git checkout master
 git fetch upstream master
 git rebase upstream/master
 git push origin master
+
+git checkout develop
+git fetch upstream develop
+git rebase upstream/develop
+git push origin develop
 ```
 
 ## Working on a patch
@@ -87,11 +92,17 @@ and rebase it to the master or develop branch, followed by pushing the changes.
 # Update master or develop
 git checkout hotfix/1234
 git rebase master
+
+# Fix conflicts
+git add <file>
+git rebase --continue
+# Repeat for multiple conflicts
+
 git push -f origin
 ```
 
 You probably get a "Updates were rejected because the tip of your current branch is behind" error. In that case
-use ``git push -f`` to force the new changes.
+use `git push -f` to force the new changes.
 
 ## Create the PR
 
