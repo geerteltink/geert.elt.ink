@@ -27,6 +27,7 @@ $container = require 'config/container.php';
 $app = $container->get(Zend\Expressive\Application::class);
 $app->raiseThrowables();
 
+// Setup middleware
 $app->pipe(ServerUrlMiddleware::class);
 $app->pipe(ErrorHandler::class);
 // TODO: ErrorLoggerMiddleware
@@ -37,6 +38,7 @@ $app->pipe(UrlHelperMiddleware::class);
 $app->pipeDispatchMiddleware();
 $app->pipe(NotFoundHandler::class);
 
+// Setup routes
 $app->route('/', App\Http\Action\HomePageAction::class, ['GET'], 'home');
 $app->route('/blog', App\Http\Action\BlogIndexAction::class, ['GET'], 'blog');
 $app->route('/blog/feed.xml', App\Http\Action\BlogXmlFeedAction::class, ['GET'], 'feed');

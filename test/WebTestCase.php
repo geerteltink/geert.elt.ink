@@ -61,6 +61,7 @@ class WebTestCase extends \PHPUnit_Framework_TestCase
         self::$app = self::$container->get(Application::class);
         self::$app->raiseThrowables();
 
+        // Setup middleware
         self::$app->pipe(ServerUrlMiddleware::class);
         self::$app->pipe(ErrorHandler::class);
         self::$app->pipe(SessionMiddleware::class);
@@ -69,6 +70,7 @@ class WebTestCase extends \PHPUnit_Framework_TestCase
         self::$app->pipeDispatchMiddleware();
         self::$app->pipe(NotFoundHandler::class);
 
+        // Setup routes
         self::$app->route('/', Action\HomePageAction::class, ['GET'], 'home');
         self::$app->route('/blog', Action\BlogIndexAction::class, ['GET'], 'blog');
         self::$app->route('/blog/feed.xml', Action\BlogXmlFeedAction::class, ['GET'], 'feed');
