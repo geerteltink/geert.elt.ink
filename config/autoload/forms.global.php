@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 use Xtreamwayz\HTMLFormValidator\InputFilterFactory;
 use Xtreamwayz\HTMLFormValidator\Validator;
 

@@ -328,6 +328,58 @@
             "time": "2016-06-24 23:00:38"
         },
         {
+            "name": "http-interop/http-middleware",
+            "version": "0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/http-interop/http-middleware.git",
+                "reference": "ff545c87e97bf4d88f0cb7eb3e89f99aaa53d7a9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/http-interop/http-middleware/zipball/ff545c87e97bf4d88f0cb7eb3e89f99aaa53d7a9",
+                "reference": "ff545c87e97bf4d88f0cb7eb3e89f99aaa53d7a9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "psr/http-message": "^1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Interop\\Http\\Middleware\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for HTTP middleware",
+            "keywords": [
+                "factory",
+                "http",
+                "middleware",
+                "psr",
+                "psr-17",
+                "psr-7",
+                "request",
+                "response"
+            ],
+            "time": "2016-09-25 13:30:27"
+        },
+        {
             "name": "lcobucci/jwt",
             "version": "3.2.1",
             "source": {
@@ -1939,27 +1991,28 @@
         },
         {
             "name": "zendframework/zend-stratigility",
-            "version": "1.2.1",
+            "version": "1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-stratigility.git",
-                "reference": "b78388f096f669f9a9f15dabe5fa73c4d9fd9a09"
+                "reference": "c410d367bb85f0a3cca44f112957d0ee28895d19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-stratigility/zipball/b78388f096f669f9a9f15dabe5fa73c4d9fd9a09",
-                "reference": "b78388f096f669f9a9f15dabe5fa73c4d9fd9a09",
+                "url": "https://api.github.com/repos/zendframework/zend-stratigility/zipball/c410d367bb85f0a3cca44f112957d0ee28895d19",
+                "reference": "c410d367bb85f0a3cca44f112957d0ee28895d19",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.4.8 || ^7.0",
-                "psr/http-message": "~1.0.0",
-                "zendframework/zend-escaper": "~2.3"
+                "http-interop/http-middleware": "^0.2.0",
+                "php": "^5.6 || ^7.0",
+                "psr/http-message": "^1.0",
+                "zendframework/zend-escaper": "^2.3"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.7",
-                "squizlabs/php_codesniffer": "^2.3.1",
-                "zendframework/zend-diactoros": "~1.0"
+                "phpunit/phpunit": "^4.7 || ^5.5",
+                "squizlabs/php_codesniffer": "^2.6.2",
+                "zendframework/zend-diactoros": "^1.0"
             },
             "suggest": {
                 "psr/http-message-implementation": "Please install a psr/http-message-implementation to consume Stratigility; e.g., zendframework/zend-diactoros"
@@ -1967,8 +2020,8 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.2-dev",
-                    "dev-develop": "1.3-dev"
+                    "dev-master": "1.3.0-dev",
+                    "dev-develop": "2.0.0-dev"
                 }
             },
             "autoload": {
@@ -1987,7 +2040,7 @@
                 "middleware",
                 "psr-7"
             ],
-            "time": "2016-03-24 22:10:30"
+            "time": "2016-11-11 00:16:05"
         },
         {
             "name": "zendframework/zend-uri",
