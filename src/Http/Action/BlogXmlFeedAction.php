@@ -46,9 +46,13 @@ class BlogXmlFeedAction implements MiddlewareInterface
      */
     public function __invoke(Request $request, Response $response, callable $next = null): Response
     {
+        $feed = null;
+
         if ($this->cache->contains('blog:xml-feed')) {
             $feed = $this->cache->fetch('blog:xml-feed');
-        } else {
+        }
+
+        if (! $feed) {
             $feed = $this->generateXmlFeed();
             $this->cache->save('blog:xml-feed', $feed);
         }
@@ -64,7 +68,7 @@ class BlogXmlFeedAction implements MiddlewareInterface
         $feed = new Feed();
         $feed->setTitle('xtreamwayz');
         $feed->setLink($this->generateUrl('home', [], true));
-        $feed->setFeedLink($this->generateUrl('feed.xml', [], true), 'atom');
+        $feed->setFeedLink($this->generateUrl('feed', [], true), 'atom');
         $feed->addAuthor([
             'name' => 'Geert Eltink',
             'uri'  => 'https://xtreamwayz.com',

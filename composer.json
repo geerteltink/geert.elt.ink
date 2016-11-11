@@ -17,10 +17,10 @@
         "psr/http-message": "^1.0",
         "psr/log": "^1.0",
         "zendframework/zend-diactoros": "^1.3",
-        "zendframework/zend-stratigility": "^1.2",
         "zendframework/zend-expressive": "^1.0",
         "zendframework/zend-expressive-helpers": "^2.0",
         "zendframework/zend-expressive-fastroute": "^1.0",
+        "zendframework/zend-expressive-template": "^1.0",
         "zendframework/zend-expressive-twigrenderer": "^1.1",
         "zendframework/zend-stdlib": "^3.0",
         "zendframework/zend-servicemanager": "^3.0",
@@ -35,8 +35,7 @@
         "michelf/php-markdown": "^1.6",
         "symfony/yaml": "^3.0",
         "doctrine/cache": "^1.6",
-        "monolog/monolog": "^1.17",
-        "zendframework/zend-expressive-template": "^1.0"
+        "monolog/monolog": "^1.17"
     },
     "require-dev": {
         "phpunit/phpunit": "^5.0",

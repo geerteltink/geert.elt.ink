@@ -24,7 +24,7 @@
     <meta property="fb:admins" content="641699917" />
     {% endif %}
 
-    <link rel="alternate" type="application/atom+xml" title="News Feed" href="{{ path('feed.xml') }}" />
+    <link rel="alternate" type="application/atom+xml" title="News Feed" href="{{ path('feed') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/core.min.css') }}" />
     {% block stylesheets %}{% endblock %}
 </head>
@@ -94,7 +94,7 @@
                 <svg class="icon icon-rss">
                     <use xlink:href="{{ asset('assets/img/icons.svg') }}#icon-rss"></use>
                 </svg>
-                <a href="{{ path('feed.xml') }}" title="xtreamwayz Blog Feed">
+                <a href="{{ path('feed') }}" title="xtreamwayz Blog Feed">
                     Blog Feed
                 </a>
             </li>

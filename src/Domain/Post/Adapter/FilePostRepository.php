@@ -41,7 +41,7 @@ class FilePostRepository implements PostRepositoryInterface
     /**
      * @inheritdoc
      */
-    public function find($id): Post
+    public function find($id)
     {
         $file = sprintf('data/posts/%s.md', $id);
         if (! is_file($file)) {
