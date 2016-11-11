@@ -30,7 +30,6 @@ $app->raiseThrowables();
 // Setup middleware
 $app->pipe(ServerUrlMiddleware::class);
 $app->pipe(ErrorHandler::class);
-// TODO: ErrorLoggerMiddleware
 $app->pipe(SessionMiddleware::class);
 $app->pipeRoutingMiddleware();
 $app->pipe(CacheMiddleware::class);
