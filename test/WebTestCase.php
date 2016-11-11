@@ -4,6 +4,8 @@ declare(strict_types = 1);
 
 namespace AppTest;
 
+use App\ErrorHandler\NotFoundHandler;
+use App\Http\Action;
 use Interop\Container\ContainerInterface;
 use Lcobucci\JWT\Builder;
 use Psr\Http\Message\ResponseInterface;
@@ -13,7 +15,10 @@ use Zend\Diactoros\Response;
 use Zend\Diactoros\ServerRequest;
 use Zend\Diactoros\Uri;
 use Zend\Expressive\Application;
+use Zend\Expressive\Helper\ServerUrlMiddleware;
+use Zend\Expressive\Helper\UrlHelperMiddleware;
 use Zend\ServiceManager\ServiceManager;
+use Zend\Stratigility\Middleware\ErrorHandler;
 
 class WebTestCase extends \PHPUnit_Framework_TestCase
 {
@@ -30,7 +35,7 @@ class WebTestCase extends \PHPUnit_Framework_TestCase
     /**
      * @var Application
      */
-    protected $app;
+    protected static $app;
 
     /**
      * @var ResponseInterface
@@ -51,6 +56,27 @@ class WebTestCase extends \PHPUnit_Framework_TestCase
 
         // Build container
         self::$container = new ServiceManager($dependencies);
+
+        // Get application from container
+        self::$app = self::$container->get(Application::class);
+        self::$app->raiseThrowables();
+
+        // Setup middleware
+        self::$app->pipe(ServerUrlMiddleware::class);
+        self::$app->pipe(ErrorHandler::class);
+        self::$app->pipe(SessionMiddleware::class);
+        self::$app->pipeRoutingMiddleware();
+        self::$app->pipe(UrlHelperMiddleware::class);
+        self::$app->pipeDispatchMiddleware();
+        self::$app->pipe(NotFoundHandler::class);
+
+        // Setup routes
+        self::$app->route('/', Action\HomePageAction::class, ['GET'], 'home');
+        self::$app->route('/blog', Action\BlogIndexAction::class, ['GET'], 'blog');
+        self::$app->route('/blog/feed.xml', Action\BlogXmlFeedAction::class, ['GET'], 'feed');
+        self::$app->route('/blog/{id:[0-9a-zA-Z\-]+}', Action\BlogPostAction::class, ['GET'], 'blog.post');
+        self::$app->route('/code', Action\CodeAction::class, ['GET'], 'code');
+        self::$app->route('/contact', Action\ContactAction::class, ['GET', 'POST'], 'contact');
     }
 
     public static function tearDownAfterClass()
@@ -114,10 +140,7 @@ class WebTestCase extends \PHPUnit_Framework_TestCase
             ]);
         }
 
-        // Get application from container
-        $app = self::$container->get(Application::class);
-
         // Invoke the request
-        return $app($request, new Response());
+        return self::$app->__invoke($request, new Response());
     }
 }

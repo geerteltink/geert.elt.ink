@@ -1,13 +1,13 @@
 <?php
 
-use Zend\Expressive\Container\TemplatedErrorHandlerFactory;
+declare(strict_types = 1);
+
 use Zend\Expressive\Template\TemplateRendererInterface;
 use Zend\Expressive\Twig\TwigRendererFactory;
 
 return [
     'dependencies' => [
         'factories' => [
-            'Zend\Expressive\FinalHandler'   => TemplatedErrorHandlerFactory::class,
             TemplateRendererInterface::class => TwigRendererFactory::class,
         ],
     ],

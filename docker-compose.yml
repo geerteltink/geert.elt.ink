@@ -32,11 +32,3 @@ services:
     ports:
       - "1025:1025"
       - "8025:8025"
-
-  livereload:
-    image: xtreamwayz/livereload
-    container_name: ${PROJECT_ID}-livereload
-    ports:
-      - "35729:35729"
-    volumes_from:
-      - datastore

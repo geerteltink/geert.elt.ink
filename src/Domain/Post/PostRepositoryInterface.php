@@ -11,7 +11,7 @@ interface PostRepositoryInterface
      *
      * @return Post|null
      */
-    public function find($id): Post;
+    public function find($id);
 
     /**
      * @return array|Post[]
