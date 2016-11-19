@@ -5,13 +5,14 @@ declare(strict_types = 1);
 namespace App\Http\Action;
 
 use App\Domain\Post\PostRepositoryInterface;
-use Psr\Http\Message\ResponseInterface as Response;
-use Psr\Http\Message\ServerRequestInterface as Request;
+use Interop\Http\Middleware\DelegateInterface;
+use Interop\Http\Middleware\ServerMiddlewareInterface;
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
 use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Expressive\Template\TemplateRendererInterface;
-use Zend\Stratigility\MiddlewareInterface;
 
-class BlogPostAction implements MiddlewareInterface
+class BlogPostAction implements ServerMiddlewareInterface
 {
     private $template;
 
@@ -23,20 +24,11 @@ class BlogPostAction implements MiddlewareInterface
         $this->postRepository = $postRepository;
     }
 
-    /**
-     * @param Request       $request
-     * @param Response      $response
-     * @param callable|null $next
-     *
-     * @return Response
-     *
-     * @throws \InvalidArgumentException
-     */
-    public function __invoke(Request $request, Response $response, callable $next = null): Response
+    public function process(ServerRequestInterface $request, DelegateInterface $delegate): ResponseInterface
     {
         $post = $this->postRepository->find($request->getAttribute('id'));
         if (! $post) {
-            return $next($request, $response->withStatus(404), 'Not found');
+            return null;
         }
 
         return new HtmlResponse(

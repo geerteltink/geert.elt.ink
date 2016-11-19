@@ -4,8 +4,10 @@ declare(strict_types = 1);
 
 namespace App\Http\Action;
 
-use Psr\Http\Message\ResponseInterface as Response;
-use Psr\Http\Message\ServerRequestInterface as Request;
+use Interop\Http\Middleware\DelegateInterface;
+use Interop\Http\Middleware\ServerMiddlewareInterface;
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
 use Psr\Log\LoggerInterface;
 use PSR7Session\Http\SessionMiddleware;
 use Xtreamwayz\HTMLFormValidator\FormFactory;
@@ -14,9 +16,8 @@ use Zend\Expressive\Template\TemplateRendererInterface;
 use Zend\InputFilter\Factory as InputFilterFactory;
 use Zend\Mail\Message;
 use Zend\Mail\Transport\TransportInterface;
-use Zend\Stratigility\MiddlewareInterface;
 
-class ContactAction implements MiddlewareInterface
+class ContactAction implements ServerMiddlewareInterface
 {
     private $template;
 
@@ -42,16 +43,7 @@ class ContactAction implements MiddlewareInterface
         $this->config             = $config;
     }
 
-    /**
-     * @param Request       $request
-     * @param Response      $response
-     * @param callable|null $next
-     *
-     * @return Response
-     *
-     * @throws \InvalidArgumentException
-     */
-    public function __invoke(Request $request, Response $response, callable $next = null): Response
+    public function process(ServerRequestInterface $request, DelegateInterface $delegate): ResponseInterface
     {
         /* @var \PSR7Session\Session\SessionInterface $session */
         $session = $request->getAttribute(SessionMiddleware::SESSION_ATTRIBUTE);

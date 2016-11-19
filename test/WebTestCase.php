@@ -4,7 +4,6 @@ declare(strict_types = 1);
 
 namespace AppTest;
 
-use App\ErrorHandler\NotFoundHandler;
 use App\Http\Action;
 use Interop\Container\ContainerInterface;
 use Lcobucci\JWT\Builder;
@@ -17,6 +16,7 @@ use Zend\Diactoros\Uri;
 use Zend\Expressive\Application;
 use Zend\Expressive\Helper\ServerUrlMiddleware;
 use Zend\Expressive\Helper\UrlHelperMiddleware;
+use Zend\Expressive\Middleware\NotFoundHandler;
 use Zend\ServiceManager\ServiceManager;
 use Zend\Stratigility\Middleware\ErrorHandler;
 

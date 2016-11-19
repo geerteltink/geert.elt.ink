@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace App\ErrorHandler;
+namespace App\Factory\Infrastructure\ErrorHandler;
 
 use Interop\Container\ContainerInterface;
 use Psr\Http\Message\RequestInterface;
@@ -10,16 +10,18 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Log\LoggerInterface;
 use Throwable;
 use Zend\Diactoros\Response;
+use Zend\Expressive\Middleware\ErrorResponseGenerator;
 use Zend\Stratigility\Middleware\ErrorHandler;
 
 class ErrorHandlerFactory
 {
-    public function __invoke(ContainerInterface $container): ErrorHandler
+    public function __invoke(ContainerInterface $container)
     {
-        $errorHandler = new ErrorHandler(
-            new Response(),
-            $container->get(TemplatedErrorResponseGenerator::class)
-        );
+        $generator = $container->has(ErrorResponseGenerator::class)
+            ? $container->get(ErrorResponseGenerator::class)
+            : null;
+
+        $errorHandler = new ErrorHandler(new Response(), $generator);
 
         if ($container->has(LoggerInterface::class)) {
             $logger = $container->get(LoggerInterface::class);

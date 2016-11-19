@@ -2,12 +2,13 @@
 
 declare(strict_types = 1);
 
-use App\ErrorHandler\NotFoundHandler;
+//error_reporting(error_reporting() & ~E_USER_DEPRECATED);
+
 use App\Infrastructure\Http\CacheMiddleware;
 use PSR7Session\Http\SessionMiddleware;
 use Zend\Expressive\Application;
-use Zend\Expressive\Helper\ServerUrlMiddleware;
 use Zend\Expressive\Helper\UrlHelperMiddleware;
+use Zend\Expressive\Middleware\NotFoundHandler;
 use Zend\Stratigility\Middleware\ErrorHandler;
 
 // Delegate static file requests back to the PHP built-in webserver
@@ -28,7 +29,7 @@ $app = $container->get(Zend\Expressive\Application::class);
 $app->raiseThrowables();
 
 // Setup middleware
-$app->pipe(ServerUrlMiddleware::class);
+//$app->pipe(ServerUrlMiddleware::class);
 $app->pipe(ErrorHandler::class);
 $app->pipe(SessionMiddleware::class);
 $app->pipeRoutingMiddleware();

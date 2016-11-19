@@ -6,11 +6,11 @@ namespace App\Http;
 
 use Interop\Container\ContainerInterface;
 use Interop\Container\Exception\ContainerException;
+use Interop\Http\Middleware\ServerMiddlewareInterface;
 use ReflectionClass;
 use Zend\ServiceManager\Exception\ServiceNotCreatedException;
 use Zend\ServiceManager\Exception\ServiceNotFoundException;
 use Zend\ServiceManager\Factory\AbstractFactoryInterface;
-use Zend\Stratigility\MiddlewareInterface;
 
 class AbstractActionFactory implements AbstractFactoryInterface
 {
@@ -21,14 +21,17 @@ class AbstractActionFactory implements AbstractFactoryInterface
      * @param  string             $requestedName
      * @param  null|array         $options
      *
-     * @return MiddlewareInterface
+     * @return ServerMiddlewareInterface
      * @throws ServiceNotFoundException if unable to resolve the service.
      * @throws ServiceNotCreatedException if an exception is raised when
      *     creating a service.
      * @throws ContainerException if any other error occurs
      */
-    public function __invoke(ContainerInterface $container, $requestedName, array $options = null): MiddlewareInterface
-    {
+    public function __invoke(
+        ContainerInterface $container,
+        $requestedName,
+        array $options = null
+    ): ServerMiddlewareInterface {
         // Construct a new ReflectionClass object for the requested action
         $reflection = new ReflectionClass($requestedName);
         // Get the constructor
@@ -39,7 +42,7 @@ class AbstractActionFactory implements AbstractFactoryInterface
         }
 
         // Get the parameters
-        $parameters   = $constructor->getParameters();
+        $parameters = $constructor->getParameters();
         $dependencies = [];
         foreach ($parameters as $parameter) {
             // Get the parameter class
