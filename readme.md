@@ -4,12 +4,15 @@
 [![Code Coverage](https://scrutinizer-ci.com/g/xtreamwayz/xtreamwayz.com/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/xtreamwayz/xtreamwayz.com/?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/xtreamwayz/xtreamwayz.com/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/xtreamwayz/xtreamwayz.com/?branch=master)
 
-xtreamwayz.com is powered by [Expressive](https://github.com/zendframework/zend-expressive) and
-[PSR-7](http://www.php-fig.org/psr/psr-7/) based
-[middleware](https://mwop.net/blog/2015-01-08-on-http-middleware-and-psr-7.html).
+xtreamwayz.com is brought to your browser by [Expressive](https://github.com/zendframework/zend-expressive);
+Coded with love conform [PSR-1: Basic Coding Standard](http://www.php-fig.org/psr/psr-1/) and 
+[PSR-2: Coding Style Guide](http://www.php-fig.org/psr/psr-2/);
+Autoloaded with [PSR-4: Autoloading Standard](http://www.php-fig.org/psr/psr-4/); 
+Logged with [PSR-3: Logger Interface](http://www.php-fig.org/psr/psr-3/);
+And using [PSR-7: HTTP messages](http://www.php-fig.org/psr/psr-7/) 
+and [PSR-15: HTTP Middleware](https://github.com/http-interop/http-middleware).
 
 Other used packages:
-
 - [zendframework/zend-servicemanager](https://github.com/zendframework/zend-servicemanager) dependency container.
 - [nikic/FastRoute](https://github.com/nikic/FastRoute) router.
 - [twigphp/Twig](https://github.com/nikic/FastRoute) template engine.
@@ -18,7 +21,6 @@ Other used packages:
 - [ocramius/psr7-session](https://github.com/Ocramius/PSR7Session) for storage-less PSR-7 session support.
 - [xtreamwayz/html-form-validator](https://github.com/xtreamwayz/html-form-validator) for form validation.
 - [guzzlehttp/guzzle](https://github.com/guzzlehttp/guzzle) for grabbing repository data from GitHub.
-- [phing/phing](https://github.com/phing/phing) for building and deployment.
 - [pure svg icons](https://icomoon.io/).
 
 ## Application Architecture
