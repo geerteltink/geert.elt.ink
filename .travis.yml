@@ -27,7 +27,7 @@ install:
   - composer info -i
   - composer info --no-ansi
   - composer show
-  - composer show --install
+  - composer show --installed
   - composer show --no-ansi
 
 script:
