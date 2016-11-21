@@ -23,7 +23,12 @@ before_install:
 
 install:
   - travis_retry composer install --no-interaction --prefer-source
+  - composer info
   - composer info -i
+  - composer info --no-ansi
+  - composer show
+  - composer show --install
+  - composer show --no-ansi
 
 script:
   - if [[ $EXECUTE_CS_CHECK == 'true' ]]; then composer cs-check ; fi
