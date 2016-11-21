@@ -25,7 +25,9 @@ install:
   - travis_retry composer install --no-interaction --prefer-source
   - composer show
   - composer show -vvv
-  - composer diagnose
+  - composer show --latest
+  - composer show --outdated
+  - composer show --direct
 
 script:
   - if [[ $EXECUTE_CS_CHECK == 'true' ]]; then composer cs-check ; fi
