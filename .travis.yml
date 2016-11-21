@@ -23,9 +23,9 @@ before_install:
 
 install:
   - travis_retry composer install --no-interaction --prefer-source
-  - composer diagnose
   - composer show
   - composer show -vvv
+  - composer diagnose
 
 script:
   - if [[ $EXECUTE_CS_CHECK == 'true' ]]; then composer cs-check ; fi
