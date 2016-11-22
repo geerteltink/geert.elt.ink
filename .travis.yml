@@ -7,6 +7,9 @@ cache:
     - $HOME/.composer/cache
     - vendor
 
+env:
+  - COLUMNS=80
+
 matrix:
   include:
     - php: 7.0
@@ -23,8 +26,6 @@ before_install:
 
 install:
   - travis_retry composer install --no-interaction --prefer-source
-  - stty cols 120
-  - export COLUMNS=120
   - composer self-update 1.2.0
   - composer show
   - composer self-update 1.2.1
@@ -36,8 +37,6 @@ install:
   - composer show --outdated
 
 script:
-  - stty cols 120
-  - export COLUMNS=120
   - if [[ $EXECUTE_CS_CHECK == 'true' ]]; then composer cs-check ; fi
   - if [[ $EXECUTE_TEST_COVERAGE == 'true' ]]; then composer test-coverage ; fi
   - if [[ $EXECUTE_TEST_COVERAGE != 'true' ]]; then composer test ; fi
