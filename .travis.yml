@@ -14,9 +14,6 @@ matrix:
         - EXECUTE_CS_CHECK=true
         - EXECUTE_TEST_COVERAGE=true
     - php: 7.1
-    - php: nightly
-  allow_failures:
-    - php: nightly
 
 before_install:
   - composer self-update --snapshot
@@ -24,10 +21,14 @@ before_install:
 
 install:
   - travis_retry composer install --no-interaction --prefer-source
+  - stty cols 80
+  - export COLUMNS=80
   - composer show
   - composer show --outdated
 
 script:
+  - stty cols 80
+  - export COLUMNS=80
   - if [[ $EXECUTE_CS_CHECK == 'true' ]]; then composer cs-check ; fi
   - if [[ $EXECUTE_TEST_COVERAGE == 'true' ]]; then composer test-coverage ; fi
   - if [[ $EXECUTE_TEST_COVERAGE != 'true' ]]; then composer test ; fi
