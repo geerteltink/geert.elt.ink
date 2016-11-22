@@ -18,7 +18,7 @@ matrix:
     - php: nightly
 
 before_install:
-  - export COLUMNS=80
+  - stty cols 80
   - if [[ $EXECUTE_TEST_COVERAGE != 'true' ]]; then phpenv config-rm xdebug.ini || return 0 ; fi
   - composer self-update
 
@@ -30,7 +30,7 @@ install:
   - composer show
   - composer self-update 1.2.2
   - composer show
-  - composer self-update --preview
+  - composer self-update --snapshot
   - composer show
   - composer show --outdated
 
