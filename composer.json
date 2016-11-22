@@ -35,7 +35,7 @@
         "zendframework/zend-inputfilter": "^2.5",
         "zendframework/zend-mail": "^2.6",
         "xtreamwayz/html-form-validator": "1.0.x-dev",
-        "ocramius/psr7-session": "^1.0",
+        "psr7-sessions/storageless": "^2.0",
         "dflydev/fig-cookies": "^1.0",
         "lcobucci/jwt": "^3.1",
         "guzzlehttp/guzzle": "^6.1",

@@ -18,7 +18,7 @@ Other used packages:
 - [twigphp/Twig](https://github.com/nikic/FastRoute) template engine.
 - [doctrine/cache](https://github.com/doctrine/cache) for caching.
 - [monolog/monolog](https://github.com/monolog/monolog) for logging.
-- [ocramius/psr7-session](https://github.com/Ocramius/PSR7Session) for storage-less PSR-7 session support.
+- [psr7-sessions/storageless](https://github.com/psr7-sessions/storageless) for storage-less PSR-7 session support.
 - [xtreamwayz/html-form-validator](https://github.com/xtreamwayz/html-form-validator) for form validation.
 - [guzzlehttp/guzzle](https://github.com/guzzlehttp/guzzle) for grabbing repository data from GitHub.
 - [pure svg icons](https://icomoon.io/).
