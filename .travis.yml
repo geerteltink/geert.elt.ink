@@ -13,7 +13,6 @@ matrix:
         - COVERAGE=true
         - DEPENDENCIES='latest'
     - php: 7.1
-    - php: nightly
 
 before_script:
   - if [[ $DEPENDENCIES == 'latest' ]]; then composer update --no-interaction --prefer-source ; fi
