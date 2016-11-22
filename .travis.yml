@@ -7,9 +7,6 @@ cache:
     - $HOME/.composer/cache
     - vendor
 
-env:
-  - COLUMNS=80
-
 matrix:
   include:
     - php: 7.0
@@ -21,6 +18,7 @@ matrix:
     - php: nightly
 
 before_install:
+  - export COLUMNS=80
   - if [[ $EXECUTE_TEST_COVERAGE != 'true' ]]; then phpenv config-rm xdebug.ini || return 0 ; fi
   - composer self-update
 
