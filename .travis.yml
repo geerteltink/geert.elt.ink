@@ -23,13 +23,15 @@ before_install:
 
 install:
   - travis_retry composer install --no-interaction --prefer-source
+  - stty cols 80
+  - export COLUMNS=80
   - composer self-update 1.2.0
   - composer show
   - composer self-update 1.2.1
   - composer show
   - composer self-update 1.2.2
   - composer show
-  - composer self-update 1.3.0-RC
+  - composer self-update --preview
   - composer show
   - composer show --outdated
 
