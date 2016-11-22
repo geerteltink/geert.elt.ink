@@ -23,8 +23,6 @@ before_install:
   - composer --version
 
 install:
-  - stty cols 120
-  - export COLUMNS=120
   - travis_retry composer install --no-interaction --prefer-source
   - composer show
   - composer show --outdated
