@@ -11,9 +11,9 @@ matrix:
   include:
     - php: 7.0
       env:
-        - EXECUTE_CS_CHECK=true
-        - EXECUTE_TEST_COVERAGE=true
+        - UPLOAD_COVERAGE=true
     - php: 7.1
+    - php: nightly
 
 before_install:
   - composer self-update --snapshot
@@ -27,15 +27,12 @@ install:
   - composer show --outdated
 
 script:
-  - if [[ $EXECUTE_CS_CHECK == 'true' ]]; then composer cs-check ; fi
-  - if [[ $EXECUTE_TEST_COVERAGE == 'true' ]]; then composer test-coverage ; fi
-  - if [[ $EXECUTE_TEST_COVERAGE != 'true' ]]; then composer test ; fi
   - ./vendor/bin/phpcs
   - ./vendor/bin/phpunit --disallow-test-output --report-useless-tests
 
 after_script:
-  - if [[ $EXECUTE_TEST_COVERAGE == 'true' ]]; then wget https://scrutinizer-ci.com/ocular.phar ; fi
-  - if [[ $EXECUTE_TEST_COVERAGE == 'true' ]]; then php ocular.phar code-coverage:upload --format=php-clover ./clover.xml ; fi
+  - if [[ $UPLOAD_COVERAGE == 'true' ]]; then wget https://scrutinizer-ci.com/ocular.phar ; fi
+  - if [[ $UPLOAD_COVERAGE == 'true' ]]; then php ocular.phar code-coverage:upload --format=php-clover ./clover.xml ; fi
 
 notifications:
   email: false
