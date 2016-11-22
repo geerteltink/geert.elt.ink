@@ -34,6 +34,8 @@ install:
   - composer show --outdated
 
 script:
+  - stty cols 80
+  - export COLUMNS=80
   - if [[ $EXECUTE_CS_CHECK == 'true' ]]; then composer cs-check ; fi
   - if [[ $EXECUTE_TEST_COVERAGE == 'true' ]]; then composer test-coverage ; fi
   - if [[ $EXECUTE_TEST_COVERAGE != 'true' ]]; then composer test ; fi
