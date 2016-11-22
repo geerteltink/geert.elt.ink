@@ -1,6 +1,5 @@
-sudo: false
-
 language: php
+sudo: false
 
 cache:
   directories:
@@ -11,28 +10,28 @@ matrix:
   include:
     - php: 7.0
       env:
-        - UPLOAD_COVERAGE=true
+        - COVERAGE=true
+        - DEPENDENCIES='latest'
     - php: 7.1
     - php: nightly
 
-before_install:
-  - composer self-update --snapshot
-  - composer --version
-
-install:
-  - travis_retry composer install --no-interaction --prefer-source
+before_script:
+  - if [[ $DEPENDENCIES == 'latest' ]]; then composer update --no-interaction --prefer-source ; fi
+  - if [[ $DEPENDENCIES != 'latest' ]]; then composer install --no-interaction --prefer-source ; fi
   - stty cols 120
   - export COLUMNS=120
+  - composer --version
   - composer show
   - composer show --outdated
 
 script:
   - ./vendor/bin/phpcs
-  - ./vendor/bin/phpunit --disallow-test-output --report-useless-tests
+  - if [[ $COVERAGE == 'true' ]]; then ./vendor/bin/phpunit --disallow-test-output --report-useless-tests ; fi
+  - if [[ $COVERAGE != 'true' ]]; then ./vendor/bin/phpunit --disallow-test-output --report-useless-tests  --coverage-clover clover.xml ; fi
 
 after_script:
-  - if [[ $UPLOAD_COVERAGE == 'true' ]]; then wget https://scrutinizer-ci.com/ocular.phar ; fi
-  - if [[ $UPLOAD_COVERAGE == 'true' ]]; then php ocular.phar code-coverage:upload --format=php-clover ./clover.xml ; fi
+  - if [[ $COVERAGE == 'true' ]]; then wget https://scrutinizer-ci.com/ocular.phar ; fi
+  - if [[ $COVERAGE == 'true' ]]; then php ocular.phar code-coverage:upload --format=php-clover ./clover.xml ; fi
 
 notifications:
   email: false
