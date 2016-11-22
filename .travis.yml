@@ -21,14 +21,12 @@ before_install:
 
 install:
   - travis_retry composer install --no-interaction --prefer-source
-  - stty cols 80
-  - export COLUMNS=80
+  - stty cols 120
+  - export COLUMNS=120
   - composer show
   - composer show --outdated
 
 script:
-  - stty cols 80
-  - export COLUMNS=80
   - if [[ $EXECUTE_CS_CHECK == 'true' ]]; then composer cs-check ; fi
   - if [[ $EXECUTE_TEST_COVERAGE == 'true' ]]; then composer test-coverage ; fi
   - if [[ $EXECUTE_TEST_COVERAGE != 'true' ]]; then composer test ; fi
