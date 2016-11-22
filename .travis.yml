@@ -20,14 +20,13 @@ before_script:
   - if [[ $DEPENDENCIES != 'latest' ]]; then composer install --no-interaction --prefer-source ; fi
   - stty cols 120
   - export COLUMNS=120
-  - composer --version
   - composer show
   - composer show --outdated
 
 script:
   - ./vendor/bin/phpcs
-  - if [[ $COVERAGE == 'true' ]]; then ./vendor/bin/phpunit --disallow-test-output --report-useless-tests ; fi
-  - if [[ $COVERAGE != 'true' ]]; then ./vendor/bin/phpunit --disallow-test-output --report-useless-tests  --coverage-clover clover.xml ; fi
+  - if [[ $COVERAGE == 'true' ]]; then ./vendor/bin/phpunit --disallow-test-output --report-useless-tests  --coverage-clover clover.xml ; fi
+  - if [[ $COVERAGE != 'true' ]]; then ./vendor/bin/phpunit --disallow-test-output --report-useless-tests ; fi
 
 after_script:
   - if [[ $COVERAGE == 'true' ]]; then wget https://scrutinizer-ci.com/ocular.phar ; fi
