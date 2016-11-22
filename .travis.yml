@@ -13,17 +13,19 @@ matrix:
       env:
         - EXECUTE_CS_CHECK=true
         - EXECUTE_TEST_COVERAGE=true
+    - php: 7.1
     - php: nightly
   allow_failures:
     - php: nightly
 
 before_install:
   - stty cols 80
+  - export COLUMNS=80
   - if [[ $EXECUTE_TEST_COVERAGE != 'true' ]]; then phpenv config-rm xdebug.ini || return 0 ; fi
   - composer self-update
+  - composer --version
 
 install:
-  - travis_retry composer install --no-interaction --prefer-source
   - composer self-update 1.2.0
   - composer show
   - composer self-update 1.2.1
@@ -31,8 +33,10 @@ install:
   - composer self-update 1.2.2
   - composer show
   - composer self-update --snapshot
+  - composer --version
   - composer show
   - composer show --outdated
+  - travis_retry composer install --no-interaction --prefer-source
 
 script:
   - if [[ $EXECUTE_CS_CHECK == 'true' ]]; then composer cs-check ; fi
