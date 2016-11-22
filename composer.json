@@ -7,7 +7,8 @@
     "authors": [
         {
             "name": "Geert Eltink",
-            "homepage": "https://xtreamwayz.com/"
+            "homepage": "https://xtreamwayz.com/",
+            "role": "Developer"
         }
     ],
     "repositories": [
@@ -70,7 +71,7 @@
         ],
         "cs-check": "phpcs",
         "cs-fix": "phpcbf",
-        "test": "phpunit --colors=always",
-        "test-coverage": "phpunit --colors=always --coverage-clover clover.xml"
+        "test": "phpunit --disallow-test-output --report-useless-tests",
+        "test-coverage": "phpunit --disallow-test-output --report-useless-tests --coverage-clover clover.xml"
     }
 }

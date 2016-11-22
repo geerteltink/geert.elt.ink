@@ -19,24 +19,15 @@ matrix:
     - php: nightly
 
 before_install:
-  - stty cols 80
-  - export COLUMNS=80
-  - if [[ $EXECUTE_TEST_COVERAGE != 'true' ]]; then phpenv config-rm xdebug.ini || return 0 ; fi
-  - composer self-update
+  - composer self-update --snapshot
   - composer --version
 
 install:
-  - composer self-update 1.2.0
-  - composer show
-  - composer self-update 1.2.1
-  - composer show
-  - composer self-update 1.2.2
-  - composer show
-  - composer self-update --snapshot
-  - composer --version
+  - stty cols 120
+  - export COLUMNS=120
+  - travis_retry composer install --no-interaction --prefer-source
   - composer show
   - composer show --outdated
-  - travis_retry composer install --no-interaction --prefer-source
 
 script:
   - if [[ $EXECUTE_CS_CHECK == 'true' ]]; then composer cs-check ; fi
