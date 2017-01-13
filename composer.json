@@ -11,24 +11,17 @@
             "role": "Developer"
         }
     ],
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/weierophinney/zend-expressive"
-        }
-    ],
     "require": {
         "php": "^7.0",
         "roave/security-advisories": "dev-master",
         "container-interop/container-interop": "^1.1",
         "psr/http-message": "^1.0",
         "psr/log": "^1.0",
-        "zendframework/zend-diactoros": "^1.3",
-        "zendframework/zend-expressive": "dev-feature/programmatic as 1.1",
-        "zendframework/zend-expressive-helpers": "^2.0",
-        "zendframework/zend-expressive-fastroute": "^1.0",
+        "zendframework/zend-expressive": "^1.1 || ^1.1-dev@dev",
+        "zendframework/zend-expressive-helpers": "^3.0",
+        "zendframework/zend-expressive-fastroute": "^2.0",
         "zendframework/zend-expressive-template": "^1.0",
-        "zendframework/zend-expressive-twigrenderer": "^1.1",
+        "zendframework/zend-expressive-twigrenderer": "^1.2",
         "zendframework/zend-stdlib": "^3.0",
         "zendframework/zend-servicemanager": "^3.0",
         "zendframework/zend-feed": "^2.6",
