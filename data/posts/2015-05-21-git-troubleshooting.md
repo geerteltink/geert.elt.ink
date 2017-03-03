@@ -26,6 +26,7 @@ tags:
 * [Resetting files](#resetting-files)
 * [Cleanup tracked files (after editing .gitignore)](#cleanup-tracked-files)
 * [Trigger hooks and ci tests](#trigger-hooks-and-ci-tests)
+* [Cleanup stale branches](#cleanup-stale-branches)
 
 ## Force LF line endings instead of CR+LF {#force-lf-line-endings}
 
@@ -202,4 +203,14 @@ Use an empty commit to trigger hooks and ci tests.
 
 ```bash
 git commit --allow-empty -m "Trigger hooks"
+```
+
+## Cleanup stale branches
+
+```bash
+# Show info for remote origin repo
+$ git remote show origin
+
+# Delete all stale tracking branches in remote repository
+$ git remote prune origin
 ```
