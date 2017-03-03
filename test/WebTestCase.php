@@ -7,6 +7,7 @@ namespace AppTest;
 use App\Http\Action;
 use Interop\Container\ContainerInterface;
 use Lcobucci\JWT\Builder;
+use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 use PSR7Session\Http\SessionMiddleware;
 use PSR7Session\Session\DefaultSessionData;
@@ -20,7 +21,7 @@ use Zend\Expressive\Middleware\NotFoundHandler;
 use Zend\ServiceManager\ServiceManager;
 use Zend\Stratigility\Middleware\ErrorHandler;
 
-class WebTestCase extends \PHPUnit_Framework_TestCase
+class WebTestCase extends TestCase
 {
     /**
      * @var array
