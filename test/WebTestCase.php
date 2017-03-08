@@ -4,7 +4,6 @@ declare(strict_types = 1);
 
 namespace AppTest;
 
-use App\Http\Action;
 use Interop\Container\ContainerInterface;
 use Lcobucci\JWT\Builder;
 use PHPUnit\Framework\TestCase;
@@ -17,35 +16,16 @@ use Zend\Diactoros\ServerRequest;
 use Zend\Diactoros\Uri;
 use Zend\Expressive\Application;
 use Zend\Expressive\Delegate\NotFoundDelegate;
-use Zend\Expressive\Helper\ServerUrlMiddleware;
-use Zend\Expressive\Helper\UrlHelperMiddleware;
-use Zend\Expressive\Middleware\NotFoundHandler;
 use Zend\ServiceManager\ServiceManager;
-use Zend\Stratigility\Middleware\ErrorHandler;
 
 class WebTestCase extends TestCase
 {
     /**
-     * @var array
-     */
-    protected static $config;
-
-    /**
      * @var ContainerInterface
      */
-    protected static $container;
+    private $container;
 
-    /**
-     * @var Application
-     */
-    protected static $app;
-
-    /**
-     * @var ResponseInterface
-     */
-    protected $response;
-
-    public static function setUpBeforeClass()
+    protected function setUp()
     {
         // Load configuration
         $config = require __DIR__ . '/../config/config.php';
@@ -55,34 +35,14 @@ class WebTestCase extends TestCase
         $config[ConfigAggregator::ENABLE_CACHE] = false;
 
         // Build container
-        self::$container = new ServiceManager($config['dependencies']);
-        self::$container->setService('config', $config);
-
-        // Get application from container
-        self::$app = self::$container->get(Application::class);
-
-        // Setup middleware
-        self::$app->pipe(ServerUrlMiddleware::class);
-        self::$app->pipe(ErrorHandler::class);
-        self::$app->pipe(SessionMiddleware::class);
-        self::$app->pipeRoutingMiddleware();
-        self::$app->pipe(UrlHelperMiddleware::class);
-        self::$app->pipeDispatchMiddleware();
-        self::$app->pipe(NotFoundHandler::class);
-
-        // Setup routes
-        self::$app->route('/', Action\HomePageAction::class, ['GET'], 'home');
-        self::$app->route('/blog', Action\BlogIndexAction::class, ['GET'], 'blog');
-        self::$app->route('/blog/feed.xml', Action\BlogXmlFeedAction::class, ['GET'], 'feed');
-        self::$app->route('/blog/{id:[0-9a-zA-Z\-]+}', Action\BlogPostAction::class, ['GET'], 'blog.post');
-        self::$app->route('/code', Action\CodeAction::class, ['GET'], 'code');
-        self::$app->route('/contact', Action\ContactAction::class, ['GET', 'POST'], 'contact');
+        $this->container = new ServiceManager($config['dependencies']);
+        $this->container->setService('config', $config);
     }
 
-    public static function tearDownAfterClass()
+    protected function tearDown()
     {
         // Clean up
-        self::$container = null;
+        $this->container = null;
     }
 
     /**
@@ -117,7 +77,7 @@ class WebTestCase extends TestCase
         // Set PSR-7 session data
         if ($sessionData !== null) {
             // Get session middleware
-            $sessionMiddleWare = self::$container->get(SessionMiddleware::class);
+            $sessionMiddleWare = $this->container->get(SessionMiddleware::class);
 
             // Get signer
             $signerReflection = new \ReflectionProperty($sessionMiddleWare, 'signer');
@@ -140,9 +100,10 @@ class WebTestCase extends TestCase
             ]);
         }
 
+        $app = $this->container->get(Application::class);
         $delegate = new NotFoundDelegate(new Response());
 
         // Invoke the request
-        return self::$app->process($request, $delegate);
+        return $app->process($request, $delegate);
     }
 }

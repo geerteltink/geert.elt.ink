@@ -6,6 +6,12 @@ use Zend\ServiceManager\Factory\InvokableFactory;
 
 return [
     'dependencies' => [
+        'delegators' => [
+            \Zend\Expressive\Application::class => [
+                App\Factory\PipelineAndRoutesDelegator::class,
+            ],
+        ],
+
         'factories' => [
             App\Domain\Post\Adapter\FilePostRepository::class => InvokableFactory::class,
             App\Http\Action\ContactAction::class              => App\Factory\Http\Action\ContactActionFactory::class,
