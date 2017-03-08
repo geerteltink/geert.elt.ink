@@ -21,26 +21,11 @@ use Zend\ServiceManager\ServiceManager;
 class WebTestCase extends TestCase
 {
     /**
-     * @var array
-     */
-    protected static $config;
-
-    /**
      * @var ContainerInterface
      */
-    protected static $container;
+    private $container;
 
-    /**
-     * @var Application
-     */
-    protected static $app;
-
-    /**
-     * @var ResponseInterface
-     */
-    protected $response;
-
-    public static function setUpBeforeClass()
+    protected function setUp()
     {
         // Load configuration
         $config = require __DIR__ . '/../config/config.php';
@@ -50,17 +35,14 @@ class WebTestCase extends TestCase
         $config[ConfigAggregator::ENABLE_CACHE] = false;
 
         // Build container
-        self::$container = new ServiceManager($config['dependencies']);
-        self::$container->setService('config', $config);
-
-        // Get application from container
-        self::$app = self::$container->get(Application::class);
+        $this->container = new ServiceManager($config['dependencies']);
+        $this->container->setService('config', $config);
     }
 
-    public static function tearDownAfterClass()
+    protected function tearDown()
     {
         // Clean up
-        self::$container = null;
+        $this->container = null;
     }
 
     /**
@@ -95,7 +77,7 @@ class WebTestCase extends TestCase
         // Set PSR-7 session data
         if ($sessionData !== null) {
             // Get session middleware
-            $sessionMiddleWare = self::$container->get(SessionMiddleware::class);
+            $sessionMiddleWare = $this->container->get(SessionMiddleware::class);
 
             // Get signer
             $signerReflection = new \ReflectionProperty($sessionMiddleWare, 'signer');
@@ -118,9 +100,10 @@ class WebTestCase extends TestCase
             ]);
         }
 
+        $app = $this->container->get(Application::class);
         $delegate = new NotFoundDelegate(new Response());
 
         // Invoke the request
-        return self::$app->process($request, $delegate);
+        return $app->process($request, $delegate);
     }
 }
