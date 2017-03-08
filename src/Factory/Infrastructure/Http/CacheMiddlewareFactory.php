@@ -6,7 +6,7 @@ namespace App\Factory\Infrastructure\Http;
 
 use App\Infrastructure\Http\CacheMiddleware;
 use Doctrine\Common\Cache\Cache;
-use Interop\Container\ContainerInterface;
+use Psr\Container\ContainerInterface;
 
 class CacheMiddlewareFactory
 {

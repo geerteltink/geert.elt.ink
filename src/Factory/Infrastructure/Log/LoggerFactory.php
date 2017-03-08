@@ -4,11 +4,11 @@ declare(strict_types = 1);
 
 namespace App\Factory\Infrastructure\Log;
 
-use Interop\Container\ContainerInterface;
 use Monolog\Handler\SlackHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 use Monolog\Processor\PsrLogMessageProcessor;
+use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
 
 class LoggerFactory

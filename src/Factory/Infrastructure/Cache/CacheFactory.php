@@ -6,7 +6,7 @@ namespace App\Factory\Infrastructure\Cache;
 
 use Doctrine\Common\Cache\CacheProvider;
 use Doctrine\Common\Cache\FilesystemCache;
-use Interop\Container\ContainerInterface;
+use Psr\Container\ContainerInterface;
 
 class CacheFactory
 {

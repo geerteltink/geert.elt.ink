@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 namespace App\Factory\Infrastructure\Mail;
 
-use Interop\Container\ContainerInterface;
+use Psr\Container\ContainerInterface;
 use RuntimeException;
 use Zend\Mail\Transport;
 

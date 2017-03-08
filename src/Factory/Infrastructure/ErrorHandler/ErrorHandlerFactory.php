@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 namespace App\Factory\Infrastructure\ErrorHandler;
 
-use Interop\Container\ContainerInterface;
+use Psr\Container\ContainerInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Log\LoggerInterface;

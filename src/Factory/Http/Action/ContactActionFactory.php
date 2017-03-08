@@ -5,7 +5,7 @@ declare(strict_types = 1);
 namespace App\Factory\Http\Action;
 
 use App\Http\Action\ContactAction;
-use Interop\Container\ContainerInterface;
+use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
 use Zend\Expressive\Template\TemplateRendererInterface;
 use Zend\InputFilter\Factory as InputFilterFactory;
