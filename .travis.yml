@@ -24,12 +24,12 @@ before_script:
 
 script:
   - ./vendor/bin/phpcs
-  - if [[ $COVERAGE == 'true' ]]; then ./vendor/bin/phpunit --disallow-test-output --report-useless-tests  --coverage-clover clover.xml ; fi
-  - if [[ $COVERAGE != 'true' ]]; then ./vendor/bin/phpunit --disallow-test-output --report-useless-tests ; fi
+  - if [[ $COVERAGE == 'true' ]]; then ./vendor/bin/phpunit --disallow-test-output --coverage-clover clover.xml; fi
+  - if [[ $COVERAGE != 'true' ]]; then ./vendor/bin/phpunit --disallow-test-output; fi
 
 after_script:
   - if [[ $COVERAGE == 'true' ]]; then wget https://scrutinizer-ci.com/ocular.phar ; fi
-  - if [[ $COVERAGE == 'true' ]]; then php ocular.phar code-coverage:upload --format=php-clover ./clover.xml ; fi
+  - if [[ $COVERAGE == 'true' ]]; then php ocular.phar code-coverage:upload --format=php-clover ./clover.xml; fi
 
 notifications:
   email: false
