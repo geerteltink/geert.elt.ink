@@ -69,7 +69,7 @@
         ],
         "cs-check": "phpcs",
         "cs-fix": "phpcbf",
-        "test": "phpunit",
-        "test-coverage": "phpunit --disallow-test-output --report-useless-tests --coverage-clover clover.xml"
+        "test": "phpunit --disallow-test-output",
+        "test-coverage": "phpunit --disallow-test-output --coverage-clover clover.xml"
     }
 }
