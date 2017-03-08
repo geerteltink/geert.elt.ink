@@ -70,7 +70,7 @@
         ],
         "cs-check": "phpcs",
         "cs-fix": "phpcbf",
-        "test": "phpunit --disallow-test-output --report-useless-tests",
+        "test": "phpunit",
         "test-coverage": "phpunit --disallow-test-output --report-useless-tests --coverage-clover clover.xml"
     }
 }

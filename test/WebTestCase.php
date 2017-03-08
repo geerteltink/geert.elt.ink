@@ -9,12 +9,14 @@ use Interop\Container\ContainerInterface;
 use Lcobucci\JWT\Builder;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
-use PSR7Session\Http\SessionMiddleware;
-use PSR7Session\Session\DefaultSessionData;
+use PSR7Sessions\Storageless\Http\SessionMiddleware;
+use PSR7Sessions\Storageless\Session\DefaultSessionData;
+use Zend\ConfigAggregator\ConfigAggregator;
 use Zend\Diactoros\Response;
 use Zend\Diactoros\ServerRequest;
 use Zend\Diactoros\Uri;
 use Zend\Expressive\Application;
+use Zend\Expressive\Delegate\NotFoundDelegate;
 use Zend\Expressive\Helper\ServerUrlMiddleware;
 use Zend\Expressive\Helper\UrlHelperMiddleware;
 use Zend\Expressive\Middleware\NotFoundHandler;
@@ -49,18 +51,15 @@ class WebTestCase extends TestCase
         $config = require __DIR__ . '/../config/config.php';
 
         // Override config settings
-        $config['debug']                = true;
-        $config['config_cache_enabled'] = false;
-
-        $dependencies                       = $config['dependencies'];
-        $dependencies['services']['config'] = $config;
+        $config['debug']                        = true;
+        $config[ConfigAggregator::ENABLE_CACHE] = false;
 
         // Build container
-        self::$container = new ServiceManager($dependencies);
+        self::$container = new ServiceManager($config['dependencies']);
+        self::$container->setService('config', $config);
 
         // Get application from container
         self::$app = self::$container->get(Application::class);
-        self::$app->raiseThrowables();
 
         // Setup middleware
         self::$app->pipe(ServerUrlMiddleware::class);
@@ -141,7 +140,9 @@ class WebTestCase extends TestCase
             ]);
         }
 
+        $delegate = new NotFoundDelegate(new Response());
+
         // Invoke the request
-        return self::$app->__invoke($request, new Response());
+        return self::$app->process($request, $delegate);
     }
 }
