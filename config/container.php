@@ -5,10 +5,12 @@ declare(strict_types = 1);
 use Zend\ServiceManager\ServiceManager;
 
 // Load configuration
-$config       = require __DIR__ . '/config.php';
-$dependencies = $config['dependencies'];
+$config = require __DIR__ . '/config.php';
+
+// Build container
+$container = new ServiceManager($config['dependencies']);
 
 // Inject config as a service
-$dependencies['services']['config'] = $config;
+$container->setService('config', $config);
 
-return new ServiceManager($dependencies);
+return $container;

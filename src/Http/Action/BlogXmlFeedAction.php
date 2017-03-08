@@ -6,8 +6,8 @@ namespace App\Http\Action;
 
 use App\Domain\Post\PostRepositoryInterface;
 use Doctrine\Common\Cache\Cache;
-use Interop\Http\Middleware\DelegateInterface;
-use Interop\Http\Middleware\ServerMiddlewareInterface;
+use Interop\Http\ServerMiddleware\DelegateInterface;
+use Interop\Http\ServerMiddleware\MiddlewareInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Zend\Diactoros\Response;
@@ -15,7 +15,7 @@ use Zend\Expressive\Helper\ServerUrlHelper;
 use Zend\Expressive\Helper\UrlHelper;
 use Zend\Feed\Writer\Feed;
 
-class BlogXmlFeedAction implements ServerMiddlewareInterface
+class BlogXmlFeedAction implements MiddlewareInterface
 {
     private $cache;
 
