@@ -24,14 +24,13 @@ class FilePostRepository implements PostRepositoryInterface
 
     private $regex;
 
-    public function __construct()
+    public function __construct(YamlParser $yamlParser = null, MarkdownParser $markdownParser = null)
     {
-        $this->yamlParser     = new YamlParser();
-        $this->markdownParser = new MarkdownParser();
+        $this->yamlParser     = $yamlParser ?? new YamlParser();
+        $this->markdownParser = $markdownParser ?? new MarkdownParser();
 
         $this->markdownParser->code_class_prefix = 'language-';
-
-        $this->regex = '~^('
+        $this->regex                             = '~^('
             . implode('|', array_map('preg_quote', ['---'])) # $matches[1] start separator
             . "){1}[\r\n|\n]*(.*?)[\r\n|\n]+("               # $matches[2] between separators
             . implode('|', array_map('preg_quote', ['---'])) # $matches[3] end separator

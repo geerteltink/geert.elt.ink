@@ -5,9 +5,11 @@ declare(strict_types = 1);
 namespace App\Infrastructure\Http;
 
 use Doctrine\Common\Cache\Cache;
+use Interop\Http\ServerMiddleware\DelegateInterface;
+use Interop\Http\ServerMiddleware\MiddlewareInterface;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
-use Zend\Stratigility\MiddlewareInterface;
+use Zend\Diactoros\Response as DefaultResponse;
 
 class CacheMiddleware implements MiddlewareInterface
 {
@@ -27,15 +29,15 @@ class CacheMiddleware implements MiddlewareInterface
         $this->debug = $debug;
     }
 
-    public function __invoke(Request $request, Response $response, callable $next = null): Response
+    public function process(Request $request, DelegateInterface $delegate): Response
     {
-        $cachedResponse = $this->getCachedResponse($request, $response);
+        $cachedResponse = $this->getCachedResponse($request);
 
         if (null !== $cachedResponse) {
             return $cachedResponse;
         }
 
-        $response = $next($request, $response);
+        $response = $delegate->process($request);
 
         if ($this->debug !== true) {
             $this->cacheResponse($request, $response);
@@ -44,7 +46,7 @@ class CacheMiddleware implements MiddlewareInterface
         return $response;
     }
 
-    private function getCachedResponse(Request $request, Response $response)
+    private function getCachedResponse(Request $request)
     {
         if ('GET' !== $request->getMethod()) {
             return null;
@@ -55,6 +57,7 @@ class CacheMiddleware implements MiddlewareInterface
             return null;
         }
 
+        $response = new DefaultResponse();
         $response->getBody()->write($item['body']);
         foreach ($item['headers'] as $name => $value) {
             $response = $response->withHeader($name, $value);

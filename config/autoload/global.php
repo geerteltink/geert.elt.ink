@@ -3,10 +3,6 @@
 declare(strict_types = 1);
 
 return [
-    'debug' => true,
-
-    'config_cache_enabled' => false,
-
     'twig' => [
         'globals' => [
             'recaptcha_pub_key'  => '',

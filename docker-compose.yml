@@ -1,27 +1,21 @@
 version: "2"
 services:
 
-  datastore:
-    image: busybox
-    container_name: ${PROJECT_ID}-datastore
-    volumes:
-      - ${PROJECT_ROOT}:/app
-
   web:
     image: xtreamwayz/nginx
     container_name: ${PROJECT_ID}-web
     ports:
       - "80:80"
-    volumes_from:
-      - datastore
+    volumes:
+      - ${PROJECT_ROOT}:/app
     links:
       - php
 
   php:
     image: xtreamwayz/php:latest
     container_name: ${PROJECT_ID}-php
-    volumes_from:
-      - datastore
+    volumes:
+      - ${PROJECT_ROOT}:/app
     links:
       - mailhog
 

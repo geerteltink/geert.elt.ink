@@ -5,12 +5,11 @@ declare(strict_types = 1);
 namespace App\Factory\Infrastructure\Http;
 
 use Interop\Container\ContainerInterface;
-use PSR7Session\Http\SessionMiddleware;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use PSR7Sessions\Storageless\Http\SessionMiddleware;
 
-class SessionMiddlewareFactory implements FactoryInterface
+class SessionMiddlewareFactory
 {
-    public function __invoke(ContainerInterface $container, $requestedName, array $options = null): SessionMiddleware
+    public function __invoke(ContainerInterface $container): SessionMiddleware
     {
         $config  = $container->has('config') ? $container->get('config') : [];
         $options = $config['session']['psr7'];

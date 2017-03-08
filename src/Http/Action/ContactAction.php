@@ -4,12 +4,13 @@ declare(strict_types = 1);
 
 namespace App\Http\Action;
 
-use Interop\Http\Middleware\DelegateInterface;
-use Interop\Http\Middleware\ServerMiddlewareInterface;
+use Interop\Http\ServerMiddleware\DelegateInterface;
+use Interop\Http\ServerMiddleware\MiddlewareInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Log\LoggerInterface;
-use PSR7Session\Http\SessionMiddleware;
+use PSR7Sessions\Storageless\Http\SessionMiddleware;
+use PSR7Sessions\Storageless\Session\SessionInterface;
 use Xtreamwayz\HTMLFormValidator\FormFactory;
 use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Expressive\Template\TemplateRendererInterface;
@@ -17,7 +18,7 @@ use Zend\InputFilter\Factory as InputFilterFactory;
 use Zend\Mail\Message;
 use Zend\Mail\Transport\TransportInterface;
 
-class ContactAction implements ServerMiddlewareInterface
+class ContactAction implements MiddlewareInterface
 {
     private $template;
 
@@ -45,7 +46,7 @@ class ContactAction implements ServerMiddlewareInterface
 
     public function process(ServerRequestInterface $request, DelegateInterface $delegate): ResponseInterface
     {
-        /* @var \PSR7Session\Session\SessionInterface $session */
+        /* @var SessionInterface $session */
         $session = $request->getAttribute(SessionMiddleware::SESSION_ATTRIBUTE);
 
         // Generate csrf token
