@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "6654866f15fddaf2b5968e79c29e54e1",
+    "content-hash": "ff62552b67dfba493b9698e7bf846c8d",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -817,25 +817,31 @@
         },
         {
             "name": "psr7-sessions/storageless",
-            "version": "dev-feature/stratigility-2",
+            "version": "dev-feature/psr-http-middleware",
             "source": {
                 "type": "git",
-                "url": "../psr7-sessions-storageless",
-                "reference": "5ca5454a3d0f08b7b8ea94b723bab2011e08a8c5"
+                "url": "https://github.com/xtreamwayz/psr7-sessions-storageless.git",
+                "reference": "13f25976f1f94ab788912cce3b1e413774879764"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xtreamwayz/psr7-sessions-storageless/zipball/13f25976f1f94ab788912cce3b1e413774879764",
+                "reference": "13f25976f1f94ab788912cce3b1e413774879764",
+                "shasum": ""
             },
             "require": {
                 "dflydev/fig-cookies": "^1.0",
+                "http-interop/http-middleware": "^0.4.1",
                 "lcobucci/jwt": "^3.2",
                 "php": "~7.0",
-                "psr/http-message": "^1.0",
-                "zendframework/zend-stratigility": "^2.0"
+                "psr/http-message": "^1.0"
             },
             "replace": {
                 "ocramius/psr7-session": "self.version"
             },
             "require-dev": {
                 "humbug/humbug": "dev-master",
-                "phpunit/phpunit": "^6.0",
+                "phpunit/phpunit": "^5.0",
                 "zendframework/zend-diactoros": "^1.1"
             },
             "type": "library",
@@ -876,7 +882,10 @@
                 }
             ],
             "description": "Storageless PSR-7 Session support",
-            "time": "2017-03-03 19:27:11"
+            "support": {
+                "source": "https://github.com/xtreamwayz/psr7-sessions-storageless/tree/feature/psr-http-middleware"
+            },
+            "time": "2017-03-03 20:37:14"
         },
         {
             "name": "roave/security-advisories",
