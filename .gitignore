@@ -1,8 +1,8 @@
 /.env
 /clover.xml
 /phpunit.xml
-
 /build/
+/config/development.config.php
 /node_modules/
 /public/.htaccess
 /vendor/
