@@ -1,25 +1,37 @@
 <?php
 
 /**
- * PhpStorm Container Interop code completion
+ * PhpStorm code completion
  *
- * Add code completion for container-interop.
- *
- * \App\ClassName::class will automatically resolve to it's own name.
- *
- * Custom strings like ``"cache"`` or ``"logger"`` need to be added manually.
+ * Add code completion for PSR-11 Container Interface and more...
  */
-namespace PHPSTORM_META
-{
-    $STATIC_METHOD_TYPES = [
-        \Interop\Container\ContainerInterface::get('') => [
-            'config' instanceof \ArrayObject,
-            'logger' instanceof \Psr\Log\LoggerInterface,
-            '' == '@',
-        ],
 
-        \Psr\Http\Message\ServerRequestInterface::getAttribute('') => [
-            \PSR7Session\Http\SessionMiddleware::SESSION_ATTRIBUTE instanceof \PSR7Session\Session\SessionInterface,
-        ],
-    ];
+namespace PHPSTORM_META {
+
+    use Interop\Container\ContainerInterface as InteropContainerInterface;
+    use Psr\Container\ContainerInterface as PsrContainerInterface;
+    use Psr\Http\Message\ServerRequestInterface;
+    use PSR7Session\Http\SessionMiddleware;
+    use PSR7Session\Session\SessionInterface;
+
+    // Old Interop\Container\ContainerInterface
+    override(InteropContainerInterface::get(0),
+        map([
+            '' => '@',
+        ])
+    );
+
+    // PSR-11 Container Interface
+    override(PsrContainerInterface::get(0),
+        map([
+            '' => '@',
+        ])
+    );
+
+    // PSR-7 requests attributes; e.g. PSR-7 Storage-less HTTP Session
+    override(ServerRequestInterface::getAttribute(0),
+        map([
+            SessionMiddleware::SESSION_ATTRIBUTE instanceof SessionInterface,
+        ])
+    );
 }
