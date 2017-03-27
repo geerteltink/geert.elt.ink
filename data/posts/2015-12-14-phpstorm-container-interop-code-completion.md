@@ -14,7 +14,11 @@ tags:
     - code completion
 ---
 
-> Updated with support for PSR-11 Container Interface and use the new 2016.2+ PHPSTORM_META format.
+<blockquote class="blockquote">
+    <p>
+        Updated with support for PSR-11 Container Interface and use the new 2016.2+ PHPSTORM_META format.
+    </p>
+</blockquote>
 
 For a long time I've been wondering how to make code completion work in PhpStorm for dependency containers. These 
 containers used the `Interop\Container\ContainerInterface` and since February 2017 it's accepted by PHP-Fig as PSR-11 
