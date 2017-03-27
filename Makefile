@@ -5,7 +5,8 @@
 #	https://cbednarski.com/articles/makefiles-for-everyone/
 #	https://github.com/njh/easyrdf/blob/master/Makefile
 
-.PHONY: init init-dir update clean build test fix deploy
+.PHONY: init init-dir update clean build test fix
+.PHONY: deploy deploy-remote deploy-start deploy-app deploy-finish
 
 init: init-dir
 	@if [ -f package.json ]; then \
@@ -60,6 +61,17 @@ fix:
 	vendor/bin/phpcbf
 
 deploy:
-	git pull
+	${SSH_DEPLOY}
+
+deploy-remote: deploy-start deploy-app deploy-finish
+
+deploy-start:
+	touch public/.maintenance
+
+deploy-app:
+	${GIT_PULL}
 	rm -rf data/cache/*
 	composer install --no-dev --optimize-autoloader
+
+deploy-finish:
+	rm -f public/.maintenance
