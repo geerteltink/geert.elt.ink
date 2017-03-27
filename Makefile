@@ -5,6 +5,8 @@
 #	https://cbednarski.com/articles/makefiles-for-everyone/
 #	https://github.com/njh/easyrdf/blob/master/Makefile
 
+-include .env
+
 .PHONY: init init-dir update clean build test fix
 .PHONY: deploy deploy-remote deploy-start deploy-app deploy-finish
 
