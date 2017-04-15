@@ -40,7 +40,7 @@
         "monolog/monolog": "^1.22",
         "symfony/yaml": "^3.2",
         "xtreamwayz/html-form-validator": "^1.0 || 1.0.x-dev",
-        "psr7-sessions/storageless": "^3.0 || dev-feature/psr-http-middleware"
+        "psr7-sessions/storageless": "^4.0 || dev-feature/psr-http-middleware"
     },
     "require-dev": {
         "phpunit/phpunit": "^6.0",
