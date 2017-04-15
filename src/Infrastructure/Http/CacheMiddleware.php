@@ -33,7 +33,7 @@ class CacheMiddleware implements MiddlewareInterface
     {
         $cachedResponse = $this->getCachedResponse($request);
 
-        if (null !== $cachedResponse) {
+        if ($cachedResponse !== null && $this->debug !== true) {
             return $cachedResponse;
         }
 
