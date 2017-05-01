@@ -1,21 +1,21 @@
 {
-  "name": "xtreamwayz.com",
-  "version": "1.0.0",
-  "author": "Geert Eltink",
-  "license": "MIT",
-  "private": true,
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/xtreamwayz/xtreamwayz.com.git"
-  },
-  "dependencies": {
-    "autoprefixer": "^6.3.6",
-    "bootstrap": "^4.0.0-alpha.4",
-    "jquery": "^3.0.0",
-    "node-sass": "^3.7.0",
-    "postcss-cli": "^2.5.2",
-    "svgxuse": "^1.1.14",
-    "uglify-js": "^2.6.2",
-    "uglifycss": "0.0.20"
-  }
+    "name": "xtreamwayz.com",
+    "version": "1.0.0",
+    "author": "Geert Eltink",
+    "license": "MIT",
+    "private": true,
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtreamwayz/xtreamwayz.com.git"
+    },
+    "dependencies": {
+        "autoprefixer": "^6.3.6",
+        "bootstrap": "4.0.0-alpha.4",
+        "imagemin-cli": "^3.0.0",
+        "jquery": "^3.0.0",
+        "node-sass": "^3.7.0",
+        "postcss-cli": "^2.5.2",
+        "uglify-js": "^2.6.2",
+        "uglifycss": "0.0.20"
+    }
 }

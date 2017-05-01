@@ -42,9 +42,6 @@ build: clean
 	mkdir -p public/assets/fonts
 	mkdir -p public/assets/img
 	mkdir -p public/assets/js
-	node_modules/.bin/uglifyjs \
-		node_modules/svgxuse/svgxuse.js \
-		--compress --mangle --screw-ie8 --output public/assets/js/core.min.js
 	node_modules/.bin/node-sass \
 		resources/public/scss/core.scss data/build/core.css
 	node_modules/.bin/postcss \
@@ -52,7 +49,9 @@ build: clean
 		--output data/build/core.prefixed.css data/build/core.css
 	node_modules/.bin/uglifycss \
 		data/build/core.prefixed.css > public/assets/css/core.min.css
-	cp resources/public/img/* public/assets/img/
+	node_modules/.bin/imagemin \
+	    resources/public/img/* --out-dir=public/assets/img/
+	cp resources/public/icons/*.svg public/assets/img/
 
 test:
 	composer validate --no-check-publish
