@@ -38,7 +38,10 @@ class AbstractActionFactoryTest extends TestCase
     public function testCreateObjectForTestAction()
     {
         $templateRenderer = $this->prophesize(TemplateRendererInterface::class);
-        $this->container->get(TemplateRendererInterface::class)->shouldBeCalled()->willReturn($templateRenderer->reveal());
+        $this->container
+            ->get(TemplateRendererInterface::class)
+            ->shouldBeCalled()
+            ->willReturn($templateRenderer->reveal());
 
         $factory = new AbstractActionFactory();
         $object = $factory($this->container->reveal(), TestAction::class);
