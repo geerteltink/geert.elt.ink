@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AppTest\Http;
 
 use App\Http\AbstractActionFactory;
@@ -44,7 +46,7 @@ class AbstractActionFactoryTest extends TestCase
             ->willReturn($templateRenderer->reveal());
 
         $factory = new AbstractActionFactory();
-        $object = $factory($this->container->reveal(), TestAction::class);
+        $object  = $factory($this->container->reveal(), TestAction::class);
 
         $this->assertInstanceOf(TestAction::class, $object);
     }
