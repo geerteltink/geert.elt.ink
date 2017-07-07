@@ -5,38 +5,21 @@
 #	https://cbednarski.com/articles/makefiles-for-everyone/
 #	https://github.com/njh/easyrdf/blob/master/Makefile
 
--include .env
+.PHONY: init update build test fix deploy
 
-.PHONY: init init-dir update clean build test fix
-.PHONY: deploy deploy-remote deploy-start deploy-app deploy-finish
-
-init: init-dir
-	@if [ -f package.json ]; then \
-		npm install; \
-	fi;
-	@if [ -f composer.json ]; then \
-		composer install; \
-	fi;
-
-init-dir:
+init:
 	mkdir -p data/cache
-	mkdir -p data/import
 	mkdir -p data/log
-	mkdir -p public/uploads
+	npm install
+	composer install
 
 update:
-	@if [ -f package.json ]; then \
-		npm update; \
-	fi;
-	@if [ -f composer.json ]; then \
-		composer update; \
-	fi;
+	npm update
+	composer update
 
-clean:
+build:
 	rm -rf data/build
 	rm -rf public/assets/*
-
-build: clean
 	mkdir -p data/build
 	mkdir -p public/assets/css
 	mkdir -p public/assets/fonts
@@ -62,17 +45,12 @@ fix:
 	vendor/bin/phpcbf
 
 deploy:
-	${SSH_DEPLOY}
-
-deploy-remote: deploy-start deploy-app deploy-finish
-
-deploy-start:
 	touch public/.maintenance
-
-deploy-app:
-	${GIT_PULL}
+	git fetch --all
+	git reset --hard origin/$(target)
+	composer install --no-dev --no-scripts --no-interaction --optimize-autoloader
 	rm -rf data/cache/*
-	composer install --no-dev --optimize-autoloader
-
-deploy-finish:
+	rm -f data/config-cache.php
+	rm -f data/cache/config-cache.php
+	rm -f data/cache/fastroute.php.cache
 	rm -f public/.maintenance

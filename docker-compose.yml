@@ -3,25 +3,25 @@ services:
 
   web:
     image: xtreamwayz/nginx
-    container_name: ${PROJECT_ID}-web
+    container_name: xtreamwayz-web
     ports:
       - "80:80"
     volumes:
-      - ${PROJECT_ROOT}:/app
+      - $PWD:/app
     links:
       - php
 
   php:
     image: xtreamwayz/php:latest
-    container_name: ${PROJECT_ID}-php
+    container_name: xtreamwayz-php
     volumes:
-      - ${PROJECT_ROOT}:/app
+      - $PWD:/app
     links:
       - mailhog
 
   mailhog:
     image: mailhog/mailhog
-    container_name: ${PROJECT_ID}-mailhog
+    container_name: xtreamwayz-mailhog
     ports:
       - "1025:1025"
       - "8025:8025"

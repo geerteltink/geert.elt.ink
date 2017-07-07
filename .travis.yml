@@ -4,28 +4,30 @@ sudo: false
 cache:
   directories:
     - $HOME/.composer/cache
-    - vendor
 
 matrix:
   include:
-    - php: 7.0
+    - php: 7
       env:
         - COVERAGE=true
-        - DEPENDENCIES='latest'
     - php: 7.1
+      env:
+        - CS_CHECK=true
+    - php: nightly
 
 before_script:
-  - if [[ $DEPENDENCIES == 'latest' ]]; then composer update --no-interaction --prefer-source ; fi
-  - if [[ $DEPENDENCIES != 'latest' ]]; then composer install --no-interaction --prefer-source ; fi
   - stty cols 120
   - export COLUMNS=120
   - composer show
   - composer show --outdated
 
+install:
+  - travis_retry composer install --no-interaction
+
 script:
-  - ./vendor/bin/phpcs
-  - if [[ $COVERAGE == 'true' ]]; then ./vendor/bin/phpunit --disallow-test-output --coverage-clover clover.xml; fi
-  - if [[ $COVERAGE != 'true' ]]; then ./vendor/bin/phpunit --disallow-test-output; fi
+  - if [[ $CS_CHECK == 'true' ]]; then ./vendor/bin/phpcs; fi
+  - if [[ $COVERAGE == 'true' ]]; then ./vendor/bin/phpunit --coverage-clover clover.xml; fi
+  - if [[ $COVERAGE != 'true' ]]; then ./vendor/bin/phpunit; fi
 
 after_script:
   - if [[ $COVERAGE == 'true' ]]; then wget https://scrutinizer-ci.com/ocular.phar ; fi
@@ -33,8 +35,3 @@ after_script:
 
 notifications:
   email: false
-  slack:
-    rooms:
-      - secure: "VvV7lbpV5k5ysDVUEJuKhUloc1a3wELN+9S7kLc9g1qLfkOpzxNmU+xymxQKe4WJS0MLhoJzC2VTKdlEQ3ki4lVhXtRNWK7fB4qq8WDzNFo5CyIkElObWiGZuMDhqbD0oztVye7BXvTBUPG+Dyt4nf9Lrn8E1UjOlgI0dxJevGmXf5gslaMhCQqj0H812vVluashu9DI4ncgWTNHrYEtkNNLK183+mXQ360+HxpdGtDADxR30mbQM2az3+QO4Qm8GPstRl8Pqnoye8OKdUy2qQhWjun8mKzepx7kkWYYf4ddihydMTgpwzh7k+qBkr1jqv8Zu/+7Fjsx7qZifgGCw2kNwfNURLonPacOEQUOln7CUzgaaIEgvB7LUsg7ojV3+HgukowCG2Ger+2IBO/9I9j4IANYOT9AMoeFi9SSlisBxWd+SCRAvQcgjzOwfG1goii9Da0R+XgvzFd4xpwLCwVwUynL5/6cosXMw4FUrt1EgeZ/AQPc0f5j8kOYAVE27fPy/JmcVBLFjnDYAW2vOyV3hvb7VXfRqa5uOf5YTrxw99kjZTt+R6cSLCcJRM39Oaf1m+2jTCg9sTeAoe4qDrBM/DwihJH7ORJm/gRAjJhBZ13rhAwjB4s/qZt0dBGp014FvW2zzP5mGPHOUfFZp332Uywos25UU5qe9+I0cnM="
-    on_success: change
-    on_failure: always
