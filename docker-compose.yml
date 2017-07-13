@@ -7,7 +7,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - $PWD:/app
+      - $PWD/public:/app/public
     links:
       - php
 
