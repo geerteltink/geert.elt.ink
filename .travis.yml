@@ -8,26 +8,24 @@ cache:
 matrix:
   include:
     - php: 7
-      env:
-        - COVERAGE=true
     - php: 7.1
       env:
-        - CS_CHECK=true
+        - COVERAGE=true
+    - php: nightly
+  allow_failures:
     - php: nightly
 
-before_script:
+install:
+  - travis_retry composer install --no-interaction
   - stty cols 120
   - export COLUMNS=120
   - composer show
   - composer show --outdated
 
-install:
-  - travis_retry composer install --no-interaction
-
 script:
-  - if [[ $CS_CHECK == 'true' ]]; then ./vendor/bin/phpcs; fi
-  - if [[ $COVERAGE == 'true' ]]; then ./vendor/bin/phpunit --coverage-clover clover.xml; fi
-  - if [[ $COVERAGE != 'true' ]]; then ./vendor/bin/phpunit; fi
+  - ./vendor/bin/phpcs
+  - ./vendor/bin/phpunit --coverage-clover clover.xml
+  - ./vendor/bin/phpstan analyse -l 5 src test
 
 after_script:
   - if [[ $COVERAGE == 'true' ]]; then wget https://scrutinizer-ci.com/ocular.phar ; fi
