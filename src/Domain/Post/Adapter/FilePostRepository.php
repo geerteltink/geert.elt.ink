@@ -65,7 +65,7 @@ class FilePostRepository implements PostRepositoryInterface
 
     private function parse($str): Post
     {
-        if (! preg_match($this->regex, $str, $matches) === 1) {
+        if (preg_match($this->regex, $str, $matches) !== 1) {
             throw new \DomainException('Invalid markdown format');
         }
 

@@ -42,7 +42,7 @@ class WebTestCase extends TestCase
     protected function tearDown()
     {
         // Clean up
-        $this->container = null;
+        unset($this->container);
     }
 
     /**
