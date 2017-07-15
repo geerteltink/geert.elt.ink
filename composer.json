@@ -23,11 +23,19 @@
     ],
     "require": {
         "php": "^7.0",
-        "roave/security-advisories": "dev-master",
+        "dflydev/fig-cookies": "^1.0",
+        "doctrine/cache": "^1.6",
+        "guzzlehttp/guzzle": "^6.2",
+        "michelf/php-markdown": "^1.7",
+        "monolog/monolog": "^1.22",
         "psr/container": "^1.0",
         "psr/http-message": "^1.0",
         "psr/log": "^1.0",
-        "zendframework/zend-config-aggregator": "^0.2.0",
+        "psr7-sessions/storageless": "^4.0 || dev-feature/psr-http-middleware",
+        "roave/security-advisories": "dev-master",
+        "symfony/yaml": "^3.2",
+        "xtreamwayz/html-form-validator": "^1.0 || 1.0.x-dev",
+        "zendframework/zend-config-aggregator": "^1.0",
         "zendframework/zend-expressive": "^2.0",
         "zendframework/zend-expressive-fastroute": "dev-feature/psr-11",
         "zendframework/zend-expressive-helpers": "^4.0",
@@ -36,23 +44,16 @@
         "zendframework/zend-inputfilter": "^2.7",
         "zendframework/zend-mail": "^2.7",
         "zendframework/zend-servicemanager": "^3.3",
-        "zendframework/zend-stdlib": "^3.1",
-        "dflydev/fig-cookies": "^1.0",
-        "doctrine/cache": "^1.6",
-        "guzzlehttp/guzzle": "^6.2",
-        "michelf/php-markdown": "^1.7",
-        "monolog/monolog": "^1.22",
-        "symfony/yaml": "^3.2",
-        "xtreamwayz/html-form-validator": "^1.0 || 1.0.x-dev",
-        "psr7-sessions/storageless": "^4.0 || dev-feature/psr-http-middleware"
+        "zendframework/zend-stdlib": "^3.1"
     },
     "require-dev": {
+        "filp/whoops": "^2.1",
+        "phpstan/phpstan": "^0.7.0",
         "phpunit/phpunit": "^6.0",
-        "squizlabs/php_codesniffer": "^2.8",
-        "zfcampus/zf-development-mode": "^3.1",
-        "zendframework/zend-component-installer": "^1.0 || ^0.7.0",
-        "zendframework/zend-expressive-tooling": "^0.3.1",
-        "filp/whoops": "^2.1"
+        "squizlabs/php_codesniffer": "^3.0",
+        "zendframework/zend-component-installer": "^1.0",
+        "zendframework/zend-expressive-tooling": "^1.0 || ^0.4",
+        "zfcampus/zf-development-mode": "^3.1"
     },
     "autoload": {
         "psr-4": {
@@ -64,17 +65,22 @@
             "AppTest\\": "test/"
         }
     },
+    "config": {
+        "sort-packages": true
+    },
     "scripts": {
         "development-disable": "zf-development-mode disable",
         "development-enable": "zf-development-mode enable",
         "development-status": "zf-development-mode status",
         "check": [
             "@cs-check",
+            "@php-stan",
             "@test"
         ],
         "cs-check": "phpcs",
         "cs-fix": "phpcbf",
-        "test": "phpunit --disallow-test-output",
-        "test-coverage": "phpunit --disallow-test-output --coverage-clover clover.xml"
+        "php-stan": "phpstan analyse -l 5 src test",
+        "test": "phpunit",
+        "test-coverage": "phpunit --coverage-clover clover.xml"
     }
 }
