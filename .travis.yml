@@ -17,8 +17,7 @@ matrix:
 
 install:
   - travis_retry composer install --no-interaction
-  - stty cols 120
-  - composer show
+  - stty cols 120 && composer show
 
 script:
   - ./vendor/bin/phpcs
