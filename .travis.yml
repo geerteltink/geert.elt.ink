@@ -17,8 +17,8 @@ matrix:
 
 install:
   - travis_retry composer install --no-interaction
-  - COLUMNS=120 composer show
-  - export COLUMNS=120 composer show --outdated
+  - stty cols 120 && composer show
+  - stty cols 120 && composer show --outdated
 
 script:
   - ./vendor/bin/phpcs
