@@ -39,7 +39,7 @@ build:
 test:
 	composer validate --no-check-publish
 	vendor/bin/phpcs
-	vendor/bin/phpunit --report-useless-tests
+	vendor/bin/phpunit
 
 fix:
 	vendor/bin/phpcbf
