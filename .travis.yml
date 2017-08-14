@@ -14,13 +14,10 @@ matrix:
   allow_failures:
     - php: 7.2
 
-before_install:
-  - stty cols 80
-
 install:
   - travis_retry composer install --no-interaction --optimize-autoloader --classmap-authoritative
-  - composer show
-  - composer show --outdated
+  - stty cols 80 && composer show
+  - stty cols 80 && composer show --outdated
 
 script:
   - ./vendor/bin/phpcs
