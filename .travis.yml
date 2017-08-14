@@ -21,12 +21,12 @@ before_install:
 install:
   - travis_retry composer install --no-interaction --optimize-autoloader --classmap-authoritative
   - composer show
-  - composer outdated --direct --strict
 
 script:
   - ./vendor/bin/phpcs
   - ./vendor/bin/phpunit --coverage-clover clover.xml
   - ./vendor/bin/phpstan analyse -l 5 src test
+  - composer outdated --direct --strict
 
 after_script:
   - if [[ $COVERAGE == 'true' ]]; then wget https://scrutinizer-ci.com/ocular.phar ; fi
