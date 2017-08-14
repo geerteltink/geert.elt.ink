@@ -21,7 +21,7 @@ before_install:
 install:
   - travis_retry composer install --no-interaction --optimize-autoloader --classmap-authoritative
   - composer show
-  - composer show --outdated
+  - composer outdated --direct --strict
 
 script:
   - ./vendor/bin/phpcs

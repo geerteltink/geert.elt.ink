@@ -41,6 +41,7 @@ test:
 	vendor/bin/phpcs
 	vendor/bin/phpunit
 	vendor/bin/phpstan analyse -l 5 src test
+	composer outdated --direct
 
 fix:
 	vendor/bin/phpcbf
