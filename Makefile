@@ -40,6 +40,7 @@ test:
 	composer validate --no-check-publish
 	vendor/bin/phpcs
 	vendor/bin/phpunit
+	vendor/bin/phpstan analyse -l 5 src test
 
 fix:
 	vendor/bin/phpcbf
