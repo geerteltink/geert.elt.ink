@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "224c8c6611e81cb00d0c37e838a22308",
+    "content-hash": "86f20086a21fd692f33b08f071195e54",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -1494,16 +1494,16 @@
         },
         {
             "name": "zendframework/zend-expressive-fastroute",
-            "version": "dev-feature/psr-11",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/xtreamwayz/zend-expressive-fastroute.git",
-                "reference": "1f54bd5e38260a7ef8878b5bff39611f0c53272c"
+                "url": "https://github.com/zendframework/zend-expressive-fastroute.git",
+                "reference": "20767d9df6d0154190e344e2bd6ba1a4db74a959"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xtreamwayz/zend-expressive-fastroute/zipball/1f54bd5e38260a7ef8878b5bff39611f0c53272c",
-                "reference": "1f54bd5e38260a7ef8878b5bff39611f0c53272c",
+                "url": "https://api.github.com/repos/zendframework/zend-expressive-fastroute/zipball/20767d9df6d0154190e344e2bd6ba1a4db74a959",
+                "reference": "20767d9df6d0154190e344e2bd6ba1a4db74a959",
                 "shasum": ""
             },
             "require": {
@@ -1526,8 +1526,8 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.0-dev",
-                    "dev-develop": "2.1-dev"
+                    "dev-master": "2.1-dev",
+                    "dev-develop": "2.2-dev"
                 }
             },
             "autoload": {
@@ -1535,36 +1535,7 @@
                     "Zend\\Expressive\\Router\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "ZendTest\\Expressive\\Router\\": "test/"
-                }
-            },
-            "scripts": {
-                "check": [
-                    "@license-check",
-                    "@cs-check",
-                    "@test"
-                ],
-                "upload-coverage": [
-                    "coveralls -v"
-                ],
-                "cs-check": [
-                    "phpcs --colors"
-                ],
-                "cs-fix": [
-                    "phpcbf --colors"
-                ],
-                "license-check": [
-                    "docheader check src/ test/"
-                ],
-                "test": [
-                    "phpunit --colors=always"
-                ],
-                "test-coverage": [
-                    "phpunit --coverage-clover clover.xml"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause"
             ],
@@ -1577,10 +1548,7 @@
                 "psr",
                 "psr-7"
             ],
-            "support": {
-                "source": "https://github.com/xtreamwayz/zend-expressive-fastroute/tree/feature/psr-11"
-            },
-            "time": "2017-04-28 09:03:28"
+            "time": "2017-08-11T18:46:49+00:00"
         },
         {
             "name": "zendframework/zend-expressive-helpers",
@@ -2604,6 +2572,51 @@
             "time": "2017-08-03T18:23:40+00:00"
         },
         {
+            "name": "jean85/pretty-package-versions",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Jean85/pretty-package-versions.git",
+                "reference": "1463537075283fb54b263c6db939ec9ceae11e0f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Jean85/pretty-package-versions/zipball/1463537075283fb54b263c6db939ec9ceae11e0f",
+                "reference": "1463537075283fb54b263c6db939ec9ceae11e0f",
+                "shasum": ""
+            },
+            "require": {
+                "ocramius/package-versions": "^1.0",
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Jean85\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alessandro Lai",
+                    "email": "alessandro.lai85@gmail.com"
+                }
+            ],
+            "description": "A wrapper for ocramius/pretty-package-versions to get pretty versions strings",
+            "keywords": [
+                "parallel test",
+                "phpunit",
+                "testing"
+            ],
+            "time": "2017-07-06T15:13:38+00:00"
+        },
+        {
             "name": "myclabs/deep-copy",
             "version": "1.6.1",
             "source": {
@@ -3190,6 +3203,54 @@
             "time": "2017-07-28T14:45:09+00:00"
         },
         {
+            "name": "ocramius/package-versions",
+            "version": "1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Ocramius/PackageVersions.git",
+                "reference": "51e867c70f0799790b3e82276875414ce13daaca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Ocramius/PackageVersions/zipball/51e867c70f0799790b3e82276875414ce13daaca",
+                "reference": "51e867c70f0799790b3e82276875414ce13daaca",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0",
+                "php": "~7.0"
+            },
+            "require-dev": {
+                "composer/composer": "^1.3",
+                "ext-zip": "*",
+                "phpunit/phpunit": "^5.4.7"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "PackageVersions\\Installer",
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PackageVersions\\": "src/PackageVersions"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marco Pivetta",
+                    "email": "ocramius@gmail.com"
+                }
+            ],
+            "description": "Composer plugin that provides efficient querying for installed package versions (no runtime IO)",
+            "time": "2016-12-30T09:49:15+00:00"
+        },
+        {
             "name": "phar-io/manifest",
             "version": "1.0.1",
             "source": {
@@ -3502,36 +3563,36 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "0.7",
+            "version": "0.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "8da03c084b2c8e4a92d48f6926f6191c2c7783ad"
+                "reference": "61271b083bb181795909a927f6e42f35c3b1a800"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/8da03c084b2c8e4a92d48f6926f6191c2c7783ad",
-                "reference": "8da03c084b2c8e4a92d48f6926f6191c2c7783ad",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/61271b083bb181795909a927f6e42f35c3b1a800",
+                "reference": "61271b083bb181795909a927f6e42f35c3b1a800",
                 "shasum": ""
             },
             "require": {
+                "jean85/pretty-package-versions": "^1.0",
                 "nette/bootstrap": "^2.4 || ^3.0",
-                "nette/caching": "^2.4 || ^3.0",
                 "nette/di": "^2.4 || ^3.0",
-                "nette/robot-loader": "^2.4.2 || ^3.0",
+                "nette/robot-loader": "^3.0.1",
                 "nette/utils": "^2.4 || ^3.0",
-                "nikic/php-parser": "^2.1 || ^3.0.2",
+                "nikic/php-parser": "^3.0.2",
                 "php": "~7.0",
                 "symfony/console": "~2.7 || ~3.0",
                 "symfony/finder": "~2.7 || ~3.0"
             },
             "require-dev": {
-                "consistence/coding-standard": "~0.13.0",
+                "consistence/coding-standard": "^2.0.0",
                 "jakub-onderka/php-parallel-lint": "^0.9.2",
                 "phing/phing": "^2.16.0",
-                "phpunit/phpunit": "^6.0.7",
+                "phpunit/phpunit": "^6.3",
                 "satooshi/php-coveralls": "^1.0",
-                "slevomat/coding-standard": "^2.0"
+                "slevomat/coding-standard": "^3.1.1"
             },
             "bin": [
                 "bin/phpstan"
@@ -3539,7 +3600,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.7-dev"
+                    "dev-master": "0.8-dev"
                 }
             },
             "autoload": {
@@ -3552,7 +3613,7 @@
                 "MIT"
             ],
             "description": "PHPStan - PHP Static Analysis Tool",
-            "time": "2017-05-14T20:37:59+00:00"
+            "time": "2017-08-13T21:13:24+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -5143,8 +5204,7 @@
     "stability-flags": {
         "psr7-sessions/storageless": 20,
         "roave/security-advisories": 20,
-        "xtreamwayz/html-form-validator": 20,
-        "zendframework/zend-expressive-fastroute": 20
+        "xtreamwayz/html-form-validator": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
