@@ -1,5 +1,6 @@
 language: php
 sudo: false
+dist: trusty
 
 cache:
   directories:
@@ -14,10 +15,13 @@ matrix:
   allow_failures:
     - php: 7.2
 
+before_install:
+  - stty cols 112
+
 install:
   - travis_retry composer install --no-interaction --optimize-autoloader --classmap-authoritative
-  - stty cols 80 && composer show
-  - stty cols 80 && composer show --outdated
+  - composer show
+  - composer show --outdated
 
 script:
   - ./vendor/bin/phpcs
