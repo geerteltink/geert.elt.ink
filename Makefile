@@ -48,7 +48,7 @@ deploy:
 	touch public/.maintenance
 	git fetch --all
 	git reset --hard origin/$(target)
-	composer install --no-dev --no-scripts --no-interaction --optimize-autoloader
+	composer install --no-dev --no-scripts --no-interaction --optimize-autoloader --classmap-authoritative
 	rm -rf data/cache/*
 	rm -f data/config-cache.php
 	rm -f data/cache/config-cache.php

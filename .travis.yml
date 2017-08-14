@@ -16,7 +16,7 @@ matrix:
     - php: nightly
 
 install:
-  - travis_retry composer install --no-interaction
+  - travis_retry composer install --no-interaction --optimize-autoloader --classmap-authoritative
   - stty cols 120 && composer show
   - stty cols 120 && composer show --outdated
 
