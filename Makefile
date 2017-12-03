@@ -15,7 +15,7 @@ init:
 
 update:
 	npm update
-	composer update
+	composer update --no-interaction
 
 build:
 	rm -rf data/build

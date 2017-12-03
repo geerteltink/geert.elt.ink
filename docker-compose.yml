@@ -1,26 +1,26 @@
-version: "2"
+version: "2.1"
 services:
 
   web:
-    image: xtreamwayz/nginx
+    image: xtreamwayz/nginx:latest
     container_name: xtreamwayz-web
     ports:
       - "80:80"
     volumes:
-      - $PWD/public:/app/public
+      - ./public:/app/public
     links:
       - php
 
   php:
-    image: xtreamwayz/php:latest
+    image: xtreamwayz/php:7.1
     container_name: xtreamwayz-php
     volumes:
-      - $PWD:/app
+      - .:/app
     links:
       - mailhog
 
   mailhog:
-    image: mailhog/mailhog
+    image: mailhog/mailhog:latest
     container_name: xtreamwayz-mailhog
     ports:
       - "1025:1025"
