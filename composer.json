@@ -29,7 +29,7 @@
         "psr/log": "^1.0",
         "psr7-sessions/storageless": "^4.0 || dev-feature/psr-http-middleware",
         "roave/security-advisories": "dev-master",
-        "symfony/yaml": "^3.2",
+        "symfony/yaml": "^4.0",
         "xtreamwayz/html-form-validator": "^1.0 || 1.0.x-dev",
         "zendframework/zend-config-aggregator": "^1.0",
         "zendframework/zend-expressive": "~2.0.0",
