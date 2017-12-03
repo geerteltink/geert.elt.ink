@@ -74,8 +74,8 @@ Open the Run/Debug Configuration at `Run -> Edit Configurations`.
 
 Green + again and select PHPUnit.
 
-Name: `PHPUnit`
-Test Runner: `Defined in the configuration file`
+- Name: `PHPUnit`
+- Test Runner: `Defined in the configuration file`
 
 Click apply.
 
