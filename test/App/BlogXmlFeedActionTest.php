@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace AppTest\App;
 
@@ -13,7 +13,7 @@ class BlogXmlFeedActionTest extends WebTestCase
     /**
      * @group functional
      */
-    public function testFeedBuildIsSuccessful()
+    public function testFeedBuildIsSuccessful() : void
     {
         $response = $this->handleRequest('GET', '/blog/feed.xml');
 

@@ -13,6 +13,7 @@ use Zend\Expressive\Template\TemplateRendererInterface;
 
 class TestAction implements MiddlewareInterface
 {
+    /** @var TemplateRendererInterface */
     private $template;
 
     public function __construct(TemplateRendererInterface $template)
@@ -20,7 +21,7 @@ class TestAction implements MiddlewareInterface
         $this->template = $template;
     }
 
-    public function process(ServerRequestInterface $request, DelegateInterface $delegate): ResponseInterface
+    public function process(ServerRequestInterface $request, DelegateInterface $delegate) : ResponseInterface
     {
         return new HtmlResponse($this->template->render('app::home'));
     }

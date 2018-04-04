@@ -1,12 +1,15 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 return [
+    'recaptcha' => [
+        'site_key'   => '',
+        'secret_key' => '',
+    ],
+
     'twig' => [
         'globals' => [
-            'recaptcha_pub_key'  => '',
-            'recaptcha_priv_key' => '',
             //'ga_tracking'      => '',
         ],
     ],
@@ -22,12 +25,10 @@ return [
     ],
 
     'session' => [
-        'psr7' => [
-            'signature_key'    => '',
-            'verification_key' => '',
-            'cookie_name'      => 'slsession',
-            'cookie_secure'    => false, // false on purpose, unless you have https locally
-            'expiration_time'  => 1200, // 20 minutes
-        ],
+        //'signature_key'    => '',
+        //'verification_key' => '',
+        'cookie_name'     => 'slsession',
+        'cookie_secure'   => false, // false on purpose, unless you have https locally
+        'expiration_time' => 1200, // 20 minutes
     ],
 ];

@@ -1,25 +1,26 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
-namespace App\Factory\Infrastructure\Mail;
+namespace App\Container;
 
+use Interop\Container\Exception\ContainerException;
+use Interop\Container\Exception\NotFoundException;
 use Psr\Container\ContainerInterface;
 use RuntimeException;
 use Zend\Mail\Transport;
+use function sprintf;
 
 class MailTransportFactory
 {
     /**
-     * @param ContainerInterface $container
      *
-     * @return Transport\TransportInterface
      *
-     * @throws \Interop\Container\Exception\NotFoundException
-     * @throws \Interop\Container\Exception\ContainerException
+     * @throws NotFoundException
+     * @throws ContainerException
      * @throws \RuntimeException
      */
-    public function __invoke(ContainerInterface $container): Transport\TransportInterface
+    public function __invoke(ContainerInterface $container) : Transport\TransportInterface
     {
         $config  = $container->get('config');
         $config  = $config['mail']['transport'];

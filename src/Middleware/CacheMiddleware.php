@@ -1,35 +1,34 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
-namespace App\Infrastructure\Http;
+namespace App\Middleware;
 
 use Doctrine\Common\Cache\Cache;
-use Interop\Http\ServerMiddleware\DelegateInterface;
-use Interop\Http\ServerMiddleware\MiddlewareInterface;
-use Psr\Http\Message\ResponseInterface as Response;
-use Psr\Http\Message\ServerRequestInterface as Request;
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
+use Psr\Http\Server\MiddlewareInterface;
+use Psr\Http\Server\RequestHandlerInterface;
 use Zend\Diactoros\Response as DefaultResponse;
+use function array_intersect;
+use function count;
+use function explode;
 
 class CacheMiddleware implements MiddlewareInterface
 {
-    /**
-     * @var Cache
-     */
+    /** @var Cache */
     protected $cache;
 
-    /**
-     * @var bool
-     */
+    /** @var bool */
     protected $debug;
 
-    public function __construct(Cache $cache, bool $debug = false)
+    public function __construct(Cache $cache, ?bool $debug = null)
     {
         $this->cache = $cache;
-        $this->debug = $debug;
+        $this->debug = $debug ?? false;
     }
 
-    public function process(Request $request, DelegateInterface $delegate): Response
+    public function process(ServerRequestInterface $request, RequestHandlerInterface $handler) : ResponseInterface
     {
         $cachedResponse = $this->getCachedResponse($request);
 
@@ -37,7 +36,7 @@ class CacheMiddleware implements MiddlewareInterface
             return $cachedResponse;
         }
 
-        $response = $delegate->process($request);
+        $response = $handler->handle($request);
 
         if ($this->debug !== true) {
             $this->cacheResponse($request, $response);
@@ -46,14 +45,14 @@ class CacheMiddleware implements MiddlewareInterface
         return $response;
     }
 
-    private function getCachedResponse(Request $request)
+    private function getCachedResponse(ServerRequestInterface $request) : ?ResponseInterface
     {
-        if ('GET' !== $request->getMethod()) {
+        if ($request->getMethod() !== 'GET') {
             return null;
         }
 
         $item = $this->cache->fetch($this->getCacheKey($request));
-        if (false === $item) {
+        if ($item === false) {
             return null;
         }
 
@@ -66,14 +65,14 @@ class CacheMiddleware implements MiddlewareInterface
         return $response;
     }
 
-    private function getCacheKey(Request $request): string
+    private function getCacheKey(ServerRequestInterface $request) : string
     {
         return 'http-cache:' . $request->getUri()->getPath();
     }
 
-    private function cacheResponse(Request $request, Response $response)
+    private function cacheResponse(ServerRequestInterface $request, ResponseInterface $response) : void
     {
-        if ('GET' !== $request->getMethod() || ! $response->hasHeader('Cache-Control')) {
+        if ($request->getMethod() !== 'GET' || ! $response->hasHeader('Cache-Control')) {
             return;
         }
 
@@ -85,7 +84,7 @@ class CacheMiddleware implements MiddlewareInterface
 
         foreach ($cacheControl as $value) {
             $parts = explode('=', $value);
-            if (count($parts) === 2 && 'max-age' === $parts[0]) {
+            if (count($parts) === 2 && $parts[0] === 'max-age') {
                 $this->cache->save(
                     $this->getCacheKey($request),
                     [

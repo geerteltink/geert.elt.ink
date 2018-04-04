@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace AppTest\App;
 
@@ -13,7 +13,7 @@ class SmokeTest extends WebTestCase
      * @group        functional
      * @dataProvider urlProvider
      */
-    public function testPageIsSuccessful($statusCode, $url)
+    public function testPageIsSuccessful($statusCode, $url) : void
     {
         $response = $this->handleRequest('GET', $url);
 
@@ -21,7 +21,7 @@ class SmokeTest extends WebTestCase
         self::assertEquals($statusCode, $response->getStatusCode());
     }
 
-    public function urlProvider()
+    public function urlProvider() : array
     {
         return [
             [200, '/'],

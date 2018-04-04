@@ -1,50 +1,51 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
-namespace App\Http\Action;
+namespace App\Handler;
 
-use Interop\Http\ServerMiddleware\DelegateInterface;
-use Interop\Http\ServerMiddleware\MiddlewareInterface;
+use App\Middleware\ReCaptchaMiddleware;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use Psr\Http\Server\RequestHandlerInterface;
 use Psr\Log\LoggerInterface;
 use PSR7Sessions\Storageless\Http\SessionMiddleware;
 use PSR7Sessions\Storageless\Session\SessionInterface;
 use Xtreamwayz\HTMLFormValidator\FormFactory;
 use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Expressive\Template\TemplateRendererInterface;
-use Zend\InputFilter\Factory as InputFilterFactory;
 use Zend\Mail\Message;
 use Zend\Mail\Transport\TransportInterface;
+use function md5;
+use function random_bytes;
 
-class ContactAction implements MiddlewareInterface
+class ContactHandler implements RequestHandlerInterface
 {
+    /** @var TemplateRendererInterface */
     private $template;
 
-    private $inputFilterFactory;
-
+    /** @var TransportInterface */
     private $mailTransport;
 
+    /** @var LoggerInterface */
     private $logger;
 
+    /** @var array */
     private $config;
 
     public function __construct(
         TemplateRendererInterface $template,
-        InputFilterFactory $inputFilterFactory,
         TransportInterface $mailTransport,
         LoggerInterface $logger,
         array $config
     ) {
-        $this->template           = $template;
-        $this->inputFilterFactory = $inputFilterFactory;
-        $this->mailTransport      = $mailTransport;
-        $this->logger             = $logger;
-        $this->config             = $config;
+        $this->template      = $template;
+        $this->mailTransport = $mailTransport;
+        $this->logger        = $logger;
+        $this->config        = $config;
     }
 
-    public function process(ServerRequestInterface $request, DelegateInterface $delegate): ResponseInterface
+    public function handle(ServerRequestInterface $request) : ResponseInterface
     {
         /* @var SessionInterface $session */
         $session = $request->getAttribute(SessionMiddleware::SESSION_ATTRIBUTE);
@@ -55,13 +56,15 @@ class ContactAction implements MiddlewareInterface
         }
 
         // Generate form and inject csrf token
-        $form = new FormFactory($this->template->render('app::contact-form', [
+        $form = (new FormFactory())->fromHtml($this->template->render('app::contact-form', [
             'token' => $session->get('csrf'),
-        ]), $this->inputFilterFactory);
+            'recaptchaSiteKey' => $request->getAttribute(ReCaptchaMiddleware::SITE_KEY),
+        ]));
 
         // Validate form
         $validationResult = $form->validateRequest($request);
         if ($validationResult->isValid()) {
+            $session->remove('csrf');
             // Get filter submitted values
             $data = $validationResult->getValues();
 

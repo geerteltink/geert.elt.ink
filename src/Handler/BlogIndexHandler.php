@@ -1,37 +1,40 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
-namespace App\Http\Action;
+namespace App\Handler;
 
 use App\Domain\Post\PostRepositoryInterface;
 use Doctrine\Common\Cache\Cache;
-use Interop\Http\ServerMiddleware\DelegateInterface;
-use Interop\Http\ServerMiddleware\MiddlewareInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use Psr\Http\Server\RequestHandlerInterface;
 use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Expressive\Template\TemplateRendererInterface;
+use function array_reverse;
 
-class BlogIndexAction implements MiddlewareInterface
+class BlogIndexHandler implements RequestHandlerInterface
 {
+    /** @var TemplateRendererInterface */
     private $template;
 
+    /** @var Cache */
     private $cache;
 
+    /** @var PostRepositoryInterface */
     private $postRepository;
 
     public function __construct(
         TemplateRendererInterface $template,
-        Cache $cache,
-        PostRepositoryInterface $postRepository
+        PostRepositoryInterface $postRepository,
+        Cache $cache
     ) {
         $this->template       = $template;
-        $this->cache          = $cache;
         $this->postRepository = $postRepository;
+        $this->cache          = $cache;
     }
 
-    public function process(ServerRequestInterface $request, DelegateInterface $delegate): ResponseInterface
+    public function handle(ServerRequestInterface $request) : ResponseInterface
     {
         if ($this->cache->contains('blog:posts')) {
             $posts = $this->cache->fetch('blog:posts');
@@ -41,9 +44,7 @@ class BlogIndexAction implements MiddlewareInterface
         }
 
         return new HtmlResponse(
-            $this->template->render('app::blog-index', [
-                'posts' => $posts,
-            ]),
+            $this->template->render('app::blog-index', ['posts' => $posts]),
             200,
             [
                 'Cache-Control' => ['public', 'max-age=3600'],

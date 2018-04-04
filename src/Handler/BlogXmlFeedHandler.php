@@ -1,28 +1,37 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
-namespace App\Http\Action;
+namespace App\Handler;
 
+use App\Domain\Post\Post;
 use App\Domain\Post\PostRepositoryInterface;
 use Doctrine\Common\Cache\Cache;
-use Interop\Http\ServerMiddleware\DelegateInterface;
-use Interop\Http\ServerMiddleware\MiddlewareInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use Psr\Http\Server\RequestHandlerInterface;
 use Zend\Diactoros\Response;
 use Zend\Expressive\Helper\ServerUrlHelper;
 use Zend\Expressive\Helper\UrlHelper;
 use Zend\Feed\Writer\Feed;
+use function array_reverse;
+use function array_slice;
+use function date;
+use function sprintf;
+use function time;
 
-class BlogXmlFeedAction implements MiddlewareInterface
+class BlogXmlFeedHandler implements RequestHandlerInterface
 {
+    /** @var Cache */
     private $cache;
 
+    /** @var PostRepositoryInterface */
     private $postRepository;
 
+    /** @var UrlHelper */
     private $urlHelper;
 
+    /** @var ServerUrlHelper */
     private $serverUrlHelper;
 
     public function __construct(
@@ -37,7 +46,7 @@ class BlogXmlFeedAction implements MiddlewareInterface
         $this->serverUrlHelper = $serverUrlHelper;
     }
 
-    public function process(ServerRequestInterface $request, DelegateInterface $delegate): ResponseInterface
+    public function handle(ServerRequestInterface $request) : ResponseInterface
     {
         $feed = null;
 
@@ -58,7 +67,7 @@ class BlogXmlFeedAction implements MiddlewareInterface
             ->withHeader('Cache-Control', ['public', 'max-age=3600']);
     }
 
-    public function generateXmlFeed()
+    public function generateXmlFeed() : string
     {
         $feed = new Feed();
         $feed->setTitle('xtreamwayz');
@@ -74,7 +83,7 @@ class BlogXmlFeedAction implements MiddlewareInterface
         $feed->setId($this->generateUrl('home', [], true));
 
         $posts = array_slice(array_reverse($this->postRepository->findAll()), 0, 5);
-        /** @var \App\Domain\Post\Post $post */
+        /** @var Post $post */
         foreach ($posts as $post) {
             $entry = $feed->createEntry();
             $entry->setTitle($post->getTitle());
@@ -98,16 +107,9 @@ class BlogXmlFeedAction implements MiddlewareInterface
         return $feed->export('atom');
     }
 
-    /**
-     * @param string $route
-     * @param array  $params
-     * @param bool   $absoluteUrl
-     *
-     * @return string
-     */
-    public function generateUrl($route = null, array $params = [], $absoluteUrl = false)
+    public function generateUrl(?string $route = null, ?array $params = null, ?bool $absoluteUrl = null) : string
     {
-        $url = $this->urlHelper->generate($route, $params);
+        $url = $this->urlHelper->generate($route, $params ?? []);
 
         if ($absoluteUrl !== true) {
             return $url;
@@ -116,12 +118,7 @@ class BlogXmlFeedAction implements MiddlewareInterface
         return $this->generateServerUrl($url);
     }
 
-    /**
-     * @param string $path
-     *
-     * @return string
-     */
-    public function generateServerUrl($path = null)
+    public function generateServerUrl(?string $path = null) : string
     {
         return $this->serverUrlHelper->generate($path);
     }

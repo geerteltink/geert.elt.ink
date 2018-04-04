@@ -1,10 +1,12 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace AppTest;
 
 use Interop\Container\ContainerInterface;
+use Interop\Container\Exception\ContainerException;
+use Interop\Container\Exception\NotFoundException;
 use Lcobucci\JWT\Builder;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
@@ -20,12 +22,10 @@ use Zend\ServiceManager\ServiceManager;
 
 class WebTestCase extends TestCase
 {
-    /**
-     * @var ContainerInterface
-     */
+    /** @var ContainerInterface */
     private $container;
 
-    protected function setUp()
+    protected function setUp() : void
     {
         // Load configuration
         $config = require __DIR__ . '/../config/config.php';
@@ -39,31 +39,28 @@ class WebTestCase extends TestCase
         $this->container->setService('config', $config);
     }
 
-    protected function tearDown()
+    protected function tearDown() : void
     {
         // Clean up
         unset($this->container);
     }
 
     /**
-     * @param string     $method
-     * @param string     $uri
      * @param array|null $parameters
      * @param array|null $sessionData
      *
-     * @return ResponseInterface
      *
      * @throws \BadMethodCallException
-     * @throws \Interop\Container\Exception\NotFoundException
-     * @throws \Interop\Container\Exception\ContainerException
+     * @throws NotFoundException
+     * @throws ContainerException
      * @throws \InvalidArgumentException
      */
     protected function handleRequest(
         string $method,
         string $uri,
-        array $parameters = null,
-        array $sessionData = null
-    ): ResponseInterface {
+        ?array $parameters = null,
+        ?array $sessionData = null
+    ) : ResponseInterface {
         // Create request
         $request = (new ServerRequest())
             ->withMethod($method)
@@ -100,7 +97,7 @@ class WebTestCase extends TestCase
             ]);
         }
 
-        $app = $this->container->get(Application::class);
+        $app      = $this->container->get(Application::class);
         $delegate = new NotFoundDelegate(new Response());
 
         // Invoke the request

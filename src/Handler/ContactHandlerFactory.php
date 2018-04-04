@@ -1,23 +1,20 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
-namespace App\Factory\Http\Action;
+namespace App\Handler;
 
-use App\Http\Action\ContactAction;
 use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
 use Zend\Expressive\Template\TemplateRendererInterface;
-use Zend\InputFilter\Factory as InputFilterFactory;
 use Zend\Mail\Transport\TransportInterface;
 
-class ContactActionFactory
+class ContactHandlerFactory
 {
-    public function __invoke(ContainerInterface $container): ContactAction
+    public function __invoke(ContainerInterface $container) : ContactHandler
     {
-        return new ContactAction(
+        return new ContactHandler(
             $container->get(TemplateRendererInterface::class),
-            $container->get(InputFilterFactory::class),
             $container->get(TransportInterface::class),
             $container->get(LoggerInterface::class),
             $container->get('config')['mail']

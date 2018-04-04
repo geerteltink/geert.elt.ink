@@ -1,18 +1,18 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
-namespace App\Http\Action;
+namespace App\Handler;
 
-use Interop\Http\ServerMiddleware\DelegateInterface;
-use Interop\Http\ServerMiddleware\MiddlewareInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use Psr\Http\Server\RequestHandlerInterface;
 use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Expressive\Template\TemplateRendererInterface;
 
-class HomePageAction implements MiddlewareInterface
+class HomePageHandler implements RequestHandlerInterface
 {
+    /** @var TemplateRendererInterface */
     private $template;
 
     public function __construct(TemplateRendererInterface $template)
@@ -20,7 +20,7 @@ class HomePageAction implements MiddlewareInterface
         $this->template = $template;
     }
 
-    public function process(ServerRequestInterface $request, DelegateInterface $delegate): ResponseInterface
+    public function handle(ServerRequestInterface $request) : ResponseInterface
     {
         return new HtmlResponse($this->template->render('app::home-page'), 200, [
             'Cache-Control' => ['public', 'max-age=3600'],

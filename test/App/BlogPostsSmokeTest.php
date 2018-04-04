@@ -1,10 +1,11 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace AppTest\App;
 
 use AppTest\WebTestCase;
+use Generator;
 use Psr\Http\Message\ResponseInterface;
 
 class BlogPostsSmokeTest extends WebTestCase
@@ -13,7 +14,7 @@ class BlogPostsSmokeTest extends WebTestCase
      * @group        functional
      * @dataProvider urlProvider
      */
-    public function testPageIsSuccessful($url)
+    public function testPageIsSuccessful($url) : void
     {
         $response = $this->handleRequest('GET', $url);
 
@@ -21,7 +22,7 @@ class BlogPostsSmokeTest extends WebTestCase
         self::assertEquals(200, $response->getStatusCode());
     }
 
-    public function urlProvider()
+    public function urlProvider() : Generator
     {
         // Get all blog posts
         foreach (new \DirectoryIterator('data/posts') as $file) {
