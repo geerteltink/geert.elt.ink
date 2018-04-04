@@ -19,4 +19,18 @@ return [
         'signature_key'    => '',
         'verification_key' => '',
     ],
+
+    /*
+    'monolog' => [
+        'handlers' => [
+            [
+                'type'    => \Monolog\Handler\SlackHandler::class,
+                'token'   => '',
+                'channel' => '#server-log',
+                'name'    => '',
+                'level'   => \Monolog\Logger::WARNING,
+            ],
+        ],
+    ],
+    */
 ];
