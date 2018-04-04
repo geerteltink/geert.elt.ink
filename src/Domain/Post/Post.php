@@ -1,62 +1,54 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace App\Domain\Post;
 
 use DateTime;
+use function is_numeric;
 
 class Post
 {
-    /**
-     * @var string
-     */
+    /** @var string */
     private $id;
 
-    /**
-     * @var string
-     */
+    /** @var string */
     private $title;
 
-    /**
-     * @var null|string
-     */
+    /** @var null|string */
     private $summary;
 
-    /**
-     * @var null|string
-     */
+    /** @var null|string */
     private $content;
 
-    /**
-     * @var array
-     */
+    /** @var array */
     private $tags;
 
-    /**
-     * @var DateTime
-     */
+    /** @var DateTime */
     private $published;
 
-    /**
-     * @var null|DateTime
-     */
+    /** @var null|DateTime */
     private $modified;
 
+    /**
+     * @param null|mixed $published
+     * @param null|mixed $modified
+     */
     public function __construct(
         string $id,
         string $title,
-        string $summary = null,
-        string $content = null,
-        array $tags = [],
-        $published = 'now',
+        ?string $summary = null,
+        ?string $content = null,
+        ?array $tags = null,
+        $published = null,
         $modified = null
     ) {
         $this->id      = $id;
         $this->title   = $title;
         $this->summary = $summary;
         $this->content = $content;
-        $this->tags    = $tags;
+        $this->tags    = $tags ?? [];
+        $published     = $published ?? 'now';
 
         if (is_numeric($published)) {
             $this->published = (new DateTime())->setTimestamp($published);
@@ -71,37 +63,37 @@ class Post
         }
     }
 
-    public function getId(): string
+    public function getId() : string
     {
         return $this->id;
     }
 
-    public function getTitle(): string
+    public function getTitle() : string
     {
         return $this->title;
     }
 
-    public function getSummary()
+    public function getSummary() : ?string
     {
         return $this->summary;
     }
 
-    public function getContent()
+    public function getContent() : ?string
     {
         return $this->content;
     }
 
-    public function getPublished(): DateTime
+    public function getPublished() : DateTime
     {
         return $this->published;
     }
 
-    public function getModified()
+    public function getModified() : ?DateTime
     {
         return $this->modified;
     }
 
-    public function getTags(): array
+    public function getTags() : array
     {
         return $this->tags;
     }

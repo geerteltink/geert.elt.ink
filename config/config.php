@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 use Zend\ConfigAggregator\ArrayProvider;
 use Zend\ConfigAggregator\ConfigAggregator;
@@ -13,8 +13,22 @@ $cacheConfig = [
 ];
 
 $aggregator = new ConfigAggregator([
+    \Xtreamwayz\HTMLFormValidator\ConfigProvider::class,
+    \Zend\Expressive\ConfigProvider::class,
+    \Zend\Expressive\Helper\ConfigProvider::class,
+    \Zend\Expressive\Router\ConfigProvider::class,
+    \Zend\Expressive\Router\FastRouteRouter\ConfigProvider::class,
+    \Zend\Expressive\Twig\ConfigProvider::class,
+    \Zend\Filter\ConfigProvider::class,
+    \Zend\HttpHandlerRunner\ConfigProvider::class,
+    \Zend\I18n\ConfigProvider::class,
+    \Zend\InputFilter\ConfigProvider::class,
+
     // Include cache configuration
     new ArrayProvider($cacheConfig),
+
+    // Default App module config
+    \App\ConfigProvider::class,
 
     // Load application config in a pre-defined order in such a way that local settings
     // overwrite global settings. (Loaded as first to last):
@@ -22,10 +36,10 @@ $aggregator = new ConfigAggregator([
     //   - `*.global.php`
     //   - `local.php`
     //   - `*.local.php`
-    new PhpFileProvider('config/autoload/{{,*.}global,{,*.}local}.php'),
+    new PhpFileProvider(realpath(__DIR__) . '/autoload/{{,*.}global,{,*.}local}.php'),
 
     // Load development config if it exists
-    new PhpFileProvider('config/development.config.php'),
+    new PhpFileProvider(realpath(__DIR__) . '/development.config.php'),
 ], $cacheConfig['config_cache_path']);
 
 return $aggregator->getMergedConfig();

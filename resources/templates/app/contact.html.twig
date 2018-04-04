@@ -4,9 +4,19 @@
 {% block subtitle %}Leave a message.{% endblock %}
 
 {% block content %}
+    <style>
+        .grecaptcha-badge {
+            display: none;
+        }
+    </style>
     {{ form|raw }}
 {% endblock %}
 
 {% block javascript %}
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+        function submitForm() {
+            document.getElementById('recaptcha-form').submit();
+        }
+    </script>
 {% endblock %}

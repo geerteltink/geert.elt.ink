@@ -1,5 +1,4 @@
 <?php
-
 /**
  * File required to allow enablement of development mode.
  *
@@ -21,10 +20,11 @@
  * - Configuration caching is _disabled_.
  */
 
+declare(strict_types=1);
+
 use Zend\ConfigAggregator\ConfigAggregator;
 
 return [
     'debug' => true,
-
     ConfigAggregator::ENABLE_CACHE => false,
 ];

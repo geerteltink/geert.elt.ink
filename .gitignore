@@ -1,8 +1,7 @@
-/.env
+.phpcs-cache
 /clover.xml
-/phpunit.xml
 /data/build/
-/config/development.config.php
 /node_modules/
+/phpunit.xml
 /public/.htaccess
 /vendor/
