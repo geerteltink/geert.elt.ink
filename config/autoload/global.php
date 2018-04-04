@@ -8,12 +8,6 @@ return [
         'secret_key' => '',
     ],
 
-    'twig' => [
-        'globals' => [
-            //'ga_tracking'      => '',
-        ],
-    ],
-
     'mail' => [
         'transport' => [
             'debug'   => true,
@@ -25,8 +19,6 @@ return [
     ],
 
     'session' => [
-        //'signature_key'    => '',
-        //'verification_key' => '',
         'cookie_name'     => 'slsession',
         'cookie_secure'   => false, // false on purpose, unless you have https locally
         'expiration_time' => 1200, // 20 minutes
