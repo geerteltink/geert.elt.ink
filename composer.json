@@ -22,6 +22,7 @@
         "dflydev/fig-cookies": "^1.0",
         "doctrine/cache": "^1.6",
         "guzzlehttp/guzzle": "^6.2",
+        "http-interop/http-middleware": "^0.4.1",
         "michelf/php-markdown": "^1.7",
         "monolog/monolog": "^1.22",
         "psr/container": "^1.0",

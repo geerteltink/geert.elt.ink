@@ -5,12 +5,12 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/xtreamwayz/xtreamwayz.com/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/xtreamwayz/xtreamwayz.com/?branch=master)
 
 xtreamwayz.com is served to your browser by [Expressive](https://github.com/zendframework/zend-expressive);
-Coded with love conform [PSR-1: Basic Coding Standard](http://www.php-fig.org/psr/psr-1/) and 
+Coded with love conform [PSR-1: Basic Coding Standard](http://www.php-fig.org/psr/psr-1/) and
 [PSR-2: Coding Style Guide](http://www.php-fig.org/psr/psr-2/);
-Autoloaded with [PSR-4: Autoloading Standard](http://www.php-fig.org/psr/psr-4/); 
+Autoloaded with [PSR-4: Autoloading Standard](http://www.php-fig.org/psr/psr-4/);
 Logged with [PSR-3: Logger Interface](http://www.php-fig.org/psr/psr-3/);
-And using [PSR-7: HTTP messages](http://www.php-fig.org/psr/psr-7/), 
-[PSR-11: Container Interface](http://www.php-fig.org/psr/psr-11/) 
+And using [PSR-7: HTTP messages](http://www.php-fig.org/psr/psr-7/),
+[PSR-11: Container Interface](http://www.php-fig.org/psr/psr-11/)
 and [PSR-15: HTTP Middleware](https://github.com/http-interop/http-middleware).
 
 Other used packages:

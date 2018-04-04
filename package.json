@@ -4,18 +4,15 @@
     "author": "Geert Eltink",
     "license": "MIT",
     "private": true,
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/xtreamwayz/xtreamwayz.com.git"
-    },
     "dependencies": {
-        "autoprefixer": "^6.3.6",
-        "bootstrap": "4.0.0-alpha.4",
+        "autoprefixer": "^8.2.0",
+        "bootstrap": "^4.0.0",
         "imagemin-cli": "^3.0.0",
-        "jquery": "^3.0.0",
-        "node-sass": "^3.7.0",
-        "postcss-cli": "^2.5.2",
-        "uglify-js": "^2.6.2",
-        "uglifycss": "0.0.20"
+        "jquery": "^3.3.1",
+        "node-sass": "^4.8.3",
+        "popper.js": "^1.14.3",
+        "postcss-cli": "^5.0.0",
+        "uglify-js": "^3.3.18",
+        "uglifycss": "0.0.29"
     }
 }

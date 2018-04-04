@@ -30,26 +30,26 @@
 </head>
 <body class="app" itemscope itemtype="http://schema.org/WebPage">
 <header>
-    <nav class="navbar navbar-light container" itemscope itemtype="http://schema.org/SiteNavigationElement">
-        <ul class="nav navbar-nav">
-            <li itemprop="url">
-                <a class="navbar-brand" href="{{ path('home') }}" itemprop="name">
-                    <svg class="icon icon-logo" style="font-size:20px;">
-                        <use xlink:href="{{ asset('assets/img/icons.svg') }}#logo"></use>
-                    </svg>
-                    XTREAMWAYZ
-                </a>
-            </li>
-            <li class="nav-item" itemprop="url">
-                <a class="nav-link" href="{{ path('blog') }}" itemprop="name">Blog</a>
-            </li>
-            <li class="nav-item" itemprop="url">
-                <a class="nav-link" href="{{ path('code') }}" itemprop="name">Code</a>
-            </li>
-            <li class="nav-item" itemprop="url">
-                <a class="nav-link" href="{{ path('contact') }}" itemprop="name">Contact</a>
-            </li>
-        </ul>
+    <nav class="navbar navbar-light justify-content-between">
+        <div class="container">
+            <a class="navbar-brand" href="{{ path('home') }}" itemprop="url">
+                <svg class="icon icon-logo" style="font-size:20px;">
+                    <use xlink:href="{{ asset('assets/img/icons.svg') }}#logo"></use>
+                </svg>
+                <strong itemprop="name">XTREAMWAYZ</strong>
+            </a>
+            <ul class="nav">
+                <li class="nav-item" itemprop="url">
+                    <a class="nav-link" href="{{ path('blog') }}" itemprop="name">Blog</a>
+                </li>
+                <li class="nav-item" itemprop="url">
+                    <a class="nav-link" href="{{ path('code') }}" itemprop="name">Code</a>
+                </li>
+                <li class="nav-item" itemprop="url">
+                    <a class="nav-link" href="{{ path('contact') }}" itemprop="name">Contact</a>
+                </li>
+            </ul>
+        </div>
     </nav>
 </header>
 
@@ -67,8 +67,8 @@
 </div>
 
 <footer class="app-footer" itemscope itemtype="http://schema.org/WPFooter">
-    <div class="container">
-        <ul class="list-inline text-xs-center pull-md-left">
+    <div class="container d-flex justify-content-between">
+        <ul class="list-inline text-xs-center">
             <li class="list-inline-item">
                 <svg class="icon icon-twitter">
                     <use xlink:href="{{ asset('assets/img/icons.svg') }}#icon-twitter"></use>
@@ -99,7 +99,7 @@
                 </a>
             </li>
         </ul>
-        <p class="pull-md-right text-xs-center text-md-right">
+        <p class="text-xs-center text-md-right">
             &copy; 2005 - {{ "now"|date("Y") }} by Geert Eltink. All rights reserved.
         </p>
     </div>
