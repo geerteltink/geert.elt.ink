@@ -1,19 +1,8 @@
 <?php
 
-declare(strict_types = 1);
-
-use Zend\Expressive\Template\TemplateRendererInterface;
-use Zend\Expressive\Twig\TwigEnvironmentFactory;
-use Zend\Expressive\Twig\TwigRendererFactory;
+declare(strict_types=1);
 
 return [
-    'dependencies' => [
-        'factories' => [
-            Twig_Environment::class          => TwigEnvironmentFactory::class,
-            TemplateRendererInterface::class => TwigRendererFactory::class,
-        ],
-    ],
-
     'templates' => [
         'extension' => 'html.twig',
         'paths'     => [

@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 use Zend\ConfigAggregator\ConfigAggregator;
 
@@ -12,11 +12,11 @@ return [
     ConfigAggregator::ENABLE_CACHE => true,
 
     // Enable debugging; typically used to provide debugging information within templates.
-    'debug' => false,
+    'debug'                        => false,
 
     'zend-expressive' => [
         // Enable exception-based error handling via standard middleware.
-        'raise_throwables' => true,
+        'raise_throwables'      => true,
 
         // Enable programmatic pipeline: Any `middleware_pipeline` or `routes`
         // configuration will be ignored when creating the `Application` instance.
@@ -24,7 +24,7 @@ return [
 
         // Provide templates for the error handling middleware to use when
         // generating responses.
-        'error_handler' => [
+        'error_handler'         => [
             'template_404'   => 'error::404',
             'template_error' => 'error::error',
         ],
