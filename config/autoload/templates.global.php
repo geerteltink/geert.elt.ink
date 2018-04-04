@@ -26,7 +26,7 @@ return [
     'twig' => [
         'cache_dir'      => 'data/cache/twig',
         'assets_url'     => '/',
-        'assets_version' => '20170501',
+        'assets_version' => '20180401',
         'extensions'     => [],
         'globals'        => [],
     ],
