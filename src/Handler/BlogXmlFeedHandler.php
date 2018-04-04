@@ -95,8 +95,12 @@ class BlogXmlFeedHandler implements RequestHandlerInterface
             } else {
                 $entry->setDateModified($post->getPublished());
             }
-            $entry->setDescription($post->getSummary());
-            $entry->setContent($post->getContent());
+            if ($post->getSummary()) {
+                $entry->setDescription($post->getSummary());
+            }
+            if ($post->getContent()) {
+                $entry->setContent($post->getContent());
+            }
             $entry->addAuthor([
                 'name' => 'Geert Eltink',
                 'uri'  => 'https://xtreamwayz.com',
