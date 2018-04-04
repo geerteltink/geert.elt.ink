@@ -10,8 +10,9 @@ return [
     ],
 
     'recaptcha' => [
-        'site_key' => '',
-        'secret_key' => '',
+        // These are recaptcha test keys which always validate, use your own secret keys
+        'site_key' => '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI',
+        'secret_key' => '6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe',
     ],
 
     'session' => [
