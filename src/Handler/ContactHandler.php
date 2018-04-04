@@ -10,7 +10,6 @@ use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use Psr\Log\LoggerInterface;
 use PSR7Sessions\Storageless\Http\SessionMiddleware;
-use PSR7Sessions\Storageless\Session\SessionInterface;
 use Xtreamwayz\HTMLFormValidator\FormFactory;
 use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Expressive\Template\TemplateRendererInterface;
@@ -47,7 +46,6 @@ class ContactHandler implements RequestHandlerInterface
 
     public function handle(ServerRequestInterface $request) : ResponseInterface
     {
-        /* @var SessionInterface $session */
         $session = $request->getAttribute(SessionMiddleware::SESSION_ATTRIBUTE);
 
         // Generate csrf token
