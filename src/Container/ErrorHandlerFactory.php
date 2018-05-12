@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Container;
 
+use App\Exception\ReCaptchaException;
 use Psr\Container\ContainerInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -30,6 +31,11 @@ class ErrorHandlerFactory
                 RequestInterface $request,
                 ResponseInterface $response
             ) use ($logger) : void {
+                if ($throwable instanceof ReCaptchaException) {
+                    // Don't log ReCaptcha exceptions
+                    return;
+                }
+
                 $logger->error('"{method} {uri}": {message} in {file}:{line}', [
                     'date'    => date('Y-m-d H:i:s'),
                     'method'  => $request->getMethod(),

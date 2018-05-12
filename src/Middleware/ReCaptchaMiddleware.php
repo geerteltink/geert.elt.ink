@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Middleware;
 
-use Exception;
+use App\Exception\ReCaptchaException;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
@@ -45,7 +45,7 @@ class ReCaptchaMiddleware implements MiddlewareInterface
         // Check if there is a valid captcha response
         $params = $request->getParsedBody();
         if (! isset($params['g-recaptcha-response']) || empty($params['g-recaptcha-response'])) {
-            throw new Exception('The captcha response is missing in the request', 422);
+            throw new ReCaptchaException('The captcha response is missing in the request', 422);
         }
 
         // Verify
@@ -62,7 +62,7 @@ class ReCaptchaMiddleware implements MiddlewareInterface
                 $errors[] = $error;
             }
 
-            throw new Exception(implode(' ', $errors), 422);
+            throw new ReCaptchaException(implode(' ', $errors), 422);
         }
 
         // Next please!
