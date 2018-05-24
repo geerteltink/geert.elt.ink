@@ -5,14 +5,14 @@
     "license": "MIT",
     "private": true,
     "dependencies": {
-        "autoprefixer": "^8.2.0",
-        "bootstrap": "^4.0.0",
+        "autoprefixer": "^8.5.0",
+        "bootstrap": "^4.1.1",
         "imagemin-cli": "^3.0.0",
         "jquery": "^3.3.1",
-        "node-sass": "^4.8.3",
+        "node-sass": "^4.9.0",
         "popper.js": "^1.14.3",
         "postcss-cli": "^5.0.0",
-        "uglify-js": "^3.3.18",
+        "uglify-js": "^3.3.27",
         "uglifycss": "0.0.29"
     }
 }
