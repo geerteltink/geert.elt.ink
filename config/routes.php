@@ -44,4 +44,5 @@ return function (Application $app, MiddlewareFactory $factory, ContainerInterfac
         ReCaptchaMiddleware::class,
         Handler\ContactHandler::class,
     ], ['GET', 'POST'], 'contact');
+    $app->route('/privacy', Handler\PrivacyHandler::class, ['GET'], 'privacy');
 };

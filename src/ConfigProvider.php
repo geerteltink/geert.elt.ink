@@ -33,6 +33,7 @@ class ConfigProvider
                 Handler\CodeHandler::class                    => Handler\CodeHandlerFactory::class,
                 Handler\ContactHandler::class                 => Handler\ContactHandlerFactory::class,
                 Handler\HomePageHandler::class                => Handler\HomePageHandlerFactory::class,
+                Handler\PrivacyHandler::class                 => Handler\PrivacyHandlerFactory::class,
                 Middleware\CacheMiddleware::class             => Middleware\CacheMiddlewareFactory::class,
                 Middleware\ReCaptchaMiddleware::class         => Middleware\ReCaptchaMiddlewareFactory::class,
 
