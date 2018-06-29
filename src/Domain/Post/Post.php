@@ -51,13 +51,13 @@ class Post
         $published     = $published ?? 'now';
 
         if (is_numeric($published)) {
-            $this->published = (new DateTime())->setTimestamp($published);
+            $this->published = (new DateTime())->setTimestamp((int) $published);
         } else {
             $this->published = new DateTime($published);
         }
 
         if (is_numeric($modified)) {
-            $this->modified = (new DateTime())->setTimestamp($modified);
+            $this->modified = (new DateTime())->setTimestamp((int) $modified);
         } elseif ($modified !== false && $modified !== null) {
             $this->modified = new DateTime($modified);
         }

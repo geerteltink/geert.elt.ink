@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace App\Container;
 
-use Interop\Container\Exception\ContainerException;
-use Interop\Container\Exception\NotFoundException;
 use Psr\Container\ContainerInterface;
 use RuntimeException;
 use Zend\Mail\Transport;
@@ -14,10 +12,6 @@ use function sprintf;
 class MailTransportFactory
 {
     /**
-     *
-     *
-     * @throws NotFoundException
-     * @throws ContainerException
      * @throws \RuntimeException
      */
     public function __invoke(ContainerInterface $container) : Transport\TransportInterface

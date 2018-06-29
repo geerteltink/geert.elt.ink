@@ -95,10 +95,10 @@ class BlogXmlFeedHandler implements RequestHandlerInterface
             } else {
                 $entry->setDateModified($post->getPublished());
             }
-            if ($post->getSummary()) {
+            if ($post->getSummary() !== null) {
                 $entry->setDescription($post->getSummary());
             }
-            if ($post->getContent()) {
+            if ($post->getContent() !== null) {
                 $entry->setContent($post->getContent());
             }
             $entry->addAuthor([

@@ -43,7 +43,7 @@ class ReCaptchaMiddleware implements MiddlewareInterface
         }
 
         // Check if there is a valid captcha response
-        $params = $request->getParsedBody();
+        $params = (array) $request->getParsedBody();
         if (! isset($params['g-recaptcha-response']) || empty($params['g-recaptcha-response'])) {
             throw new ReCaptchaException('The captcha response is missing in the request', 422);
         }

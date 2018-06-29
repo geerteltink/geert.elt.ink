@@ -56,14 +56,23 @@ class FilePostRepository implements PostRepositoryInterface
             return null;
         }
 
-        return $this->parse(file_get_contents($file));
+        $content = file_get_contents($file);
+        if ($content === false) {
+            return null;
+        }
+
+        return $this->parse($content);
     }
 
     public function findAll() : array
     {
         $posts = [];
         foreach (Glob::glob('data/posts/*.md', Glob::GLOB_BRACE) as $file) {
-            $posts[] = $this->parse(file_get_contents($file));
+            $content = file_get_contents($file);
+            if ($content === false) {
+                continue;
+            }
+            $posts[] = $this->parse($content);
         }
 
         return $posts;
