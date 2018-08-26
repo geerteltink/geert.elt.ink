@@ -5,6 +5,7 @@ summary: Validating cqrs command/event/query messages with Assert, Symfony valid
 draft: false
 public: true
 published: 2018-08-26T20:17:00+00:00
+modified: 2018-08-26T20:25:00+00:00
 tags:
     - cqrs
     - validation
@@ -204,7 +205,7 @@ class MessageValidationException extends DomainException
 }
 ```
 
-The validation exception has some logic in it. It's really interesting to var_dump a `ConstraintViolationList`. There is a lot of information in it, which can be helpful for translations. All I need are the messages and the key names to create the array I want. The key names, accessed by `getPropertyPath`, are not the real key names. They are paths and look like this: `[id]`, `[email]`. This is where the property accessor comes is. It translates those paths into array keys and assigns the value to it.
+The validation exception has some logic in it. It's really interesting to var_dump a `ConstraintViolationList`. There is a lot of information in it, which can be helpful for translations. All I need are the messages and the key names to create the array I want. The key names, accessed by `getPropertyPath`, are not the real key names. They are paths and look like this: `[id]`, `[email]`. This is where the property accessor comes in. It translates those paths into array keys and assigns the value to it.
 
 This does exactly what I was looking for however I'm still missing something. I'm missing filters. For example if a name or password has trailing spaces, I don't want those. I want the input to be valid at all times before it's persisted.
 
@@ -278,9 +279,9 @@ class ChangeUserEmail extends Command
 }
 ```
 
-In comparison with the Symfony validator the constructor has changed and also the validation specification. Now, the constructor assigns the validated values to the payload property. In case you have a `StringTrim` filter, the validator returns the value without the trailing spaces. Obviously the validation specification changed because the two work differently. I find the Symfony validator spec easier to read and understand, but the zend-inputfilter is much more powerful.
+In comparison with the Symfony validator the constructor has changed and also the validation specification. The constructor assigns the validated and filtered values to the payload property. Obviously the validation specification changed because the two work differently. I find the Symfony validator spec easier to read and understand, but the zend-inputfilter is much more powerful.
 
-In this example I've added an email `StringTrim` filter. It isn't really needed since an email address can't have spaces in it. However in case the email address would have trailing spaces, they are stripped first and then validated, so it would still pass. And because the filtered values are returned you still have a valid email address in your command message.
+In this example I've added an email `StringTrim` filter. It isn't really needed since an email address can't have spaces in it. However in case the email address would have trailing spaces, they are stripped first and then validated, so it would still pass. And because the filtered values are returned you still have a valid email address in your command message without the trailing spaces.
 
 ```php
 <?php
