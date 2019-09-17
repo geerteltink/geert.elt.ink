@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
-    <meta name="Description" content="A web developers playground, notes, and thoughts.">
+    <meta name="Description" content="It all starts with an idea, I can make it a reallity.">
     <meta name="web_author" content="Geert Eltink, https://www.elt.ink/" />
     <meta name="theme-color" content="#ff4f00" />
     <meta name="msapplication-TileColor" content="#ff4f00" />
@@ -19,13 +19,13 @@
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:url" content="{{ .Permalink }}" />
     <meta name="twitter:title" content="{{ .Title }}" />
-    <meta name="twitter:description" content="A web developers playground, notes, and thoughts." />
+    <meta name="twitter:description" content="It all starts with an idea, I can make it a reallity." />
     <meta name="twitter:image" content="{{ .Site.BaseURL }}/img/logo-120x120.png" />
     <meta property="og:url" content="{{ .Permalink }}" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="{{ .Title }}" />
     <meta property="og:image" content="{{ .Site.BaseURL }}/img/logo-120x120.png" />
-    <meta property="og:description" content="A web developers playground, notes, and thoughts." />
+    <meta property="og:description" content="It all starts with an idea, I can make it a reallity." />
     <meta property="og:site_name" content="{{ .Site.Title }}" />
     <meta property="article:author" content="Geert Eltink" />
     <base href="{{ if getenv "CONTEXT" }}{{ cond (eq "production" (getenv "CONTEXT")) (getenv "URL") (getenv "DEPLOY_PRIME_URL") }}{{ else }}{{ $.Site.BaseURL }}{{ end }}" />

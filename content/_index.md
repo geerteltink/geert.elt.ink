@@ -1,8 +1,8 @@
 ---
 title: Geert Eltink
-subtitle: "[designer, developer, devops, project manager]"
-summary: Making ideas a reallity!
-date: 2018-08-26T20:17:00+00:00
+subtitle: '[designer, developer, devops, project manager]'
+summary: It all starts with an idea, I can make it a reallity.
+date: 2018-08-26
 draft: false
 ---
 
@@ -18,6 +18,6 @@ I’ll be dedicated to create the most effective approach that aligns with your
 business objectives, attracts your target audience, and sustainably grows your
 organization.
 
-Talk to me about the interaction of design and content, optimizing content
-updates, streamlining and automating workflows and tasks, project management,
-web development, mountainbiking, diving and sushi.
+Talk to me about UX design, optimizing content delivery, streamlining and
+automating workflows and tasks, project management, web development,
+mountainbiking, diving and sushi.
