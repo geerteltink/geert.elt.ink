@@ -14,7 +14,7 @@ schedule a call within one business day.
     <dl>
         <dt>Get in Touch</dt>
         <dd>
-            <a href="mailto:geert@elt.ink" aria-label="Email">
+            <a href="mailto:geert.eltink@gmail.com" aria-label="Email">
                 {{% fontawesome envelope %}} Email
             </a>
             <br />
