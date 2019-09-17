@@ -1,5 +1,6 @@
 ---
-title: ɡeː Geert Eltink
+title: Geert Eltink
+subtitle: "[designer, developer, devops, project manager]"
 summary: Making ideas a reallity!
 date: 2018-08-26T20:17:00+00:00
 draft: false
