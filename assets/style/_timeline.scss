@@ -4,25 +4,20 @@
 
 .timeline {
   position: relative;
-
+  padding: 2em 0;
   margin-top: 2em;
   margin-bottom: 2em;
-  padding: 2em 0;
-
   list-style: none;
 
-  &:before {
+  &::before {
     position: absolute;
     top: 0;
     left: 18px;
-
     width: 4px;
     height: 100%;
-
     content: '';
-
-    opacity: 0.25;
     background: $primary;
+    opacity: 0.25;
   }
 }
 
@@ -31,9 +26,8 @@
     margin-top: 3em;
     margin-bottom: 3em;
 
-    &:before {
+    &::before {
       left: 50%;
-
       margin-left: -2px;
     }
   }
@@ -45,13 +39,11 @@
 
 .timeline-item {
   position: relative;
-
   margin: 2em 0;
 
-  &:after {
+  &::after {
     display: table;
     clear: both;
-
     content: '';
   }
 
@@ -85,22 +77,18 @@
 .timeline-item-image {
   position: absolute;
   top: 0;
-
   width: ($spacer * 1.375);
   height: ($spacer * 1.375);
   margin-left: (($spacer * 1.375) / 2);
-
-  border-radius: 50%;
   background: lighten($primary, 25%);
+  border-radius: 50%;
   box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
 
   img {
     position: relative;
     top: 50%;
     left: 50%;
-
     display: block;
-
     width: ($spacer * 1.375);
     height: ($spacer * 1.375);
   }
@@ -109,7 +97,6 @@
 @include media-breakpoint-up(md) {
   .timeline-item-image {
     left: 50%;
-
     margin-left: -(($spacer * 1.375) / 2);
   }
 }
@@ -122,16 +109,13 @@
   @include clearfix();
 
   position: relative;
-
-  margin-left: 60px;
   padding: 1em;
-
+  margin-left: 60px;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.24);
 
   h2 {
-    font-size: $h4-font-size;
-
     margin-top: 0;
+    font-size: $h4-font-size;
   }
 
   p {
@@ -140,15 +124,12 @@
 }
 
 .timeline-item-date {
-  font-weight: bold;
-
   display: inline-block;
   float: left;
-
-  text-transform: uppercase;
-
-  opacity: 0.4;
+  font-weight: bold;
   color: $gray-600;
+  text-transform: uppercase;
+  opacity: 0.4;
 }
 
 @include media-breakpoint-up(md) {
@@ -158,13 +139,11 @@
   }
 
   .timeline-item-date {
-    font-size: $h4-font-size;
-
     position: absolute;
     top: 0;
     left: 122%;
-
     width: 100%;
+    font-size: $h4-font-size;
   }
 
   .timeline-item:nth-child(even) .timeline-item-content {
@@ -174,7 +153,6 @@
   .timeline-item:nth-child(even) .timeline-item-date {
     right: 122%;
     left: auto;
-
     text-align: right;
   }
 }
