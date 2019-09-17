@@ -16,6 +16,10 @@ The site you are looking at right now actually. It used to run on Jekyll and Git
 
 For a client I'm building a PHP based API server powered by zend-expressive. Its purpose is to feed configuration and content to several company websites, auction sites and webshops, all build with Vue.js.
 
+## Testdriving
+
+Once in a while to clear my head I'm testdriving cars for quality assurance, evaluating brakes and durability, for Valmet Automotive Spain.
+
 ## Doing sports when not working
 
 This may include, but is not limted to, mountain biking, (trail) running and diving.
