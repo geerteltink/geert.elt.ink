@@ -1,8 +1,4 @@
-.phpcs-cache
-/clover.xml
-/data/build/
-/node_modules/
-/package-lock.json
-/phpunit.xml
-/public/.htaccess
-/vendor/
+/public
+/themes
+/vendor
+/node_modules

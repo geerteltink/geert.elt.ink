@@ -1,0 +1,21 @@
+baseURL = "/"
+languageCode = "en-US"
+title = "Geert Eltink"
+googleAnalytics = "UA-56579105-2"
+enableRobotsTxt = true
+enableGitInfo = true
+disqusShortname = "xtreamwayz"
+copyright = "Geert Eltink"
+rssLimit = 10
+summarylength = 30
+pygmentsCodeFences=true
+
+[author]
+    name = "Geert Eltink"
+
+[imaging]
+    resampleFilter = "Linear"
+    quality = 80
+
+[permalinks]
+    resources = "/resources/:filename/"

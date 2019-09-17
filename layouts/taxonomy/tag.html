@@ -1,0 +1,24 @@
+{{ define "title" }} TAG: {{ .Title }} &ndash; {{ .Site.Title }}{{ end }}
+{{ define "main" }}
+<main class="app-content">
+    <header class="bg-primary text-light mb-5">
+      <div class="container h-100">
+        <div class="row align-items-center h-100" style="min-height: 20vh;">
+          <div class="col-10 mx-auto text-center">
+            <h1>TAG: {{ .Title }}</h1>
+            {{ with.Params.subtitle }}
+            <h2 class="subtitle">{{.}}</h2>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </header>
+  <ul class="list-unstyled container">
+    {{ range.Data.Pages }}
+    <li>
+      <a href="{{.RelPermalink}}">{{ .Title }}</a>
+    </li>
+    {{ end }}
+  </ul>
+</main>
+{{ end }}

@@ -1,0 +1,37 @@
+{{ define "main" }}
+<main class="app-content">
+  <article>
+    <header class="bg-primary text-light mb-5">
+      <div class="container h-100">
+        <div class="row align-items-center h-100" style="min-height: 20vh;">
+          <div class="col-10 mx-auto text-center">
+            <h1>{{ .Title }}</h1>
+            {{ with.Params.subtitle }}
+            <span class="subtitle">{{.}}</span>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      {{ .Content }}
+    </div>
+  </article>
+  <ul itemscope="itemscope" itemtype="http://schema.org/Blog" class="container timeline">
+    {{ range .Pages.ByDate.Reverse }}
+    <li itemprop="blogPost" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" class="timeline-item">
+      <div class="timeline-item-image"></div>
+      <div class="timeline-item-content">
+        <h2 itemprop="name headline">
+          <a href="{{.Permalink}}" itemprop="url">{{.Title}}</a>
+        </h2>
+        <p itemprop="description">{{.Summary | markdownify}}</p>
+        <time datetime="{{.Date.Format "2006-01-02T15:04:05Z07:00"}}" itemprop="datePublished" class="timeline-item-date">
+          {{ .Date.Format "January 2006" }}
+        </time>
+      </div>
+    </li>
+    {{ end }}
+  </ul>
+</main>
+{{ end }}

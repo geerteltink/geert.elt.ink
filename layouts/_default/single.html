@@ -1,0 +1,22 @@
+{{ define "title" }} {{ .Title }} &ndash; {{ .Site.Title }}{{ end }}
+{{ define "main" }}
+<main class="app-content">
+  <article>
+    <header class="bg-primary text-light mb-5">
+      <div class="container h-100">
+        <div class="row align-items-center h-100" style="min-height: 20vh;">
+          <div class="col-10 mx-auto text-center">
+            <h1>{{ .Title }}</h1>
+            {{ with.Params.subtitle }}
+            <h2 class="subtitle">{{.}}</h2>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      {{ .Content }}
+    </div>
+  </article>
+</main>
+{{ end }}

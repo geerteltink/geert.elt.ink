@@ -1,0 +1,4 @@
+{{- $fname:=print "assets/svg/" . ".svg" -}}
+{{- $svg:="<svg" -}}
+{{- $class:="<svg class=\"icon\"" -}}
+{{ replace (readFile $fname) $svg $class | safeHTML }}

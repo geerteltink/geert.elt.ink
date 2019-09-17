@@ -1,32 +1,16 @@
 # https://www.netlify.com/docs/netlify-toml-reference/
 [build]
-  command = "npm run build"
-  publish = "dist"
+publish = "public"
+command = "hugo -b $URL"
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+[context.deploy-preview]
+command = "hugo --i18n-warnings -b $DEPLOY_PRIME_URL"
 
-[[headers]]
-  for = "/service-worker.js"
-  [headers.values]
-    cache-control = "public, max-age=0, must-revalidate"
+[context.deploy-preview.environment]
+HUGO_GOOGLEANALYTICS = "dev"
 
-[[headers]]
-  for = "/index.html"
-  [headers.values]
-    cache-control = "public, max-age=0, must-revalidate"
+[context.branch-deploy]
+command = "hugo --i18n-warnings --buildDrafts -b $DEPLOY_PRIME_URL"
 
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Access-Control-Allow-Origin = "*"
-    Content-Security-Policy = "base-uri 'self'; default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' https://www.google-analytics.com https://storage.googleapis.com; connect-src 'self' https://www.google-analytics.com; img-src 'self' https://www.google-analytics.com data:; object-src 'none'; frame-ancestors 'none'; report-uri https://sentry.io/api/1315496/security/?sentry_key=a16dcb199b9e4ad59a4da59a5fe092a0"
-    Expect-CT = "enforce, max-age=604800, report-uri='https://sentry.io/api/1315496/security/?sentry_key=a16dcb199b9e4ad59a4da59a5fe092a0'"
-    Feature-Policy = "accelerometer 'none'; camera 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; midi 'none'; payment 'none'; usb 'none'"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
-    X-Content-Type-Options = "nosniff"
-    X-Frame-Options = "DENY"
-    X-XSS-Protection = "1; mode=block"
+[context.deploy-deploy.environment]
+HUGO_GOOGLEANALYTICS = "dev"

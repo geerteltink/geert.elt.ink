@@ -1,0 +1,13 @@
+/*
+  Optimal reading line length is around 66 characters including spaces and punctuation.
+  Using 66ch translates to roughly 72 characters on each line.
+
+  1ch = 0.5em
+
+  @see http://www.simon-li.com/design-and-code/how-to-set-perfect-line-lengths-for-your-webpages/
+ */
+
+p,
+.u-read-length {
+  max-width: 66ch;
+}

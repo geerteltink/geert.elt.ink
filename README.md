@@ -2,7 +2,18 @@
 
 [![Build Status](https://travis-ci.org/xtreamwayz/xtreamwayz.com.svg?branch=master)](https://travis-ci.org/xtreamwayz/xtreamwayz.com)
 
-This repo contains the source code for www.xtreamwayz.com. It has changed over time. First it started with zend-expressive. Changed in 2018 to a vuejs based progressive web app to learn the language, PWA and service workers concepts.
+This repo contains the source code for www.xtreamwayz.com. It has changed over time. First it started with zend-expressive. Changed in 2018 to a vuejs based progressive web app to learn the language, PWA and service workers concepts. And then there is hugo: A fast way to generate static sites.
+
+## Version 3: Hugo
+
+[source code](https://github.com/xtreamwayz/www.xtreamwayz.com/tree/master)
+
+- [Hugo](https://gohugo.io/) a fast framework for building static websites
+
+**Notes:**
+
+Use icons in layouts: `{{ partial "fontawesome.html" "github" }}`
+Use icons in content: `{{% fontawesome github %}}`
 
 ## Version 2: Vue.js, PWA and service worker
 
@@ -34,9 +45,9 @@ This repo contains the source code for www.xtreamwayz.com. It has changed over t
 Following files, directories and their contents are copyrighted by Geert Eltink unless explicitly stated otherwise.
 You may not reuse anything therein without permission:
 
-* [data/posts/](/data/posts)
-* [resources/public/img/](resources/public/img)
-* [public/assets/img/](public/assets/img)
+- [content/posts/](/data/posts)
+- [assets/img/](resources/public/img)
+- [resources/img/](public/assets/img)
 
 All other files and directories are licensed under the [MIT](http://www.opensource.org/licenses/mit-license.php)
 unless explicitly stated.
