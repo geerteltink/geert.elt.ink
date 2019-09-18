@@ -1,7 +1,4 @@
 # Redirect default Netlify subdomain to primary domain
 https://elt-ink.netlify.com/* https://www.elt.ink/:splat 301!
 
-# Redirect domain aliases to primary domain
-https://www.xtreamwayz.com/* https://www.elt.ink/:splat 301!
-
 /blog/* /resources/:splat 301
