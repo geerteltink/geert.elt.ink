@@ -68,7 +68,7 @@ It's only a tiny collection of the most interesting projects.
         This custom build webshop ran on PHP a while back. However the
         filtering of products was done server side and used too many resources.
         The site was converted to a Vue.js app and the filtering is now done
-        client side. The PHP server is converted to an API and admin.
+        client side. The server still uses PHP for an API and admin pages.
       </p>
     </div>
     <div class="card-footer">
