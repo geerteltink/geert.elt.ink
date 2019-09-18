@@ -66,9 +66,9 @@ It's only a tiny collection of the most interesting projects.
       <h2 class="card-title">ai-total.nl</h2>
       <p class="card-text">
         This custom build webshop ran on PHP a while back. However the
-        filtering of products was done server side and used too many uncachable
-        resources. The site was converted to a Vue.js app and the filtering is
-        now done client side. The PHP server is converted to an API and admin.
+        filtering of products was done server side and used too many resources.
+        The site was converted to a Vue.js app and the filtering is now done
+        client side. The PHP server is converted to an API and admin.
       </p>
     </div>
     <div class="card-footer">
