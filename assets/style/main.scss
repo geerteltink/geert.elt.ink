@@ -21,6 +21,11 @@ body {
   flex: 1;
 }
 
+.app-footer,
+.app-footer a {
+  color: $light;
+}
+
 .subtitle {
   font-style: italic;
 }

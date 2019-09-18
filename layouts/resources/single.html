@@ -15,22 +15,25 @@
       </div>
     </header>
     <div class="container">
-        <ul class="list-inline text-muted small font-weight-bold">
-            <li class="list-inline-item">
-                Published: <time datetime="{{.Date.Format "2006-01-02T15:04:05Z07:00"}}" aria-label="published">{{.Date.Format "Januari 2006"}}</time>
-            </li>
-            {{ if not (eq .Lastmod .Date) }}
-            <li class="list-inline-item">
-                Modified: <time datetime="{{.Lastmod.Format "2006-01-02T15:04:05Z07:00"}}" aria-label="Modified">{{.Lastmod.Format "Januari 2006"}}</time>
-            </li>
-            {{ end }}
-            {{ range .Params.tags }}
-            <li class="list-inline-item">
-                <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="text-muted">{{ . | urlize }}</a>
-            </li>
-            {{ end }}
-        </ul>
-        {{ .Content }}
+      <dl class="float-right font-smaller text-muted ml-5 mb-5">
+        <dt>Published:</dt>
+        <dd>
+          <time datetime="{{.Date.Format "2006-01-02T15:04:05Z07:00"}}" aria-label="published">{{.Date.Format "Januari 2006"}}</time>
+        </dd>
+        {{ if not (eq .Lastmod .Date) }}
+        <dt>Modified:</dt>
+        <dd>
+          <time datetime="{{.Lastmod.Format "2006-01-02T15:04:05Z07:00"}}" aria-label="Modified">{{.Lastmod.Format "Januari 2006"}}</time>
+        </dd>
+        {{ end }}
+        <dt>Tags:</dt>
+        {{ range .Params.tags }}
+          <dd>
+            <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="text-muted">{{ . | urlize }}</a>
+          </dd>
+        {{ end }}
+      </dl>
+      {{ .Content }}
     </div>
     <footer class="container">
         <ul class="nav justify-content-between my-4">
