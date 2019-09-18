@@ -12,7 +12,7 @@ It's only a tiny collection of the most interesting projects.
 
 <div class="card-deck">
   <div class="card mb-3">
-    <img loading="lazy" class="card-img-top" alt="Screenshot pakyruiz.com" src="{{< imgurl "/img/screenshot-pakyruiz-com.jpg" >}}" />
+    <img loading="eager" class="card-img-top" alt="Screenshot pakyruiz.com" src="{{< imgurl "/img/screenshot-pakyruiz-com.jpg" >}}" />
     <div class="card-body">
       <h2 class="card-title">pakyruiz.com</h2>
       <p class="card-text">
@@ -34,7 +34,7 @@ It's only a tiny collection of the most interesting projects.
   </div>
 
   <div class="card mb-3">
-    <img loading="lazy" class="card-img-top" alt="Screenshot linksbek.nl" src="{{< imgurl "/img/screenshot-linksbek-nl.jpg" >}}" />
+    <img loading="eager" class="card-img-top" alt="Screenshot linksbek.nl" src="{{< imgurl "/img/screenshot-linksbek-nl.jpg" >}}" />
     <div class="card-body">
       <h2 class="card-title">linksbek.nl</h2>
       <p class="card-text">
