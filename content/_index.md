@@ -1,6 +1,6 @@
 ---
-title: It all starts with an idea
-subtitle: I can make yours a reallity
+title: Geert Eltink
+subtitle: It all starts with an idea, I can make yours a reallity
 summary: It all starts with an idea, I can make yours a reallity.
 date: 2018-08-26
 draft: false
