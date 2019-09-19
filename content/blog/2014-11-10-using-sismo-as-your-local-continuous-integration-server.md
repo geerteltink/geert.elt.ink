@@ -16,7 +16,7 @@ The installation guide on their site is pretty easy to understand. However for w
 
 You must set system environment variables in the advanced system settings, which you can find in "Control Panel\System and Security\System" -> Advanced Settings -> Environment Variables. Once set, you need to restart your pc for these to work.
 
-```
+```text
 SISMO_DATA_PATH "/path/to/sismo/data"
 SISMO_CONFIG_PATH "/path/to/sismo/config.php"
 ```
