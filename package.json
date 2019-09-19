@@ -4,13 +4,10 @@
   "description": "A web developer's playground.",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "lint:md": "markdownlint {archetypes,content}/**/*.md",
-    "lint:html": "htmlhint layouts/**/*.html",
-    "lint:index": "bootlint -d W002,W005 layouts/_default/baseof.html",
-    "lint:components": "bootlint -d E001,W001,W002,W003,W005 layouts/**/*.html",
-    "lint:css": "stylelint assets/**/*.{css,scss}",
-    "lint:fix": "stylelint assets/**/*.{css,scss} --fix"
+    "lint:html:index": "bootlint -d W002,W005 layouts/_default/baseof.html",
+    "lint:html:components": "bootlint -d E001,W001,W002,W003,W005 layouts/**/*.html",
+    "lint:css": "stylelint assets/**/*.{css,scss}"
   },
   "author": "Geert Eltink",
   "license": "MIT",
