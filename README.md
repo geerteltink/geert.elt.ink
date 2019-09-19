@@ -1,6 +1,7 @@
 # www.xtreamwayz.com
 
-[![Build Status](https://travis-ci.org/xtreamwayz/xtreamwayz.com.svg?branch=master)](https://travis-ci.org/xtreamwayz/xtreamwayz.com)
+![Netlify Status](https://api.netlify.com/api/v1/badges/ccb7030a-d423-436b-831d-21a6eabfaa8f/deploy-status)
+![Q&A Tests](https://github.com/xtreamwayz/www.elt.ink/workflows/Node%20CI/badge.svg)
 
 This repo contains the source code for www.xtreamwayz.com. It has changed over time. First it started with zend-expressive. Changed in 2018 to a vuejs based progressive web app to learn the language, PWA and service workers concepts. And then there is hugo: A fast way to generate static sites.
 
