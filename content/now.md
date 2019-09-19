@@ -8,6 +8,8 @@ menu:
     weight: 60
 ---
 
+Last updated: {{< lastmodified >}}
+
 ## Working on my own site
 
 The site you are looking at right now actually. It used to run on Jekyll and GitHub pages. Switched to a private VPS with PHP and zend-expressive. In 2018 it was converted to Vue.js and hosted on Netlify to learn the framework and progressive web apps. And currently it's being changed to Hugo served by Netlify's content delivery network to get it to your screen as fast as possible. No fancy stuff, just static html pages.
