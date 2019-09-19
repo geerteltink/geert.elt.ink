@@ -11,7 +11,7 @@ Want to see what I am made of? Here you go, I'm proud of the work I've done.
 It's only a tiny collection of the most interesting projects.
 
 <div class="card-deck">
-  <div class="card mb-3">
+  <div class="card mb-4">
     <img loading="eager" class="card-img-top" alt="Screenshot pakyruiz.com" src="{{< imgurl "/img/screenshot-pakyruiz-com.jpg" >}}" />
     <div class="card-body">
       <h2 class="card-title">pakyruiz.com</h2>
@@ -35,7 +35,7 @@ It's only a tiny collection of the most interesting projects.
     </div>
   </div>
 
-  <div class="card mb-3">
+  <div class="card mb-4">
     <img loading="eager" class="card-img-top" alt="Screenshot linksbek.nl" src="{{< imgurl "/img/screenshot-linksbek-nl.jpg" >}}" />
     <div class="card-body">
       <h2 class="card-title">linksbek.nl</h2>
@@ -60,7 +60,7 @@ It's only a tiny collection of the most interesting projects.
     </div>
   </div>
 
-  <div class="card mb-3">
+  <div class="card mb-4">
     <img loading="lazy" class="card-img-top" alt="Screenshot ai-total.nl" src="{{< imgurl "/img/screenshot-ai-total-nl.jpg" >}}" />
     <div class="card-body">
       <h2 class="card-title">ai-total.nl</h2>
@@ -91,7 +91,7 @@ It's only a tiny collection of the most interesting projects.
     </div>
   </div>
 
-  <div class="card mb-3">
+  <div class="card mb-4">
     <img loading="lazy" class="card-img-top" alt="Screenshot auctions" src="{{< imgurl "/img/screenshot-auctions.jpg" >}}" />
     <div class="card-body">
       <h2 class="card-title">Custom build auctions</h2>
