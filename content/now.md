@@ -16,12 +16,12 @@ The site you are looking at right now actually. It used to run on Jekyll and Git
 
 For a client I'm building a PHP based API server powered by zend-expressive. Its purpose is to feed configuration and content to several company websites, auction sites and webshops, all build with Vue.js.
 
-## Testdriving
+## Test driving
 
-Once in a while to clear my head I'm testdriving cars for quality assurance, evaluating brakes and durability, for Valmet Automotive Spain.
+Once in a while I'm test driving cars for brake refinement, quality assurance and durability, for Valmet Automotive Spain. Besides the quality assurance part it has nothing to do with my designer and programmer life, but it clears my head and gets me away from the screen.
 
 ## Doing sports when not working
 
-This may include, but is not limted to, mountain biking, (trail) running and diving.
+This may include, but is not limited to, mountain biking, (trail) running, yoga and diving.
 
 [What is this page?](https://nownownow.com/about)

@@ -1,6 +1,25 @@
 <footer class="app-footer bg-dark mt-5 p-3">
   <div class="container">
-    <div class="d-flex flex-row justify-content-between my-3">
+    <div class="d-flex flex-column flex-lg-row justify-content-between my-3">
+      <div>
+        <h3>Availability</h3>
+        <p>
+          I’m available for hire to consult, design and develop websites. Based in
+          Spain, I travel regularly to work with clients world-wide.
+        </p>
+        <p>
+          <span class="badge badge-light">Available from October 2019</span>
+        </p>
+      </div>
+      <div>
+        <h3>How can I help?</h3>
+        <p>
+          For work enquiries <a href="mailto:geert.eltink@gmail.com">email</a> me.<br />
+          Or send me a <a href="https://wa.me/34673288434" aria-label="WhatsApp">message</a>.
+        </p>
+      </div>
+    </div>
+    <div class="d-flex flex-column flex-sm-row justify-content-center my-3 text-center text-md-left">
       <ul class="list-inline">
         <li class="list-inline-item mr-3">
           <a href="https://twitter.com/geerteltink" aria-label="Twitter">{{ partial "fontawesome.html" "twitter" }}</a>
@@ -17,14 +36,13 @@
         <li class="list-inline-item mr-3">
           <a href="https://wa.me/34673288434" aria-label="WhatsApp">{{ partial "fontawesome.html" "whatsapp" }}</a>
         </li>
-      </ul>
-      <ul class="list-inline">
-        <li class="list-inline-item">
-          &copy; <span class="d-none d-sm-inline-block">1999-</span>{{ now.Year }}
-          <span class="d-sm-none">ɡeː</span>
-          <span class="d-none d-sm-inline-block">GEERT ELT&#451;NK</span>
+        <li class="list-inline-item mr-3">
+          <a href="/privacy">Privacy</a>
         </li>
       </ul>
+      <div>
+        &copy; 1999-{{ now.Year }} Geert Eltink
+      </div>
     </div>
   </div>
 </footer>

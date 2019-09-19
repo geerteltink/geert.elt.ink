@@ -1,7 +1,7 @@
 ---
 title: Geert Eltink
-subtitle: It all starts with an idea, I can make yours a reallity
-summary: It all starts with an idea, I can make yours a reallity.
+subtitle: It all starts with an idea, I can make yours a reality
+summary: A web designer, front-end and back-end developer and a devops specialist. Ready to make your idea a reality.
 date: 2018-08-26
 draft: false
 ---
@@ -20,8 +20,8 @@ business objectives, attracts your target audience, and sustainably grows your
 organization.
 
 Talk to me about UX design, optimizing content delivery, streamlining and
-automating workflows and tasks, web development, wether you should javascript
-in your next project or not, mountainbiking, diving and sushi.
+automating workflows and tasks, web development, to use or not to use
+javascript, mountain biking, diving and sushi.
 
 Any ideas or projects? Just send me a message
 <a href="https://wa.me/34673288434" aria-label="WhatsApp">{{% fontawesome whatsapp %}}</a>.

@@ -31,10 +31,10 @@ schedule a call within one business day.
         </dd>
     </dl>
     <dl>
-        <dt>Mailing Address</dt>
+        <dt>Studio</dt>
         <dd>
-            Apartado 952<br />
-            04638 Mojacar, Spain
+            Mojacar (Almeria)<br />
+            Spain
         </dd>
     </dl>
 </div>

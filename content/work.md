@@ -16,8 +16,10 @@ It's only a tiny collection of the most interesting projects.
     <div class="card-body">
       <h2 class="card-title">pakyruiz.com</h2>
       <p class="card-text">
-        This a perfect example of where not to use javascript. The site is only
-        built with what is needed: html and css.
+        This a perfect example of where javascript is overkill. The site is
+        built with what is needed: html and css. It's very fast generated with
+        Hugo and deployed to Netlify and its powerful CDN. And that is all
+        automated when updates are pushed to its GitHub repository.
       </p>
     </div>
     <div class="card-footer">
@@ -38,12 +40,10 @@ It's only a tiny collection of the most interesting projects.
     <div class="card-body">
       <h2 class="card-title">linksbek.nl</h2>
       <p class="card-text">
-        This site is a long term project. Started back in 2002 it was built on
-        top of a custom cms. Later it was converted to wordpress with a custom
-        theme. In 2019 GitHub Actions were available which makes it possible to
-        schedule rebuilds easily and together with Hugo you can schedule posts.
-        Enough reason to convert it to a static site, move it to netlify and
-        trigger daily builds with GitHub Actions.
+        Since 2002 I'm doing weekly content updates for the owner. It started
+        with a custom cms, moved to WordPress, and converted to a static site
+        generated with Hugo and delivered to you by Netlify. GitHub Actions
+        are used to trigger daily builds so new columns can be scheduled.
       </p>
     </div>
     <div class="card-footer">
@@ -66,9 +66,10 @@ It's only a tiny collection of the most interesting projects.
       <h2 class="card-title">ai-total.nl</h2>
       <p class="card-text">
         This custom build webshop ran on PHP a while back. However the
-        filtering of products was done server side and used too many resources.
-        The site was converted to a Vue.js app and the filtering is now done
-        client side. The server still uses PHP for an API and admin pages.
+        filtering of products was done server side and used too many resources
+        and made it a pain to use for clients. The site was converted to a
+        Vue.js app and the filtering is now done client side. The server still
+        uses PHP for an API and admin pages, powered by zend-expressive.
       </p>
     </div>
     <div class="card-footer">
@@ -98,7 +99,7 @@ It's only a tiny collection of the most interesting projects.
         Built with PHP this app supports multiple auction sites and auction
         types (dutch, english, timed, live). It has mass mailing, scripts to
         automatically close and handle auctions, bid master screen for live
-        auctions and much more.
+        auctions and so much more.
       </p>
     </div>
     <div class="card-footer">
