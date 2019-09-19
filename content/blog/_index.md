@@ -3,7 +3,7 @@ title: "What's Going On"
 date: "2013-11-05"
 menu:
   main:
-    name: "Resources"
+    name: "Blog"
     weight: 50
 ---
 

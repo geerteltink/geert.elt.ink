@@ -18,4 +18,4 @@ pygmentsCodeFences=true
     quality = 80
 
 [permalinks]
-    resources = "/resources/:filename/"
+    blog = "/blog/:filename/"
