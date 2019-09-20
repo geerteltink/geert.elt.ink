@@ -38,6 +38,19 @@ pre {
   padding: 1rem;
 }
 
+.logo-i {
+  position: relative;
+  content: '\0131';
+}
+
+.logo-i::before {
+  position: absolute;
+  bottom: 0.08em;
+  left: 0.39em;
+  color: #ff5722;
+  content: '\0323';
+}
+
 .icon {
   position: relative;
   display: inline-block;

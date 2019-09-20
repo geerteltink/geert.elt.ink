@@ -4,6 +4,7 @@
   "description": "A web developer's playground.",
   "private": true,
   "scripts": {
+    "lint": "npm run lint:md && npm run lint:html:index && npm run lint:html:components && npm run lint:css",
     "lint:md": "markdownlint {archetypes,content}/**/*.md",
     "lint:html:index": "bootlint -d W002,W005 layouts/_default/baseof.html",
     "lint:html:components": "bootlint -d E001,W001,W002,W003,W005 layouts/**/*.html",

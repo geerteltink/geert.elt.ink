@@ -4,8 +4,6 @@ ASSETS_DIR := assets
 build-js:
 	mkdir -p $(ASSETS_DIR)/js/
 	mkdir -p $(ASSETS_DIR)/svg/
-	cp node_modules/jquery/dist/jquery.slim.js $(ASSETS_DIR)/js/
-	cp node_modules/bootstrap/dist/js/bootstrap.bundle.js $(ASSETS_DIR)/js/
 	cp node_modules/@fortawesome/fontawesome-free/svgs/brands/github.svg $(ASSETS_DIR)/svg/
 	cp node_modules/@fortawesome/fontawesome-free/svgs/brands/instagram.svg $(ASSETS_DIR)/svg/
 	cp node_modules/@fortawesome/fontawesome-free/svgs/brands/twitter.svg $(ASSETS_DIR)/svg/

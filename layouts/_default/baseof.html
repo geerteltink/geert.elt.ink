@@ -40,11 +40,6 @@
     {{ block "header" . }}{{ partial "page/header" . }}{{end}}
     {{ block "main" . }}{{ end }}
     {{ block "footer" . }}{{ partial "page/footer" . }}{{end}}
-
-    {{ $jquery := resources.Get "js/jquery.slim.js" }}
-    {{ $bootstrap := resources.Get "js/bootstrap.bundle.js" }}
-    {{ $js := slice $jquery $bootstrap | resources.Concat "js/bundle.js" | resources.Minify | fingerprint }}
-    <script src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>
     {{ template "_internal/google_analytics_async.html" . }}
 </body>
 
