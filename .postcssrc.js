@@ -1,5 +1,11 @@
 module.exports = {
   plugins: {
-    autoprefixer: {}
+    autoprefixer: {},
+    '@fullhuman/postcss-purgecss': {
+      content: [
+        './content/**/*.md',
+        './layouts/**/*.html'
+      ]
+    }
   }
 };
