@@ -1,4 +1,4 @@
-# www.xtreamwayz.com
+# www.elt.ink - f.k.a xtreamwayz.com
 
 ![Netlify Status](https://api.netlify.com/api/v1/badges/ccb7030a-d423-436b-831d-21a6eabfaa8f/deploy-status)
 ![Q&A Tests](https://github.com/xtreamwayz/www.elt.ink/workflows/test/badge.svg)
