@@ -1,5 +1,5 @@
 ---
-title: 2019-09-24-from-jekyll-to-expressive-to-vue-to-hugo
+title: From Jekyll to zend-expressive to Vue.js to Hugo
 summary: From Jekyll to zend-expressive to Vue.js to Hugo
 date: 2019-09-24
 tags:
