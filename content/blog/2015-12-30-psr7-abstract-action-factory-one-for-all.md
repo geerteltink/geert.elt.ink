@@ -11,16 +11,9 @@ tags:
 
 Yesterday I wrote about using [one ActionFactory for all](https://xtreamwayz.com/blog/2015-12-29-zend-expressive-action-factory-one-for-all)
 your PSR-7 actions. I used zend-servicemanager for it, together with some voodoo to detect the dependencies and inject
-it. I was pretty happy with the solution and then I got this
-[tweet](https://twitter.com/samsonasik/status/681891488205160448):
+it. I was pretty happy with the solution and then I got this:
 
-<blockquote class="blockquote">
-    <p>
-        question: why not use abstract_factories? while it may take slower, it will reduce repetitive reg
-        with same factory
-    </p>
-    <footer class="blockquote-footer">Abdul Malik Ikhsan (@samsonasik)</footer>
-</blockquote>
+{{< tweet 681891488205160448 >}}
 
 After some more research I decided to try it out and it's actually pretty brilliant. Zend ServiceManger 3 is needed
 for this.
