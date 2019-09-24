@@ -1,6 +1,6 @@
 ---
 title: Geert Eltink
-subtitle: It all starts with an idea, I can make yours a reality
+subtitle: Designer / Developer / DevOps / Consultant
 summary: A web designer, front-end and back-end developer and a devops specialist. Ready to make your idea a reality.
 date: 2018-08-26
 draft: false
