@@ -2,13 +2,13 @@
 
 ![Netlify Status](https://api.netlify.com/api/v1/badges/ccb7030a-d423-436b-831d-21a6eabfaa8f/deploy-status)
 ![Q&A Tests](https://github.com/xtreamwayz/www.elt.ink/workflows/test/badge.svg)
-![Nightly build](https://github.com/xtreamwayz/www.linksbek.nl/workflows/nightly/badge.svg)
+![Nightly build](https://github.com/xtreamwayz/www.elt.ink/workflows/nightly/badge.svg)
 
 This repo contains the source code for www.xtreamwayz.com. It has changed over time. First it started with zend-expressive. Changed in 2018 to a vuejs based progressive web app to learn the language, PWA and service workers concepts. And then there is hugo: A fast way to generate static sites.
 
 ## Version 3: Hugo
 
-[source code](https://github.com/xtreamwayz/www.xtreamwayz.com/tree/master)
+[source code](https://github.com/xtreamwayz/www.elt.ink/tree/master)
 
 - [Hugo](https://gohugo.io/) a fast framework for building static websites
 
@@ -19,7 +19,7 @@ Use icons in content: `{{% fontawesome github %}}`
 
 ## Version 2: Vue.js, PWA and service worker
 
-[source code](https://github.com/xtreamwayz/www.xtreamwayz.com/tree/vuejs)
+[source code](https://github.com/xtreamwayz/www.elt.ink/tree/vuejs)
 
 - [Vue.js](https://www.npmjs.com/package/vue)
 - [vue-analytics](https://www.npmjs.com/package/vue-analytics)
@@ -29,7 +29,7 @@ Use icons in content: `{{% fontawesome github %}}`
 
 ## Version 1: PHP / zend-expressive
 
-[source code](https://github.com/xtreamwayz/www.xtreamwayz.com/tree/expressive)
+[source code](https://github.com/xtreamwayz/www.elt.ink/tree/expressive)
 
 - [zend-expressive](https://github.com/zendframework/zend-expressive)
 - [zend-servicemanager](https://github.com/zendframework/zend-servicemanager) dependency container
