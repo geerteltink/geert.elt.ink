@@ -1,6 +1,6 @@
 ---
-title: I create web sites and applications for humans
-subtitle: "My skills are: UX / UI Design, web development and devops!"
+title: I create, deploy and manage web sites and applications
+subtitle: "My skills are: Web design, development and devops!"
 summary: A web designer, front-end and back-end developer and a devops specialist. Ready to make your idea a reality.
 date: 1998-10-10
 draft: false
