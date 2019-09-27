@@ -1,0 +1,33 @@
+.card-banner {
+  margin-bottom: 1rem;
+}
+
+.card-banner-title {
+  font-size: 7vw;
+  text-shadow: 1px 1px 1px $light;
+  text-transform: uppercase;
+}
+
+@include media-breakpoint-up(sm) {
+  .card-deck .card {
+    flex: 1 1 100%;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .card-deck .card {
+    flex: 1 1 100%;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .card-deck .card {
+    flex-basis: 33.3%;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .card-deck .card {
+    flex-basis: 33.3%;
+  }
+}

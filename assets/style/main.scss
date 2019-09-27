@@ -1,93 +1,17 @@
 @import 'variables';
 @import '../../node_modules/bootstrap/scss/bootstrap';
 @import 'bootswatch';
-@import 'card-banner';
-@import 'page-title';
+@import 'typography';
+@import 'code';
+@import 'app';
+@import 'page';
+@import 'article';
+@import 'card';
+@import 'icon';
 @import 'timeline';
 @import 'u-read-length';
 
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.app {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.app-content {
-  flex: 1;
-}
-
-.app-footer,
-.app-footer a {
-  color: $light;
-}
-
-.subtitle {
-  font-style: italic;
-}
-
-.highlight {
-  margin-bottom: 1rem;
-}
-
-pre {
-  padding: 1rem;
-}
-
-.logo-i {
-  position: relative;
-  content: '\0131';
-}
-
-.logo-i::before {
-  position: absolute;
-  bottom: 0.08em;
-  left: 0.39em;
-  color: #ff5722;
-  content: '\0323';
-}
-
-.icon {
-  position: relative;
-  display: inline-block;
-  width: 1.15rem;
-  height: 1.15rem;
-  fill: currentColor;
-}
-
-svg {
-  overflow: hidden;
-}
-
-@include media-breakpoint-up(sm) {
-  .card-deck .card {
-    flex: 1 1 100%;
-  }
-}
-
-@include media-breakpoint-up(md) {
-  .card-deck .card {
-    flex: 1 1 100%;
-  }
-}
-
-@include media-breakpoint-up(lg) {
-  .card-deck .card {
-    flex-basis: 33.3%;
-  }
-}
-
-@include media-breakpoint-up(xl) {
-  .card-deck .card {
-    flex-basis: 33.3%;
-  }
-}
-
-blockquote {
-  padding-left: 1rem;
-  border-left: 0.5rem solid $primary;
 }

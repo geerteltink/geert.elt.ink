@@ -1,6 +1,6 @@
 ---
-title: Geert Eltink
-subtitle: Designer / Developer / DevOps / Consultant
+title: I create web sites and applications for humans
+subtitle: "My skills are: UX / UI Design, web development and devops!"
 summary: A web designer, front-end and back-end developer and a devops specialist. Ready to make your idea a reality.
 date: 2018-08-26
 draft: false
