@@ -16,7 +16,7 @@ grows you might end up with as much factories as actions. This probably goes for
 <blockquote class="blockquote">
     <p class="m-b-0">
         *NOTE:* There is even a better solution using an
-        <a href="https://xtreamwayz.com/blog/2015-12-30-psr7-abstract-action-factory-one-for-all">abstract factory</a>.
+        <a href="https://www.elt.ink/blog/2015-12-30-psr7-abstract-action-factory-one-for-all">abstract factory</a>.
     </p>
 </blockquote>
 

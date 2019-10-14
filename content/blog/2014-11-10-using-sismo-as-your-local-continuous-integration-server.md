@@ -76,7 +76,7 @@ use Sismo\Notifier\Notifier;
  * Toast binaries need to be available in your PATH and can be downloaded at
  * https://github.com/nels-o/toaster
  *
- * @author Geert Eltink <https://xtreamwayz.github.io>
+ * @author Geert Eltink <https://www.elt.ink/>
  */
 class ToastNotifier extends Notifier
 {

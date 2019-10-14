@@ -9,7 +9,7 @@ tags:
     - zend-servicemanager
 ---
 
-Yesterday I wrote about using [one ActionFactory for all](https://xtreamwayz.com/blog/2015-12-29-zend-expressive-action-factory-one-for-all)
+Yesterday I wrote about using [one ActionFactory for all](https://www.elt.ink/blog/2015-12-29-zend-expressive-action-factory-one-for-all)
 your PSR-7 actions. I used zend-servicemanager for it, together with some voodoo to detect the dependencies and inject
 it. I was pretty happy with the solution and then I got this:
 
@@ -109,4 +109,4 @@ specific abstract factory, it causes some overhead. As long as you limit the num
 have a good performance.
 
 At the time of writing this solution is used for this site and it's
-[open source](https://github.com/xtreamwayz/xtreamwayz.com).
+[open source](https://github.com/geerteltink/www.elt.ink/).

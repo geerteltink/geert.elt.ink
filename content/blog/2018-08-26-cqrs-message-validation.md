@@ -344,4 +344,4 @@ The zend-inputfilter returns the validation messages in an usable format, so a c
 
 Now I'm happy. It doesn't matter where I create a command, I will always have a valid message before I send it to the message bus.
 
-As said before, this is one part to validate input. I recommend to still validate the submitted form values. If you don't like to work with zend-form or symfony/form, there is another easier solution that you might like: [html-form-validator](https://github.com/xtreamwayz/html-form-validator) :P
+As said before, this is one part to validate input. I recommend to still validate the submitted form values. If you don't like to work with zend-form or symfony/form, there is another easier solution that you might like: [html-form-validator](https://github.com/geerteltink/html-form-validator) :P

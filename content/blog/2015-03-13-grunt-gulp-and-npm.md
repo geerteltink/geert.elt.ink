@@ -18,7 +18,7 @@ I converted the Grunt tasks and started to explore npm as a build tool. At first
 
 ```json
 {
-  "name": "xtreamwayz",
+  "name": "my-project",
   "private": true,
   "scripts": {
     "setup": "npm run setup:npm -s && npm run setup:jshint -s && npm run setup:less -s && npm run setup:uglify-js -s && npm run setup:bower -s",

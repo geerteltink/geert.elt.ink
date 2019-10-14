@@ -217,5 +217,5 @@ $ git remote prune origin
 
 ```bash
 $ git push <remote> <local-branch>:<remote-branch>
-$ git push git@github.com:xtreamwayz/github-test.git hotfix/1:patch-1
+$ git push git@github.com:geerteltink/github-test.git hotfix/1:patch-1
 ```
