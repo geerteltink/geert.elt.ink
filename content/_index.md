@@ -1,7 +1,7 @@
 ---
 title: I create, deploy and manage web sites and applications
 subtitle: "My skills are: DevOps, CSS, HTML, JavaScript, PHP and SQL!"
-summary: A web designer, front-end and back-end developer and a devops specialist. Ready to make your idea a reality.
+summary: A web designer, front-end and back-end developer and a DevOps specialist. Ready to make your idea a reality.
 date: 1998-10-10
 draft: false
 ---
