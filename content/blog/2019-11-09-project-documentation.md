@@ -265,3 +265,7 @@ Now we can
 If needed, I could still create a docker image with Hugo, Go, Node and npm inside but that's something for the future as well.
 
 Enjoy.
+
+## Resources
+
+At the time of writing the theme and main website code can be viewed at the [website](https://github.com/xtreamwayz/website) repository and the imported project modules are in the [xtreamwayz](https://github.com/xtreamwayz) namespace. The generated documentation is available at https://xtreamwayz.netlify.com/.
