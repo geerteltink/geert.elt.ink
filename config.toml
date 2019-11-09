@@ -19,3 +19,6 @@ pygmentsCodeFences=true
 
 [permalinks]
     blog = "/blog/:filename/"
+
+[params]
+    description = "It all starts with an idea, I can make yours a reality."
