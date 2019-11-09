@@ -56,6 +56,7 @@ While working on documentation I soon found some limitations with this setup. Fi
 I've been using Github Actions more and more lately and the documentation was built and pushed with an action:
 
 ```yaml
+# ./.github/workflows/build-docs.yml
 name: github-pages
 
 on:
@@ -107,6 +108,7 @@ What would be ideal is having 1 repository that builds documentation and serve i
 And then there are [Hugo modules](https://gohugo.io/categories/hugo-modules). It is possible you haven't heard of it yet, because it's pretty new. It's available since version 0.56 and it requires go 1.12. With modules you can import themes, layouts, css, partials, shortcodes, etc. However it's so powerful that you can even import content from somewhere else.
 
 ```yaml
+# ./config/_default/module.yml
 modules:
   imports:
   - path: "github.com/xtreamwayz/html-form-validator"
@@ -234,6 +236,7 @@ With this setup GitHub project pages aren't used, so why use GitHub Pages at all
 The last part that is missing is triggering a rebuild when the projects documentation has changed:
 
 ```yaml
+# ./.github/workflows/build-docs.yml
 name: build-docs
 
 on:
