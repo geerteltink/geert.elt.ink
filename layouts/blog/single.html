@@ -5,14 +5,18 @@
     {{ partial "article/header" . }}
     <div class="container">
       <dl class="float-right font-smaller text-muted ml-5 mb-5">
+        <dt>Reading time:</dt>
+        <dd>
+          {{ .ReadingTime }} minutes
+        </dd>
         <dt>Published:</dt>
         <dd>
-          <time datetime="{{.Date.Format "2006-01-02T15:04:05Z07:00"}}" aria-label="published">{{.Date.Format "Januari 2006"}}</time>
+          <time datetime="{{.Date.Format "2006-01-02T15:04:05Z07:00"}}" aria-label="published">{{.Date.Format "January 2, 2006"}}</time>
         </dd>
         {{ if not (eq .Lastmod .Date) }}
         <dt>Modified:</dt>
         <dd>
-          <time datetime="{{.Lastmod.Format "2006-01-02T15:04:05Z07:00"}}" aria-label="Modified">{{.Lastmod.Format "Januari 2006"}}</time>
+          <time datetime="{{.Lastmod.Format "2006-01-02T15:04:05Z07:00"}}" aria-label="Modified">{{.Lastmod.Format "January 2, 2006"}}</time>
         </dd>
         {{ end }}
         <dt>Tags:</dt>
