@@ -19,21 +19,21 @@ Now the first issue I ran into was making the organization site and all project 
 
 ## A shared theme
 
-For the Zend Framework documentation mkdocs is used with a custom [theme](https://github.com/zendframework/zf-mkdoc-theme). For each project the documentation is generated with this theme and pushed to its `gh-pages` branch. With a lot of configuration every project is glued into the documentation. Now here it comes... Developing the documentation is a pain. Writing itself is easy but testing it, not really. To get started you need Python 3, PIP, mkdocs, plugins, npm, gulp and perl. I've tried to set this up on windows a while back, but gave up on it. Recently I've stumbled upon [mkdocs-material](https://github.com/squidfunk/mkdocs-material) which adds all dependencies in a docker image and uses the mkdocs command as its entrypoint. This should make life easier.
+For the Zend Framework documentation mkdocs is used with a custom [theme](https://github.com/zendframework/zf-mkdoc-theme). For each project the documentation is generated with this theme and pushed to its `gh-pages` branch. With a lot of configuration every project is glued into the documentation. Now here it comes... Developing the documentation is a pain. Writing itself is easy but testing it, not really. To get started you need Python 3, PIP, mkdocs, several plugins, npm, gulp and perl. I've tried to set this up on windows a while back, but gave up on it. Recently I've stumbled upon [mkdocs-material](https://github.com/squidfunk/mkdocs-material) which adds all dependencies in a docker image and uses the mkdocs command as its entrypoint. This should make life easier.
 
-I've got a lot of experience with [Hugo](https://gohugo.io/) and it's my preferred static site generator. So I tried that instead of the mkdocs example.
+I've got a lot of experience with [Hugo](https://gohugo.io/) and it's my preferred static site generator. So I tried that instead of mkdocs in the example.
 
-On a site note: If you haven't used Hugo yet, it's fast... Really fast. It has a steep learning curve when it comes to customizing themes and adding functionality to it. But I guess that if you have golang experience it will be a lot easier. Oh, did I mention that it is fast? It also built your scss files into css if you use the extended version and supports postcss processing.
+On a site note: If you haven't used Hugo yet, it's fast... Really fast. It has a steep learning curve when it comes to customizing themes and adding functionality to it. But I guess that if you have golang experience it will be a lot easier. Oh, did I mention that it is fast? It also transforms your scss files into css if you use the extended version and supports postcss processing.
 
 ## The docker image variant
 
-The [docker image](https://github.com/xtreamwayz/docs-sdk/blob/master/Dockerfile) is easy to build once you figured out which dependencies are needed for Hugo in an alpine image. I've extended node:lts-alpine, installed Hugo, installed the npm dependencies and copied the custom Hugo theme into the image. Installing the npm packages inside the image makes it bigger but the you only need to install it once and not every time when you start a new container. It saves you bandwidth and time.
+The [docker image](https://github.com/xtreamwayz/docs-sdk/blob/master/Dockerfile) is easy to build once you figured out which dependencies are needed for Hugo in an alpine image. I've extended node:lts-alpine, installed Hugo, installed the npm dependencies and copied the custom Hugo theme into the image. Installing the npm packages inside the image makes it bigger but you only need to install it once and not every time when you start a new container. It saves you bandwidth and time.
 
 I've written a [docker-entrypoint.sh](https://github.com/xtreamwayz/docs-sdk/blob/master/docker-entrypoint.sh) script which sets up the theme and generates the project documentation. It supports a few commands:
 
 > *NOTE:*
 >
-> Don't try to run these commands as it won't work because the image is not available.
+> Don't try to run these commands as it won't work because the docker image is not available.
 
 ```bash
 # Build documentation into ./build
@@ -47,9 +47,9 @@ docker run --rm -it -p 1313:1313 -v ${PWD}:/src <docker_user>/docs server
 docker run --rm -it -p 1313:1313 -v ${PWD}:/src <docker_user>/docs preview
 ```
 
-So far so good. The project documentation can be previewed and build for production.
+So far so good. The project documentation can be previewed and build for production without setting up a ton of dependencies.
 
-While working on documentation I soon found out some limitations with this setup. First of all, if there is a bug or missing feature in the theme, you need to go to the theme project, make changes, push the container to docker hub and start over. If there is a specific need for a change in the theme ou need to copy the project documentation to the theme project to be able develop the new feature. It's not ideal but it works.
+While working on documentation I soon found some limitations with this setup. First of all, if there is a bug or missing feature in the theme, you need to go to the theme project, make changes, push the container to docker hub and start over. If there is a specific need for a change in the theme you need to copy the project documentation to the theme project to be able to develop the new feature. It's not ideal but it works.
 
 ## Publishing project pages
 
@@ -90,15 +90,15 @@ jobs:
           git push origin gh-pages
 ```
 
-This uses a git worktree to import the current project documentation and push changed files. However there is an annoying bug currently which prevents notifying the GitHub service to rebuild a project page on changes to the branch. It works for private repositories, but not public ones. My solution was to creating a bot account to deploy the documentation. Once the GitHub devs figured out this issue and the rebuild event is triggered as it should, this solution might work for your. I say *might* because this is still not ideal.
+This uses a git worktree to import the current project documentation located at the `gh-pages` branch and push changed files. However, currently there is an annoying bug which prevents notifying the GitHub service to rebuild a project page on changes to the `gh-pages` branch. It works for private repositories, but not public ones. My solution was to creating a bot account to deploy the documentation with a [Personal Access Token](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line). Once the GitHub devs figured out this issue and the rebuild event is triggered as it should, this solution might work for your. I say *might* because this is still not ideal.
 
-So what if you updated your theme? You end up with your main organization page up to date but not the project pages. They are still on an older version. Zend Framework solved this by creating a bot from where you can trigger project page rebuilds for all repositories (around 150 or so). This is a long running process and to play nicely with GitHub and Travis CI, all rebuilds are queued and triggered with some time in between.
+So what if you update your theme? You end up with your main organization page with the changed theme, but not the project pages. They are still on an older theme version. Zend Framework solved this by creating a bot from where you can trigger project page rebuilds for all repositories (around 150 or so). This is a long running process and to play nicely with GitHub and Travis CI, all rebuilds are queued and triggered with some time in between.
 
-To automate this, one could trigger a documentation build action from the theme repository once it received an update. Let's not discuss why you don't want this for 150+ linked repositories. It's also not possible: You can't trigger actions in other repositories within an action. This is done to prevent chain reactions. If you set it up wrong you start a never ending loop.
+To automate this, one could trigger a documentation build action from the theme repository once it received an update. Let's not discuss why you don't want this for 150+ linked repositories. It's also not possible: You can't trigger GitHub Actions in other repositories within an GitHub Action. This is done to prevent chain reactions. If you set it up wrong you start a never ending loop.
 
 ## Back to the drawing board
 
-It's time to rethink all this. So we can't trigger all repositories automatically once a theme gets an update. It's a pain to make changes to the theme. Things like generating a sitemap.xml file won't work.
+It's time to rethink all this. So we can't trigger all repositories automatically once a theme gets an update. It's a pain to make changes to the theme. Things like generating a sitemap.xml file won't work because all projects are generated separately.
 
 What would be ideal is having 1 repository that builds documentation and serve it from 1 location. If project documentation is changed, it should be able to trigger a rebuild. If the theme is changed, it should trigger a site wide rebuild.
 
@@ -117,10 +117,10 @@ modules:
 
 The config above tells Hugo to download https://github.com/xtreamwayz/html-form-validator and link it's docs dir to the content dir. You could even use this to import bootstrap and link its scss path to the assets path. I've tried this but it's pretty slow and using npm for bootstrap is much faster.
 
-Next we need some kind of configuration. In Hugo you can use `params` for configuration. I've given each project it's own section so we can retrieve it's data where ever we want.
+We need some kind of configuration. In Hugo you can use `params` for configuration. I've given each project it's own section so we can retrieve it's data where ever we want.
 
 ```yaml
-# config.yml
+# ./config.yml
 params:
   html-form-validator:
     name: html-form-validator
@@ -129,9 +129,10 @@ params:
       - v1
 ```
 
-Next up we define the projects landing page:
+Next we define the projects landing page:
 
 ```yaml
+# ./docs/_index.md
 ---
 title: xtreamwayz/html-form-validator
 type: project
@@ -140,11 +141,12 @@ project: html-form-validator
 ---
 ```
 
-The `type` and `layout` are needed to tell with layout to use. `project` is used to tell Hugo it generates a page for that specific project and uses it to trigger some features in the theme.
+The `type` and `layout` are needed to tell which layout to use. `project` is used to tell Hugo to generate a page for that specific project and uses it to trigger some features in the theme.
 
 A normal page uses the same config and sets an extra version as well:
 
 ```yaml
+# ./docs/latest/_index.md
 ---
 title: Getting started
 type: project
@@ -156,7 +158,8 @@ version: v1
 
 And to bind all projects together I've added a config to the main website config:
 
-```
+```yaml
+# ./config/_default/params.yml
 projects:
   - "devops"
   - "expressive-console"
@@ -164,13 +167,13 @@ projects:
   - "html-form-validator"
 ```
 
-Now Hugo knows (or better yet, the theme knows) which project to generate. Maybe I can get that list from the module imports, but that's something for later.
+Now Hugo knows (or better yet, the theme knows) which projects to generate. Maybe I can get that list from the module imports config, but that's something for later.
 
-So that's the configuration. Now triggering `Hugo server` downloads the modules, builds the entire site, including all linked project pages, and serves it locally. That's part one done. It sounds easy, but it was a lot of trail and error to get this working as I want because there is not much documentation about using modules like this yet.
+So that's the configuration. Now triggering `Hugo server`, it downloads the modules, builds the entire site, including all linked project pages, and serves it locally. That's part one done. It sounds easy, but it was a lot of trail and error to get this working as I want because there is not much documentation about using modules like this yet.
 
 ## Hugo modules caveats
 
-There is a small issue. The main website itself must also be a module (`hugo mod init website`). When doing this it creates a `go.mod` file with all downloaded modules and versions and it creates a `go.sum` with the checksums. This is nice and very good for security however it prevents updating the modules:
+There is a small issue. The main website itself must also be a module (`hugo mod init <name>`). When doing this it creates a `go.mod` file with all downloaded modules and versions and it creates a `go.sum` with the checksums. This is nice and very good for security however it prevents updating the modules:
 
 ```go
 module website
@@ -184,7 +187,7 @@ require (
 )
 ```
 
-Ideally you want always the latest version of the modules with the latest documentation changes like this:
+This locks the imported modules to the specific version. There is a `hugo mod get -u` command which supposed to update modules, but I couldn't get it working on Windows. Ideally you want always the latest version of the modules with the latest documentation changes like this:
 
 ```go
 module website
@@ -198,7 +201,7 @@ require (
 )
 ```
 
-However when updating modules the `master` part is changed into the downloaded version again. The solution is to ignore the two files in your main website repo and then run this: `hugo mod init website && hugo server`. This makes sure you always generate the latest documentation. The `go.mod` and `go.sum` should be added to your projects though otherwise Hugo complaints if you develop locally.
+However when updating modules, the `master` part is changed into the downloaded version again. The solution is to git ignore the two files in your main website repo and then run this for development: `hugo mod init website && hugo server`. This makes sure you always import the latest documentation. The `go.mod` and `go.sum` should be added to each of your projects though, otherwise Hugo complaints if you develop locally.
 
 ## Hugo modules and theme development
 
@@ -222,7 +225,7 @@ replace (
 )
 ```
 
-The modules that aren't locally replaced are downloaded from the internet. That way you have the full website available locally and you can test and develop the full site.
+The modules that aren't locally replaced are downloaded from the internet. That way you have the full website available locally and you can test and develop the full site and check each loaded project module.
 
 ## Hugo modules and ci
 
@@ -253,6 +256,7 @@ jobs:
 A Netlify site has a build hook which you can trigger. This GitHub Action is triggered on a push to the master branch and if there are changes to the docs path. It will trigger a netlify build hook. And that's the last part done.
 
 Now we can
+
 - Build one website with all projects integrated tightly
 - Trigger site wide rebuilds if a theme changes
 - Trigger a rebuild if project documentation changes
