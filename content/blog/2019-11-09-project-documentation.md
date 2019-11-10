@@ -13,7 +13,7 @@ Recently I changed my GitHub account name and converted my old username to an or
 
 ## GitHub pages
 
-I started with [GitHub pages](https://help.github.com/en/github/working-with-github-pages/creating-a-github-pages-site). The main organization site was simple. Generate some html and push it to a master branch in `<organization>.github.io`. Done. Next up was adding project sites. Project sites are built automatically from the docs folder if you use Jekyll or you push the html pages directly to a `gh-pages` branch. That was easily done and I got the documentation online.
+I started with [GitHub pages](https://help.github.com/en/github/working-with-github-pages/creating-a-github-pages-site). The main organization site was simple. Generate some HTML and push it to a master branch in `<organization>.github.io`. Done. Next up was adding project sites. Project sites are built automatically from the docs folder if you use Jekyll or you push the HTML pages directly to a `gh-pages` branch. That was easily done and I got the documentation online.
 
 Now the first issue I ran into was making the organization site and all project sites feel like one website. This is very hard to do but not impossible. A good example is the [Zend Framework documentation](https://docs.zendframework.com/). Every project is integrated into the website and it feels like they all belong together.
 
@@ -23,7 +23,7 @@ For the Zend Framework documentation, mkdocs is used with a custom [theme](https
 
 I've got a lot of experience with [Hugo](https://gohugo.io/) and it's my preferred static site generator. So I tried that instead of mkdocs in the example.
 
-On a side note: If you haven't used Hugo yet, it's fast... Really fast. It has a steep learning curve when it comes to customizing themes and adding functionality to it. But I guess that if you have golang experience it will be a lot easier. Oh, did I mention that it is fast? It also transforms your scss files into css if you use the extended version and supports postcss processing.
+On a side note: If you haven't used Hugo yet, it's fast... Really fast. It has a steep learning curve when it comes to customizing themes and adding functionality to it. But I guess that if you have golang experience it will be a lot easier. Oh, did I mention that it is fast? It also transforms your SCSS files into CSS if you use the extended version and supports postcss processing.
 
 ## The docker image variant
 
@@ -95,7 +95,7 @@ This uses a git worktree to import the current project documentation located at 
 
 So what if you update your theme? You end up with your main organization page with the changed theme, but not the project pages. They are still on an older theme version. Zend Framework solved this by creating a bot from where you can trigger project page rebuilds for all repositories (around 150 or so). This is a long-running process and to play nicely with GitHub and Travis CI, all rebuilds are queued and triggered with some time in between.
 
-To automate this, one could trigger a documentation build action from the theme repository once it received an update. Let's not discuss why you don't want this for 150+ linked repositories. It's also not possible: You can't trigger GitHub Actions in other repositories within an GitHub Action. This is done to prevent chain reactions. If you set it up wrong you start a never-ending loop.
+To automate this, one could trigger a documentation build action from the theme repository once it received an update. Let's not discuss why you don't want this for 150+ linked repositories. It's also not possible: You can't trigger GitHub Actions in other repositories within a GitHub Action. This is done to prevent chain reactions. If you set it up wrong you start a never-ending loop.
 
 ## Back to the drawing board
 
@@ -105,7 +105,7 @@ What would be ideal is having 1 repository that builds documentation and serve i
 
 ## The Hugo modules experiment
 
-And then there are [Hugo modules](https://gohugo.io/categories/hugo-modules). It is possible you haven't heard of it yet, because it's pretty new. It's available since version 0.56 and it requires go 1.12. With modules, you can import themes, layouts, css, partials, shortcodes, etc. However, it's so powerful that you can even import content from somewhere else.
+And then there are [Hugo modules](https://gohugo.io/categories/hugo-modules). It is possible you haven't heard of it yet, because it's pretty new. It's available since version 0.56 and it requires go 1.12. With modules, you can import themes, layouts, CSS, partials, shortcodes, etc. However, it's so powerful that you can even import content from somewhere else.
 
 ```yaml
 # ./config/_default/module.yml
