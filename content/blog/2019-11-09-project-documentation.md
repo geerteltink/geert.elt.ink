@@ -3,10 +3,10 @@ title: "Project documentation with Hugo Modules"
 summary: "Generating multi project documentation with Hugo Modules blazing fast"
 date: 2019-11-09
 tags:
-    - documentation
-    - hugo
-    - netlify
-    - GitHub Actions
+  - documentation
+  - hugo
+  - netlify
+  - GitHub Actions
 ---
 
 Recently I changed my GitHub account name and converted my old username to an organization. My important projects are now nicely grouped into that organization and not hidden between all forked projects. Each project comes with documentation but so far it was a mess. One project used the GitHub wiki, another one used only the main readme. It's time to bring some order into the chaos. The question was how?
@@ -117,7 +117,7 @@ modules:
       target: "content/html-form-validator"
 ```
 
-The config above tells Hugo to download https://github.com/xtreamwayz/html-form-validator and link it's docs dir to the content dir. You could even use this to import bootstrap and link its scss path to the assets path. I've tried this but it's pretty slow and using npm for bootstrap is much faster.
+The config above tells Hugo to download [html-form-validator](https://github.com/xtreamwayz/html-form-validator) and link it's docs dir to the content dir. You could even use this to import bootstrap and link its scss path to the assets path. I've tried this but it's pretty slow and using npm for bootstrap is much faster.
 
 We need some kind of configuration. In Hugo you can use `params` for configuration. I've given each project it's own section so we can retrieve its data where ever we want.
 
@@ -183,9 +183,9 @@ module website
 go 1.13
 
 require (
-	github.com/xtreamwayz/expressive-console v0.0.0-20191108154255-d1d08d24588a // indirect
-	github.com/xtreamwayz/expressive-messenger v0.0.0-20191108160421-b557e2c28728 // indirect
-	github.com/xtreamwayz/html-form-validator v0.0.0-20191108173115-a044c4a9b259 // indirect
+  github.com/xtreamwayz/expressive-console v0.0.0-20191108154255-d1d08d24588a // indirect
+  github.com/xtreamwayz/expressive-messenger v0.0.0-20191108160421-b557e2c28728 // indirect
+  github.com/xtreamwayz/html-form-validator v0.0.0-20191108173115-a044c4a9b259 // indirect
 )
 ```
 
@@ -197,9 +197,9 @@ module website
 go 1.13
 
 require (
-	github.com/xtreamwayz/expressive-console master
-	github.com/xtreamwayz/expressive-messenger master
-	github.com/xtreamwayz/html-form-validator master
+  github.com/xtreamwayz/expressive-console master
+  github.com/xtreamwayz/expressive-messenger master
+  github.com/xtreamwayz/html-form-validator master
 )
 ```
 
@@ -215,15 +215,15 @@ module website
 go 1.13
 
 require (
-	github.com/xtreamwayz/devops v0.0.0-20191108125323-133e1062dfbc // indirect
-	github.com/xtreamwayz/expressive-console v0.0.0-20191108154255-d1d08d24588a // indirect
-	github.com/xtreamwayz/expressive-messenger v0.0.0-20191108160421-b557e2c28728 // indirect
-	github.com/xtreamwayz/html-form-validator v0.0.0-20191108173115-a044c4a9b259 // indirect
+  github.com/xtreamwayz/devops v0.0.0-20191108125323-133e1062dfbc // indirect
+  github.com/xtreamwayz/expressive-console v0.0.0-20191108154255-d1d08d24588a // indirect
+  github.com/xtreamwayz/expressive-messenger v0.0.0-20191108160421-b557e2c28728 // indirect
+  github.com/xtreamwayz/html-form-validator v0.0.0-20191108173115-a044c4a9b259 // indirect
 )
 
 replace (
-	github.com/xtreamwayz/expressive-console => ../expressive-console
-	github.com/xtreamwayz/html-form-validator => ../html-form-validator
+  github.com/xtreamwayz/expressive-console => ../expressive-console
+  github.com/xtreamwayz/html-form-validator => ../html-form-validator
 )
 ```
 
@@ -271,4 +271,4 @@ Enjoy.
 
 ## Resources
 
-At the time of writing the theme and main website code can be viewed at the [website](https://github.com/xtreamwayz/website) repository and the imported project modules are in the [xtreamwayz](https://github.com/xtreamwayz) namespace. The generated documentation is available at https://xtreamwayz.netlify.com/.
+At the time of writing the theme and main website code can be viewed at the [website](https://github.com/xtreamwayz/website) repository and the imported project modules are in the [xtreamwayz](https://github.com/xtreamwayz) namespace. The generated documentation is available [online](https://xtreamwayz.netlify.com/).
