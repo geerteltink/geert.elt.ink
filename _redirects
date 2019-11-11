@@ -1,2 +1,6 @@
 # Redirect default Netlify subdomain to primary domain
 https://elt-ink.netlify.com/* https://www.elt.ink/:splat 301!
+
+/feed           /index.xml  301
+/feed.xml       /index.xml  301
+/blog/feed.xml  /blog/index.xml  301
