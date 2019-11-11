@@ -7,5 +7,5 @@ menu:
     weight: 50
 ---
 
-I've learned a thing or two over the years of working as a freelancer. I love
-sharing what I've learned with you to help you.
+I've learned a thing or two over the years of working as a developer. I love
+sharing what I've learned. It might even help you.
