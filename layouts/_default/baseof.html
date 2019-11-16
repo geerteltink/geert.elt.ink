@@ -29,7 +29,7 @@
     <meta property="og:site_name" content="{{ .Site.Title }}" />
     <meta property="article:author" content="Geert Eltink" />
     <base href="{{ if getenv "CONTEXT" }}{{ cond (eq "production" (getenv "CONTEXT")) (getenv "URL") (getenv "DEPLOY_PRIME_URL") }}{{ else }}{{ $.Site.BaseURL }}{{ end }}" />
-    {{ $styles := resources.Get "style/main.scss" | toCSS | resources.PostCSS | resources.Minify | fingerprint }}
+    {{ $styles := resources.Get "style/main.scss" | toCSS | resources.PostCSS | resources.Minify | fingerprint "sha512" }}
     <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen" />
     {{ range .AlternativeOutputFormats -}}
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
