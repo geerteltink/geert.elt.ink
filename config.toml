@@ -10,6 +10,11 @@ rssLimit = 10
 summarylength = 30
 pygmentsCodeFences=true
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+      
 [author]
     name = "Geert Eltink"
 
