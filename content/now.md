@@ -12,7 +12,7 @@ Last updated: {{< lastmodified >}}
 
 ## Working on side projects
 
-I just finished [research](../blog/2019-11-09-project-documentation.md) on automating documentation generation for multiple projects within an organization. Now it's time to apply this to the Zend Framework documentation. And I'm also looking into automatically merging pull requests and creating releases with GitHub Actions.
+I just finished [research]({{< ref "blog/2019-11-09-project-documentation.md" >}}) on automating documentation generation for multiple projects within an organization. Now it's time to apply this to the Zend Framework documentation. And I'm also looking into automatically merging pull requests and creating releases with GitHub Actions.
 
 ## Working on a client project
 
