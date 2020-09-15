@@ -11,8 +11,11 @@ build-js:
 	cp node_modules/@fortawesome/fontawesome-free/svgs/solid/envelope.svg $(ASSETS_DIR)/svg/
 	cp node_modules/@fortawesome/fontawesome-free/svgs/solid/mobile-alt.svg $(ASSETS_DIR)/svg/
 
-build: build-js
-	$(HUGO)
+install:
+	npm install
+
+build: install build-js
+	$(HUGO) --gc --minify -b https://geerteltink.github.io/
 
 serve: build-js
 	$(HUGO) server --buildDrafts --buildFuture
