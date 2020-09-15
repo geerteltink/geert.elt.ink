@@ -16,6 +16,3 @@ build: build-js
 
 serve: build-js
 	$(HUGO) server --buildDrafts --buildFuture
-
-generate-githubpages:
-	rm -fr docs && HUGO_ENV=production $(HUGO) --baseURL https://marcanuy.github.io/hugo-pipes-bootstrap/ && mv public docs && touch docs/.nojekyll

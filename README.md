@@ -1,17 +1,16 @@
-# www.elt.ink - f.k.a xtreamwayz.com
+# https://geerteltink.github.io/
 
-![Netlify Status](https://api.netlify.com/api/v1/badges/ccb7030a-d423-436b-831d-21a6eabfaa8f/deploy-status)
-![Q&A Tests](https://github.com/geerteltink/www.elt.ink/workflows/test/badge.svg)
-![Nightly build](https://github.com/geerteltink/www.elt.ink/workflows/nightly/badge.svg)
+![Q&A Tests](https://github.com/geerteltink/geerteltink.github.io/workflows/test/badge.svg)
+![Deploy status](https://github.com/geerteltink/geerteltink.github.io/workflows/deploy/badge.svg)
 
-This repo contains the source code for [www.elt.ink](https://www.elt.ink/). It
+This repo contains the source code for [geerteltink.github.io](https://geerteltink.github.io/). It
 has changed over time. First it started with zend-expressive. Changed in 2018
 to a vuejs based progressive web app to learn the language, PWA and service
 workers concepts. And then there is hugo: A fast way to generate static sites.
 
 ## Version 3: Hugo
 
-[source code](https://github.com/geerteltink/www.elt.ink/tree/master)
+[source code](https://github.com/geerteltink/geerteltink.github.io/tree/master)
 
 - [Hugo](https://gohugo.io/) a fast framework for building static websites
 
@@ -22,7 +21,7 @@ Use icons in content: `{{% fontawesome github %}}`
 
 ## Version 2: Vue.js, PWA and service worker
 
-[source code](https://github.com/geerteltink/www.elt.ink/tree/vuejs)
+[source code](https://github.com/geerteltink/geerteltink.github.io/tree/vuejs)
 
 - [Vue.js](https://www.npmjs.com/package/vue)
 - [vue-analytics](https://www.npmjs.com/package/vue-analytics)
@@ -32,7 +31,7 @@ Use icons in content: `{{% fontawesome github %}}`
 
 ## Version 1: PHP / zend-expressive
 
-[source code](https://github.com/geerteltink/www.elt.ink/tree/expressive)
+[source code](https://github.com/geerteltink/geerteltink.github.io/tree/expressive)
 
 - [zend-expressive](https://github.com/zendframework/zend-expressive)
 - [zend-servicemanager](https://github.com/zendframework/zend-servicemanager) dependency container
