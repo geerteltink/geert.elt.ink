@@ -7,19 +7,15 @@ menu:
     weight: 70
 ---
 
-I'd love to hear from you! Send me an email and I'll get back to you to
-schedule a call within one business day.
+I'd love to hear from you! Send me a tweet and I'll get back to you to
+as soon as possible.
 
 <div class="d-flex justify-content-between mt-5">
     <dl>
         <dt>Get in Touch</dt>
         <dd>
-            <a href="mailto:hello@elt.ink" aria-label="Email">
-                {{% fontawesome envelope %}} Email
-            </a>
-            <br />
-            <a href="https://wa.me/34673288434" aria-label="WhatsApp">
-                {{% fontawesome whatsapp %}} WhatsApp
+            <a href="https://twitter.com/geerteltink" aria-label="Twitter">
+                {{% fontawesome twitter %}} Tweet
             </a>
         </dd>
     </dl>
@@ -33,8 +29,8 @@ schedule a call within one business day.
     <dl>
         <dt>Studio</dt>
         <dd>
-            Mojacar (Almeria)<br />
-            Spain
+            Munich (Bavaria)<br />
+            Germany
         </dd>
     </dl>
 </div>

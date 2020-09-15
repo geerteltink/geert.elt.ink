@@ -5,8 +5,8 @@ date: 1998-10-10
 draft: false
 ---
 
-I grew up in the Netherlands and am currently based in the south of spain,
-surrounded by sea and mountains, focused on designing, developing and
+I grew up in the Netherlands and am currently based in the south of Germany,
+surrounded by lakes and mountains, focused on designing, developing and
 deploying things to the web.
 
 Job titles can be misleading and often don't reflect what someone really
@@ -26,6 +26,6 @@ automating workflows and tasks, web development, to use or not to use
 javascript, mountain biking, diving and sushi.
 
 Any ideas or projects? Just send me a message
-<a href="https://wa.me/34673288434" aria-label="WhatsApp">{{% fontawesome whatsapp %}}</a>.
+<a href="/contact" aria-label="contact">{{% fontawesome envelope %}}</a>.
 
 Geert.

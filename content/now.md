@@ -12,15 +12,18 @@ Last updated: {{< lastmodified >}}
 
 ## Working on side projects
 
-I just finished [research]({{< ref "blog/2019-11-09-project-documentation.md" >}}) on automating documentation generation for multiple projects within an organization. Now it's time to apply this to the Zend Framework documentation. And I'm also looking into automatically merging pull requests and creating releases with GitHub Actions.
+Besides contributing to [laminas](https://getlaminas.org/) and [mezzio](https://getmezzio.org/), there are not many side
+projects going on at the moment.
 
 ## Working on a client project
 
-For a client I'm building a PHP based API server powered by zend-expressive. Its purpose is to feed configuration and content to several company websites, auction sites and webshops, all build with Vue.js.
+For a client I'm still building a PHP based API server powered by mezzio. Its purpose is to feed configuration and content to several company websites, auction sites and webshops, all build with Angular.
 
-## Test driving
+## Health insurance
 
-Once in a while I'm test driving cars for brake refinement, quality assurance and durability, for Valmet Automotive Spain. Besides the quality assurance part it has nothing to do with my designer and programmer life, but it clears my head and gets me away from the screen.
+Since Januari 2020 I started working ottonova, bringing digital health insurance to Germany. I enjoy working in a team and it
+turns out it's something I missed the passed years as a freelancer. Because health insurance is so complex and we build most
+stuff in house, there is never a boring day.
 
 ## Doing sports when not working
 
