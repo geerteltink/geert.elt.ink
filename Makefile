@@ -19,3 +19,10 @@ build: install build-js
 
 serve: build-js
 	$(HUGO) server --buildDrafts --buildFuture
+
+test: install
+	npm run build --if-present
+	npm run lint:md
+	npm run lint:html:index
+	npm run lint:html:components
+	npm run lint:css
