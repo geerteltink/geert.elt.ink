@@ -7,6 +7,7 @@ tags:
   - hugo
   - netlify
   - GitHub Actions
+  - GitHub Pages
 ---
 
 Recently I changed my GitHub account name and converted my old username to an organization. My important projects are now nicely grouped into that organization and not hidden between all forked projects. Each project comes with documentation but so far it was a mess. One project used the GitHub wiki, another one used only the main readme. It's time to bring some order into the chaos. The question was how?
@@ -231,7 +232,7 @@ The modules that aren't locally replaced are downloaded from the internet. That 
 
 ## Hugo modules and ci
 
-With this setup GitHub project pages aren't used, so why use GitHub Pages at all? I've got a very good experience with [netlify](https://www.netlify.com/). It's faster than GitHub Pages and after linking it to a repository it builds automatically your site. If you use Hugo combined with Netlify you've got a very fast pipeline. So using that takes care of building the site when changes are made to the [website](https://github.com/xtreamwayz/website) repository.
+With this setup GitHub project pages aren't used, so why use GitHub Pages at all? I've got a very good experience with [netlify](https://www.netlify.com/). It's faster than GitHub Pages and after linking it to a repository it builds automatically your site. If you use Hugo combined with Netlify you've got a very fast pipeline. So using that takes care of building the site when changes are made to the repository.
 
 The last part that is missing is triggering a rebuild when the documentation of the project has changed:
 
@@ -265,10 +266,12 @@ Now we can
 - Trigger a rebuild if project documentation changes
 - Develop our theme rapidly with minimal dependencies
 
+The same can be done when using GitHub pages, except for triggering a new build if a single repository is updated. You could run a github action daily or hourly so the site gets refreshed every day, or you could run the deploy script manually in the main repository.
+
 If needed, I could still create a docker image with Hugo, Go, Node and npm inside but that's something for the future as well.
 
 Enjoy.
 
 ## Resources
 
-At the time of writing the theme and main website code can be viewed at the [website](https://github.com/xtreamwayz/website) repository and the imported project modules are in the [xtreamwayz](https://github.com/xtreamwayz) namespace. The generated documentation is available [online](https://xtreamwayz.netlify.com/).
+The theme and main source code can be viewed at the [xtreamwayz.github.io](https://github.com/xtreamwayz/xtreamwayz.github.io) repository and the imported project modules are in the [xtreamwayz](https://github.com/xtreamwayz) namespace. The generated documentation is available [online](https://xtreamwayz.github.io/).
