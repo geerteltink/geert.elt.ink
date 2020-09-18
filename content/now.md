@@ -24,7 +24,7 @@ projects going on at the moment.
 
 ## Working on a client project
 
-For a client I'm still building a PHP based API server powered by mezzio. Its purpose is to feed configuration and content to several company websites, auction sites and webshops, all build with Angular.
+Once in a while I'm still building a PHP based API server powered by mezzio. Its purpose is to feed configuration and content to several company websites, auction sites and webshops, all build with Angular.
 
 ## Doing sports when not working
 
