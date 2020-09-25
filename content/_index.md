@@ -11,9 +11,9 @@ deploying things to the web.
 
 Job titles can be misleading and often don't reflect what someone really
 does. I fall somewhere in the cross-section of a web designer, front-end
-and back-end developer and a devops specialist.
+and back-end developer with an interest in devops.
 
-I love designing and developing web applications and make your idea a reality.
+I love designing and developing web applications and make ideas a reality.
 I’ll be dedicated to create the most effective approach that aligns with your
 business objectives, attracts your target audience, and sustainably grows your
 organization.

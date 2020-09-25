@@ -12,30 +12,31 @@
         </p>
       </div>
       <div>
-        <h3>How can I help?</h3>
-        <p>
-          For work enquiries send me a <a href="https://twitter.com/geerteltink">tweet</a>.
-        </p>
+        <h3>Connect with me</h3>
+        <ul class="list-unstyled">
+          <li class="mb-2">
+            <a href="https://twitter.com/geerteltink" aria-label="Twitter">
+              {{ partial "fontawesome.html" "twitter" }} @geerteltink
+            </a>
+          </li>
+          <li class="mb-2">
+            <a href="https://github.com/geerteltink" aria-label="GitHub">
+              {{ partial "fontawesome.html" "github" }} @geerteltink
+            </a>
+          </li>
+          <li class="mb-2">
+            <a href="{{ "/blog/index.xml" | absURL }}" aria-label="RSS">
+              {{ partial "fontawesome.html" "rss" }} Subscribe
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
-    <div class="d-flex flex-column flex-sm-row justify-content-center my-3 text-center text-md-left">
-      <ul class="list-inline">
-        <li class="list-inline-item mr-3">
-          <a href="https://twitter.com/geerteltink" aria-label="Twitter">{{ partial "fontawesome.html" "twitter" }}</a>
-        </li>
-        <li class="list-inline-item mr-3">
-          <a href="https://github.com/geerteltink" aria-label="GitHub">{{ partial "fontawesome.html" "github" }}</a>
-        </li>
-        <li class="list-inline-item mr-3">
-          <a href="{{ "/blog/index.xml" | absURL }}" aria-label="RSS">{{ partial "fontawesome.html" "rss" }}</a>
-        </li>
-        <li class="list-inline-item mr-3">
-          <a href="/privacy" aria-label="Privacy Policy">{{ partial "fontawesome.html" "user-secret" }}</a>
-        </li>
-      </ul>
-      <div>
-        &copy; 1999-{{ now.Year }} Geert Eltink
-      </div>
+    <div class="d-flex flex-column flex-sm-row my-3">
+        &copy; 1999-{{ now.Year }} Geert Eltink &nbsp; &FilledVerySmallSquare; &nbsp;
+        Made with HTML and CSS &nbsp; &FilledVerySmallSquare; &nbsp;
+        Build with Hugo &nbsp; &FilledVerySmallSquare; &nbsp;
+        <a href="/privacy" aria-label="Privacy Policy">Privacy Policy</a>
     </div>
   </div>
 </footer>

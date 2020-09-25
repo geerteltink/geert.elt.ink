@@ -7,16 +7,25 @@ menu:
     weight: 70
 ---
 
-I'd love to hear from you! Send me a tweet and I'll get back to you to
+I'd love to hear from you! Send me a message and I'll get back to you to
 as soon as possible.
 
 <div class="d-flex justify-content-between mt-5">
     <dl>
-        <dt>Get in Touch</dt>
+        <dt>Connect with me</dt>
         <dd>
-            <a href="https://twitter.com/geerteltink" aria-label="Twitter">
-                {{% fontawesome twitter %}} Tweet
-            </a>
+            <ul class="list-unstyled">
+                <li class="mb-2">
+                    <a href="https://twitter.com/geerteltink" aria-label="Twitter">
+                        Twitter
+                    </a>
+                </li>
+                <li class="mb-2">
+                    <a href="https://github.com/geerteltink" aria-label="GitHub">
+                        GitHub
+                    </a>
+                </li>
+            </ul>
         </dd>
     </dl>
     <dl>
