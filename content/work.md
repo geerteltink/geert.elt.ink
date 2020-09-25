@@ -1,5 +1,5 @@
 ---
-title: 'My Work'
+title: 'Selected Work'
 date: '1999-09-09'
 menu:
   main:

@@ -17,7 +17,6 @@
     height: 100%;
     content: '';
     background: $primary;
-    opacity: 0.25;
   }
 }
 
@@ -80,7 +79,7 @@
   width: ($spacer * 1.375);
   height: ($spacer * 1.375);
   margin-left: (($spacer * 1.375) / 2);
-  background: lighten($primary, 25%);
+  background: $primary;
   border-radius: 50%;
   box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
 
@@ -111,6 +110,7 @@
   position: relative;
   padding: 1em;
   margin-left: 60px;
+  background: $secondary;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.24);
 
   h2 {
