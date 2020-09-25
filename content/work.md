@@ -24,9 +24,6 @@ It's only a tiny collection of the most interesting projects.
     </div>
     <div class="card-footer">
       <ul class="list-inline">
-        <li class="list-inline-item badge badge-light">
-          <a href="https://www.pakyruiz.com/" aria-label="pakyruiz.com">Visit project</a>
-        </li>
         <li class="list-inline-item badge badge-danger">HTML</li>
         <li class="list-inline-item badge badge-danger">CSS</li>
         <li class="list-inline-item badge badge-info">Hugo</li>
@@ -48,9 +45,6 @@ It's only a tiny collection of the most interesting projects.
     </div>
     <div class="card-footer">
       <ul class="list-inline">
-        <li class="list-inline-item badge badge-light">
-          <a href="https://linksbek-nl.netlify.com/" aria-label="linksbek.nl">Visit project</a>
-        </li>
         <li class="list-inline-item badge badge-danger">HTML</li>
         <li class="list-inline-item badge badge-danger">CSS</li>
         <li class="list-inline-item badge badge-info">Hugo</li>
@@ -74,9 +68,6 @@ It's only a tiny collection of the most interesting projects.
     </div>
     <div class="card-footer">
       <ul class="list-inline">
-        <li class="list-inline-item badge badge-light">
-          <a href="https://www.ai-total.nl/" aria-label="ai-total.nl">Visit project</a>
-        </li>
         <li class="list-inline-item badge badge-danger">PHP</li>
         <li class="list-inline-item badge badge-danger">Vue.js</li>
         <li class="list-inline-item badge badge-info">
