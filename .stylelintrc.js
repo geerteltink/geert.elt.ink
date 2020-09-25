@@ -12,7 +12,7 @@ module.exports = {
 
   rules: {
     'max-empty-lines': 4,
-    'max-nesting-depth': 2,
+    'max-nesting-depth': 3,
     'at-rule-no-unknown': null,
     'scss/at-rule-no-unknown': true
   },

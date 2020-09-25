@@ -50,7 +50,7 @@ $link-color:    $light !default;
 
 // Fonts
 
-$font-family-sans-serif:            "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$font-family-sans-serif:            "Lato", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
 
 $font-size-base:                    1.1rem !default;
 
@@ -94,12 +94,12 @@ $nav-tabs-link-active-border-color: $nav-tabs-border-color $nav-tabs-border-colo
 // Navbar
 
 $navbar-padding-y:                  1rem !default;
-$navbar-dark-color:                 rgba($white,.6) !default;
+$navbar-dark-color:                 rgba($white, 0.6) !default;
 $navbar-dark-hover-color:           $white !default;
-$navbar-light-color:                rgba($gray-900, .7) !default;
+$navbar-light-color:                rgba($gray-900, 0.7) !default;
 $navbar-light-hover-color:          $gray-900 !default;
 $navbar-light-active-color:         $gray-900 !default;
-$navbar-light-toggler-border-color: rgba($gray-900, .1) !default;
+$navbar-light-toggler-border-color: rgba($gray-900, 0.1) !default;
 
 // Pagination
 

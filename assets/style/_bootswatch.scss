@@ -4,6 +4,7 @@
 // Variables ===================================================================
 
 $web-font-path: 'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap' !default;
+
 @import url($web-font-path);
 
 // Navbar ======================================================================
@@ -193,12 +194,6 @@ $web-font-path: 'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0
   color: #fff;
 }
 
-.pagination {
-  a:hover {
-    text-decoration: none;
-  }
-}
-
 // Indicators ==================================================================
 
 .close {
@@ -211,8 +206,8 @@ $web-font-path: 'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0
 }
 
 .alert {
-  border: none;
   color: $white;
+  border: none;
 
   a,
   .alert-link {
@@ -224,10 +219,18 @@ $web-font-path: 'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0
     &-#{$color} {
       @if $enable-gradients {
         background: $value linear-gradient(180deg, mix($white, $value, 15%), $value) repeat-x;
-      } @else {
+      }
+
+      @else {
         background-color: $value;
       }
     }
+  }
+}
+
+.pagination {
+  a:hover {
+    text-decoration: none;
   }
 }
 
@@ -240,8 +243,8 @@ $web-font-path: 'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0
 
   &:hover,
   &:focus {
-    background-color: $gray-700;
     color: #fff;
+    background-color: $gray-700;
   }
 
   .list-group-item-heading {
