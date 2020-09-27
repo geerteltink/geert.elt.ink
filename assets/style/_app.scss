@@ -4,6 +4,10 @@
   min-height: 100vh;
 }
 
+.app-header a {
+  text-decoration: none;
+}
+
 .app-content {
   flex: 1;
 }
@@ -11,4 +15,5 @@
 .app-footer,
 .app-footer a {
   color: $light;
+  text-decoration: none;
 }
