@@ -12,8 +12,8 @@ Last updated: {{< lastmodified >}}
 
 ## ... health insurance
 
-Since January 2020 I am working at [ottonova](https://www.ottonova.de/), bringing digital health insurance to Germany. I 
-enjoy working in a team and it turns out it's something I missed the passed years as a freelancer. I'm mostly doing PHP 
+Since January 2020 I am working at [ottonova](https://www.ottonova.de/), bringing digital health insurance to Germany. I
+enjoy working in a team and it turns out it's something I missed the passed years as a freelancer. I'm mostly doing PHP
 backend work and once in a while I break the frontend with my Angular contributions. Because health insurance is so
 complex and most stuff is build in house, there is never a boring day.
 
