@@ -3,9 +3,9 @@ module.exports = {
     tabWidth: 2,
     semi: true,
     singleQuote: true,
-    printWidth: 240,
+    printWidth: 100,
     quoteProps: "as-needed",
-    bracketSpacing: false,
+    bracketSpacing: true,
     arrowParens: "always",
     endOfLine: "lf",
     useTabs: false

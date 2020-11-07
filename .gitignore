@@ -1,5 +1,29 @@
-/public
-/themes
+# compiled output
+/dist
+/tmp
+/var
+
+# secrets
+.env
+
+# dependencies
 /vendor
 /node_modules
+
+# IDEs and editors
+.idea
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Project specific
+/public
+/themes
 /resources
