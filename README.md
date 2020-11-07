@@ -1,7 +1,7 @@
 # https://geerteltink.github.io/
 
 ![Q&A Tests](https://github.com/geerteltink/geerteltink.github.io/workflows/test/badge.svg)
-![Deploy status](https://github.com/geerteltink/geerteltink.github.io/workflows/deploy/badge.svg)
+![GitHub Pages](https://github.com/geerteltink/geerteltink.github.io/workflows/github%20pages/badge.svg)
 
 This repo contains the source code for [geerteltink.github.io](https://geerteltink.github.io/). It
 has changed over time. First it started with zend-expressive. Changed in 2018
