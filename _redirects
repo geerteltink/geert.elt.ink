@@ -1,7 +1,0 @@
-/work/      https://geerteltink.github.io/work/         301
-/now/       https://geerteltink.github.io/now/          301
-/contact/   https://geerteltink.github.io/contact/      301
-/blog/*     https://geerteltink.github.io/blog/:splat   301
-/tags/*     https://geerteltink.github.io/tags/:splat   301
-/*          https://geerteltink.github.io/:splat        301
-/           https://geerteltink.github.io/              301

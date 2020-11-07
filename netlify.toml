@@ -19,3 +19,19 @@ command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
 
 # [context.branch-deploy.environment]
 # HUGO_VERSION = "0.59.1"
+
+[[redirects]]
+  from = "/*"
+  to = "https://geerteltink.github.io/:splat"
+  status = 301
+  force = true
+  [redirects.headers]
+    X-From = "Netlify"
+
+[[redirects]]
+  from = "/"
+  to = "https://geerteltink.github.io/"
+  status = 301
+  force = true
+  [redirects.headers]
+    X-From = "Netlify"
