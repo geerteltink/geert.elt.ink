@@ -22,7 +22,7 @@
     "@fullhuman/postcss-purgecss": "^2.3.0",
     "autoprefixer": "^9.8.6",
     "bootlint": "^1.1.0",
-    "htmlhint": "^0.14.0",
+    "htmlhint": "^0.14.2",
     "markdownlint": "^0.20.0",
     "markdownlint-cli": "^0.23.0",
     "postcss-cli": "^7.1.2",
