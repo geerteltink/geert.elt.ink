@@ -3,9 +3,7 @@
 <main class="app-content">
   <article>
     {{ partial "article/header" . }}
-    <div class="container">
-      {{ .Content }}
-    </div>
+    <div class="container">{{ .Content }}</div>
   </article>
   <ul class="container list list-unstyled">
     <!-- Ranges through content/posts/*.md -->
@@ -17,8 +15,6 @@
     </li>
     {{ end }}
   </ul>
-  <div class="container">
-    {{ template "_internal/pagination.html" . }}
-  </div>
+  <div class="container">{{ template "_internal/pagination.html" . }}</div>
 </main>
 {{ end }}

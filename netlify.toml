@@ -22,7 +22,7 @@ command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
 
 [[redirects]]
   from = "/*"
-  to = "https://geerteltink.github.io/:splat"
+  to = "https://geert.elt.ink/:splat"
   status = 301
   force = true
   [redirects.headers]
@@ -30,7 +30,7 @@ command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
 
 [[redirects]]
   from = "/"
-  to = "https://geerteltink.github.io/"
+  to = "https://geert.elt.ink/"
   status = 301
   force = true
   [redirects.headers]

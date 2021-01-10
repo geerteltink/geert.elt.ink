@@ -2,7 +2,7 @@
 <main class="app-content">
   <header class="bg-primary text-light mb-5">
     <div class="container h-100">
-      <div class="row align-items-center h-100" style="min-height: 20vh;">
+      <div class="row align-items-center h-100" style="min-height: 20vh">
         <div class="col-md-10 mx-auto text-center">
           <h1>Page Not Found</h1>
         </div>
@@ -11,7 +11,10 @@
   </header>
   <div class="container">
     <h2 class="h1 my-2">Oops! Looks like you followed a bad link.</h2>
-    <p>You are looking for something that doesn't exist or may have moved. Check out the <a href="{{ '/' | relLangURL }}">home page</a> instead.</p>
+    <p>
+      You are looking for something that doesn't exist or may have moved. Check out the
+      <a href="{{ '/' | relLangURL }}">home page</a> instead.
+    </p>
   </div>
 </main>
 {{ end }}

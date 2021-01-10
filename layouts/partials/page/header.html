@@ -1,15 +1,15 @@
 <header class="app-header navbar navbar-expand navbar-dark bg-primary text-white">
-    <nav class="nav-container container">
-        <a class="navbar-brand" href="{{ "/" | relURL }}" aria-label="{{ .Site.Title }}">
-            [&#712;&#611;&#101;&#720;&#114;&#116;]
-        </a>
-        <ul class="navbar-nav ml-auto">
-            {{ $currentPage := . }}
-            {{ range .Site.Menus.main }}
-            <li class="nav-item">
-                <a class="nav-link{{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{ end }}" href="{{ .URL }}">{{- .Name -}}</a>
-            </li>
-            {{ end }}
-        </ul>
-    </nav>
+  <nav class="nav-container container">
+    <a class="navbar-brand" href="{{ "/" | relURL }}" aria-label="{{ .Site.Title }}">
+      [&#712;&#611;&#101;&#720;&#114;&#116;]
+    </a>
+    <ul class="navbar-nav ml-auto">
+      {{ $currentPage := . }}
+      {{ range .Site.Menus.main }}
+      <li class="nav-item">
+        <a class="nav-link{{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{ end }}" href="{{ .URL }}">{{- .Name -}}</a>
+      </li>
+      {{ end }}
+    </ul>
+  </nav>
 </header>

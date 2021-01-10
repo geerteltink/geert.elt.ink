@@ -14,16 +14,16 @@ pygmentsCodeFences=true
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
-      
+
 [author]
-    name = "Geert Eltink"
+  name = "Geert Eltink"
 
 [imaging]
-    resampleFilter = "Linear"
-    quality = 80
+  resampleFilter = "Linear"
+  quality = 80
 
 [permalinks]
-    blog = "/blog/:filename/"
+  blog = "/blog/:filename/"
 
 [params]
-    description = "It all starts with an idea, I can make yours a reality."
+  description = "It all starts with an idea, I can make yours a reality."
