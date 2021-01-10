@@ -1,6 +1,6 @@
 ---
-title: I create, deploy and manage web apps.
-summary: A web designer, front-end and back-end developer. Ready to make your idea a reality.
+title: Geert Eltink
+summary: I create, deploy and manage web apps. Ready to make your idea a reality.
 date: 1998-10-10
 draft: false
 ---
