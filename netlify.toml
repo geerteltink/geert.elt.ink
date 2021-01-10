@@ -21,7 +21,7 @@ command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
 # HUGO_VERSION = "0.59.1"
 
 [[redirects]]
-  from = "/*"
+  from = "https://elt.ink/*"
   to = "https://geert.elt.ink/:splat"
   status = 301
   force = true
@@ -29,7 +29,23 @@ command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
     X-From = "Netlify"
 
 [[redirects]]
-  from = "/"
+  from = "https://elt.ink/"
+  to = "https://geert.elt.ink/"
+  status = 301
+  force = true
+  [redirects.headers]
+    X-From = "Netlify"
+
+[[redirects]]
+  from = "https://www.elt.ink/*"
+  to = "https://geert.elt.ink/:splat"
+  status = 301
+  force = true
+  [redirects.headers]
+    X-From = "Netlify"
+
+[[redirects]]
+  from = "https://www.elt.ink*"
   to = "https://geert.elt.ink/"
   status = 301
   force = true

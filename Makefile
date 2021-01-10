@@ -15,7 +15,7 @@ install:
 	npm install
 
 build: install build-js
-	$(HUGO) --gc --minify -b https://geerteltink.github.io/
+	$(HUGO) --gc --minify -b https://geert.elt.ink/
 
 serve: build-js
 	$(HUGO) server --buildDrafts --buildFuture

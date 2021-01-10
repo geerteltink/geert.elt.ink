@@ -1,16 +1,16 @@
-# https://geerteltink.github.io/
+# https://geert.elt.ink/
 
-![Q&A Tests](https://github.com/geerteltink/geerteltink.github.io/workflows/test/badge.svg)
-![GitHub Pages](https://github.com/geerteltink/geerteltink.github.io/workflows/github%20pages/badge.svg)
+![Q&A Tests](https://github.com/geerteltink/geert.elt.ink/workflows/test/badge.svg)
+![GitHub Pages](https://github.com/geerteltink/geert.elt.ink/workflows/github%20pages/badge.svg)
 
-This repo contains the source code for [geerteltink.github.io](https://geerteltink.github.io/). It
+This repo contains the source code for [geert.elt.ink](https://geert.elt.ink/). It
 has changed over time. First it started with zend-expressive. Changed in 2018
 to a vuejs based progressive web app to learn the language, PWA and service
 workers concepts. And then there is hugo: A fast way to generate static sites.
 
 ## Version 3: Hugo
 
-[source code](https://github.com/geerteltink/geerteltink.github.io/tree/master)
+[source code](https://github.com/geerteltink/geert.elt.ink/tree/master)
 
 - [Hugo](https://gohugo.io/) a fast framework for building static websites
 
@@ -21,7 +21,7 @@ Use icons in content: `{{% fontawesome github %}}`
 
 ## Version 2: Vue.js, PWA and service worker
 
-[source code](https://github.com/geerteltink/geerteltink.github.io/tree/vuejs)
+[source code](https://github.com/geerteltink/geert.elt.ink/tree/vuejs)
 
 - [Vue.js](https://www.npmjs.com/package/vue)
 - [vue-analytics](https://www.npmjs.com/package/vue-analytics)
@@ -31,7 +31,7 @@ Use icons in content: `{{% fontawesome github %}}`
 
 ## Version 1: PHP / zend-expressive
 
-[source code](https://github.com/geerteltink/geerteltink.github.io/tree/expressive)
+[source code](https://github.com/geerteltink/geert.elt.ink/tree/expressive)
 
 - [zend-expressive](https://github.com/zendframework/zend-expressive)
 - [zend-servicemanager](https://github.com/zendframework/zend-servicemanager) dependency container
