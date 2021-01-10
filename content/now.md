@@ -1,7 +1,6 @@
 ---
 title: 'Right now, I am...'
 date: '1999-09-09'
-markup: mmark
 menu:
   main:
     name: 'Now'
