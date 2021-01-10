@@ -6,8 +6,8 @@ draft: false
 ---
 
 I grew up in the Netherlands and am currently based in the south of Germany,
-surrounded by lakes and mountains, focused on designing, developing and
-deploying things to the web.
+surrounded by lakes and mountains, focused on developing and deploying things
+to the web.
 
 I love designing and developing web applications and make ideas a reality.
 I’ll be dedicated to create the most effective approach that aligns with your
