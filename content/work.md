@@ -4,7 +4,7 @@ date: '1999-09-09'
 menu:
   main:
     name: 'Work'
-    weight: 10
+    weight: 60
 ---
 
 Want to see what I am made of? Here you go, I'm proud of the work I've done.

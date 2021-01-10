@@ -18,7 +18,7 @@ build: install build-js
 	$(HUGO) --gc --minify -b https://geert.elt.ink/
 
 serve: build-js
-	$(HUGO) server --buildDrafts --buildFuture
+	$(HUGO) server --buildDrafts --buildFuture --bind 0.0.0.0
 
 test: install
 	npm run build --if-present

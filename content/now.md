@@ -5,7 +5,7 @@ markup: mmark
 menu:
   main:
     name: 'Now'
-    weight: 60
+    weight: 40
 ---
 
 Last updated: {{< lastmodified >}}
