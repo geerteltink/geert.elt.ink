@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.Language.Lang }}" class="h-100">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>{{ .Title }} &ndash; {{ .Site.Title }}</title>
+  <meta name="description" content="{{ .Params.summary | default .Site.Params.description }}" />
+  <meta name="web_author" content="Geert Eltink, https://www.elt.ink/" />
+  <meta name="theme-color" content="#ff4f00" />
+  <meta name="msapplication-TileColor" content="#ff4f00" />
+  <meta name="msapplication-square150x150logo" content="/img/logo-120x120.png" />
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png" />
+  {{ with .GitInfo }}<meta name="revision" content="{{ .Hash }}" />{{ end }}
+  <meta name="dcterms.created" content="{{ .Date }}" />
+  <meta name="dcterms.modified" content="{{ .Lastmod }}" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:url" content="{{ .Permalink }}" />
+  <meta name="twitter:title" content="{{ .Title }}" />
+  <meta name="twitter:description" content="{{ .Params.summary | default .Site.Params.description }}" />
+  <meta name="twitter:image" content="{{ .Site.BaseURL }}/img/logo-120x120.png" />
+  <meta property="og:url" content="{{ .Permalink }}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="{{ .Title }}" />
+  <meta property="og:image" content="{{ .Site.BaseURL }}/img/logo-120x120.png" />
+  <meta property="og:description" content="{{ .Params.summary | default .Site.Params.description }}" />
+  <meta property="og:site_name" content="{{ .Site.Title }}" />
+  <meta property="article:author" content="Geert Eltink" />
+  <base href="{{ if getenv "CONTEXT" }}{{ cond (eq "production" (getenv "CONTEXT")) (getenv "URL") (getenv "DEPLOY_PRIME_URL") }}{{ else }}{{ $.Site.BaseURL }}{{ end }}" />
+  {{ $styles := resources.Get "style/main.scss" | toCSS | resources.PostCSS | resources.Minify | fingerprint "sha512" }}
+  <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen" />
+  {{ range .AlternativeOutputFormats -}}
+  {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+  {{ end -}}
+</head>
+
+<body class="d-flex h-100 text-center text-white bg-dark">
+  <div class="container d-flex w-100 h-100 p-3 mx-auto flex-column bg-green">
+    <header class="mb-auto">
+      <div class="d-flex justify-content-between">
+        <a class="h3 mb-0" href="{{ "/" | relURL }}" aria-label="{{ .Site.Title }}">
+          [&#712;&#611;&#101;&#720;&#114;&#116;]
+        </a>
+        <form class="search d-flex justify-content-center" method="GET" action="https://duckduckgo.com/?q=">
+          <input class="search-input" type="text" autocomplete="off" name="q" autocapitalize="off" autocorrect="off">
+          <span class="search-input-text">
+            {{ partial "fontawesome.html" "search" }}
+          </span>
+        </form>
+        <nav class="nav nav-masthead justify-content-center">
+          {{ $currentPage := . }}
+          {{ range .Site.Menus.main }}
+          <a class="nav-link{{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{ end }}" href="{{ .URL }}">{{- .Name -}}</a>
+          {{ end }}
+        </nav>
+      </div>
+    </header>
+
+    <main class="mx-auto">
+      <h1 class="clock m-0" id="time"></h1>
+      <div class="message" id="message"></div>
+      <nav class="d-flex justify-content-around tiles">
+        <a href="https://mail.google.com/" class="tile">
+          {{ partial "fontawesome.html" "gmail" }}
+        </a>
+        <a href="https://calendar.google.com/" class="tile">
+          {{ partial "fontawesome.html" "calendar" }}
+        </a>
+        <a href="https://drive.google.com/" class="tile">
+          {{ partial "fontawesome.html" "drive" }}
+        </a>
+        <a href="https://notion.so/" class="tile">
+          {{ partial "fontawesome.html" "notion" }}
+        </a>
+        <a href="https://github.com/" class="tile">
+          {{ partial "fontawesome.html" "github" }}
+        </a>
+      </nav>
+    </main>
+
+    <footer class="mt-auto mx-auto text-white-50">
+      <p>
+        &copy; 1999-{{ now.Year }} Geert Eltink &nbsp; &FilledVerySmallSquare; &nbsp;
+        <a href="/privacy" aria-label="Privacy Policy">Privacy Policy</a>
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+        function checkTime(i) {
+            return (i < 10) ? "0" + i : i;
+        }
+
+        function startTime() {
+            var today = new Date(),
+                h = checkTime(today.getHours()),
+                m = checkTime(today.getMinutes()),
+                s = checkTime(today.getSeconds());
+            document.getElementById('time').innerHTML = h + ":" + m;
+            switch (true) {
+              case (h < 6):
+                  message = 'Hello, good night!'
+                break;
+              case (h < 12):
+                  message = 'Hello, good morning!'
+                break;
+              case (h < 18):
+                  message = 'Hello, good afternoon!'
+                break;
+              default:
+                  message = 'Hello, good evening!'
+                break;
+            }
+            document.getElementById('message').innerHTML = message;
+            t = setTimeout(function () {
+                startTime()
+            }, 500);
+        }
+        startTime();
+    })();
+  </script>
+
+  {{ template "_internal/google_analytics_async.html" . }}
+</body>
+
+</html>
