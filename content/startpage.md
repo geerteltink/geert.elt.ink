@@ -4,8 +4,6 @@ date: '2021-02-08'
 layout: 'startpage'
 ---
 
-# Startpage
-
 <form id="search_form_homepage" class="search--home  js-search-form search--adv" name="x" method="GET" action="/" _lpchecked="1">
     <input id="search_form_input_homepage" class="js-search-input search__input--adv" type="text" autocomplete="off" name="q" tabindex="1" value="" autocapitalize="off" autocorrect="off">
     <input id="search_button_homepage" class="search__button  js-search-button" type="submit" tabindex="2" value="S">
