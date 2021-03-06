@@ -7,7 +7,7 @@ menu:
     weight: 100
 ---
 
-# Sharing
+## Sharing
 
 I've learned a thing or two over the years when working as a developer. I love
 sharing what I've learned and use this site for that.
@@ -18,7 +18,7 @@ I choose a skill I want to be good at, do the research and will get my hands
 dirty while experimenting to uncover its principles. To be able to write or
 teach I need real experience.
 
-# Career
+## Career
 
 It started back in 1999 when I got involved in a startup which listed all
 available daily menus of the local restaurants. The programming languages

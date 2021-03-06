@@ -4,8 +4,6 @@ date: '2021-02-08'
 layout: 'startpage'
 ---
 
-<h1>Test</h1>
-
 # Startpage
 
 <form id="search_form_homepage" class="search--home  js-search-form search--adv" name="x" method="GET" action="/" _lpchecked="1">
