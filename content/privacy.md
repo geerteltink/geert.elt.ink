@@ -48,7 +48,7 @@ If you do business with us, we also collect your business name and bank details 
 
 ## Where we store your information
 
-When you contact us by email or through our website, we store your your information in Google Apps, our Customer Relationship Management (CRM) software. If you sign up for a newsletter, we store your email address in MailChimp which is the marketing platform we prefer. If we do business, we store your information in our accounts software [Harvest](https://www.getharvest.com/)). We chose these systems partly for their commitment to security.
+When you contact us by email or through our website, we store your your information in Google Workspace, our Customer Relationship Management (CRM) software. If you sign up for a newsletter, we store your email address in MailChimp which is the marketing platform we prefer. If we do business, we store your information in our accounts software [Harvest](https://www.getharvest.com/)). We chose these systems partly for their commitment to security.
 
 ## What we use your information for
 
