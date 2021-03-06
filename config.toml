@@ -1,7 +1,7 @@
 baseURL = "/"
 languageCode = "en-US"
 title = "Geert Eltink"
-googleAnalytics = "UA-56579105-2"
+# googleAnalytics = "UA-56579105-2"
 enableRobotsTxt = true
 enableGitInfo = true
 disqusShortname = "elt-ink"
