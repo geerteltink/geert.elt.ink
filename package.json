@@ -11,22 +11,22 @@
   "author": "Geert Eltink",
   "license": "MIT",
   "dependencies": {
-    "bootstrap": "^5.0.0-beta1"
+    "bootstrap": "^5.1.0"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.3",
-    "@fullhuman/postcss-purgecss": "^4.0.3",
-    "autoprefixer": "^10.2.5",
-    "htmlhint": "^0.14.2",
-    "markdownlint": "^0.23.1",
-    "markdownlint-cli": "^0.27.1",
-    "postcss-cli": "^8.3.1",
-    "stylelint": "^13.13.1",
-    "stylelint-config-idiomatic-order": "^8.1.0",
-    "stylelint-config-recess-order": "^2.4.0",
-    "stylelint-config-recommended-scss": "^4.2.0",
-    "stylelint-config-standard": "^22.0.0",
-    "stylelint-order": "^4.1.0",
-    "stylelint-scss": "^3.19.0"
+    "@fortawesome/fontawesome-free": "^5.15",
+    "@fullhuman/postcss-purgecss": "^4.0",
+    "autoprefixer": "^10.3",
+    "htmlhint": "^0.15",
+    "markdownlint": "^0.23",
+    "markdownlint-cli": "^0.28",
+    "postcss-cli": "^8.3",
+    "stylelint": "^13.13",
+    "stylelint-config-idiomatic-order": "^8.1",
+    "stylelint-config-recess-order": "^2.4",
+    "stylelint-config-recommended-scss": "^4.3",
+    "stylelint-config-standard": "^22.0",
+    "stylelint-order": "^4.1",
+    "stylelint-scss": "^3.20"
   }
 }
