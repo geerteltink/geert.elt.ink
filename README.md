@@ -1,16 +1,17 @@
 # https://geert.elt.ink/
 
-![Q&A Tests](https://github.com/geerteltink/geert.elt.ink/workflows/test/badge.svg)
-![GitHub Pages](https://github.com/geerteltink/geert.elt.ink/workflows/github%20pages/badge.svg)
-
 This repo contains the source code for [geert.elt.ink](https://geert.elt.ink/). It
 has changed over time. First it started with zend-expressive. Changed in 2018
 to a vuejs based progressive web app to learn the language, PWA and service
-workers concepts. And then there is hugo: A fast way to generate static sites.
+workers concepts, Hugo and currently hashnode.com.
+
+## Version 4: hashnode.com
+
+[source code](https://github.com/geerteltink/geert.elt.ink/tree/main)
 
 ## Version 3: Hugo
 
-[source code](https://github.com/geerteltink/geert.elt.ink/tree/master)
+[source code](https://github.com/geerteltink/geert.elt.ink/tree/hugo)
 
 - [Hugo](https://gohugo.io/) a fast framework for building static websites
 
