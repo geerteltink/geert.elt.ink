@@ -14,9 +14,13 @@ And then, a few months ago, [Microsoft announced WSL 2](https://youtu.be/lwhMThe
 
 ## Getting started
 
-There is a downside for trying it right now. You need Windows 10 build 18917 or higher. This means you have to subscribe to the *fast ring* or download a [Windows Insider ISO](https://insider.windows.com/en-us/getting-started/). Once you have Windows 10 18917+ installed, we can start with WSL 2 itself.
+> Update (2021-08-01): for Windows 10 version 2004 and higher, there is now a single command to install it which should make this easier. The process to set up WSL was previously too complicated, involving turning on multiple settings and installing multiple packages.
+>
+> Now you can open a command prompt window with admin privileges and run `wsl --install`.
+>
+> To find distros run `wsl --list --online` and to install one you can run `wsl --install -d <DistroName>`.
 
-## Enable the 'Virtual Machine Platform' and WSL components
+There is a downside for trying it right now. You need Windows 10 build 18917 or higher. This means you have to subscribe to the *fast ring* or download a [Windows Insider ISO](https://insider.windows.com/en-us/getting-started/). Once you have Windows 10 18917+ installed, we can start with WSL 2 itself.
 
 Open PowerShell as an Administrator and start the installation:
 
@@ -95,4 +99,4 @@ You might want to keep an eye on [this page](https://github.com/shayne/wsl2-hack
 
 ## What's next
 
-It would be nice if I could get PhpStorm working the same way. However, I'm afraid it's not going to be that easy. Also trying out docker containers is on the top of my Todo list.
+It would be nice if I could get PhpStorm working the same way. However, I'm afraid it's not going to be that easy. PhpStorm is constantly scanning files and because it's actually using a network connection to access files in WSL2, it's too slow.
