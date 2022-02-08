@@ -2,7 +2,7 @@
 
 ## Force LF line endings instead of CR+LF
 
-Although there tons of different opinions on stackoverflow, this is the one that works for me:
+Although there are tons of different opinions on stackoverflow, this is the one that works for me:
 
 ```bash
 git config --global core.eol lf
@@ -46,7 +46,7 @@ git commit --amend -a
 
 ## Pull before push
 
-Sometimes a push failed because the remote branch contains commits which you do not have locally. You need to pull these in first. However doing this with a normal `git pull` command, it creates an extra *merged branch* commit. This is normal, but can get messy if it happens a lot. To prevent this, you need to *rebase* your commits behind the new commits made by others when pulling.
+Sometimes a push failed because the remote branch contains commits which you do not have locally. You need to pull these in first. However, doing this with a normal `git pull` command, it creates an extra *merged branch* commit. This is normal, but can get messy if it happens a lot. To prevent this, you need to *rebase* your commits behind the new commits made by others when pulling.
 
 ```bash
 git pull --rebase
@@ -82,7 +82,7 @@ git merge --no-ff -s recursive -Xtheirs [branch]
 
 ## Handling merge conflicts
 
-First you have to fix the merge conflicts. Use ``git status`` to check where the conflicts are. After that you can commit resolved conflicts.
+First, you have to fix the merge conflicts. Use ``git status`` to check where the conflicts are. After that, you can commit resolved conflicts.
 
 ```bash
 git add -A
@@ -92,7 +92,7 @@ git push
 
 ## Cherry picking
 
-Cherry pick a specific commit from another branch into the current branch.
+Cherry-pick a specific commit from another branch into the current branch.
 
 ```bash
 git cherry-pick [commit]
@@ -139,7 +139,7 @@ git stash drop
 
 ## Unstage files
 
-Unstage files wwhich are not committed yet.
+Unstage files which are not committed yet.
 
 ```bash
 git reset HEAD
