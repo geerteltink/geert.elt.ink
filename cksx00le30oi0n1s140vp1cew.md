@@ -8,9 +8,9 @@ reboot
 ./install_ubuntu.sh
 ```
 
-The reason I like Ubuntu is that it is fast, and I mean really fast. For example, in just a few seconds `npm update` is finished, the same goes for `composer` commands and docker containers are started instantly. As I said it's just an example because everything feels fast. Don't expect to break any speed records when trying development on Windows. Also, the way updates are handled, the snaps that are recently added. It is easy to work with. The reason I swap to Windows is when I want to do more than work, connect two monitors or need sporadically and application that doesn't run on Ubuntu. I have tried Windows 10 several times with WSL, Windows Subsystem for Linux. It's a good start but it didn't have a full Linux kernel implementation so a lot didn't work. And WSL is slow... Very slow.
+The reason I like Ubuntu is that it is fast, and I mean really fast. For example, in just a few seconds `npm update` is finished, the same goes for `composer` commands and docker containers are started instantly. As I said, it's just an example because everything feels fast. Don't expect to break any speed records when trying development on Windows. Also, the way updates are handled, the snaps that are recently added. It is easy to work with. The reason I swap to Windows is when I want to do more than work, connect two monitors or need sporadically and application that doesn't run on Ubuntu. I have tried Windows 10 several times with WSL, Windows Subsystem for Linux. It's a good start, but it didn't have a full Linux kernel implementation, so a lot didn't work. And WSL is slow… Very slow.
 
-And then, a few months ago, [Microsoft announced WSL 2](https://youtu.be/lwhMThePdIo). It should be fast, have a full Linux kernel implementation and fixes all issues with WSL. Because of the full Linux kernel, all programs that run in Ubuntu will run its WSL 2 version. As curious as I am I thought I'm just going to try it. I can always wipe my disk and install Ubuntu again.
+And then, a few months ago, [Microsoft announced WSL 2](https://youtu.be/lwhMThePdIo). It should be fast, have a full Linux kernel implementation and fixes all issues with WSL. Because of the full Linux kernel, all programs that run in Ubuntu will run its WSL 2 version. As curious as I am, I thought I'm just going to try it. I can always wipe my disk and install Ubuntu again.
 
 ## Getting started
 
@@ -29,11 +29,11 @@ Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
 ```
 
-This will make sure that both the Virtual Machine Platform and Windows Subsystem for Linux optional components are installed. After you've run these commands you'll need to restart your computer.
+This will make sure that both the Virtual Machine Platform and Windows Subsystem for Linux optional components are installed. After you've run these commands, you'll need to restart your computer.
 
 ## Set WSL 2 as your default architecture
 
-To make WSL 2 your default architecture you can do so with this command:
+To make WSL 2 your default architecture, you can do so with this command:
 
 ```powershell
 wsl --set-default-version 2
@@ -61,19 +61,19 @@ wsl --set-version <Distro> 2
 
 So for Ubuntu, this would be `wsl --set-version Ubuntu 2`.
 
-And that's it. You now have WSL 2. Open a Ubuntu terminal by typing `ubuntu` in PowerShell or cmd. Set it up, add your ssh key, install PHP, Node and git, download a git repo, play around and enjoy the speed. You have a fast full functioning Ubuntu terminal.
+And that's it. You now have WSL 2. Open an Ubuntu terminal by typing `ubuntu` in PowerShell or cmd. Set it up, add your ssh key, install PHP, Node and git, download a git repo, play around and enjoy the speed. You have a fast, full functioning Ubuntu terminal.
 
-## But wait... there is more
+## But wait… there is more
 
-Of course, there is more. The title mentions Visual Studio Code. The speed of WSL 2 impressed me a lot but actually using it with VS Code was amazing.
+Of course, there is more. The title mentions Visual Studio Code. The speed of WSL 2 impressed me a lot, but actually using it with VS Code was amazing.
 
 If you didn't install it yet, get [Visual Studio Code](https://code.visualstudio.com/) and install it. Once you have it, install the [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) extension. It has currently the preview label but basically, this installs all extensions you need to get WSL 2 integrated with VS Code.
 
-Once installed, on the left bottom you get a new green button. Click on it and select `Remote-WSL: New Window`. The first time you will do this it will setup WSL. Taken from the manual:
+Once installed, on the left bottom, you get a new green button. Click on it and select `Remote-WSL: New Window`. The first time you will do this, it will set up WSL. Taken from the manual:
 
 > VS Code is installing a small server on the Linux side that the desktop VS Code will then talk to. That server will then install and host extensions in WSL so that they run in the context of the tools and frameworks installed in WSL. In other words, your language extensions will run against the tools and frameworks installed in WSL, not against what is installed on the Windows side, as it should for the proper development experience.
 
-This is amazing. For example, if you need tools like nodejs, PHP or git, VS Code will use what is installed on the WSL distro. Besides the editor, you don't need anything anymore on Windows itself. Finally, all my Windows dev-tools installation nightmares are over and the maintenance mess is gone.
+This is amazing. For example, if you need tools like nodejs, PHP or git, VS Code will use what is installed on the WSL distro. Besides the editor, you don't need anything anymore on Windows itself. Finally, all my Windows dev-tools installation nightmares are over, and the maintenance mess is gone.
 
 Want to see why I'm so excited about this? Check out [this example](https://microsoft.github.io/vscode-remote-release/images/ssh-readme.gif). It's for an SSH connection, but it's about the same.
 
