@@ -1,6 +1,6 @@
 ## Git Workflow
 
-Git workflow works best for large projects. For smaller projects or projects with little commits and releases I suggest to use something lightweight like [GitHub Flow](https://guides.github.com/introduction/flow/).
+Git workflow works best for large projects. For smaller projects or projects with little commits and releases, I suggest to use something lightweight like [GitHub Flow](https://guides.github.com/introduction/flow/).
 
 * [Versioning](#versioning)
 * [Commit Messages](#commit-messages)
@@ -12,7 +12,7 @@ This guide is based on [a successful git branching model](http://nvie.com/posts/
 
 The `origin/master` branch is considered the main branch where the source code always reflects a production-ready state. Never push code changes into this branch. Only merge other tested stable branches in to this.
 
-The `origin/develop` branch contains the source code with the latest development changes for the next release. If there automatic nightly builds, this is where they should be built from. Don't start big code changes into this branch and keep the `develop` branch clean. Make a local feature branch for big projects and once ready, merge it back into this `develop` branch.
+The `origin/develop` branch contains the source code with the latest development changes for the next release. If there are automatic nightly builds, this is where they should be built from. Don't start big code changes into this branch, and keep the `develop` branch clean. Make a local feature branch for big projects and once ready, merge it back into this `develop` branch.
 
 There are 3 supporting branches: [feature/*](#feature-branches), [release/*](#release-branches) and [hotfix/*](#hotfix-branches). These branches aid development between team members, ease tracking of features, prepare for production releases and to assist in quickly fixing live production problems. Unlike the main branches, these branches always have a limited lifetime, since they will be removed eventually.
 
@@ -20,11 +20,11 @@ To help with the workflow and save typing commands, predefined git-flow commands
 
 ## Versioning
 
-For versioning [Semantic Versioning](http://semver.org/) is used. This means `<major>.<minor>.<patch>`.
+For versioning, [Semantic Versioning](http://semver.org/) is used. This means `<major>.<minor>.<patch>`.
 
 ## Commit Messages
 
-The first line should be a short summary, followed by an empty line and a detailed explanatory. If the summary contains (closes #1) or (fixes #1), it auto closes issue #1 when merged into the default (master) branch. To reference to an issue use "Partially fix issue #1".
+The first line should be a short summary, followed by an empty line and a detailed explanatory. If the summary contains (closes #1) or (fixes #1), it auto closes issue #1 when merged into the default (master) branch. To reference to an issue, use "Partially fix issue #1".
 
 ```text
 Capitalized, short (50 chars or less) summary (closes #1), (fixes #1) or issue #1
