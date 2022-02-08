@@ -1,11 +1,10 @@
 ## zend-expressive console cli commands
 
-zend-expressive does not come out of the box with a console for handling cli commands. However it's easy to add this
-and make full use of the container and its dependencies.
+zend-expressive does not come out of the box with a console for handling cli commands. However, it's easy to add this and make full use of the container and its dependencies.
 
 ## Install Symfony Console
 
-First the Symfony console needs to be installed.
+First, the Symfony console needs to be installed.
 
 ```bash
 $ composer require symfony/console
@@ -35,8 +34,7 @@ foreach ($commands as $command) {
 $application->run();
 ```
 
-The console needs to know which commands to setup. Here the ``console -> commands`` key is chosen, however you can
-change this as you like.
+The console needs to know which commands to setup. Here the ``console -> commands`` key is chosen, however you can change this as you like.
 
 ```php
 <?php // config/autoload/console.global.php
@@ -62,8 +60,7 @@ And that's about it. You've got a working console.
 ## Example greet command
 
 But what is a console without a command. Let's re-create the example
-[greet command](http://symfony.com/doc/current/cookbook/console/console_command.html) from the Symfony cookbook.
-First up is the command itself. To get a better idea of what you really can do, a logger is injected to log the
+[greet command](http://symfony.com/doc/current/cookbook/console/console_command.html) from the Symfony cookbook. First up is the command itself. To get a better idea of what you really can do, a logger is injected to log the
 executed command.
 
 ```php
@@ -136,8 +133,7 @@ class GreetCommand extends Command
 }
 ```
 
-Most likely dependencies are needed, which are injected with a factory. In this example an instance of Monolog is
-injected.
+Most likely, dependencies are needed, which are injected with a factory. In this example, an instance of Monolog is injected.
 
 ```php
 <?php // src/App/Command/GreetCommandFactory.php
@@ -158,7 +154,7 @@ class GreetCommandFactory
 }
 ```
 
-Add this command and its factory to the configuration so it can actually be used.
+Add this command and its factory to the configuration, so it can actually be used.
 
 ```php
 <?php // config/autoload/console.global.php
