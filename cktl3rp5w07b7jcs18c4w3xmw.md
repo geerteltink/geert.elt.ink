@@ -11,7 +11,7 @@ It has some advantages:
 
 What I like from it is that you don't need to return anything anymore. Top-level bindings are exposed to the template automatically, and the same goes for imports.
 
-I haven't found complete examples on how to use it with TypeScript. While playing with this new feature I've created an example for testing. I'm just going to leave it here so it might help someone else too.
+I haven't found complete examples on how to use it with TypeScript. While playing with this new feature, I've created an example for testing. I'm just going to leave it here so it might help someone else too.
 
 ```js
 <script setup lang="ts">
