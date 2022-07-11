@@ -4,20 +4,16 @@
     {{ partial "article/header" . }}
     <div class="container">
       <div class="row">
-        <div class="col-md-8">
-          {{ .Content }}
-        </div>
+        <div class="col-md-8">{{ .Content }}</div>
         <div class="col-md-4">
           <ul class="list list-unstyled">
             <!-- Ranges through content/posts/*.md -->
             {{ range (.Paginator 4).Pages.ByDate.Reverse }}
             <li class="mb-3">
-              <h2 style="font-size: large;">
+              <h2 style="font-size: large">
                 <a href="{{.Permalink}}">{{.Title}}</a>
               </h2>
-              <div style="font-size: medium;">
-                {{.Summary | markdownify}}
-              </div>
+              <div style="font-size: medium">{{.Summary | markdownify}}</div>
             </li>
             {{ end }}
           </ul>

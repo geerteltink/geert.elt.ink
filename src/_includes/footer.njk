@@ -1,0 +1,25 @@
+<footer class="page-footer">
+  <div class="container">
+    <ul class="flex flex-justify-between my-4">
+      {% set navPages = collections.all | eleventyNavigation %}
+      {% for entry in navPages %}
+        <li class="p-1">
+          <a href="{{ entry.url | url }}">{{ entry.title }}</a>
+        </li>
+      {% endfor %}
+      <li class="p-1">
+        <a href="/feed.xml">RSS</a>
+      </li>
+    </ul>
+    <ul class="flex flex-justify-between my-4">
+      <li class="p-1">
+        <div>
+          Copyright © 2002-{% year %} Geert Eltink
+        </div>
+      </li>
+      <li class="p-1">
+        <a href="https://geert.elt.ink/">Maintained with care.</a>
+      </li>
+    </ul>
+  </div>
+</footer>

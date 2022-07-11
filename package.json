@@ -1,31 +1,41 @@
 {
   "name": "geert.elt.ink",
-  "version": "3.0.0",
+  "version": "5.0.0",
   "description": "A web developer's playground.",
-  "private": true,
-  "scripts": {
-    "lint": "npm run lint:md && npm run lint:css",
-    "lint:md": "markdownlint {archetypes,content}/**/*.md",
-    "lint:css": "stylelint assets/**/*.{css,scss}"
-  },
   "author": "Geert Eltink",
   "license": "MIT",
-  "dependencies": {
-    "bootstrap": "^5.1.0"
+  "private": true,
+  "main": "_site/index.html",
+  "scripts": {
+    "build": "npx @11ty/eleventy",
+    "build-production": "NODE_ENV=production npx @11ty/eleventy",
+    "serve": "npx @11ty/eleventy --serve --port=8091",
+    "serve-production": "NODE_ENV=production npx @11ty/eleventy --serve --port=8091",
+    "check-links": "npx check-html-links _site",
+    "lint": "npm run lint:md && npm run lint:css",
+    "lint:md": "markdownlint src/**/*.md",
+    "lint:css": "stylelint src/assets/**/*.css",
+    "format": "prettier --write '**/*.{js,css,html,md}'"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.15",
-    "@fullhuman/postcss-purgecss": "^4.0",
-    "autoprefixer": "^10.3",
-    "markdownlint": "^0.23",
-    "markdownlint-cli": "^0.28",
-    "postcss-cli": "^8.3",
-    "stylelint": "^13.13",
-    "stylelint-config-idiomatic-order": "^8.1",
-    "stylelint-config-recess-order": "^2.4",
-    "stylelint-config-recommended-scss": "^4.3",
-    "stylelint-config-standard": "^22.0",
-    "stylelint-order": "^4.1",
-    "stylelint-scss": "^3.20"
+    "@11ty/eleventy": "^1.0.1",
+    "@11ty/eleventy-img": "^2.0.1",
+    "@11ty/eleventy-navigation": "^0.3.3",
+    "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "autoprefixer": "^10.4.7",
+    "cssnano": "^5.1.12",
+    "fast-glob": "^3.2.11",
+    "html-minifier": "^4.0.0",
+    "luxon": "^3.0.1",
+    "markdownlint": "^0.26.0",
+    "markdownlint-cli": "^0.31.1",
+    "md5": "^2.3.0",
+    "postcss-cli": "^10.0.0",
+    "postcss-import": "^14.1.0",
+    "prettier": "^2.7.1",
+    "striptags": "^3.2.0",
+    "stylelint": "^14.9.1",
+    "stylelint-config-recess-order": "^3.0.0",
+    "stylelint-config-recommended": "^8.0.0"
   }
 }
