@@ -2,10 +2,22 @@
   font-weight: 700;
 }
 
+.text-bolder {
+  font-weight: 900;
+}
+
 .text-italic {
   font-style: italic;
 }
 
 .text-right {
   text-align: right !important;
+}
+
+.text-decoration-none {
+  text-decoration: none!important;
+}
+
+a.text-decoration-none {
+  background: inherit;
 }

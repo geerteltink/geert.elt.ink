@@ -1,0 +1,11 @@
+---
+layout: base.njk
+---
+
+<main class="page-main bg-surface">
+  <div class="container">
+    <h1>{{ title }}</h1>
+    <p><time datetime="{{ page.date | isoDate }}">({{ page.date | readableDate }})</time></p>
+    {{ content | safe }}
+  </div>
+</main>

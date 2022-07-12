@@ -1,10 +1,9 @@
-const { DateTime } = require('luxon');
-const striptags = require('striptags');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const Image = require('@11ty/eleventy-img');
 const htmlmin = require('html-minifier');
 const collections = require('./src/_lib/collections.js');
+const filters = require('./src/_lib/filters.js');
 
 async function imageShortcode(src, alt, sizes) {
   let metadata = await Image(src, {
@@ -28,9 +27,12 @@ async function imageShortcode(src, alt, sizes) {
 }
 
 module.exports = function (eleventyConfig) {
-  // Collections
-  Object.keys(collections).forEach((collectionName) => {
-    eleventyConfig.addCollection(collectionName, collections[collectionName]);
+  Object.keys(collections).forEach((name) => {
+    eleventyConfig.addCollection(name, collections[name]);
+  });
+
+  Object.keys(filters).forEach((name) => {
+    eleventyConfig.addFilter(name, filters[name]);
   });
 
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
@@ -38,36 +40,6 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addShortcode('year', () => `${new Date().getFullYear()}`);
   eleventyConfig.addAsyncShortcode('image', imageShortcode);
-
-  eleventyConfig.addFilter('limit', function (array, limit) {
-    return array.slice(0, limit);
-  });
-
-  eleventyConfig.addFilter('readableDate', (dateObj) => {
-    return DateTime.fromJSDate(dateObj).setLocale('nl').toLocaleString(DateTime.DATE_FULL);
-  });
-
-  eleventyConfig.addFilter('isoDate', (dateObj) => {
-    return DateTime.fromJSDate(dateObj).toFormat('yyyy-LL-dd');
-  });
-
-  eleventyConfig.addFilter('isoDateTime', (dateObj) => {
-    return DateTime.fromJSDate(dateObj).toISO();
-  });
-
-  eleventyConfig.addFilter('summary', (data) => {
-    return striptags(data.replace(/<h1[^>]*>([\s\S]*?)<\/h1[^>]*>/, ''))
-      .substring(0, 200)
-      .replace(/^\s+|\s+$|\s+(?=\s)/g, '')
-      .trim()
-      .concat('...');
-  });
-
-  eleventyConfig.addFilter('getRandom', function (collection) {
-    const slicedCollection = collection.slice(5);
-
-    return slicedCollection.splice(Math.floor(Math.random() * slicedCollection.length), 1)[0];
-  });
 
   eleventyConfig.addWatchTarget('./src/_lib');
   eleventyConfig.addWatchTarget('./src/assets');

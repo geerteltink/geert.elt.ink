@@ -1,7 +1,7 @@
 ---
-layout: 'base.njk'
-title: 'Style Guide'
-date: '2022-07-04'
+layout: page.njk
+title: Style Guide
+date: 2022-07-04
 eleventyExcludeFromCollections: true
 ---
 
@@ -57,7 +57,7 @@ _Note: the [Figure-Figcaption](https://html5doctor.com/the-figure-figcaption-ele
 
 ## Text Elements
 
-The [a element](#), [external a element](https://example.com), and [a element with title](# 'Example Title') examples
+The [a element](#example), [external a element](https://example.com), and [a element with title](#example 'Example Title') examples
 
 The <abbr>abbr element</abbr> and an <abbr title="Abbreviation">abbr</abbr> element with title examples
 
@@ -173,9 +173,3 @@ Monospace Text wrapped in "pre" tags:
 | Division 1     | Division 2     | Division 3     |
 | Division 1     | Division 2     | Division 3     |
 | Division 1     | Division 2     | Division 3     |
-
----
-
-## Media and Form Elements
-
-The remaining sections contain elements that cannot be represented in markdown. Please consult [the HTML version](https://github.com/bryanbraun/poor-mans-styleguide/blob/gh-pages/index.html), to see these elements.

@@ -1,7 +1,37 @@
-.bg-dark {
-  background-color: var(--dark);
+.bg-background {
+  background-color: var(--background);
+  color: var(--text-high-emphasis);
 }
 
-.text-light {
-  color: var(--light);
+.bg-surface {
+  background-color: var(--surface);
+  color: var(--text-medium-emphasis);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-primary-variant {
+  color: var(--primary-variant);
+}
+
+.text-secondary {
+  color: var(--secondary);
+}
+
+.text-secondary-variant {
+  color: var(--secondary-variant);
+}
+
+.text-high-emphasis {
+  color: var(--text-high-emphasis);
+}
+
+.text-medium-emphasis {
+  color: var(--text-medium-emphasis);
+}
+
+.text-disabled {
+  color: var(--text-disabled);
 }

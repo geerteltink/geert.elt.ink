@@ -1,19 +1,18 @@
-<header class="page-header">
+<header class="page-header p-3">
   <nav class="container">
-    <div class="flex">
-      <div class="p-1">
-        <a class="navbar-brand" href="/" aria-label="logo">
-          image
+    <ul class="flex">
+      <li class="pr-3">
+        <a class="text-decoration-none text-primary" href="/" aria-label="logo">
+          <div class="h4 text-bold">Geert Eltink</div>
+          <div class="h6">Software Engineer</div>
         </a>
-      </div>
+      </li>
       {% set navPages = collections.all | eleventyNavigation %}
-      <ul class="flex flex-column flex-row-md flex-align-self-center py-3">
-        {% for entry in navPages %}
-          <li class="py-1 px-3">
-            <a href="{{ entry.url | url }}">{{ entry.title }}</a>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
+      {% for entry in navPages %}
+      <li class="flex-align-end px-3">
+        <a href="{{ entry.url | url }}" class="h4 text-decoration-none text-primary">{{ entry.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
   </nav>
 </header>

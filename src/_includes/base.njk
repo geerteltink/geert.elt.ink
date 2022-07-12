@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>{{ title or metadata.title }}</title>
+    <title>{{ title or metadata.title }} · {{ meta.author }} – Software Engineer</title>
     {% set desc %}{{ summary or content | summary }}{% endset %}
     <meta name="description" content="{{ desc }}">
     <meta name="generator" content="Eleventy">
@@ -30,9 +30,7 @@
   <body class="page">
     {% include 'header.njk' %}
 
-    <main class="page-main container">
-      {{ content | safe }}
-    </main>
+    {{ content | safe }}
 
     {% include 'footer.njk' %}
 

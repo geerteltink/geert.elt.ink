@@ -1,25 +1,19 @@
 <footer class="page-footer">
-  <div class="container">
-    <ul class="flex flex-justify-between my-4">
+  <div class="container py-3">
+    <ul class="flex my-3">
       {% set navPages = collections.all | eleventyNavigation %}
       {% for entry in navPages %}
-        <li class="p-1">
+        <li class="pr-5">
           <a href="{{ entry.url | url }}">{{ entry.title }}</a>
         </li>
       {% endfor %}
-      <li class="p-1">
-        <a href="/feed.xml">RSS</a>
-      </li>
     </ul>
-    <ul class="flex flex-justify-between my-4">
-      <li class="p-1">
-        <div>
-          Copyright © 2002-{% year %} Geert Eltink
-        </div>
-      </li>
-      <li class="p-1">
-        <a href="https://geert.elt.ink/">Maintained with care.</a>
-      </li>
-    </ul>
+    <div>You can subscribe to the <a href="/feed.xml">RSS feed</a> and stay up to date.</div>
+    <div>
+      Copyright © 2002-{% year %} Geert Eltink •
+      <a href="/privacy-policy/">Privacy Policy</a> •
+      <a href="/style-guide/">Style guide</a> •
+      Made with HTML, CSS and generated with eleventy.
+    </div>
   </div>
 </footer>

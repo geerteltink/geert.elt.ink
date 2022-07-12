@@ -1,13 +1,14 @@
 ---
-title: 'Right now, I am...'
-date: '1999-09-09'
-menu:
-  main:
-    name: 'Now'
-    weight: 40
+layout: page.njk
+title: Right now, I am...
+date: 1999-09-09
+eleventyNavigation:
+  key: main
+  title: Now
+  order: 30
 ---
 
-Last updated: {{< lastmodified >}}
+Last updated: {{ '2022-07-12' | readableDate }}
 
 ## ... health insurance
 

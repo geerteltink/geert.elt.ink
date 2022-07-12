@@ -1,10 +1,11 @@
 ---
-title: 'About'
-date: '1999-09-09'
-menu:
-  main:
-    name: 'About'
-    weight: 100
+layout: page.njk
+title: About
+date: 1999-09-09
+eleventyNavigation:
+  key: main
+  title: About
+  order: 40
 ---
 
 ## Sharing
