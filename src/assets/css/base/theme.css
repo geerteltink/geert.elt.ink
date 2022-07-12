@@ -1,10 +1,10 @@
 :root {
   /* stylelint-disable-next-line max-line-length */
-  --font-sans-serif: system-ui, -apple-system, 'Segoe UI', roboto,
-    'Helvetica Neue', 'Noto Sans', 'Liberation Sans', arial, sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  --font-monospace: sfmono-regular, menlo, monaco, consolas, 'Liberation Mono',
-    'Courier New', monospace;
+  --font-sans-serif: system-ui, -apple-system, 'Segoe UI', roboto, 'Helvetica Neue', 'Noto Sans',
+    'Liberation Sans', arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+  --font-monospace: sfmono-regular, menlo, monaco, consolas, 'Liberation Mono', 'Courier New',
+    monospace;
   --gradient: linear-gradient(180deg, rgb(255 255 255 / 15%), rgb(255 255 255 / 0%));
 
   --body-font-family: var(--font-sans-serif);
@@ -23,12 +23,12 @@
   --surface-16dp: rgba(255, 255, 255, 0.15);
   --surface-24dp: rgba(255, 255, 255, 0.16);
 
-  --primary: #FFCC80;
-  --primary-variant: #F57C00;
-  --secondary: #90CAF9;
-  --secondary-variant: #2196F3;
+  --primary: #ffcc80;
+  --primary-variant: #f57c00;
+  --secondary: #90caf9;
+  --secondary-variant: #2196f3;
 
   --text-high-emphasis: rgba(255, 255, 255, 0.87);
-  --text-medium-emphasis: rgba(255, 255, 255, 0.60);
+  --text-medium-emphasis: rgba(255, 255, 255, 0.6);
   --text-disabled: rgba(255, 255, 255, 0.38);
 }

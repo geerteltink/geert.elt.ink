@@ -18,13 +18,15 @@ function filterPost(post) {
 }
 
 exports.posts = (collections) => {
-  return collections.getFilteredByTag('post')
+  return collections
+    .getFilteredByTag('post')
     .reverse()
     .filter((post) => filterPost(post));
 };
 
 exports.notes = (collections) => {
-  return collections.getFilteredByTag('note')
+  return collections
+    .getFilteredByTag('note')
     .reverse()
     .filter((post) => filterPost(post));
 };
