@@ -8,11 +8,17 @@ has changed over time. First it started with zend-expressive. Changed in 2018
 to a vuejs based progressive web app to learn the language, PWA and service
 workers concepts. And then there is hugo: A fast way to generate static sites.
 
+## Version 4: Eleventy
+
+[source code](https://github.com/geerteltink/geert.elt.ink/tree/main)
+
+- [11ty](https://www.11ty.dev/) a fast framework for building static websites.
+
 ## Version 3: Hugo
 
-[source code](https://github.com/geerteltink/geert.elt.ink/tree/master)
+[source code](https://github.com/geerteltink/geert.elt.ink/tree/hugo)
 
-- [Hugo](https://gohugo.io/) a fast framework for building static websites
+- [Hugo](https://gohugo.io/) - Eleventy, a simpler static site generator.
 
 **Notes:**
 
