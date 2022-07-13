@@ -5,7 +5,7 @@ date: 1998-10-10
 ---
 
 <main class="page-main">
-  <div class="container">
+  <div class="container pb-5">
     <h1>{{ title }}</h1>
     <figure>
       <blockquote class="blockquote">
@@ -36,11 +36,11 @@ date: 1998-10-10
     </figure>
   </div>
   <div class="bg-surface">
-    <div class="container">
-      <h2>Latest notes</h2>
+    <div class="container py-5">
+      <h2 class="h4">Latest notes</h2>
       <ul class="flex">
         {% for entry in collections.notes | limit(2) %}
-        <li class="">
+        <li class="bg-surface-dp mx-3 p-3">
           <a href="{{ entry.url }}">
             <h2>{{ entry.data.title }}</h2>
           </a>

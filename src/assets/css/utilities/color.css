@@ -8,6 +8,10 @@
   color: var(--text-medium-emphasis);
 }
 
+.bg-surface-dp {
+  background-color: var(--surface-02dp);
+}
+
 .text-primary {
   color: var(--primary);
 }

@@ -102,3 +102,23 @@ ul {
 .list-inline-item {
   display: inline-block;
 }
+
+blockquote {
+  margin: 0 0 1rem;
+}
+
+.blockquote {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.blockquote-footer {
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: var(--text-medium-emphasis);
+}
+
+.blockquote-footer::before {
+  content: "— ";
+}
