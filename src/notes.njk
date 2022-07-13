@@ -8,16 +8,20 @@ eleventyNavigation:
   order: 20
 ---
 
-I've learned a thing or two over the years when working as a developer. I love
-sharing what I've learned. It might even help you.
+<p>
+  I've learned a thing or two over the years when working as a developer. I love
+  sharing what I've learned. It might even help you.
+</p>
 
-<ul>
+<ul class="timeline">
   {% for entry in collections.notes %}
-    <li>
-      <time datetime="{{ entry.date | isoDate }}">{{ entry.date | readableDate }}</time>
-      <a href="{{ entry.url }}">
-        <h2>{{ entry.data.title }}</h2>
-      </a>
+    <li class="timeline-entry">
+      <time class="timeline-entry-meta" datetime="{{ entry.date | isoDate }}">{{ entry.date | readableDate }}</time>
+      <h2 class="timeline-entry-title">
+        <a href="{{ entry.url }}">
+          {{ entry.data.title }}
+        </a>
+      </h2>
     </li>
   {% endfor %}
 </ul>
