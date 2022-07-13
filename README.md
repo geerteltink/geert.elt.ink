@@ -12,13 +12,13 @@ workers concepts. And then there is hugo: A fast way to generate static sites.
 
 [source code](https://github.com/geerteltink/geert.elt.ink/tree/main)
 
-- [11ty](https://www.11ty.dev/) a fast framework for building static websites.
+- [11ty](https://www.11ty.dev/) - Eleventy, a simpler static site generator.
 
 ## Version 3: Hugo
 
 [source code](https://github.com/geerteltink/geert.elt.ink/tree/hugo)
 
-- [Hugo](https://gohugo.io/) - Eleventy, a simpler static site generator.
+- [Hugo](https://gohugo.io/)  a fast framework for building static websites.
 
 **Notes:**
 
