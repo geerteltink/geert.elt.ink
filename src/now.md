@@ -8,6 +8,8 @@ eleventyNavigation:
   order: 30
 ---
 
+# {{ title }}
+
 Last updated: {{ '2022-07-12' | readableDate }}
 
 ## ... health insurance
