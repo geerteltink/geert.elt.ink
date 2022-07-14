@@ -1,12 +1,13 @@
 # https://geert.elt.ink/
 
-![Q&A Tests](https://github.com/geerteltink/geert.elt.ink/workflows/test/badge.svg)
-![GitHub Pages](https://github.com/geerteltink/geert.elt.ink/workflows/github%20pages/badge.svg)
+[![continuous-integration](https://github.com/geerteltink/geert.elt.ink/actions/workflows/ci.yml/badge.svg)](https://github.com/geerteltink/geert.elt.ink/actions/workflows/ci.yml)
 
 This repo contains the source code for [geert.elt.ink](https://geert.elt.ink/). It
 has changed over time. First it started with zend-expressive. Changed in 2018
 to a vuejs based progressive web app to learn the language, PWA and service
-workers concepts. And then there is hugo: A fast way to generate static sites.
+workers concepts. And then there was Hugo, which is a fast static site generator.
+And if you think Hugo is fast, try Eleventy, which is much faster and has easier
+to understand templating in different flavors.
 
 ## Version 4: Eleventy
 
@@ -18,7 +19,7 @@ workers concepts. And then there is hugo: A fast way to generate static sites.
 
 [source code](https://github.com/geerteltink/geert.elt.ink/tree/hugo)
 
-- [Hugo](https://gohugo.io/)  a fast framework for building static websites.
+- [Hugo](https://gohugo.io/) a fast framework for building static websites.
 
 **Notes:**
 
