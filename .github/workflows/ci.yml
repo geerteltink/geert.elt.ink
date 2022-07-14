@@ -1,4 +1,4 @@
-name: test
+name: continuous-integration
 
 on: [push]
 
