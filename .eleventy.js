@@ -15,7 +15,6 @@ async function imageShortcode(src, alt, sizes) {
 
   let imageAttributes = {
     alt,
-    class: 'img-fluid',
     sizes: sizes || '100vw',
     loading: 'lazy',
     decoding: 'async',
