@@ -44,8 +44,16 @@ lead and architect.
 
 In 2019 I got tired of chasing clients for payments and wanted to work in a
 bigger company. Januari 2020 I started as a Senior Software Engineer at
-[ottonova](https://www.ottonova.de/).
+[ottonova](https://www.ottonova.de/). Early 2021 I got the role as a team
+lead. It means less programming but more of the other things I like to do
+like management and even building a new team from scratch in 2022. Even tough
+the official title is _team lead software engineering_, I do a lot more in the
+area of a software architect like: managing projects, talking to clients,
+collaborate with other teams, code reviews, documentation and even
+troubleshooting from time to time.
 
 ## Say hello
 
-Say hello on Twitter: [@geerteltink](https://twitter.com/geerteltink).
+Say hello on [Twitter](https://twitter.com/geerteltink), follow me on
+[Instagram](https://www.instagram.com/geerteltink) or check our my projects on
+[GitHub](https://github.com/geerteltink).
