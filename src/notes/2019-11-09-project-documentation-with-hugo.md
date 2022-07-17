@@ -10,6 +10,8 @@ tags:
   - GitHub Pages
 ---
 
+{% image "./src/assets/images/logo-hugo.png", "Hugo" %}
+
 Recently I changed my GitHub account name and converted my old username to an organization. My important projects are now nicely grouped into that organization and not hidden between all forked projects. Each project comes with documentation but so far it was a mess. One project used the GitHub wiki, another one used only the main readme. It's time to bring some order into the chaos. The question was how?
 
 ## GitHub pages

@@ -10,6 +10,8 @@ tags:
   - code completion
 ---
 
+{% image "./src/assets/images/phpstorm.png", "PhpStorm" %}
+
 > Updated with support for PSR-11 Container Interface and use the new 2016.2+ PHPSTORM_META format.
 
 For a long time I've been wondering how to make code completion work in PhpStorm for dependency containers. These containers used the `Interop\Container\ContainerInterface` and since February 2017 it's accepted by PHP-Fig as PSR-11 and use the `Psr\Container\ContainerInterface`. I know there is a plugin for Symfony projects that works nicely. However I couldn't figure out how to make something like that work outside a Symfony project. Lately I've been building some projects on top of Zend Expressive and it's really frustrating not having code completion. Until today...
