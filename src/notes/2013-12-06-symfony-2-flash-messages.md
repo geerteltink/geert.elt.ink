@@ -1,5 +1,4 @@
 ---
-id: 2013-12-06-symfony-2-flash-messages
 title: Symfony 2.4 flash messages
 summary: In Symfony 2.4 the session is not always initialized in a template. You need an extra step to detect this.
 date: 2013-12-06

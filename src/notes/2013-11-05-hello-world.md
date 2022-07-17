@@ -1,5 +1,4 @@
 ---
-id: 2013-11-05-hello-world
 title: Hello World!
 summary: Hello World! I'm back. Serving this site with GitHub pages with a touch of Jekyll.
 date: 2013-11-05

@@ -1,5 +1,4 @@
 ---
-id: 2017-12-03-phpstorm-phpunit-docker-compose-windows
 title: Running PHPUnit in PhpStorm with docker-compose on Windows
 summary: Setup PhpStorm with docker-compose and PHPUnit integration on Windows.
 date: 2017-12-03
@@ -7,7 +6,7 @@ tags:
   - PhpStorm
   - PHPUnit
   - docker-compose
-  - windows
+  - Windows
 ---
 
 I've followed some guides on how to setup PhpStorm with docker-compose but I never got it to work. I decided to start from scratch and forget about all the guides.

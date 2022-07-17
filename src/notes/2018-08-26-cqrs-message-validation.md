@@ -1,5 +1,4 @@
 ---
-id: 2018-08-26-cqrs-message-validation
 title: CQRS Message Validation
 summary: Validating CQRS command/event/query messages with Assert, Symfony validator and zend-inputfilter.
 date: 2018-08-26

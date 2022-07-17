@@ -1,22 +1,18 @@
 ---
-id: 2015-12-30-psr7-abstract-action-factory-one-for-all
 title: One Abstract Action Factory For All
 summary: Use one abstract action factory for all PSR-7 actions.
 date: 2015-12-30
 tags:
-  - zend-expressive
+  - Zend Expressive
   - dependency injection
   - zend-servicemanager
 ---
 
-Yesterday I wrote about using [one ActionFactory for all](https://www.elt.ink/blog/2015-12-29-zend-expressive-action-factory-one-for-all)
-your PSR-7 actions. I used zend-servicemanager for it, together with some voodoo to detect the dependencies and inject
-it. I was pretty happy with the solution and then I got this:
+Yesterday I wrote about using [one ActionFactory for all](/notes/one-abstract-action-factory-for-all/) your PSR-7 actions. I used zend-servicemanager for it, together with some voodoo to detect the dependencies and inject it. I was pretty happy with the solution and then I got this:
 
-< tweet 681891488205160448 >
+> @geerteltink question: why not use abstract_factories? while it may take slower, it will reduce repetitive reg with same factory
 
-After some more research I decided to try it out and it's actually pretty brilliant. Zend ServiceManger 3 is needed
-for this.
+After some more research I decided to try it out and it's actually pretty brilliant. Zend ServiceManger 3 is needed for this.
 
 ```php
 <?php
@@ -66,8 +62,7 @@ class AbstractActionFactory implements AbstractFactoryInterface
 }
 ```
 
-As you can see, the code is almost the same as what I did before with the ActionFactory. However it now extends an
-`AbstractFactoryInterface` and it has this `canCreate` method.
+As you can see, the code is almost the same as what I did before with the ActionFactory. However it now extends an `AbstractFactoryInterface` and it has this `canCreate` method.
 
 To register the factory you need to add this line:
 
@@ -83,8 +78,7 @@ To register the factory you need to add this line:
 ],
 ```
 
-And now the most brilliant part... Remove all action factories from dependencies -> factories / invokables. Yes you
-read it correctly, you can remove them. The abstract factory will automatically handle all actions from now on.
+And now the most brilliant part... Remove all action factories from dependencies -> factories / invokables. Yes you read it correctly, you can remove them. The abstract factory will automatically handle all actions from now on.
 
 In case you used the expressive-skeleton, remove these two lines from `routes.global.php`:
 
@@ -99,14 +93,8 @@ In case you used the expressive-skeleton, remove these two lines from `routes.gl
 ],
 ```
 
-While trying to get homepage, under the hood the container (still zend-servicemanager) is looking for the
-`HomePageAction` class at the usual locations. But since it's not registered with the container, it falls back to
-this abstract factory. In its `canCreate` method it tells the container it can handle all classes
-ending with `Action`. After that the abstract factory returns the Action class with the right dependencies.
+While trying to get homepage, under the hood the container (still zend-servicemanager) is looking for the `HomePageAction` class at the usual locations. But since it's not registered with the container, it falls back to this abstract factory. In its `canCreate` method it tells the container it can handle all classes ending with `Action`. After that the abstract factory returns the Action class with the right dependencies.
 
-There might be a downside though. Since the servicemanager checks if unregistered classes can be handled by a
-specific abstract factory, it causes some overhead. As long as you limit the number of abstract factories you still
-have a good performance.
+There might be a downside though. Since the servicemanager checks if unregistered classes can be handled by a specific abstract factory, it causes some overhead. As long as you limit the number of abstract factories you still have a good performance.
 
-At the time of writing this solution is used for this site and it's
-[open source](https://github.com/geerteltink/www.elt.ink/).
+At the time of writing this solution is used for this site and it's [open source](https://github.com/geerteltink/geert.elt.ink/tree/expressive).

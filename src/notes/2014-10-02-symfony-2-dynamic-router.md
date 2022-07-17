@@ -1,5 +1,4 @@
 ---
-id: 2014-10-02-symfony-2-dynamic-router
 title: Symfony 2 Dynamic Router
 summary: There are some dynamic router examples out there for Symfony 2. But most are overly complicated. This is an easy way to load dynamic routes from a database.
 date: 2014-10-02

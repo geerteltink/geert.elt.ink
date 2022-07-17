@@ -1,5 +1,4 @@
 ---
-id: 2014-11-03-howto-update-teamspeak-3
 title: Howto Update TeamSpeak 3 on Debian
 summary: This is the missing manual for updating TeamSpeak 3 on Debian.
 date: 2014-11-03

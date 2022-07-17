@@ -59,7 +59,7 @@ The information we collect from analytics helps us understand what parts of our 
 
 ## Who’s responsible for your information
 
-Geert Eltink is responsible for the security of your information. You can [contact](/contact) him by email or by phone if you have any concerns about the information we store.
+Geert Eltink is responsible for the security of your information. You can [contact](/about/) him by email or by phone if you have any concerns about the information we store.
 
 ## Who has access to your information
 
@@ -73,7 +73,7 @@ The computers we use are all encrypted and are protected by a passcode or finger
 
 ## How to complain
 
-We take complaints very seriously. If you’ve any reason to complain about the ways we handle your privacy, please contact me by [email](/contact) or by [phone](/contact). If you’re the letter writing type, send your [envelope](/contact).
+We take complaints very seriously. If you’ve any reason to complain about the ways we handle your privacy, please contact me by [email](/about/) or by [phone](/about/). If you’re the letter writing type, send your [envelope](/about/).
 
 ## Changes to the policy
 

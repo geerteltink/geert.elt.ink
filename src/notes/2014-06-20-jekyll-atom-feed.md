@@ -1,5 +1,4 @@
 ---
-id: 2014-06-20-jekyll-atom-feed
 title: Jekyll Atom Feed
 summary: A proper atom feed for Jekyll.
 date: 2014-06-20

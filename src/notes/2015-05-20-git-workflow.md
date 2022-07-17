@@ -1,5 +1,4 @@
 ---
-id: 2015-05-20-git-worklow
 title: Git Workflow
 summary: A git workflow suitable for large projects.
 date: 2015-05-20
@@ -11,9 +10,10 @@ Git workflow works best for large projects. For smaller projects or projects wit
 
 - [Versioning](#versioning)
 - [Commit Messages](#commit-messages)
-- [Feature Branches](#feature-branches)
-- [Release Branches](#release-branches)
-- [Hotfix Branches](#hotfix-branches)
+- [Git flow branches](#git-flow-branches)
+  - [Feature Branches](#feature-branches)
+  - [Release Branches](#release-branches)
+  - [Hotfix Branches](#hotfix-branches)
 
 This guide is based on [a successful git branching model](http://nvie.com/posts/a-successful-git-branching-model/). The central repo holds the two main branches, `master` and `develop`, with an infinite lifetime.
 
