@@ -4,7 +4,7 @@ summary: 'Generating multi project documentation with Hugo Modules blazing fast'
 date: 2019-11-09
 tags:
   - documentation
-  - hugo
+  - Hugo
   - netlify
   - GitHub Actions
   - GitHub Pages

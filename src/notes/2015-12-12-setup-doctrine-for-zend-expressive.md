@@ -1,5 +1,4 @@
 ---
-id: 2015-12-12-setup-doctrine-for-zend-expressive
 title: How to setup doctrine for zend expressive
 summary: Build a Zend Expressive Doctrine factory and cache driver factory.
 date: 2015-12-12
@@ -9,17 +8,9 @@ tags:
   - caching
 ---
 
-<blockquote class="blockquote">
-    <p class="m-b-0">
-        *NOTE:* This post was written in the time there was no good solution available to add Doctrine to Expressive.
-        Fortunately there is
-        <a href="https://github.com/DASPRiD/container-interop-doctrine">container-interop-doctrine</a>.
-        It makes setting up Doctrine a lot easier.
-    </p>
-</blockquote>
+> *NOTE: This post was written in the time there was no good solution available to add Doctrine to Expressive. Fortunately there is <a href="https://github.com/Roave/psr-container-doctrine">psr-container-doctrine</a>. It makes setting up Doctrine a lot easier.*
 
-You want to use doctrine in your Zend Expressive project but don't know where to start? Here is how to do it. This
-guide uses a doctrine factory and a separate cache factory so you can use the doctrine cache for other purposes too.
+You want to use doctrine in your Zend Expressive project but don't know where to start? Here is how to do it. This guide uses a doctrine factory and a separate cache factory so you can use the doctrine cache for other purposes too.
 
 ## Installing Doctrine
 
@@ -92,8 +83,7 @@ class DoctrineFactory
 
 ## The cache factory
 
-The cache factory is a separate factory so you can use it for other purposes as well. For this example a Redis cache
-driver is used. You can easily create your own factory for other supported cache drivers.
+The cache factory is a separate factory so you can use it for other purposes as well. For this example a Redis cache driver is used. You can create your own factory for other supported cache drivers.
 
 ```php
 <?php // src/App/Container/DoctrineRedisCacheFactory.php
@@ -125,12 +115,9 @@ class DoctrineRedisCacheFactory
 
 ## The configuration
 
-You can go several ways to setup the configuration. You can create a `doctrine.global.php` config file and overwrite
-some settings in a local file. In this case the whole doctrine config is in the local config file since most settings
-are different on the production server.
+You can go several ways to setup the configuration. You can create a `doctrine.global.php` config file and overwrite some settings in a local file. In this case the whole doctrine config is in the local config file since most settings are different on the production server.
 
-If you are using windows on your dev machine, make sure you use `127.0.0.1` as the host in stead of `localhost`. It
-massively speeds up connecting to the database. At least for MySQL, I don't know about other databases.
+If you are using windows on your dev machine, make sure you use `127.0.0.1` as the host in stead of `localhost`. It massively speeds up connecting to the database. At least for MySQL, I don't know about other databases.
 
 ```php
 <?php // config/autoload/doctrine.local.php
@@ -167,8 +154,7 @@ return [
 
 ## The container
 
-What is left is adding doctrine to the container so you can easily access it throughout the project. To do that you need
-to add 2 lines to your dependencies config.
+What is left is adding doctrine to the container so you can easily access it throughout the project. To do that you need to add 2 lines to your dependencies config.
 
 ```php
 <?php // config/autoload/dependencies.global.php
@@ -249,14 +235,11 @@ if ($cache->contains('my_array')) {
 }
 ```
 
-More info on how to use the cache can be found in the
-[doctrine docs](https://doctrine-orm.readthedocs.org/projects/doctrine-orm/en/latest/reference/caching.html).
+More info on how to use the cache can be found in the [doctrine docs](https://doctrine-orm.readthedocs.org/projects/doctrine-orm/en/latest/reference/caching.html).
 
 ## Doctrine Console
 
-The Doctrine Console is a very useful command line interface tool. However it doesn't work out of the box. Doctine
-needs to know how to setup the entity manager with the right configuration. Fortunately this is easily done by
-creating the file `cli-config.php` in the config dir.
+The Doctrine Console is a very useful command line interface tool. However it doesn't work out of the box. Doctrine needs to know how to setup the entity manager with the right configuration. Fortunately this is easily done by creating the file `cli-config.php` in the config dir.
 
 ```php
 <?php // config/cli-config.php
@@ -275,15 +258,13 @@ $em = $container->get(EntityManager::class);
 return ConsoleRunner::createHelperSet($em);
 ```
 
-This file loads the configuration, setup the container and gets the entity manger which will then be injected in the
-console. All you need to do now is call the doctrine console.
+This file loads the configuration, setup the container and gets the entity manger which will then be injected in the console. All you need to do now is call the doctrine console.
 
 ```bash
 # List all commands
 $ php vendor/bin/doctrine list
 ```
 
-More info about how to use the doctrine console can be found on the
-[doctrine site](https://doctrine-orm.readthedocs.org/projects/doctrine-orm/en/latest/reference/tools.html).
+More info about how to use the doctrine console can be found on the [doctrine site](https://doctrine-orm.readthedocs.org/projects/doctrine-orm/en/latest/reference/tools.html).
 
 Enjoy your zend expressive project with doctrine.

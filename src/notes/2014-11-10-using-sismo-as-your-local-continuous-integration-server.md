@@ -1,5 +1,4 @@
 ---
-id: 2014-11-10-using-sismo-as-your-local-continuous-integration-server
 title: Using Sismo as Your Personal CI Server on Windows
 summary: Sismo is a lightweight and easy to install continuous testing server which you can use locally and trigger from a git post-commit hook.
 date: 2014-11-10
@@ -12,7 +11,7 @@ There are some really good continuous integration servers out there which you ~~
 
 ## Configuration
 
-The installation guide on their site is pretty easy to understand. However for windows it didn't work straight away and I had to find out by trail and error how to get it working.
+The installation guide on their site is good to understand. However for windows it didn't work straight away and I had to find out by trail and error how to get it working.
 
 You must set system environment variables in the advanced system settings, which you can find in "Control Panel\System and Security\System" -> Advanced Settings -> Environment Variables. Once set, you need to restart your pc for these to work.
 
@@ -60,7 +59,7 @@ php path/to/sismo.php build --force --quiet $SLUG $HASH 2>&1 &
 
 ## Notifications
 
-Ofcourse you want notifications with the test results. Growl for Windows is supported by default in Sismo. However I couldn't get it working. I think I needed to register Sismo with growl but I decided I didn't want to use an extra service anyway. I'm using nodejs a lot and it has a nice notification system (`node-notifier`). It integrates with the windoews 10 notification center and enables you to send notifications from the console whenever needed. So it's perfect to integrate it into a custom notification class.
+Of course you want notifications with the test results. Growl for Windows is supported by default in Sismo. However I couldn't get it working. I think I needed to register Sismo with growl but I decided I didn't want to use an extra service anyway. I'm using nodejs a lot and it has a nice notification system (`node-notifier`). It integrates with the windows 10 notification center and enables you to send notifications from the console whenever needed. So it's perfect to integrate it into a custom notification class.
 
 ```php
 <?php
@@ -76,7 +75,7 @@ use Sismo\Notifier\Notifier;
  * Toast binaries need to be available in your PATH and can be downloaded at
  * https://github.com/nels-o/toaster
  *
- * @author Geert Eltink <https://www.elt.ink/>
+ * @author Geert Eltink <https://geert.elt.ink/>
  */
 class ToastNotifier extends Notifier
 {

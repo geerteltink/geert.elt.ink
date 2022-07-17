@@ -1,5 +1,4 @@
 ---
-id: 2015-05-21-git-troubleshooting
 title: Git Troubleshooting
 summary: Some ways to resolve git issues.
 date: 2015-05-21
@@ -7,7 +6,7 @@ tags:
   - git
 ---
 
-- [Force LF line endings instead of CR+LF](#force-lf-line-endings)
+- [Force LF line endings instead of CR+LF](#force-lf-line-endings-instead-of-crlf)
 - [Stage changes and new files](#stage-changes-and-new-files)
 - [Commit changes](#commit-changes)
 - [Fix last commit](#fix-last-commit)
@@ -21,7 +20,7 @@ tags:
 - [Stashing uncommitted changes](#stashing-uncommitted-changes)
 - [Unstage files](#unstage-files)
 - [Resetting files](#resetting-files)
-- [Cleanup tracked files (after editing .gitignore)](#cleanup-tracked-files-after-editing-gitignore-)
+- [Cleanup tracked files (after editing .gitignore)](#cleanup-tracked-files-after-editing-gitignore)
 - [Trigger hooks and ci tests](#trigger-hooks-and-ci-tests)
 - [Cleanup stale branches](#cleanup-stale-branches)
 - [Push changes to PR](#push-changes-to-pr)

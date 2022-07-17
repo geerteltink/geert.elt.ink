@@ -1,5 +1,4 @@
 ---
-id: 2015-03-13-grunt-gulp-and-npm
 title: Grunt, Gulp and NPM scripts
 summary: Build tools and task runners.
 date: 2015-03-13

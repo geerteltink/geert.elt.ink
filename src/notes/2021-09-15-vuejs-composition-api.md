@@ -6,6 +6,8 @@ tags:
   - Vue.js
 ---
 
+{% image "./src/assets/images/logo-vuejs.png", "Vue.js" %}
+
 Since Vue.js 3.2 you can use the `<script setup>` compile-time syntactic sugar for using Composition API inside Single File Components (SFCs). It is now the recommended syntax if you are using both SFCs and Composition API.
 
 It has some advantages:

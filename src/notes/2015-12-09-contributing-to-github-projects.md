@@ -1,5 +1,4 @@
 ---
-id: 2015-12-09-contributing-to-github-projects
 title: Contributing to a github project
 summary: Keep your github fork in sync.
 date: 2015-12-09

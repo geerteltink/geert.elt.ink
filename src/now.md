@@ -10,19 +10,15 @@ eleventyNavigation:
 
 # {{ title }}
 
-Last updated: {{ '2022-07-12' | readableDate }}
+Last updated: {{ '2022-07-17' | readableDate }}
 
 ## ... health insurance
 
-Since January 2020 I am working at [ottonova](https://www.ottonova.de/), bringing digital health insurance to Germany. I
-enjoy working in a team and it turns out it's something I missed the passed years as a freelancer. I'm mostly doing PHP
-backend work and once in a while I break the frontend with my Angular contributions. Because health insurance is so
-complex and most stuff is build in house, there is never a boring day.
+Since January 2020 I am working at [ottonova](https://www.ottonova.de/), bringing digital health insurance to Germany. I enjoy working in a team and it turns out it's something I missed the passed years as a freelancer. Since 2021 I'm a team lead of a cross functional team. First started with B2C topics and since 2022 concentrating on B2B and building a platform as a service for brokers and partners. When I have time I contribute to our PHP backend services and once in a while I break the frontend with my Angular contributions. Because health insurance is so complex and most stuff is build in house, there is never a boring day.
 
 ## ... working on side projects
 
-Besides contributing to [laminas](https://getlaminas.org/) and [mezzio](https://getmezzio.org/), there are not many side
-projects going on at the moment.
+Besides contributing to [laminas](https://getlaminas.org/) and [mezzio](https://getmezzio.org/), there are not many side projects going on at the moment.
 
 ## ... working on a client project
 

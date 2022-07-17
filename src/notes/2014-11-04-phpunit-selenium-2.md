@@ -1,5 +1,4 @@
 ---
-id: 2014-11-04-phpunit-selenium-2
 title: PHPunit and Selenium Server 2
 summary: This is the missing manual for phpunit-selenium.
 date: 2014-11-04

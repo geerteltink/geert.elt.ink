@@ -1,24 +1,16 @@
 ---
-id: 2015-12-29-zend-expressive-action-factory-one-for-all
 title: 'Zend Expressive: One Action Factory For All'
 summary: Use one action factory for all zend expressive actions.
 date: 2015-12-29
 tags:
-  - zend-expressive
+  - Zend Expressive
   - dependency injection
   - zend-servicemanager
 ---
 
-I know, it's better to write factories in stead of magical dependency injection. But some people are lazy, me included,
-when it comes to repeating code over and over. In this case I'm talking about zend-expressive actions. When a project
-grows you might end up with as much factories as actions. This probably goes for every PSR-7 oriented framework.
+I know, it's better to write factories in stead of magical dependency injection. But some people are lazy, me included, when it comes to repeating code over and over. In this case I'm talking about zend-expressive actions. When a project grows you might end up with as much factories as actions. This probably goes for every PSR-7 oriented framework.
 
-<blockquote class="blockquote">
-    <p class="m-b-0">
-        *NOTE:* There is even a better solution using an
-        <a href="https://www.elt.ink/blog/2015-12-30-psr7-abstract-action-factory-one-for-all">abstract factory</a>.
-    </p>
-</blockquote>
+> *NOTE: There is even a better solution using an [abstract factory](/notes/one-abstract-action-factory-for-all/).*
 
 A very simple action class might look like this:
 
@@ -62,15 +54,10 @@ In the dependency container you get something like this:
 ],
 ```
 
-Now can you imagine if you have 20 action classes and you need to write as many factories to inject the template
-renderer or anything else they all have in common? It would be nice to write just one factory for all actions. Luckily
-this is possible. And it's pretty easy as well. In this example I have chosen for
-[zend-servicemanager 3](https://github.com/zendframework/zend-servicemanager/tree/develop). At the time of writing it's
-still living in the develop branch. But it's fast, usable and it has a nice feature: FactoryInterface.
+Now can you imagine if you have 20 action classes and you need to write as many factories to inject the template renderer or anything else they all have in common? It would be nice to write just one factory for all actions. Luckily
+this is possible. In this example I have chosen for [zend-servicemanager 3](https://github.com/zendframework/zend-servicemanager/tree/develop). At the time of writing it's still living in the develop branch. But it's fast, usable and it has a nice feature: FactoryInterface.
 
-> A factory is a callable object that is able to create an object. It is given the instance of the service locator,
-> the requested name of the class you want to create, and any additional options that could be used to configure the
-> instance state.
+> A factory is a callable object that is able to create an object. It is given the instance of the service locator, the requested name of the class you want to create, and any additional options that could be used to configure the instance state.
 
 ```php
 interface FactoryInterface
@@ -139,13 +126,9 @@ Now you need to change the factories for the HomePageAction and PingAction. Just
 ],
 ```
 
-If the home page is requested, zend-expressive is calling the `App\Action\HomePageAction` class and the dependency
-container is telling it to use `App\Action\ActionFactory`. Behind the scene zend-servicemanager is passing along the
-requested HomePageAction class, which is need to instantiate the correct class. The ActionFactory gets the right
-dependencies from the container and injects those into a newly created HomePageAction.
+If the home page is requested, zend-expressive is calling the `App\Action\HomePageAction` class and the dependency container is telling it to use `App\Action\ActionFactory`. Behind the scene zend-servicemanager is passing along the requested HomePageAction class, which is need to instantiate the correct class. The ActionFactory gets the right dependencies from the container and injects those into a newly created HomePageAction.
 
-To get this working zend-servicemanager 3 is needed (there are probably more ways to do this, but I like it this way).
-To install it you need to get the develop branch until it's released. Just change the dependency in `composer.json`:
+To get this working zend-servicemanager 3 is needed (there are probably more ways to do this, but I like it this way). To install it you need to get the develop branch until it's released. Just change the dependency in `composer.json`:
 
 ```json
 "require": {
@@ -155,5 +138,4 @@ To install it you need to get the develop branch until it's released. Just chang
 
 Anyway, I think this is a better solution than what I used before: Injecting the complete container in every Action :)
 
-If you want to test this code, you can use the [zend-expressive-skeleton](https://github.com/zendframework/zend-expressive-skeleton)
-to create a basic project within seconds.
+If you want to test this code, you can use the [zend-expressive-skeleton](https://github.com/zendframework/zend-expressive-skeleton) to create a basic project within seconds.
