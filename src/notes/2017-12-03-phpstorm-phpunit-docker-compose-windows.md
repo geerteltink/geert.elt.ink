@@ -9,6 +9,8 @@ tags:
   - Windows
 ---
 
+{% image "./src/assets/images/phpstorm.png", "PhpStorm" %}
+
 I've followed some guides on how to setup PhpStorm with docker-compose but I never got it to work. I decided to start from scratch and forget about all the guides.
 
 ## Setup docker

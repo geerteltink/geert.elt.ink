@@ -9,6 +9,8 @@ tags:
   - Vue.js
 ---
 
+{% image "./src/assets/images/logo-hugo.png", "Hugo" %}
+
 Back in [2013](/notes/hello-world/), I started this blog based on Jekyll. A static generated site, hosted on GitHub pages. It did its job good and was ok to work with.
 
 Later on, in 2015, I got involved with [zend-expressive](https://github.com/zendframework/zend-expressive). I needed something to play around, get to know it better and test changes. This blog [turned into a playground](https://github.com/geerteltink/geert.elt.ink/tree/expressive) for exactly that purpose. I got my private VPS to host it, created something to load markdown files and re-used blog posts.
