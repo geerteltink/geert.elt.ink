@@ -21,4 +21,4 @@ Proof of concept done, project done and finally having some free time again, it 
 
 I always skipped static site generators because I couldn't use it to queue blog posts. That's were GitHub Actions come in. It has support for cron jobs. So basically you can trigger new builds each morning. When you set a blog post to a future date it won't be visible until that day the cron job was triggered.
 
-I have to admit that Hugo has a very steep learning curve. But once you dig into it and have the patience you can build a [fast site](https://github.com/geerteltink/geert.elt.ink/tree/hugo with a 100% lighthouse score. It's my preferred setup now for basic sites: Hugo, GitHub Actions, using the Netlify content delivery network to bring it as fast as possible to your device.
+I have to admit that Hugo has a very steep learning curve. But once you dig into it and have the patience you can build a [fast site](https://github.com/geerteltink/geert.elt.ink/tree/hugo) with a 100% lighthouse score. It's my preferred setup now for basic sites: Hugo, GitHub Actions, using the Netlify content delivery network to bring it as fast as possible to your device.
