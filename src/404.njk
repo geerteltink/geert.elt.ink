@@ -1,6 +1,6 @@
 ---
-layout: base.njk
-title: Page not found
+layout: page.njk
+title: Oops! Page not found
 subtitle: We’re sorry, that page doesn’t seem to exist.
 eleventyNavigation:
   key: Page not found
@@ -10,10 +10,24 @@ permalink: 404.html
 eleventyExcludeFromCollections: true
 ---
 
-<div>
-  <h1>404: Page not found</h1>
+<div class="mb-5">
+  <h1>Oops! Page not found</h1>
   <p class="lead">
-    Sorry, we've misplaced that URL or it's pointing to something that doesn't exist.
-    <a href="/">Head back home</a> to try finding it again.
+    Sorry, we've misplaced that URL or it's pointing to something that doesn't exist or has moved.
+    <a href="/">Head back home</a> or look in the <a href="/notes/">notes section</a> to try finding it again.
   </p>
 </div>
+
+<h2>Or try one of my latest posts</h2>
+<ul class="timeline">
+  {% for entry in collections.notes | limit(5) %}
+    <li class="timeline-entry">
+      <time class="timeline-entry-meta" datetime="{{ entry.date | isoDate }}">{{ entry.date | readableDate }}</time>
+      <h3 class="timeline-entry-title">
+        <a href="{{ entry.url }}">
+          {{ entry.data.title }}
+        </a>
+      </h3>
+    </li>
+  {% endfor %}
+</ul>
