@@ -1,13 +1,13 @@
 <footer class="page-footer">
   <div class="container py-3">
-    <ul class="flex my-3">
+    <ul class="flex flex-column flex-row-md my-3">
       {% set navPages = collections.all | eleventyNavigation %}
       {% for entry in navPages %}
         <li class="pr-5">
           <a href="{{ entry.url | url }}">{{ entry.title }}</a>
         </li>
       {% endfor %}
-        <li class="ml-auto pr-5">
+        <li class="pr-5">
           <a href="https://github.com/geerteltink">GitHub</a>
         </li>
         <li class="pr-5">
