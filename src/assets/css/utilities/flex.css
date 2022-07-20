@@ -6,6 +6,26 @@
   flex-grow: 1;
 }
 
+.flex-gap-1 {
+  gap: 0.25rem;
+}
+
+.flex-gap-2 {
+  gap: 0.5rem;
+}
+
+.flex-gap-3 {
+  gap: 1rem;
+}
+
+.flex-gap-4 {
+  gap: 1.5rem;
+}
+
+.flex-gap-5 {
+  gap: 3rem;
+}
+
 .flex-justify-between {
   justify-content: space-between;
 }
