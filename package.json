@@ -27,7 +27,7 @@
     "fast-glob": "^3.2.12",
     "html-minifier": "^4.0.0",
     "luxon": "^3.1.1",
-    "markdownlint": "^0.26.2",
+    "markdownlint": "^0.27.0",
     "markdownlint-cli": "^0.32.2",
     "md5": "^2.3.0",
     "postcss-cli": "^10.1.0",
