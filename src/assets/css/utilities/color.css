@@ -5,7 +5,7 @@
 
 .bg-surface {
   background-color: var(--surface);
-  color: var(--text-medium-emphasis);
+  color: var(--text-high-emphasis);
 }
 
 .bg-surface-dp {
