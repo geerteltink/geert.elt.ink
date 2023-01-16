@@ -38,7 +38,7 @@ date: 1998-10-10
   <div class="bg-surface">
     <div class="container py-5">
       <h2 class="h4">Latest notes</h2>
-      <ul class="flex flex-column flex-row-md flex-gap-3">
+      <ul class="grid grid--of-two">
         {% for entry in collections.notes | limit(2) %}
         <li class="bg-surface-dp p-3">
           <a href="{{ entry.url }}">

@@ -1,10 +1,12 @@
-@import 'base/theme.css';
+@import 'base/var-space.css';
+@import 'base/var-type.css';
+@import 'base/var-theme.css';
 @import 'base/reset.css';
 @import 'base/typography';
 @import 'base/code.css';
 @import 'components/page.css';
-@import 'components/container.css';
 @import 'components/timeline.css';
+@import 'utilities/grid.css';
 @import 'utilities/flex.css';
 @import 'utilities/text.css';
 @import 'utilities/color.css';
