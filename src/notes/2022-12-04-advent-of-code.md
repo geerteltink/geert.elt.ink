@@ -8,6 +8,8 @@ tags:
   - rust
 ---
 
+{% image "./src/assets/images/advent-of-code.jpg", "Advent of Code" %}
+
 The Advent of Code is an annual Advent calendar of small programming puzzles for a variety of skill sets and skill levels that can be solved in any programming language you like.
 
 A colleague of mine challenged me to participate in the advent of code this year. Well, not only me but the entire company. So far 11 are participating.
