@@ -6,7 +6,7 @@ tags:
   - git
 ---
 
-{% image "./src/assets/images/wolfgang-rottmann-tx632mx5dr0-unsplash.jpg", "Git squash" %}
+{% image "./src/assets/images/wolfgang-rottmann-tx632mx5dr0-unsplash.png", "Git squash" %}
 
 Sometimes you have a feature branch on which you are working for a while with a lot of commits. In the mean time, more work by others is merged in the main branch. When trying to rebase, you keep getting merge conflicts every single time. Sounds familiar?
 
