@@ -1,4 +1,15 @@
 {
+  "headers": [
+    {
+      "source": "/.well-known/webfinger",
+      "headers": [
+        {
+          "key": "content-type",
+          "value": "application/activity+json"
+        }
+      ]
+    }
+  ],
   "redirects": [
     {
       "source": "/about-the-value-of-workshops",
