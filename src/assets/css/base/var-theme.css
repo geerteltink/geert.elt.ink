@@ -8,7 +8,7 @@
   --body-font-weight: 400;
   --body-line-height: 1.7;
 
-  --background: #121212;
+  --background: #1f1c19;
   --surface: #1d1d1d;
   --surface-02dp: rgba(255, 255, 255, 0.07);
   --surface-03dp: rgba(255, 255, 255, 0.08);
@@ -19,12 +19,13 @@
   --surface-16dp: rgba(255, 255, 255, 0.15);
   --surface-24dp: rgba(255, 255, 255, 0.16);
 
-  --primary: #ffcc80;
-  --primary-variant: #f57c00;
+  --primary: #FF9B00;
+  --primary-variant: #ffcc80;
   --secondary: #90caf9;
   --secondary-variant: #2196f3;
 
-  --text-high-emphasis: rgba(255, 255, 255, 0.87);
-  --text-medium-emphasis: rgba(255, 255, 255, 0.6);
+  --text-high-emphasis: rgba(255, 255, 255, 0.97);
+  --text-medium-emphasis: rgba(203, 201, 200, 0.9);
+  --text-low-emphasis: rgba(120, 120, 120, 0.9);
   --text-disabled: rgba(255, 255, 255, 0.38);
 }

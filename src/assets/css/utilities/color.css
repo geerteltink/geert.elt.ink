@@ -1,11 +1,11 @@
 .bg-background {
   background-color: var(--background);
-  color: var(--text-high-emphasis);
+  color: var(--text-medium-emphasis);
 }
 
 .bg-surface {
   background-color: var(--surface);
-  color: var(--text-high-emphasis);
+  color: var(--text-medium-emphasis);
 }
 
 .bg-surface-dp {
@@ -34,6 +34,10 @@
 
 .text-medium-emphasis {
   color: var(--text-medium-emphasis);
+}
+
+.text-low-emphasis {
+  color: var(--text-low-emphasis);
 }
 
 .text-disabled {

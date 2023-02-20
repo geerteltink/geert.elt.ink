@@ -44,7 +44,7 @@ date: 1998-10-10
           <a href="{{ entry.url }}">
             <h2>{{ entry.data.title }}</h2>
           </a>
-          <time datetime="{{ entry.date | isoDate }}">{{ entry.date | readableDate }}</time>
+          <time datetime="{{ entry.date | isoDate }}" class="text-low-emphasis">{{ entry.date | readableDate }}</time>
           <p>{{ entry.templateContent | summary }}</p>
           <a href="{{ entry.url }}">
             Continue reading →
