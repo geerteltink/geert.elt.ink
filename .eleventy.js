@@ -43,8 +43,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget('./src/_lib');
   eleventyConfig.addWatchTarget('./src/assets');
 
-  eleventyConfig.addPassthroughCopy('./src/favicon.png');
-  eleventyConfig.addPassthroughCopy('./src/assets/images/logo-linksbek.gif');
+  eleventyConfig.addPassthroughCopy({ './src/assets/favicon': '/' });
 
   eleventyConfig.addTransform('htmlmin', function (content, outputPath) {
     if (process.env.NODE_ENV === 'production' && outputPath && outputPath.endsWith('.html')) {
