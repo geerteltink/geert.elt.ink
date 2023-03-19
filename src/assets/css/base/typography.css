@@ -121,19 +121,25 @@ ul {
 }
 
 blockquote {
-  margin: 0 0 1rem;
+  max-inline-size: 48ch;
+  text-wrap: balance;
+  margin: 0 0 var(--space-s) var(--space-2xs);
+  padding-left: var(--space-s);
+  font-size: var(--space-s);
+  border-left: 5px solid var(--text-low-emphasis);
+  color: var(--text-low-emphasis);
 }
 
-.blockquote {
-  margin-bottom: 1rem;
-  font-size: var(--step-1);
+blockquote cite {
+  font-weight: 500;
+  display: block;
+  opacity: 0.5;
+  text-indent: var(--space-s);
+  color: var(--text-low-emphasis);
 }
 
-.blockquote-footer {
-  margin-top: -1rem;
-  margin-bottom: 1rem;
-  font-size: var(--step-0);
-  color: var(--text-medium-emphasis);
+blockquote cite::before {
+  content: "—";
 }
 
 .blockquote-footer::before {
