@@ -33,9 +33,9 @@
     "md5": "^2.3.0",
     "postcss-cli": "^10.1.0",
     "postcss-import": "^15.1.0",
-    "prettier": "^2.8.7",
+    "prettier": "^2.8.8",
     "striptags": "^3.2.0",
-    "stylelint": "^15.5.0",
+    "stylelint": "^15.6.0",
     "stylelint-config-recess-order": "^4.0.0",
     "stylelint-config-recommended": "^11.0.0"
   }
