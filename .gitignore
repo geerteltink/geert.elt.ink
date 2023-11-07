@@ -2,6 +2,7 @@
 dist/
 # generated types
 .astro/
+.eslintcache
 
 # dependencies
 node_modules/
