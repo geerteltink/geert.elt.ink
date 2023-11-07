@@ -1,0 +1,28 @@
+---
+import Footer from '@components/Footer.astro';
+import Header from '@components/Header.astro';
+import HeadMeta from '@components/HeadMeta.astro';
+
+const { title, summary } = Astro.props.frontmatter || Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <HeadMeta title={title} description={summary} />
+	</head>
+	<body class="page layout">
+    <Header />
+    <main class="page-main container">
+      <slot />
+    </main>
+    <Footer />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F62S13KXF9"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-F62S13KXF9');
+    </script>
+	</body>
+</html>

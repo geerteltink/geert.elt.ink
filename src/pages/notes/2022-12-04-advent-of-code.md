@@ -1,0 +1,121 @@
+---
+title: 'Advent of Code'
+description: 'Participating in Advent of Code for the first time and learning a new language.'
+slug: advent-of-code
+pubDate: 2022-12-04
+tags:
+  - advent of code
+  - go
+  - rust
+---
+
+{% image "./src/assets/images/advent-of-code.png", "Advent of Code" %}
+
+The Advent of Code is an annual Advent calendar of small programming puzzles for a variety of skill sets and skill levels that can be solved in any programming language you like.
+
+A colleague of mine challenged me to participate in the advent of code this year. Well, not only me but the entire company. So far 11 are participating.
+
+My strengths are PHP and JavaScript, but I decided to use Go so I can take the opportunity and learn something new. I was divided between rust and Golang. After looking at some code and reading a few blog posts, my impression was that rust was too complicated. So Golang would be the one for me.
+
+Day 1 went pretty smoothly. I had to look up some language basics but within an hour I got something working. And surprisingly, I got the right answers. Day 2 went pretty much the same. I noticed the way I coded wasn't very clean. It felt like I was programming in basic again. For simple tasks, I would expect a function available out of the box, but after checking with a colleague, there was not. Day 3 was worse. It took me 2 hours to complete the task and a lot of lines of code.
+
+During day 3, I looked at other solutions in rust. It was so much nicer, and I have seen solutions with only a few lines of code. Iterating over an array, sort it, get the max value and even get the sum of the top 3 values. All done in rust in a single line.
+
+So, it was time for me to swap strategies: try to complete the first day's task in rust. Since I had no clue where to start coding, I started with a cli tutorial. That got me started to set up a hello world cli app. Next up was understanding what others were doing.
+
+```rust
+pub fn main() {
+    let mut cals = include_str!("../input.txt")
+        .split("\n\n")
+        .map(|e| e.lines().map(|c| c.parse::<u32>().unwrap()).sum())
+        .collect::<Vec<u32>>();
+    cals.sort_unstable();
+    println!("{}", cals.into_iter().rev().take(3).sum::<u32>());
+}
+```
+
+This is the solution I found for the task of day 1. Where I could code the task in Golang without reading a tutorial, I have no idea how and if I could come up with something like that. I have an idea what it does, but that are quite a few parts in there that don’t mean anything to me. Motivated by how much better that solution looked than my Go version, I spend half a day working my way through the first 4 chapters of the [online Rust book](https://doc.rust-lang.org/book/).
+
+Next up was writing a Rust version of the task of day 1 and helping out the elves calculate the total calories they are carrying once again. It took me an hour to complete it. The logic itself I wrote down pretty fast, however, rust is very strict with types, and half of the time was used to fix and convert types. It didn’t quite look like the solution I had in mind, but it worked, and I even included multiple functions and tests.
+
+```rust
+static DAY: &'static str = "01";
+
+fn main() {
+    let content = std::fs::read_to_string(format!("./2022/day_{DAY}/fixtures/input.txt")).unwrap();
+
+    let result1 = part_one(&content);
+    println!("Answer day {DAY} part one: {result1}");
+
+    let result2 = part_two(&content);
+    println!("Answer day {DAY} part one: {result2}");
+}
+
+fn part_one(content: &String) -> u32 {
+    let elfs = calculate_calories_per_elf(content);
+    let answer = elfs.iter().max().unwrap();
+
+    return *answer;
+}
+
+fn part_two(content: &String) -> u32 {
+    let mut elfs = calculate_calories_per_elf(content);
+    elfs.sort();
+
+    let answer: u32 = elfs.iter().rev().take(3).sum();
+    return answer;
+}
+
+fn calculate_calories_per_elf(content: &String) -> Vec<u32> {
+    let mut elfs: Vec<u32> = Vec::new();
+
+    let mut total_calories: u32 = 0;
+    for line in content.lines() {
+        if line == "" {
+            elfs.push(total_calories);
+            total_calories = 0;
+        } else {
+            let calories: u32 = line.trim().parse().unwrap();
+            total_calories += calories;
+        }
+    }
+    elfs.push(total_calories);
+
+    return elfs;
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn it_returns_the_answer_for_part_one() {
+        let content = std::fs::read_to_string("./fixtures/input_test.txt").unwrap();
+        assert_eq!(24000, part_one(&content));
+    }
+
+    #[test]
+    fn it_returns_the_answer_for_part_two() {
+        let content = std::fs::read_to_string("./fixtures/input_test.txt").unwrap();
+        assert_eq!(45000, part_two(&content));
+    }
+
+    #[test]
+    fn it_calculates_calories_per_elf() {
+        let content = std::fs::read_to_string("./fixtures/input_test.txt").unwrap();
+        let expected: Vec<u32> = vec![6000, 4000, 11000, 24000, 10000];
+
+        assert_eq!(expected, calculate_calories_per_elf(&content));
+    }
+}
+```
+
+Some basics I learned were to keep the main function slim, extract code into functions to make it more testable and share code between both parts of the task.
+
+Today I worked on the task of day 4. In less than an hour, my answers were accepted. The solution is written in rust and even some testing is in place. I know my code is far from optimized, it's my first try at Rust after all. At some point, I will be able to write code like the first solution someone else wrote, after gaining more experience.
+
+What I learned from this is that you can learn rust, but you need to learn and understand the basics first and read a fair part of the manual. Golang on the other hand is pretty basic and you can jump right into it and get results fast. Out of the box, Golang is pretty limited and feels like programming in basic again. Rust on the other hand has a lot of functionality and feels like an advanced programming language.
+
+So far, I completed all advent of code tasks, but let's see how long I can keep up. It seems the tasks increase in complexity over time.
+
+I can recommend participating in the [Advent of code](https://adventofcode.com/) with your friends or colleagues. It’s also a perfect time to learn a language (so far, but let’s talk about that again when the complexity of the tasks increases).

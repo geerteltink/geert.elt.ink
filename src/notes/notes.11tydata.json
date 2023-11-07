@@ -1,5 +1,0 @@
-{
-  "layout": "note.njk",
-  "tags": ["note", "post"],
-  "permalink": "/notes/{{ title | slugify }}/index.html"
-}

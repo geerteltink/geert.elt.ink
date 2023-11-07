@@ -1,0 +1,16 @@
+---
+export interface Props {
+  src: string;
+  alt: string;
+  [attr: string]: any;
+}
+const { src, ...attrs } = Astro.props as Props;
+---
+
+<!--Picture src={src} formats={['avif', 'webp']} widths={[400, 800, 1280, 1920]} sizes="100vw" {...attrs} /-->
+
+<style>
+  img, picture :global(img), svg {
+    border-radius: 0.5rem;
+  }
+</style>

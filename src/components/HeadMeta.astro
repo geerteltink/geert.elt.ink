@@ -1,0 +1,42 @@
+---
+// Import the global.css file here so that it is included on
+// all pages through the use of the <Head /> component.
+import '../styles/global.css';
+
+const { title, description, image = '/placeholder-social.jpg' } = Astro.props;
+---
+
+<!-- Global Metadata -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<!-- Primary Meta Tags -->
+<title>{title && title + ' | '}Geert Eltink &mdash; Software engineer and architect</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+<meta name="author" content="Geert Eltink" />
+<meta name="copyright" content="MIT" />
+<meta name="generator" content={Astro.generator} />
+<meta name="build" content={new Date().toISOString()} />
+<meta name="env" content={import.meta.env.MODE} />
+<meta name="robots" content="index,follow" />
+<meta name="rating" content="General" />
+
+<link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+<link rel="sitemap" href={new URL('/sitemap-index.xml', Astro.site)}>
+<link rel="alternate" type="application/rss+xml" href={new URL('/feed.xml', Astro.site)} title="RSS" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL(image, Astro.url)} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={new URL(image, Astro.url)} />

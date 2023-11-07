@@ -1,0 +1,45 @@
+.bg-background {
+  color: var(--text-medium-emphasis);
+  background-color: var(--background);
+}
+
+.bg-surface {
+  color: var(--text-medium-emphasis);
+  background-color: var(--surface);
+}
+
+.bg-surface-dp {
+  background-color: var(--surface-02dp);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-primary-variant {
+  color: var(--primary-variant);
+}
+
+.text-secondary {
+  color: var(--secondary);
+}
+
+.text-secondary-variant {
+  color: var(--secondary-variant);
+}
+
+.text-high-emphasis {
+  color: var(--text-high-emphasis);
+}
+
+.text-medium-emphasis {
+  color: var(--text-medium-emphasis);
+}
+
+.text-low-emphasis {
+  color: var(--text-low-emphasis);
+}
+
+.text-disabled {
+  color: var(--text-disabled);
+}

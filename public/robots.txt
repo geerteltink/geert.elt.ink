@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://geert.elt.ink
+
+# Sitemaps
+Sitemap: https://geert.elt.ink/sitemap-index.xml

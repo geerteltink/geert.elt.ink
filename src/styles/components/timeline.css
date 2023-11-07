@@ -1,0 +1,30 @@
+.timeline-entry {
+  padding-bottom: 2rem;
+  margin-bottom: 0;
+  border-left: 1px solid var(--primary);
+}
+
+.timeline-entry-meta {
+  display: block;
+  padding: 0 0 0 2rem;
+  color: var(--text-low-emphasis);
+}
+
+.timeline-entry-meta:before {
+  position: absolute;
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.3rem;
+  margin-left: -2.5rem;
+  content: '';
+  background-color: var(--primary);
+  border-radius: 100%;
+}
+
+.timeline-entry-title {
+  display: block;
+  padding: 0 0 0 2rem;
+  text-decoration: none;
+  background: inherit;
+}
