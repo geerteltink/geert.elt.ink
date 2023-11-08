@@ -85,7 +85,7 @@ jobs:
       - name: Build
         uses: docker://iswai/iswai-docs:latest
         with:
-          args: 'build'
+          args: build
 
       - name: Deploy
         run: |
@@ -115,10 +115,10 @@ And then there are [Hugo modules](https://gohugo.io/categories/hugo-modules). It
 # ./config/_default/module.yml
 modules:
   imports:
-    - path: 'github.com/xtreamwayz/html-form-validator'
+    - path: "github.com/xtreamwayz/html-form-validator"
       mounts:
-        - source: 'docs'
-          target: 'content/html-form-validator'
+        - source: "docs"
+          target: "content/html-form-validator"
 ```
 
 The config above tells Hugo to download [html-form-validator](https://github.com/xtreamwayz/html-form-validator) and link it's docs dir to the content dir. You could even use this to import bootstrap and link its scss path to the assets path. I've tried this but it's pretty slow and using npm for bootstrap is much faster.
@@ -167,10 +167,10 @@ And to bind all projects together I've added a config to the main website config
 ```yaml
 # ./config/_default/params.yml
 projects:
-  - 'devops'
-  - 'expressive-console'
-  - 'expressive-messenger'
-  - 'html-form-validator'
+  - "devops"
+  - "expressive-console"
+  - "expressive-messenger"
+  - "html-form-validator"
 ```
 
 Now Hugo knows (or better yet, the theme knows) which projects to generate. Maybe I can get that list from the module imports config, but that's something for later.
@@ -248,7 +248,7 @@ on:
     branches:
       - master
     paths:
-      - 'docs/**'
+      - "docs/**"
 
 jobs:
   build:

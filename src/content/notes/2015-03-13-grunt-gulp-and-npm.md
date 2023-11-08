@@ -59,78 +59,78 @@ The main purpose was rebuilding sources on changes and notifying the browser. Wi
 So with the issues in npm and I didn't want to go back to grunt, I gave gulp.js a try. Again I converted all tasks and after some tweaking and speed optimizations, it looks like I've got a pretty stable build system now. It didn't crash yet and the errors are reported nicely. It feels a lot faster than grunt and especially npm.
 
 ```javascript
-var gulp = require('gulp');
-var cp = require('child_process');
-var del = require('del');
-var concat = require('gulp-concat');
-var shell = require('gulp-shell');
-var express = require('express');
-var livereload = require('gulp-livereload');
-var plumber = require('gulp-plumber');
-var notify = require('gulp-notify');
-var less = require('gulp-less');
-var autoprefixer = require('gulp-autoprefixer');
-var minifycss = require('gulp-minify-css');
-var imagemin = require('gulp-imagemin');
-var jshint = require('gulp-jshint');
-var uglify = require('gulp-uglify');
-var bundler = process.platform === 'win32' ? 'bundle.bat' : 'bundle';
+var gulp = require("gulp");
+var cp = require("child_process");
+var del = require("del");
+var concat = require("gulp-concat");
+var shell = require("gulp-shell");
+var express = require("express");
+var livereload = require("gulp-livereload");
+var plumber = require("gulp-plumber");
+var notify = require("gulp-notify");
+var less = require("gulp-less");
+var autoprefixer = require("gulp-autoprefixer");
+var minifycss = require("gulp-minify-css");
+var imagemin = require("gulp-imagemin");
+var jshint = require("gulp-jshint");
+var uglify = require("gulp-uglify");
+var bundler = process.platform === "win32" ? "bundle.bat" : "bundle";
 
 var onError = function (err) {
   notify.onError({
-    title: 'Gulp',
-    subtitle: 'Failure!',
-    message: 'Error: <%= error.message %>',
-    sound: 'Beep',
+    title: "Gulp",
+    subtitle: "Failure!",
+    message: "Error: <%= error.message %>",
+    sound: "Beep",
   })(err);
 
-  this.emit('end');
+  this.emit("end");
 };
 
-gulp.task('default', ['watch']);
+gulp.task("default", ["watch"]);
 
-gulp.task('build', ['clean', 'images', 'styles', 'lint', 'scripts', 'styleguide']);
+gulp.task("build", ["clean", "images", "styles", "lint", "scripts", "styleguide"]);
 
 // Run static file server
-gulp.task('serve', function () {
+gulp.task("serve", function () {
   var server = express();
-  server.use(express.static('_site'));
+  server.use(express.static("_site"));
   server.listen(3333);
 });
 
 // Watch for changed files
-gulp.task('watch', ['jekyll', 'serve'], function () {
+gulp.task("watch", ["jekyll", "serve"], function () {
   // Create LiveReload server
-  livereload.listen({ port: 35729, basePath: '_site' });
+  livereload.listen({ port: 35729, basePath: "_site" });
   // Watch files, reload on change
-  gulp.watch('_site/**').on('change', function (file) {
+  gulp.watch("_site/**").on("change", function (file) {
     livereload.changed(file.path);
   });
 
-  gulp.watch('src/images/**/*', ['images']);
-  gulp.watch('src/styles/**/*.less', ['styles']);
-  gulp.watch('src/scripts/**/*.js', ['scripts']);
-  gulp.watch(['src/styles/**/*', 'src/styleguide/**/*'], ['styleguide', 'jekyll']);
+  gulp.watch("src/images/**/*", ["images"]);
+  gulp.watch("src/styles/**/*.less", ["styles"]);
+  gulp.watch("src/scripts/**/*.js", ["scripts"]);
+  gulp.watch(["src/styles/**/*", "src/styleguide/**/*"], ["styleguide", "jekyll"]);
   gulp.watch(
     [
-      '*.html',
-      '**/*.html',
-      '**/*.md',
-      '!assets/**',
-      '!src/**',
-      '!_site/**',
-      '!_site/**/*',
-      '!styleguide/**',
+      "*.html",
+      "**/*.html",
+      "**/*.md",
+      "!assets/**",
+      "!src/**",
+      "!_site/**",
+      "!_site/**/*",
+      "!styleguide/**",
     ],
-    ['jekyll']
+    ["jekyll"]
   );
 });
 
 // Cleanup
-gulp.task('clean', function (cb) {
+gulp.task("clean", function (cb) {
   // Force cleaning first before all other tasks
   del(
-    ['_site', 'assets/css/**/*', 'assets/img/**/*', 'assets/js/**/*', 'styleguide'],
+    ["_site", "assets/css/**/*", "assets/img/**/*", "assets/js/**/*", "styleguide"],
     function (err, deletedFiles) {
       //console.log('Files deleted:', deletedFiles.join(', '));
     }
@@ -139,9 +139,9 @@ gulp.task('clean', function (cb) {
 });
 
 // Process images
-gulp.task('images', function () {
+gulp.task("images", function () {
   return gulp
-    .src('src/images/*')
+    .src("src/images/*")
     .pipe(plumber({ errorHandler: onError }))
     .pipe(
       imagemin({
@@ -149,77 +149,77 @@ gulp.task('images', function () {
         svgoPlugins: [{ removeViewBox: false }],
       })
     )
-    .pipe(gulp.dest('assets/img'))
-    .pipe(gulp.dest('_site/assets/img')); // Copy to static dir
+    .pipe(gulp.dest("assets/img"))
+    .pipe(gulp.dest("_site/assets/img")); // Copy to static dir
 });
 
 // Compile style sheets
-gulp.task('styles', function () {
+gulp.task("styles", function () {
   return gulp
-    .src('src/styles/stylesheet.less')
+    .src("src/styles/stylesheet.less")
     .pipe(plumber({ errorHandler: onError }))
     .pipe(less())
-    .pipe(autoprefixer('last 2 version', '> 1%'))
+    .pipe(autoprefixer("last 2 version", "> 1%"))
     .pipe(minifycss())
-    .pipe(gulp.dest('assets/css'))
-    .pipe(gulp.dest('_site/assets/css')); // Copy to static dir
+    .pipe(gulp.dest("assets/css"))
+    .pipe(gulp.dest("_site/assets/css")); // Copy to static dir
 });
 
 // Lint scripts
-gulp.task('lint', function () {
+gulp.task("lint", function () {
   return gulp
-    .src(['gulpfile.js', 'src/js/**/*.js'])
+    .src(["gulpfile.js", "src/js/**/*.js"])
     .pipe(plumber({ errorHandler: onError }))
     .pipe(jshint());
 });
 
-gulp.task('scripts', ['scripts:jquery', 'scripts:bundle']);
+gulp.task("scripts", ["scripts:jquery", "scripts:bundle"]);
 
 // Compress jquery
-gulp.task('scripts:jquery', function () {
+gulp.task("scripts:jquery", function () {
   return gulp
-    .src(['components/jquery/dist/jquery.js'])
+    .src(["components/jquery/dist/jquery.js"])
     .pipe(plumber({ errorHandler: onError }))
     .pipe(jshint())
     .pipe(uglify())
-    .pipe(gulp.dest('assets/js'))
-    .pipe(gulp.dest('_site/assets/js')); // Copy to static dir
+    .pipe(gulp.dest("assets/js"))
+    .pipe(gulp.dest("_site/assets/js")); // Copy to static dir
 });
 
 // Compile all custom scripts and plugins into one bundle
-gulp.task('scripts:bundle', function () {
+gulp.task("scripts:bundle", function () {
   return gulp
-    .src(['src/scripts/app.js', 'src/scripts/**/*.js'])
+    .src(["src/scripts/app.js", "src/scripts/**/*.js"])
     .pipe(plumber({ errorHandler: onError }))
     .pipe(jshint())
-    .pipe(concat('bundle.js'))
+    .pipe(concat("bundle.js"))
     .pipe(uglify())
-    .pipe(gulp.dest('assets/js'))
-    .pipe(gulp.dest('_site/assets/js')); // Copy to static dir
+    .pipe(gulp.dest("assets/js"))
+    .pipe(gulp.dest("_site/assets/js")); // Copy to static dir
 });
 
 // Build styleguide docs
 gulp.task(
-  'styleguide',
+  "styleguide",
   shell.task(
     [
       // kss-node [source folder of files to parse] [destination folder] --template [location of template files]
-      'kss-node <%= source %> <%= destination %> --template <%= template %>',
+      "kss-node <%= source %> <%= destination %> --template <%= template %>",
     ],
     {
       templateData: {
-        template: 'src/styleguide',
-        source: 'src/styles',
-        destination: 'styleguide',
+        template: "src/styleguide",
+        source: "src/styles",
+        destination: "styleguide",
       },
     }
   )
 );
 
 // Compile pages with Jekyll
-gulp.task('jekyll', function () {
-  return cp.spawn(bundler, ['exec', 'jekyll', 'build', '--drafts', '--quiet'], {
-    stdio: 'inherit',
+gulp.task("jekyll", function () {
+  return cp.spawn(bundler, ["exec", "jekyll", "build", "--drafts", "--quiet"], {
+    stdio: "inherit",
   });
 });
 ```

@@ -23,5 +23,11 @@ module.exports = {
         parser: 'astro',
       },
     },
+    {
+      files: ['*.md', '*.mdx'],
+      options: {
+        singleQuote: false,
+      },
+    },
   ],
 };
