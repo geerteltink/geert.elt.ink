@@ -1,0 +1,41 @@
+---
+const today = new Date();
+---
+
+<footer>
+  <div class="container">
+    <ul class="flex flex-column flex-row-md my-3">
+      <li class="pr-5">
+        <a href="/notes/">Notes</a>
+      </li>
+      <li class="pr-5">
+        <a href="/now/">Now</a>
+      </li>
+      <li class="pr-5">
+        <a href="/about/">About</a>
+      </li>
+      <li class="pr-5">
+        <a href="https://github.com/geerteltink">GitHub</a>
+      </li>
+      <li class="pr-5">
+        <a href="https://twitter.com/geerteltink">Twitter</a>
+      </li>
+      <li class="pr-5">
+        <a href="https://www.instagram.com/geerteltink">Instagram</a>
+      </li>
+    </ul>
+  </div>
+  <div class="container">You can subscribe to the <a href="/feed.xml">RSS feed</a> and stay up to date.</div>
+  <div class="container">
+    &copy; 2002-{today.getFullYear()} Geert Eltink &bull;
+    <a href="/privacy-policy/">Privacy Policy</a> &bull;
+    <a href="/style-guide/">Style guide</a> &bull;
+    Made with HTML, CSS and generated with Astro.
+  </div>
+</footer>
+
+<style>
+	footer {
+		padding: 25px;
+	}
+</style>

@@ -9,4 +9,25 @@ module.exports = {
   arrowParens: 'always',
   endOfLine: 'lf',
   useTabs: false,
+  plugins: ['prettier-plugin-astro'],
+  overrides: [
+    {
+      files: ['.*', '*.json', '*.md', '*.toml', '*.yml'],
+      options: {
+        useTabs: false,
+      },
+    },
+    {
+      files: '*.astro',
+      options: {
+        parser: 'astro',
+      },
+    },
+    {
+      files: ['*.md', '*.mdx'],
+      options: {
+        singleQuote: false,
+      },
+    },
+  ],
 };

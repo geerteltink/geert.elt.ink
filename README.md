@@ -3,53 +3,21 @@
 [![continuous-integration](https://github.com/geerteltink/geert.elt.ink/actions/workflows/ci.yml/badge.svg)](https://github.com/geerteltink/geert.elt.ink/actions/workflows/ci.yml)
 
 This repo contains the source code for [geert.elt.ink](https://geert.elt.ink/). It
-has changed over time. First it started with zend-expressive. Changed in 2018
-to a vuejs based progressive web app to learn the language, PWA and service
-workers concepts. And then there was Hugo, which is a fast static site generator.
-And if you think Hugo is fast, try Eleventy, which is much faster and has easier
-to understand templating in different flavors.
+has changed over time. First it started with Jekyll, followed by zend-expressive.
+Changed in 2018 to a vuejs based progressive web app to learn the language, PWA and
+service workers concepts. And then there was Hugo, which is a fast static site
+generator. And if you think Hugo is fast, try Eleventy, which is much faster and has
+easier to understand templating in different flavors. In 2023 the switch to Astro
+was inevitable.
 
-## Version 4: Eleventy
+## Changelog
 
-[source code](https://github.com/geerteltink/geert.elt.ink/tree/main)
-
-- [11ty](https://www.11ty.dev/) - Eleventy, a simpler static site generator.
-
-## Version 3: Hugo
-
-[source code](https://github.com/geerteltink/geert.elt.ink/tree/hugo)
-
-- [Hugo](https://gohugo.io/) a fast framework for building static websites.
-
-**Notes:**
-
-Use icons in layouts: `{{ partial "fontawesome.html" "github" }}`
-Use icons in content: `{{% fontawesome github %}}`
-
-## Version 2: Vue.js, PWA and service worker
-
-[source code](https://github.com/geerteltink/geert.elt.ink/tree/vuejs)
-
-- [Vue.js](https://www.npmjs.com/package/vue)
-- [vue-analytics](https://www.npmjs.com/package/vue-analytics)
-- [vue-meta](https://www.npmjs.com/package/vue-meta)
-- [vue-router](https://www.npmjs.com/package/vue-router)
-- [vuex](https://www.npmjs.com/package/vuex)
-
-## Version 1: PHP / zend-expressive
-
-[source code](https://github.com/geerteltink/geert.elt.ink/tree/expressive)
-
-- [zend-expressive](https://github.com/zendframework/zend-expressive)
-- [zend-servicemanager](https://github.com/zendframework/zend-servicemanager) dependency container
-- [FastRoute](https://github.com/nikic/FastRoute) router
-- [Twig](https://github.com/twigphp/Twig) template engine
-- [doctrine/cache](https://github.com/doctrine/cache) for caching
-- [monolog](https://github.com/monolog/monolog) for logging
-- [psr7-sessions/storageless](https://github.com/psr7-sessions/storageless) for storage-less PSR-7 session support
-- [html-form-validator](https://github.com/geerteltink/html-form-validator) for form validation
-- [guzzle](https://github.com/guzzlehttp/guzzle) for grabbing repository data from GitHub
-- [pure svg icons](https://icomoon.io/)
+- 0.x.x Jekyll
+- [1.x.x](https://github.com/geerteltink/geert.elt.ink/releases/tag/v1.0.0) PHP / zend-expressive
+- [2.x.x](https://github.com/geerteltink/geert.elt.ink/releases/tag/v2.0.0) Vue.js, PWA and service worker
+- [3.x.x](https://github.com/geerteltink/geert.elt.ink/releases/tag/v3.0.0) Hugo
+- [4.x.x](https://github.com/geerteltink/geert.elt.ink/releases/tag/v4.0.0) Eleventy
+- [5.x.x](https://github.com/geerteltink/geert.elt.ink/releases/tag/v5.0.0) Astro
 
 ## License and Copyright
 
@@ -57,9 +25,7 @@ Following files, directories and their contents are copyrighted by Geert Eltink
 unless explicitly stated otherwise. You may not reuse anything therein without
 permission:
 
-- [content/posts/](/data/posts)
-- [assets/img/](resources/public/img)
-- [resources/img/](public/assets/img)
+- [src/content/](/src/content)
 
 All other files and directories are licensed under the [MIT](http://www.opensource.org/licenses/mit-license.php)
 unless explicitly stated.

@@ -1,21 +1,20 @@
 version: 2
 updates:
-
-  - package-ecosystem: "github-actions"
-    directory: "/"
+  - package-ecosystem: 'github-actions'
+    directory: '/'
     schedule:
-      interval: "monthly"
+      interval: 'monthly'
     open-pull-requests-limit: 5
     labels:
-      - "dependencies"
+      - 'dependencies'
 
-  - package-ecosystem: "npm"
-    directory: "/"
+  - package-ecosystem: 'npm'
+    directory: '/'
     schedule:
-      interval: "monthly"
+      interval: 'monthly'
     versioning-strategy: increase
     open-pull-requests-limit: 5
     allow:
-      - dependency-type: "direct"
+      - dependency-type: 'direct'
     labels:
-      - "dependencies"
+      - 'dependencies'
