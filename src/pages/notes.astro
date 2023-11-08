@@ -1,26 +1,27 @@
 ---
 import Layout from '@layouts/Layout.astro';
+import { getCollection } from 'astro:content';
 
 Astro.props.title = 'Notes';
 
-const posts = (await Astro.glob('./notes/**/*.{md,mdx}')).sort(
-	(a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
+const notes = (await getCollection('notes')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
 
 <Layout>
   <section>
     <ul>
-      {posts.map((post) => (
+      {notes.map((note) => (
         <li>
-          <time datetime={post.frontmatter.pubDate}>
-            {new Date(post.frontmatter.pubDate).toLocaleDateString('en-us', {
+          <time datetime={note.frontmatter.pubDate}>
+            {new Date(note.frontmatter.pubDate).toLocaleDateString('en-us', {
               year: 'numeric',
               month: 'short',
               day: 'numeric',
             })}
           </time>
-          <a href={post.url}>{post.frontmatter.title}</a>
+          <a href={note.url}>{note.frontmatter.title}</a>
         </li>
       ))}
     </ul>

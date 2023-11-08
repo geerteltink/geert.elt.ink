@@ -11,10 +11,12 @@ const { title, summary } = Astro.props.frontmatter || Astro.props;
 	<head>
     <HeadMeta title={title} description={summary} />
 	</head>
-	<body class="page layout">
+	<body class="page">
     <Header />
-    <main class="page-main container">
-      <slot />
+    <main class="page-main bg-surface">
+      <div class="container">
+        <slot />
+      </div>
     </main>
     <Footer />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-F62S13KXF9"></script>
