@@ -33,7 +33,7 @@
     "@types/node": "^20.5.9",
     "@typescript-eslint/eslint-plugin": "^6.6.0",
     "@typescript-eslint/parser": "^6.6.0",
-    "astro-eslint-parser": "^0.15.0",
+    "astro-eslint-parser": "^0.16.0",
     "autoprefixer": "^10.4.16",
     "check-html-links": "^0.2.4",
     "eslint": "^8.48.0",
