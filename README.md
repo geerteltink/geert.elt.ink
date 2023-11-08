@@ -12,12 +12,12 @@ was inevitable.
 
 ## Changelog
 
-- 1.x.x Jekyll
-- 2.x.x PHP / zend-expressive             64979388aa933255ad95da081bc7b84f860081aa
-- 3.x.x Vue.js, PWA and service worker    96df61f5362204b4ebefde74bab91d442195d60e
-- 4.x.x Hugo                              bed46fb2ab1a3f8f4ffdd66d3ab88c86e69b90ac
-- 5.x.x Eleventy                          8764d2377c5ca659446c8084867ab3bc5e801d6d
-- 6.x.x Astro
+- 0.x.x Jekyll
+- [1.x.x](https://github.com/geerteltink/geert.elt.ink/releases/tag/v1.0.0) PHP / zend-expressive
+- [2.x.x](https://github.com/geerteltink/geert.elt.ink/releases/tag/v2.0.0) Vue.js, PWA and service worker
+- [3.x.x](https://github.com/geerteltink/geert.elt.ink/releases/tag/v3.0.0) Hugo
+- [4.x.x](https://github.com/geerteltink/geert.elt.ink/releases/tag/v4.0.0) Eleventy
+- [5.x.x](https://github.com/geerteltink/geert.elt.ink/releases/tag/v5.0.0) Astro
 
 ## License and Copyright
 
