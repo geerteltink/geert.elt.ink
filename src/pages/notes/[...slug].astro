@@ -18,7 +18,7 @@ const { Content } = await entry.render();
   <article>
     <h1>{entry.data.title}</h1>
     <div class="mb-3 text-disabled">
-      {entry.data.pubDate && <time datetime={formatISO(entry.data.pubDate, { representation: 'date' })}>Published: {format(entry.data.pubDate, 'PPP')}</time>}
+      {entry.data.published && <time datetime={formatISO(entry.data.published, { representation: 'date' })}>Published: {format(entry.data.published, 'PPP')}</time>}
       {entry.data.modified && <time datetime={formatISO(entry.data.modified, { representation: 'date' })}>Modified: {format(entry.data.modified, 'PPP')}</time>}
     </div>
     <Content />

@@ -2,7 +2,7 @@
 title: "Zend Expressive: One Action Factory For All"
 description: "Use one action factory for all zend expressive actions."
 slug: "zend-expressive-one-action-factory-for-all"
-pubDate: "2015-12-29"
+published: "2015-12-29"
 tags:
   - "zend-expressive"
   - "dependency-injection"

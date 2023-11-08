@@ -2,7 +2,7 @@
 title: "From Jekyll to zend-expressive to Vue.js to Hugo"
 description: "From Jekyll to zend-expressive to Vue.js to Hugo."
 slug: "from-jekyll-to-zend-expressive-to-vue-js-to-hugo"
-pubDate: "2019-09-24"
+published: "2019-09-24"
 coverImage: "/src/assets/logo-hugo.png"
 coverImageAlt: "Hugo"
 tags:

@@ -2,7 +2,7 @@
 title: "Howto Update TeamSpeak 3 on Debian"
 description: "This is the missing manual for updating TeamSpeak 3 on Debian."
 slug: "howto-update-teamspeak-3-on-debian"
-pubDate: "2014-11-03"
+published: "2014-11-03"
 tags:
   - "teamspeak3"
 ---

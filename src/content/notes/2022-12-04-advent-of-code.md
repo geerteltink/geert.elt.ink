@@ -2,7 +2,7 @@
 title: "Advent of Code"
 description: "Participating in Advent of Code for the first time and learning a new language."
 slug: "advent-of-code"
-pubDate: "2022-12-04"
+published: "2022-12-04"
 coverImage: "/src/assets/advent-of-code.png"
 coverImageAlt: "Advent of Code"
 tags:

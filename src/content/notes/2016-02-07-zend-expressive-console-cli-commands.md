@@ -2,7 +2,7 @@
 title: "zend-expressive console cli commands"
 description: "Use Symfony console for your zend-expressive console commands."
 slug: "zend-expressive-console-cli-commands"
-pubDate: "2016-02-07"
+published: "2016-02-07"
 tags:
   - "zend-expressive"
   - "console"

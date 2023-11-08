@@ -2,7 +2,7 @@
 title: "Running PHPUnit in PhpStorm with docker-compose on Windows"
 description: "Setup PhpStorm with docker-compose and PHPUnit integration on Windows."
 slug: "running-phpunit-in-phpstorm-with-docker-compose-on-windows"
-pubDate: "2017-12-03"
+published: "2017-12-03"
 coverImage: "/src/assets/phpstorm.png"
 coverImageAlt: "PhpStorm"
 tags:

@@ -2,7 +2,7 @@
 title: "Grunt, Gulp and NPM scripts"
 description: "Build tools and task runners."
 slug: "grunt-gulp-and-npm"
-pubDate: "2015-03-13"
+published: "2015-03-13"
 tags:
   - "nodejs"
   - "npm"

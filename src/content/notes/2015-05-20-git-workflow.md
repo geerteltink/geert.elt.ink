@@ -2,7 +2,7 @@
 title: "Git Workflow"
 description: "A git workflow suitable for large projects."
 slug: "git-workflow"
-pubDate: "2015-05-20"
+published: "2015-05-20"
 tags:
   - "git"
 ---

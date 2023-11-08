@@ -2,7 +2,7 @@
 title: "Git Troubleshooting"
 description: "Some ways to resolve git issues."
 slug: "git-troubleshooting"
-pubDate: "2015-05-21"
+published: "2015-05-21"
 tags:
   - "git"
 ---

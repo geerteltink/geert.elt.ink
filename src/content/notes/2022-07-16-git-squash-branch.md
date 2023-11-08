@@ -2,7 +2,7 @@
 title: "Git squash all commits in a branch"
 description: "How to squash all commits in a branch."
 slug: "git-squash-all-commits-in-a-branch"
-pubDate: "2022-07-16"
+published: "2022-07-16"
 coverImage: "/src/assets/wolfgang-rottmann-tx632mx5dr0-unsplash.jpg"
 coverImageAlt: "Git squash"
 tags:

@@ -2,7 +2,7 @@
 title: "How to setup doctrine for zend expressive"
 description: "Build a Zend Expressive Doctrine factory and cache driver factory."
 slug: "how-to-setup-doctrine-for-zend-expressive"
-pubDate: "2015-12-12"
+published: "2015-12-12"
 tags:
   - "zend-expressive"
   - "doctrine"

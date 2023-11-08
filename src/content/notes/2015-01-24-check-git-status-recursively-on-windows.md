@@ -2,7 +2,7 @@
 title: "Check git status recursively on windows"
 description: "A command to check all git repos for changes not committed or pushed in all sub directories."
 slug: "check-git-status-recursively-on-windows"
-pubDate: "2015-01-24"
+published: "2015-01-24"
 tags:
   - "windows"
   - "cli"

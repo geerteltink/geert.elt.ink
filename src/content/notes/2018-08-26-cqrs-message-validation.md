@@ -2,7 +2,7 @@
 title: "CQRS Message Validation"
 description: "Validating CQRS command/event/query messages with Assert, Symfony validator and zend-inputfilter."
 slug: "cqrs-message-validation"
-pubDate: "2018-08-26"
+published: "2018-08-26"
 tags:
   - "cqrs"
   - "validation"

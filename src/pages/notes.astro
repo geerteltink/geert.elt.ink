@@ -3,7 +3,7 @@ import Layout from '@layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
 const notes = (await getCollection('notes')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+	(a, b) => b.data.published.valueOf() - a.data.published.valueOf()
 );
 ---
 
@@ -12,8 +12,8 @@ const notes = (await getCollection('notes')).sort(
     <ul>
       {notes.map((note) => (
         <li>
-          <time datetime={note.data.pubDate.toISOString()}>
-            {new Date(note.data.pubDate).toLocaleDateString('en-us', {
+          <time datetime={note.data.published.toISOString()}>
+            {new Date(note.data.published).toLocaleDateString('en-us', {
               year: 'numeric',
               month: 'short',
               day: 'numeric',

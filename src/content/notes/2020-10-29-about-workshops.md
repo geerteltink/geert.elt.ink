@@ -2,7 +2,7 @@
 title: "About the value of workshops"
 description: "If you have the opportunity to attend conferences, talks or a workshop, just go for it!"
 slug: "about-the-value-of-workshops"
-pubDate: "2020-10-29"
+published: "2020-10-29"
 coverImage: "/src/assets/workshop.jpeg"
 coverImageAlt: "Workshop"
 tags:

@@ -4,7 +4,7 @@ export interface Props {
   alt: string;
   [attr: string]: any;
 }
-const { src, ...attrs } = Astro.props ;
+// const { src, ...attrs } = Astro.props ;
 ---
 
 <!--Picture src={src} formats={['avif', 'webp']} widths={[400, 800, 1280, 1920]} sizes="100vw" {...attrs} /-->

@@ -2,7 +2,7 @@
 title: "Hello World!"
 description: "Hello World! I am back. Serving this site with GitHub pages with a touch of Jekyll."
 slug: "hello-world"
-pubDate: "2013-11-05"
+published: "2013-11-05"
 tags:
   - "github-pages"
   - "jekyll"

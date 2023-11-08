@@ -2,7 +2,7 @@
 title: "PHPunit and Selenium Server 2"
 description: "This is the missing manual for phpunit-selenium."
 slug: "phpunit-and-selenium-server-2"
-pubDate: "2014-11-04"
+published: "2014-11-04"
 tags:
   - "phpunit"
   - "selenium"

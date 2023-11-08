@@ -2,7 +2,7 @@
 title: "PhpStorm PSR-11 Container Interface Code Completion"
 description: "Easily add code completion for PSR-11 Container Interface in PhpStorm."
 slug: "phpstorm-psr-11-container-interface-code-completion"
-pubDate: "2015-12-14"
+published: "2015-12-14"
 tags:
   - "phpstorm"
   - "php"

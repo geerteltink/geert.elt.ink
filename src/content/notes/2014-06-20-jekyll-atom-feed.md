@@ -2,7 +2,7 @@
 title: "Jekyll Atom Feed"
 description: "A proper atom feed for Jekyll."
 slug: "jekyll-atom-feed"
-pubDate: "2014-06-20"
+published: "2014-06-20"
 tags:
   - "jekyll"
 ---

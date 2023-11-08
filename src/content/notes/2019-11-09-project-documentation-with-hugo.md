@@ -2,7 +2,7 @@
 title: "Project documentation with Hugo Modules"
 description: "Generating multi project documentation with Hugo Modules blazing fast."
 slug: "project-documentation-with-hugo-modules"
-pubDate: "2019-11-09"
+published: "2019-11-09"
 coverImage: "/src/assets/logo-hugo.png"
 coverImageAlt: "Hugo"
 tags:

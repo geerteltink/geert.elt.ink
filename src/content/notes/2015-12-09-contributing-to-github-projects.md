@@ -2,7 +2,7 @@
 title: "Contributing to a github project"
 description: "Keep your github fork in sync."
 slug: contributing-to-a-github-project
-pubDate: "2015-12-09"
+published: "2015-12-09"
 tags:
   - "git"
 ---

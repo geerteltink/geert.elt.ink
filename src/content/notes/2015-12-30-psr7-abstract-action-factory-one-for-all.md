@@ -2,7 +2,7 @@
 title: "One Abstract Action Factory For All"
 description: "Use one abstract action factory for all PSR-7 actions."
 slug: "one-abstract-action-factory-for-all"
-pubDate: "2015-12-30"
+published: "2015-12-30"
 tags:
   - "zend-expressive"
   - "dependency-injection"
