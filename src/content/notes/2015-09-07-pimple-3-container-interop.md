@@ -1,11 +1,10 @@
 ---
-title: 'Container-Interop wrapper for Pimple 3.0'
-description: 'While the Pimple developers are waiting for the PSR it does not mean you have too.'
-slug: container-interop-wrapper-for-pimple-3-0
-pubDate: 2015-06-04
+title: "Container-Interop wrapper for Pimple 3.0"
+description: "While the Pimple developers are waiting for the PSR it does not mean you have too."
+slug: "container-interop-wrapper-for-pimple-3-0"
+pubDate: "2015-06-04"
 tags:
-  - Pimple
-  - Container-Interop
+  - "container-interop"
 ---
 
 PHP middleware is growing fast these days. One of the nicest features is that you can mix and match different packages from different frameworks or even use standalone packages.

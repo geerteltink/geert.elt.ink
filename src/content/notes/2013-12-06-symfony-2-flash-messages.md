@@ -1,10 +1,10 @@
 ---
-title: 'Symfony 2.4 flash messages'
-description: 'In Symfony 2.4 the session is not always initialized in a template. You need an extra step to detect this.'
-slug: symfony-2-flash-messages
-pubDate: 2013-12-06
+title: "Symfony 2.4 flash messages"
+description: "In Symfony 2.4 the session is not always initialized in a template. You need an extra step to detect this."
+slug: "symfony-2-flash-messages"
+pubDate: "2013-12-06"
 tags:
-  - Symfony 2
+  - "symfony"
 ---
 
 After upgrading to Symfony 2.4 I got PHPUnit errors. I'm not sure what exactly changed, but the session is not initialized automatically. An extra check is needed:

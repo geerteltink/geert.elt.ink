@@ -1,13 +1,13 @@
 ---
-title: 'About the value of workshops'
-description: 'If you have the opportunity to attend conferences, talks or a workshop, just go for it!'
-slug: about-the-value-of-workshops
-pubDate: 2020-10-29
+title: "About the value of workshops"
+description: "If you have the opportunity to attend conferences, talks or a workshop, just go for it!"
+slug: "about-the-value-of-workshops"
+pubDate: "2020-10-29"
 tags:
-  - knowledge
-  - books
-  - conferences
-  - workshops
+  - "knowledge"
+  - "books"
+  - "conferences"
+  - "workshops"
 ---
 
 {% image "./src/assets/images/workshop.jpeg", "Workshop" %}

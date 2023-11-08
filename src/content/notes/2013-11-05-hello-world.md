@@ -1,11 +1,11 @@
 ---
-title: 'Hello World!'
-description: 'Hello World! I am back. Serving this site with GitHub pages with a touch of Jekyll.'
-slug: hello-world
-pubDate: 2013-11-05
+title: "Hello World!"
+description: "Hello World! I am back. Serving this site with GitHub pages with a touch of Jekyll."
+slug: "hello-world"
+pubDate: "2013-11-05"
 tags:
-  - GitHub pages
-  - Jekyll
+  - "github-pages"
+  - "jekyll"
 ---
 
 <ul class="no-bullet">

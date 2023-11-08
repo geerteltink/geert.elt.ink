@@ -1,12 +1,12 @@
 ---
-title: 'One Abstract Action Factory For All'
-description: 'Use one abstract action factory for all PSR-7 actions.'
-slug: one-abstract-action-factory-for-all
-pubDate: 2015-12-30
+title: "One Abstract Action Factory For All"
+description: "Use one abstract action factory for all PSR-7 actions."
+slug: "one-abstract-action-factory-for-all"
+pubDate: "2015-12-30"
 tags:
-  - Zend Expressive
-  - dependency injection
-  - zend-servicemanager
+  - "zend-expressive"
+  - "dependency-injection"
+  - "zend-servicemanager"
 ---
 
 Yesterday I wrote about using [one ActionFactory for all](/notes/one-abstract-action-factory-for-all/) your PSR-7 actions. I used zend-servicemanager for it, together with some voodoo to detect the dependencies and inject it. I was pretty happy with the solution and then I got this:

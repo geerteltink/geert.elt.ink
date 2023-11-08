@@ -1,12 +1,12 @@
 ---
-title: 'Zend Expressive: One Action Factory For All'
-description: 'Use one action factory for all zend expressive actions.'
-slug: zend-expressive-one-action-factory-for-all
-pubDate: 2015-12-29
+title: "Zend Expressive: One Action Factory For All"
+description: "Use one action factory for all zend expressive actions."
+slug: "zend-expressive-one-action-factory-for-all"
+pubDate: "2015-12-29"
 tags:
-  - Zend Expressive
-  - dependency injection
-  - zend-servicemanager
+  - "zend-expressive"
+  - "dependency-injection"
+  - "zend-servicemanager"
 ---
 
 I know, it's better to write factories in stead of magical dependency injection. But some people are lazy, me included, when it comes to repeating code over and over. In this case I'm talking about zend-expressive actions. When a project grows you might end up with as much factories as actions. This probably goes for every PSR-7 oriented framework.

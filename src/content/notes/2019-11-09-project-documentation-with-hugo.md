@@ -1,14 +1,14 @@
 ---
-title: 'Project documentation with Hugo Modules'
-description: 'Generating multi project documentation with Hugo Modules blazing fast.'
-slug: project-documentation-with-hugo-modules
-pubDate: 2019-11-09
+title: "Project documentation with Hugo Modules"
+description: "Generating multi project documentation with Hugo Modules blazing fast."
+slug: "project-documentation-with-hugo-modules"
+pubDate: "2019-11-09"
 tags:
-  - documentation
-  - Hugo
-  - netlify
-  - GitHub Actions
-  - GitHub Pages
+  - "documentation"
+  - "hugo"
+  - "netlify"
+  - "github-actions"
+  - "github-pages"
 ---
 
 {% image "./src/assets/images/logo-hugo.png", "Hugo" %}

@@ -2,14 +2,12 @@
 import Layout from '@layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
-Astro.props.title = 'Notes';
-
 const notes = (await getCollection('notes')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
 
-<Layout>
+<Layout title="Notes" description="My notes">
   <section>
     <ul>
       {notes.map((note) => (

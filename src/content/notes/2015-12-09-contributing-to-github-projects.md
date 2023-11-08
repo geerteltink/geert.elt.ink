@@ -1,11 +1,10 @@
 ---
-title: 'Contributing to a github project'
-description: 'Keep your github fork in sync.'
+title: "Contributing to a github project"
+description: "Keep your github fork in sync."
 slug: contributing-to-a-github-project
-pubDate: 2015-12-09
+pubDate: "2015-12-09"
 tags:
-  - git
-  - git-flow
+  - "git"
 ---
 
 This guide is a mix of several other guides and my own experience. I'm just writing this down altogether so I can easily find the right commands.

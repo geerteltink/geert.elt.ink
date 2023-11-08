@@ -1,11 +1,12 @@
 ---
-title: 'Check git status recursively on windows'
-description: 'A command to check all git repos for changes not committed or pushed in all sub directories.'
-slug: check-git-status-recursively-on-windows
-pubDate: 2015-01-24
+title: "Check git status recursively on windows"
+description: "A command to check all git repos for changes not committed or pushed in all sub directories."
+slug: "check-git-status-recursively-on-windows"
+pubDate: "2015-01-24"
 tags:
-  - Windows
-  - cli
+  - "windows"
+  - "cli"
+  - "git"
 ---
 
 Sometimes you wonder if you forgot to commit and push changes. And if you are working on several projects at the same time you just don't know which ones. With this small batch script you can check the current directory and all sub directories for changes that still need to be committed or pushed.

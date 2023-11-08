@@ -1,12 +1,12 @@
 ---
-title: 'How to setup doctrine for zend expressive'
-description: 'Build a Zend Expressive Doctrine factory and cache driver factory.'
-slug: how-to-setup-doctrine-for-zend-expressive
-pubDate: 2015-12-12
+title: "How to setup doctrine for zend expressive"
+description: "Build a Zend Expressive Doctrine factory and cache driver factory."
+slug: "how-to-setup-doctrine-for-zend-expressive"
+pubDate: "2015-12-12"
 tags:
-  - zend expressive
-  - doctrine
-  - caching
+  - "zend-expressive"
+  - "doctrine"
+  - "caching"
 ---
 
 > _NOTE: This post was written in the time there was no good solution available to add Doctrine to Expressive. Fortunately there is <a href="https://github.com/Roave/psr-container-doctrine">psr-container-doctrine</a>. It makes setting up Doctrine a lot easier._

@@ -1,10 +1,10 @@
 ---
-title: 'Symfony 2 Dynamic Router'
-description: 'There are some dynamic router examples out there for Symfony 2. But most are overly complicated. This is an easy way to load dynamic routes from a database.'
-slug: symfony-2-dynamic-router
-pubDate: 2014-10-02
+title: "Symfony 2 Dynamic Router"
+description: "There are some dynamic router examples out there for Symfony 2. But most are overly complicated. This is an easy way to load dynamic routes from a database."
+slug: "symfony-2-dynamic-router"
+pubDate: "2014-10-02"
 tags:
-  - Symfony 2
+  - "symfony"
 ---
 
 What I tried to achieve is having a content table with the different content types in it. Sort of like WordPress. The idea is that you don't want to add all pages and blog posts to your routing table manually. It would be nicer to add a router that matches the url path against the content table and grab its content. This way if you add pages, blog posts or even move pages around, it always know where to find them.

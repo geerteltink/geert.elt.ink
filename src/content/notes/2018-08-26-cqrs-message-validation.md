@@ -1,11 +1,11 @@
 ---
-title: 'CQRS Message Validation'
-description: 'Validating CQRS command/event/query messages with Assert, Symfony validator and zend-inputfilter.'
-slug: cqrs-message-validation
-pubDate: 2018-08-26
+title: "CQRS Message Validation"
+description: "Validating CQRS command/event/query messages with Assert, Symfony validator and zend-inputfilter."
+slug: "cqrs-message-validation"
+pubDate: "2018-08-26"
 tags:
-  - cqrs
-  - validation
+  - "cqrs"
+  - "validation"
 ---
 
 Bare with me, I'm just starting with CQRS. I've got an application running with DDD, CQRS and even Event Sourcing. I think I did a good job because everything seems to be working. The write and read model are separated as it is supposed to be. The event store is working and my read models are populated when new events are received. I'll probably write something about this later but I want to have some more experience first.

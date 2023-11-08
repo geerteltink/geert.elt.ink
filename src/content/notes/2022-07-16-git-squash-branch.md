@@ -1,10 +1,10 @@
 ---
-title: 'Git squash all commits in a branch'
-description: 'How to squash all commits in a branch.'
-slug: git-squash-all-commits-in-a-branch
-pubDate: 2022-07-16
+title: "Git squash all commits in a branch"
+description: "How to squash all commits in a branch."
+slug: "git-squash-all-commits-in-a-branch"
+pubDate: "2022-07-16"
 tags:
-  - git
+  - "git"
 ---
 
 {% image "./src/assets/images/wolfgang-rottmann-tx632mx5dr0-unsplash.jpg", "Git squash" %}

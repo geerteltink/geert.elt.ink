@@ -1,10 +1,10 @@
 ---
-title: 'Vue.js 3.2 Composition API Setup with TypeScript'
-description: 'If you have the opportunity to attend conferences, talks or a workshop, just go for it!'
-slug: vue-js-3-2-composition-api-setup-with-typescript
-pubDate: 2021-09-15
+title: "Vue.js 3.2 Composition API Setup with TypeScript"
+description: "If you have the opportunity to attend conferences, talks or a workshop, just go for it!"
+slug: "vue-js-3-2-composition-api-setup-with-typescript"
+pubDate: "2021-09-15"
 tags:
-  - Vue.js
+  - "vue.js"
 ---
 
 {% image "./src/assets/images/logo-vuejs.png", "Vue.js" %}

@@ -1,10 +1,10 @@
 ---
-title: 'Jekyll Atom Feed'
-description: 'A proper atom feed for Jekyll.'
-slug: jekyll-atom-feed
-pubDate: 2014-06-20
+title: "Jekyll Atom Feed"
+description: "A proper atom feed for Jekyll."
+slug: "jekyll-atom-feed"
+pubDate: "2014-06-20"
 tags:
-  - Jekyll
+  - "jekyll"
 ---
 
 I read a twitter post today about the lack of rss feeds on blogs. Then I realized this one was missing it too. Google is your friend and pretty fast I found an example. When I tried to throw it at the W3C feed validation service it gave some errors. Guess what? They mixed rss and atom code together. Those are two different specifications and you can't make up your own. Well, actually you can, but then you should use a different xml namespace.

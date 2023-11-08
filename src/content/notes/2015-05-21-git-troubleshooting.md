@@ -1,10 +1,10 @@
 ---
-title: 'Git Troubleshooting'
-description: 'Some ways to resolve git issues.'
-slug: git-troubleshooting
-pubDate: 2015-05-21
+title: "Git Troubleshooting"
+description: "Some ways to resolve git issues."
+slug: "git-troubleshooting"
+pubDate: "2015-05-21"
 tags:
-  - git
+  - "git"
 ---
 
 - [Force LF line endings instead of CR+LF](#force-lf-line-endings-instead-of-crlf)
@@ -92,7 +92,7 @@ Push commits in all branches.
 git push --all
 ```
 
-Push [tag] to origin
+Push `[tag]` to origin
 
 ```bash
 git push origin [tag]

@@ -1,10 +1,10 @@
 ---
-title: 'Git Workflow'
-description: 'A git workflow suitable for large projects.'
-slug: git-workflow
-pubDate: 2015-05-20
+title: "Git Workflow"
+description: "A git workflow suitable for large projects."
+slug: "git-workflow"
+pubDate: "2015-05-20"
 tags:
-  - git
+  - "git"
 ---
 
 Git workflow works best for large projects. For smaller projects or projects with little commits and releases I suggest to use something lightweight like [GitHub Flow](https://guides.github.com/introduction/flow/).

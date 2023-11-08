@@ -1,12 +1,11 @@
 ---
-title: 'Advent of Code'
-description: 'Participating in Advent of Code for the first time and learning a new language.'
+title: "Advent of Code"
+description: "Participating in Advent of Code for the first time and learning a new language."
 slug: "advent-of-code"
-pubDate: 2022-12-04
+pubDate: "2022-12-04"
 tags:
-  - advent of code
-  - go
-  - rust
+  - "advent-of-code"
+  - "rust"
 ---
 
 {% image "./src/assets/images/advent-of-code.png", "Advent of Code" %}

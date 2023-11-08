@@ -1,12 +1,12 @@
 ---
-title: 'Symfony 2.6 Shibboleth Login - The Easy Way'
-description: 'Since Symfony 2.6 Shibboleth logins can be added easily with the remote_user security option.'
-slug: symfony-2-6-shibboleth-login-the-easy-way
-pubDate: 2015-06-04
+title: "Symfony 2.6 Shibboleth Login - The Easy Way"
+description: "Since Symfony 2.6 Shibboleth logins can be added easily with the remote_user security option."
+slug: "symfony-2-6-shibboleth-login-the-easy-way"
+pubDate: "2015-06-04"
 tags:
-  - Symfony
-  - Shibboleth
-  - security
+  - "symfony"
+  - "shibboleth"
+  - "security"
 ---
 
 There was a time we had to write complicated-hard-to-maintain Shibboleth bundles to get it working with Symfony. I did as well back in the Symfony 2.4 days. Fortunately since Symfony 2.6 there is a new security firewall option called [remote_user](http://symfony.com/doc/current/cookbook/security/pre_authenticated.html#remote-user-based-authentication). The REMOTE_USER variable passed by the http server is actually a [standard](https://www.ietf.org/rfc/rfc3875).

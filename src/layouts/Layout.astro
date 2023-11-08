@@ -2,14 +2,21 @@
 import Footer from '@components/Footer.astro';
 import Header from '@components/Header.astro';
 import HeadMeta from '@components/HeadMeta.astro';
+import { ViewTransitions } from 'astro:transitions';
 
-const { title, summary } = Astro.props.frontmatter || Astro.props;
+interface Props {
+	title?: string | undefined;
+	description?: string | undefined;
+}
+
+const { title, description } = Astro.props.frontmatter || Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-    <HeadMeta title={title} description={summary} />
+    <HeadMeta title={title} description={description} />
+    <ViewTransitions />
 	</head>
 	<body class="page">
     <Header />

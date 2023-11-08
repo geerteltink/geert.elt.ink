@@ -1,13 +1,13 @@
 ---
-title: 'Grunt, Gulp and NPM scripts'
-description: 'Build tools and task runners.'
-slug: grunt-gulp-and-npm
-pubDate: 2015-03-13
+title: "Grunt, Gulp and NPM scripts"
+description: "Build tools and task runners."
+slug: "grunt-gulp-and-npm"
+pubDate: "2015-03-13"
 tags:
-  - nodejs
-  - npm
-  - grunt
-  - gulp
+  - "nodejs"
+  - "npm"
+  - "grunt"
+  - "gulp"
 ---
 
 Two years ago I ran into Grunt and started using it as my preferred build tool. The more I used it and the bigger the projects became, the more I screamed for a better tool. The configuration gets so complicated. I read a bit about Gulp but didn't want to convert all projects again. And then recently I read an article from Keith Cirkel about [how to use npm as a build tool](http://blog.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/). It was really interested and gave it a try.

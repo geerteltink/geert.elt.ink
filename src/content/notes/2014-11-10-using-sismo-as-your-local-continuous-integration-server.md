@@ -1,11 +1,10 @@
 ---
-title: 'Using Sismo as Your Personal CI Server on Windows'
-description: 'Sismo is a lightweight and easy to install continuous testing server which you can use locally and trigger from a git post-commit hook.'
-slug: using-sismo-as-your-personal-ci-server-on-windows
-pubDate: 2014-11-10
+title: "Using Sismo as Your Personal CI Server on Windows"
+description: "Sismo is a lightweight and easy to install continuous testing server which you can use locally and trigger from a git post-commit hook."
+slug: "using-sismo-as-your-personal-ci-server-on-windows"
+pubDate: "2014-11-10"
 tags:
-  - continuous integration
-  - sismo
+  - "continuous-integration"
 ---
 
 There are some really good continuous integration servers out there which you ~~can~~ should use. Well known are Travis CI and Jenkins. I had a look at those but they seemed to be a hassle to setup. I did install and try [PHPCI](https://www.phptesting.org/). It looks promising but I couldn't get it to work properly because of some error messages and bugs. After trying PHPCI I changed my mind: A CI server is way too much and heavy on resources for what I really need... Something that checks my committed code and runs several tests in the background, and once it's done report the result. This way I know within seconds if I didn't break anything. After some more research I found [Sismo](http://sismo.sensiolabs.org/), a Continuous Testing Server written in PHP. Great, lightweight (only a single 398KB file) and even written in PHP!

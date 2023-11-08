@@ -1,12 +1,12 @@
 ---
-title: 'zend-expressive console cli commands'
-description: 'Use Symfony console for your zend-expressive console commands.'
-slug: zend-expressive-console-cli-commands
-pubDate: 2016-02-07
+title: "zend-expressive console cli commands"
+description: "Use Symfony console for your zend-expressive console commands."
+slug: "zend-expressive-console-cli-commands"
+pubDate: "2016-02-07"
 tags:
-  - Zend Expressive
-  - console
-  - cli
+  - "zend-expressive"
+  - "console"
+  - "cli"
 ---
 
 zend-expressive does not come out of the box with a console for handling cli commands. However with minimal effort you can add this and make full use of the container and its dependencies.

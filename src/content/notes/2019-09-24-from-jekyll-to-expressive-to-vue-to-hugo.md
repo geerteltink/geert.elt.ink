@@ -1,13 +1,13 @@
 ---
-title: 'From Jekyll to zend-expressive to Vue.js to Hugo'
-description: 'From Jekyll to zend-expressive to Vue.js to Hugo.'
-slug: from-jekyll-to-zend-expressive-to-vue-js-to-hugo
-pubDate: 2019-09-24
+title: "From Jekyll to zend-expressive to Vue.js to Hugo"
+description: "From Jekyll to zend-expressive to Vue.js to Hugo."
+slug: "from-jekyll-to-zend-expressive-to-vue-js-to-hugo"
+pubDate: "2019-09-24"
 tags:
-  - jekyll
-  - Zend Expressive
-  - Hugo
-  - Vue.js
+  - "jekyll"
+  - "zend-expressive"
+  - "hugo"
+  - "vue.js"
 ---
 
 {% image "./src/assets/images/logo-hugo.png", "Hugo" %}
