@@ -2,10 +2,9 @@
 import { Image } from 'astro:assets';
 
 const { src, alt } = Astro.props;
-const images = import.meta.glob('/src/assets/*');
 ---
 
-<Image src={images[src]()} alt={alt} widths={[400, 800, 1280, 1920]} sizes="100vw" />
+<Image src={src} alt={alt} widths={[400, 800, 1280, 1920]} sizes="100vw" />
 
 <style>
   img,

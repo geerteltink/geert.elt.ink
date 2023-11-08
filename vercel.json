@@ -17,6 +17,15 @@
           "value": "public, max-age=86400"
         }
       ]
+    },
+    {
+      "source": "/_astro/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "immutable, max-age=31536000"
+        }
+      ]
     }
   ],
   "redirects": [
