@@ -1,149 +1,164 @@
 {
-  "headers": [
-    {
-      "source": "/.well-known/webfinger",
-      "headers": [
+    "headers": [
         {
-          "key": "content-type",
-          "value": "application/activity+json"
-        }
-      ]
-    },
-    {
-      "source": "/assets/(.*)",
-      "headers": [
+            "source": "/.well-known/webfinger",
+            "headers": [
+                {
+                    "key": "content-type",
+                    "value": "application/activity+json"
+                }
+            ]
+        },
         {
-          "key": "Cache-Control",
-          "value": "public, max-age=86400"
+            "source": "/assets/(.*)",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=86400"
+                }
+            ]
         }
-      ]
-    }
-  ],
-  "redirects": [
-    {
-      "source": "/about-the-value-of-workshops",
-      "destination": "https://geert.elt.ink/notes/about-the-value-of-workshops/",
-      "permanent": true
-    },
-    {
-      "source": "/check-git-status-recursively-on-windows",
-      "destination": "https://geert.elt.ink/notes/check-git-status-recursively-on-windows/",
-      "permanent": true
-    },
-    {
-      "source": "/container-interop-wrapper-for-pimple-30",
-      "destination": "https://geert.elt.ink/notes/container-interop-wrapper-for-pimple-3-0/",
-      "permanent": true
-    },
-    {
-      "source": "/contributing-to-a-github-project",
-      "destination": "https://geert.elt.ink/notes/contributing-to-a-github-project/",
-      "permanent": true
-    },
-    {
-      "source": "/cqrs-message-validation",
-      "destination": "https://geert.elt.ink/notes/cqrs-message-validation/",
-      "permanent": true
-    },
-    {
-      "source": "/from-jekyll-to-zend-expressive-to-vuejs-to-hugo",
-      "destination": "https://geert.elt.ink/notes/from-jekyll-to-zend-expressive-to-vue-js-to-hugo/",
-      "permanent": true
-    },
-    {
-      "source": "/git-troubleshooting",
-      "destination": "https://geert.elt.ink/notes/git-troubleshooting/",
-      "permanent": true
-    },
-    {
-      "source": "/git-workflow",
-      "destination": "https://geert.elt.ink/notes/git-workflow/",
-      "permanent": true
-    },
-    {
-      "source": "/grunt-gulp-and-npm-scripts",
-      "destination": "https://geert.elt.ink/notes/grunt-gulp-and-npm-scripts/",
-      "permanent": true
-    },
-    {
-      "source": "/how-to-setup-doctrine-for-zend-expressive",
-      "destination": "https://geert.elt.ink/notes/how-to-setup-doctrine-for-zend-expressive/",
-      "permanent": true
-    },
-    {
-      "source": "/howto-update-teamspeak-3-on-debian",
-      "destination": "https://geert.elt.ink/notes/howto-update-teamspeak-3-on-debian/",
-      "permanent": true
-    },
-    {
-      "source": "/jekyll-atom-feed",
-      "destination": "https://geert.elt.ink/notes/jekyll-atom-feed/",
-      "permanent": true
-    },
-    {
-      "source": "/one-abstract-action-factory-for-all",
-      "destination": "https://geert.elt.ink/notes/one-abstract-action-factory-for-all/",
-      "permanent": true
-    },
-    {
-      "source": "/phpstorm-psr-11-container-interface-code-completion",
-      "destination": "https://geert.elt.ink/notes/phpstorm-psr-11-container-interface-code-completion/",
-      "permanent": true
-    },
-    {
-      "source": "/phpunit-and-selenium-server-2-cheat-sheet",
-      "destination": "https://geert.elt.ink/notes/phpunit-and-selenium-server-2/",
-      "permanent": true
-    },
-    {
-      "source": "/project-documentation-with-hugo-modules",
-      "destination": "https://geert.elt.ink/notes/project-documentation-with-hugo-modules/",
-      "permanent": true
-    },
-    {
-      "source": "/running-phpunit-in-phpstorm-with-docker-compose-on-windows",
-      "destination": "https://geert.elt.ink/notes/running-phpunit-in-phpstorm-with-docker-compose-on-windows/",
-      "permanent": true
-    },
-    {
-      "source": "/symfony-2-dynamic-router",
-      "destination": "https://geert.elt.ink/notes/symfony-2-dynamic-router/",
-      "permanent": true
-    },
-    {
-      "source": "/symfony-24-flash-messages",
-      "destination": "https://geert.elt.ink/notes/symfony-2-4-flash-messages/",
-      "permanent": true
-    },
-    {
-      "source": "/symfony-26-shibboleth-login-the-easy-way",
-      "destination": "https://geert.elt.ink/notes/symfony-2-6-shibboleth-login-the-easy-way/",
-      "permanent": true
-    },
-    {
-      "source": "/using-sismo-as-your-personal-ci-server-on-windows",
-      "destination": "https://geert.elt.ink/notes/using-sismo-as-your-personal-ci-server-on-windows/",
-      "permanent": true
-    },
-    {
-      "source": "/vuejs-32-composition-api-setup-with-typescript",
-      "destination": "https://geert.elt.ink/notes/vue-js-3-2-composition-api-setup-with-typescript/",
-      "permanent": true
-    },
-    {
-      "source": "/wsl-2-and-visual-studio-code",
-      "destination": "https://geert.elt.ink/notes/wsl-2-and-visual-studio-code/",
-      "permanent": true
-    },
-    {
-      "source": "/zend-expressive-console-cli-commands",
-      "destination": "https://geert.elt.ink/notes/zend-expressive-console-cli-commands/",
-      "permanent": true
-    },
-    {
-      "source": "/zend-expressive-one-action-factory-for-all",
-      "destination": "https://geert.elt.ink/notes/zend-expressive-one-action-factory-for-all/",
-      "permanent": true
-    }
-  ]
+    ],
+    "redirects": [
+        {
+            "source": "/atom.xml",
+            "destination": "https://geert.elt.ink/feed.xml",
+            "permanent": true
+        },
+        {
+            "source": "/rss.xml",
+            "destination": "https://geert.elt.ink/feed.xml",
+            "permanent": true
+        },
+        {
+            "source": "/blog/feed.xml",
+            "destination": "https://geert.elt.ink/feed.xml",
+            "permanent": true
+        },
+        {
+            "source": "/about-the-value-of-workshops",
+            "destination": "https://geert.elt.ink/notes/about-the-value-of-workshops/",
+            "permanent": true
+        },
+        {
+            "source": "/check-git-status-recursively-on-windows",
+            "destination": "https://geert.elt.ink/notes/check-git-status-recursively-on-windows/",
+            "permanent": true
+        },
+        {
+            "source": "/container-interop-wrapper-for-pimple-30",
+            "destination": "https://geert.elt.ink/notes/container-interop-wrapper-for-pimple-3-0/",
+            "permanent": true
+        },
+        {
+            "source": "/contributing-to-a-github-project",
+            "destination": "https://geert.elt.ink/notes/contributing-to-a-github-project/",
+            "permanent": true
+        },
+        {
+            "source": "/cqrs-message-validation",
+            "destination": "https://geert.elt.ink/notes/cqrs-message-validation/",
+            "permanent": true
+        },
+        {
+            "source": "/from-jekyll-to-zend-expressive-to-vuejs-to-hugo",
+            "destination": "https://geert.elt.ink/notes/from-jekyll-to-zend-expressive-to-vue-js-to-hugo/",
+            "permanent": true
+        },
+        {
+            "source": "/git-troubleshooting",
+            "destination": "https://geert.elt.ink/notes/git-troubleshooting/",
+            "permanent": true
+        },
+        {
+            "source": "/git-workflow",
+            "destination": "https://geert.elt.ink/notes/git-workflow/",
+            "permanent": true
+        },
+        {
+            "source": "/grunt-gulp-and-npm-scripts",
+            "destination": "https://geert.elt.ink/notes/grunt-gulp-and-npm-scripts/",
+            "permanent": true
+        },
+        {
+            "source": "/how-to-setup-doctrine-for-zend-expressive",
+            "destination": "https://geert.elt.ink/notes/how-to-setup-doctrine-for-zend-expressive/",
+            "permanent": true
+        },
+        {
+            "source": "/howto-update-teamspeak-3-on-debian",
+            "destination": "https://geert.elt.ink/notes/howto-update-teamspeak-3-on-debian/",
+            "permanent": true
+        },
+        {
+            "source": "/jekyll-atom-feed",
+            "destination": "https://geert.elt.ink/notes/jekyll-atom-feed/",
+            "permanent": true
+        },
+        {
+            "source": "/one-abstract-action-factory-for-all",
+            "destination": "https://geert.elt.ink/notes/one-abstract-action-factory-for-all/",
+            "permanent": true
+        },
+        {
+            "source": "/phpstorm-psr-11-container-interface-code-completion",
+            "destination": "https://geert.elt.ink/notes/phpstorm-psr-11-container-interface-code-completion/",
+            "permanent": true
+        },
+        {
+            "source": "/phpunit-and-selenium-server-2-cheat-sheet",
+            "destination": "https://geert.elt.ink/notes/phpunit-and-selenium-server-2/",
+            "permanent": true
+        },
+        {
+            "source": "/project-documentation-with-hugo-modules",
+            "destination": "https://geert.elt.ink/notes/project-documentation-with-hugo-modules/",
+            "permanent": true
+        },
+        {
+            "source": "/running-phpunit-in-phpstorm-with-docker-compose-on-windows",
+            "destination": "https://geert.elt.ink/notes/running-phpunit-in-phpstorm-with-docker-compose-on-windows/",
+            "permanent": true
+        },
+        {
+            "source": "/symfony-2-dynamic-router",
+            "destination": "https://geert.elt.ink/notes/symfony-2-dynamic-router/",
+            "permanent": true
+        },
+        {
+            "source": "/symfony-24-flash-messages",
+            "destination": "https://geert.elt.ink/notes/symfony-2-4-flash-messages/",
+            "permanent": true
+        },
+        {
+            "source": "/symfony-26-shibboleth-login-the-easy-way",
+            "destination": "https://geert.elt.ink/notes/symfony-2-6-shibboleth-login-the-easy-way/",
+            "permanent": true
+        },
+        {
+            "source": "/using-sismo-as-your-personal-ci-server-on-windows",
+            "destination": "https://geert.elt.ink/notes/using-sismo-as-your-personal-ci-server-on-windows/",
+            "permanent": true
+        },
+        {
+            "source": "/vuejs-32-composition-api-setup-with-typescript",
+            "destination": "https://geert.elt.ink/notes/vue-js-3-2-composition-api-setup-with-typescript/",
+            "permanent": true
+        },
+        {
+            "source": "/wsl-2-and-visual-studio-code",
+            "destination": "https://geert.elt.ink/notes/wsl-2-and-visual-studio-code/",
+            "permanent": true
+        },
+        {
+            "source": "/zend-expressive-console-cli-commands",
+            "destination": "https://geert.elt.ink/notes/zend-expressive-console-cli-commands/",
+            "permanent": true
+        },
+        {
+            "source": "/zend-expressive-one-action-factory-for-all",
+            "destination": "https://geert.elt.ink/notes/zend-expressive-one-action-factory-for-all/",
+            "permanent": true
+        }
+    ]
 }
