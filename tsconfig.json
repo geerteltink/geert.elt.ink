@@ -10,6 +10,8 @@
       "@layouts/*": ["src/layouts/*"],
       "@lib/*": ["src/lib/*"]
     },
+    "strictNullChecks": true,
+    "allowJs": true,
     "jsx": "preserve"
   },
   "include": ["**/*", ".eslintrc.cjs"],

@@ -1,7 +1,7 @@
 ---
 title: 'Advent of Code'
 description: 'Participating in Advent of Code for the first time and learning a new language.'
-slug: advent-of-code
+slug: "advent-of-code"
 pubDate: 2022-12-04
 tags:
   - advent of code

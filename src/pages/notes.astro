@@ -14,14 +14,14 @@ const notes = (await getCollection('notes')).sort(
     <ul>
       {notes.map((note) => (
         <li>
-          <time datetime={note.frontmatter.pubDate}>
-            {new Date(note.frontmatter.pubDate).toLocaleDateString('en-us', {
+          <time datetime={note.data.pubDate.toISOString()}>
+            {new Date(note.data.pubDate).toLocaleDateString('en-us', {
               year: 'numeric',
               month: 'short',
               day: 'numeric',
             })}
           </time>
-          <a href={note.url}>{note.frontmatter.title}</a>
+          <a href={`/notes/${note.slug}`}>{note.data.title}</a>
         </li>
       ))}
     </ul>
