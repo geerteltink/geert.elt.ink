@@ -1,6 +1,6 @@
 # https://geert.elt.ink/
 
-[![continuous-integration](https://github.com/geerteltink/geert.elt.ink/actions/workflows/ci.yml/badge.svg)](https://github.com/geerteltink/geert.elt.ink/actions/workflows/ci.yml)
+[![continuous-integration](https://github.com/geerteltink/geert.elt.ink/actions/workflows/continuous-integration.yml/badge.svg)](https://github.com/geerteltink/geert.elt.ink/actions/workflows/continuous-integration.yml)
 
 This repo contains the source code for [geert.elt.ink](https://geert.elt.ink/). It
 has changed over time. First it started with Jekyll, followed by zend-expressive.
