@@ -3,14 +3,14 @@ title: "From Jekyll to zend-expressive to Vue.js to Hugo"
 description: "From Jekyll to zend-expressive to Vue.js to Hugo."
 slug: "from-jekyll-to-zend-expressive-to-vue-js-to-hugo"
 pubDate: "2019-09-24"
+coverImage: "/src/assets/logo-hugo.png"
+coverImageAlt: "Hugo"
 tags:
   - "jekyll"
   - "zend-expressive"
   - "hugo"
   - "vue.js"
 ---
-
-{% image "./src/assets/images/logo-hugo.png", "Hugo" %}
 
 Back in [2013](/notes/hello-world/), I started this blog based on Jekyll. A static generated site, hosted on GitHub pages. It did its job good and was ok to work with.
 

@@ -3,6 +3,8 @@ title: "Project documentation with Hugo Modules"
 description: "Generating multi project documentation with Hugo Modules blazing fast."
 slug: "project-documentation-with-hugo-modules"
 pubDate: "2019-11-09"
+coverImage: "/src/assets/logo-hugo.png"
+coverImageAlt: "Hugo"
 tags:
   - "documentation"
   - "hugo"
@@ -10,8 +12,6 @@ tags:
   - "github-actions"
   - "github-pages"
 ---
-
-{% image "./src/assets/images/logo-hugo.png", "Hugo" %}
 
 Recently I changed my GitHub account name and converted my old username to an organization. My important projects are now nicely grouped into that organization and not hidden between all forked projects. Each project comes with documentation but so far it was a mess. One project used the GitHub wiki, another one used only the main readme. It's time to bring some order into the chaos. The question was how?
 

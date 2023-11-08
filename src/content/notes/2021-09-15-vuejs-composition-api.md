@@ -3,11 +3,11 @@ title: "Vue.js 3.2 Composition API Setup with TypeScript"
 description: "If you have the opportunity to attend conferences, talks or a workshop, just go for it!"
 slug: "vue-js-3-2-composition-api-setup-with-typescript"
 pubDate: "2021-09-15"
+coverImage: "/src/assets/logo-vuejs.png"
+coverImageAlt: "Vue.js"
 tags:
   - "vue.js"
 ---
-
-{% image "./src/assets/images/logo-vuejs.png", "Vue.js" %}
 
 Since Vue.js 3.2 you can use the `<script setup>` compile-time syntactic sugar for using Composition API inside Single File Components (SFCs). It is now the recommended syntax if you are using both SFCs and Composition API.
 

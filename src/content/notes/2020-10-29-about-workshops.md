@@ -3,14 +3,14 @@ title: "About the value of workshops"
 description: "If you have the opportunity to attend conferences, talks or a workshop, just go for it!"
 slug: "about-the-value-of-workshops"
 pubDate: "2020-10-29"
+coverImage: "/src/assets/workshop.jpeg"
+coverImageAlt: "Workshop"
 tags:
   - "knowledge"
   - "books"
   - "conferences"
   - "workshops"
 ---
-
-{% image "./src/assets/images/workshop.jpeg", "Workshop" %}
 
 Yesterday we had the second remote workshop from this year. It was about application architecture. What surprised me was that some knowledge I picked up the past years turned out to be wrong. In my life, I haven't had the luck to attend conferences. I simply didn't have the money for it. As a freelancer in the south of Spain, paying hundreds of euros to attend a conference is just too much, or at least I thought. My knowledge I gained by reading others code, contribute to open source projects and reading books.
 

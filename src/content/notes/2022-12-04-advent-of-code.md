@@ -3,12 +3,12 @@ title: "Advent of Code"
 description: "Participating in Advent of Code for the first time and learning a new language."
 slug: "advent-of-code"
 pubDate: "2022-12-04"
+coverImage: "/src/assets/advent-of-code.png"
+coverImageAlt: "Advent of Code"
 tags:
   - "advent-of-code"
   - "rust"
 ---
-
-{% image "./src/assets/images/advent-of-code.png", "Advent of Code" %}
 
 The Advent of Code is an annual Advent calendar of small programming puzzles for a variety of skill sets and skill levels that can be solved in any programming language you like.
 

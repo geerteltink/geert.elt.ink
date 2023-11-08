@@ -3,14 +3,14 @@ title: "Running PHPUnit in PhpStorm with docker-compose on Windows"
 description: "Setup PhpStorm with docker-compose and PHPUnit integration on Windows."
 slug: "running-phpunit-in-phpstorm-with-docker-compose-on-windows"
 pubDate: "2017-12-03"
+coverImage: "/src/assets/phpstorm.png"
+coverImageAlt: "PhpStorm"
 tags:
   - "phpstorm"
   - "phpunit"
   - "docker-compose"
   - "windows"
 ---
-
-{% image "./src/assets/images/phpstorm.png", "PhpStorm" %}
 
 I've followed some guides on how to setup PhpStorm with docker-compose but I never got it to work. I decided to start from scratch and forget about all the guides.
 
