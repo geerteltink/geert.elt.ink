@@ -5,9 +5,9 @@ export interface Props extends astroHTML.JSX.AnchorHTMLAttributes {}
 // const isActive = href === Astro.url.pathname;
 
 const navLinks: { label: string; href: string }[] = [
-	{ label: 'Notes', href: '/notes/' },
-	{ label: 'Now', href: '/now/' },
-	{ label: 'About', href: '/about/' },
+  { label: 'Notes', href: '/notes/' },
+  { label: 'Now', href: '/now/' },
+  { label: 'About', href: '/about/' },
 ];
 ---
 
@@ -20,37 +20,39 @@ const navLinks: { label: string; href: string }[] = [
           <div class="h6">Software engineer and architect</div>
         </a>
       </li>
-        {
-            navLinks.map(({ label, href }) => (
-                <li class="px-3">
-                    <a
-                        aria-current={Astro.url.pathname === href}
-                        class:list={[
-                            'h4', 'text-decoration-none', 'text-primary',
-                            {
-                                active:
-                                    Astro.url.pathname === href ||
-                                    (href !== '/' && Astro.url.pathname.startsWith(href)),
-                            },
-                        ]}
-                        href={href}
-                    >
-                        {label}
-                    </a>
-                </li>
-            ))
-        }
+      {
+        navLinks.map(({ label, href }) => (
+          <li class="px-3">
+            <a
+              aria-current={Astro.url.pathname === href}
+              class:list={[
+                'h4',
+                'text-decoration-none',
+                'text-primary',
+                {
+                  active:
+                    Astro.url.pathname === href ||
+                    (href !== '/' && Astro.url.pathname.startsWith(href)),
+                },
+              ]}
+              href={href}
+            >
+              {label}
+            </a>
+          </li>
+        ))
+      }
     </ul>
   </nav>
 </header>
 
 <style>
-	a {
-		display: inline-block;
-		text-decoration: none;
-	}
-	a.active {
-		font-weight: bolder;
-		text-decoration: underline;
-	}
+  a {
+    display: inline-block;
+    text-decoration: none;
+  }
+  a.active {
+    font-weight: bolder;
+    text-decoration: underline;
+  }
 </style>
