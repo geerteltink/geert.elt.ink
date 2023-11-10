@@ -1,0 +1,115 @@
+---
+title: "Astro Islands with Vue Components"
+description: "Using Vue Components inside Astro"
+slug: "astro-islands-with-vue"
+published: "2023-11-11"
+coverImage: "~/assets/logo-vuejs.png"
+coverImageAlt: "Vue and Astro"
+tags:
+  - "vue"
+  - "astro"
+---
+
+Component Islands are a pattern of web architecture pioneered by Astro. The idea of “islands
+architecture” was first coined by Etsy’s frontend architect Katie Sylor-Miller in 2019, and
+expanded on by Preact creator Jason Miller.
+
+Astro has it build in and calls it “Astro Island”. The term refers to an interactive UI
+component on an otherwise static page of HTML. Multiple islands can exist on a page, and an
+island always renders in isolation.
+
+Astro generates every website with zero client-side JavaScript, by default. Use a frontend UI
+component built with React, Preact, Svelte, Vue, SolidJS, AlpineJS, or Lit and Astro will
+automatically render it to HTML ahead of time and then strip out all of the JavaScript. This
+keeps every site fast by default by removing all unused JavaScript from the page.
+
+import HelloVue from '~/components/examples/HelloVue.vue';
+
+<HelloVue message="Hello, Vue!" />
+
+The hello Vue header above is such Astro Island. If you look at the source code, it's just an
+html h1 element, with the text in it. Behind it is a Vue component which was imported during
+rendering this page to static html. Since the HelloVue component does not have any dynamic
+parts, the output is only what the component produced.
+
+The source code for this:
+
+```vue
+<script setup>
+import { ref } from 'vue'
+
+const message = ref('Hello Vue!')
+</script>
+
+<template>
+  <h1>{{ message }}</h1>
+</template>
+```
+
+To display it inside the page the component is imported and used:
+
+```js
+import HelloVue from '~/components/examples/HelloVue.vue';
+
+<HelloVue message="Hello, Vue!" />
+```
+
+## A dynamic counter
+
+Astro Islands also support dynamic components. Meaning that all the code which is needed is
+added to the page. When a user opens the page, the component is started. A basic example is
+a counter which updates when you click the button:
+
+import Counter from '~/components/examples/Counter.vue';
+
+<Counter client:visible />
+
+The source code for the component:
+
+```vue
+<script setup>
+import { ref } from 'vue'
+
+const count = ref(0)
+</script>
+
+<template>
+  {{ count }}
+  <button @click="count++">Count</button>
+</template>
+```
+
+To include it in a page:
+
+```js
+import Counter from '~/components/examples/Counter.vue';
+
+<Counter client:visible />
+```
+
+You can tell Astro exactly how and when to render each component. If that counter would be really
+expensive to load, you can attach a special client directive that tells Astro to only load the
+component when it becomes visible on the page. If the user never sees it, it never loads.
+
+To add vue.js support to your Astro site, [install](https://docs.astro.build/en/guides/integrations-guide/vue/)
+it like this:
+
+```bash
+npm install @astrojs/vue vue
+```
+
+Activate it in `astro.config.mjs`:
+
+```js
+import { defineConfig } from 'astro/config';
+import vue from '@astrojs/vue';
+
+export default defineConfig({
+  // ...
+  integrations: [vue()],
+  //             ^^^^^
+});
+```
+
+If you want to know more, the astro docs has more info about using
+[framework components](https://docs.astro.build/en/core-concepts/framework-components/#using-framework-components).

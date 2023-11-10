@@ -185,202 +185,209 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"notes": {
-"2013-11-05-hello-world.md": {
-	id: "2013-11-05-hello-world.md";
+"2013-11-05-hello-world.mdx": {
+	id: "2013-11-05-hello-world.mdx";
   slug: "hello-world";
   body: string;
   collection: "notes";
   data: InferEntrySchema<"notes">
-} & { render(): Render[".md"] };
-"2013-12-06-symfony-2-flash-messages.md": {
-	id: "2013-12-06-symfony-2-flash-messages.md";
+} & { render(): Render[".mdx"] };
+"2013-12-06-symfony-2-flash-messages.mdx": {
+	id: "2013-12-06-symfony-2-flash-messages.mdx";
   slug: "symfony-2-flash-messages";
   body: string;
   collection: "notes";
   data: InferEntrySchema<"notes">
-} & { render(): Render[".md"] };
-"2014-06-20-jekyll-atom-feed.md": {
-	id: "2014-06-20-jekyll-atom-feed.md";
+} & { render(): Render[".mdx"] };
+"2014-06-20-jekyll-atom-feed.mdx": {
+	id: "2014-06-20-jekyll-atom-feed.mdx";
   slug: "jekyll-atom-feed";
   body: string;
   collection: "notes";
   data: InferEntrySchema<"notes">
-} & { render(): Render[".md"] };
-"2014-10-02-symfony-2-dynamic-router.md": {
-	id: "2014-10-02-symfony-2-dynamic-router.md";
+} & { render(): Render[".mdx"] };
+"2014-10-02-symfony-2-dynamic-router.mdx": {
+	id: "2014-10-02-symfony-2-dynamic-router.mdx";
   slug: "symfony-2-dynamic-router";
   body: string;
   collection: "notes";
   data: InferEntrySchema<"notes">
-} & { render(): Render[".md"] };
-"2014-11-03-howto-update-teamspeak-3.md": {
-	id: "2014-11-03-howto-update-teamspeak-3.md";
+} & { render(): Render[".mdx"] };
+"2014-11-03-howto-update-teamspeak-3.mdx": {
+	id: "2014-11-03-howto-update-teamspeak-3.mdx";
   slug: "howto-update-teamspeak-3-on-debian";
   body: string;
   collection: "notes";
   data: InferEntrySchema<"notes">
-} & { render(): Render[".md"] };
-"2014-11-04-phpunit-selenium-2.md": {
-	id: "2014-11-04-phpunit-selenium-2.md";
+} & { render(): Render[".mdx"] };
+"2014-11-04-phpunit-selenium-2.mdx": {
+	id: "2014-11-04-phpunit-selenium-2.mdx";
   slug: "phpunit-and-selenium-server-2";
   body: string;
   collection: "notes";
   data: InferEntrySchema<"notes">
-} & { render(): Render[".md"] };
-"2014-11-10-using-sismo-as-your-local-continuous-integration-server.md": {
-	id: "2014-11-10-using-sismo-as-your-local-continuous-integration-server.md";
+} & { render(): Render[".mdx"] };
+"2014-11-10-using-sismo-as-your-local-continuous-integration-server.mdx": {
+	id: "2014-11-10-using-sismo-as-your-local-continuous-integration-server.mdx";
   slug: "using-sismo-as-your-personal-ci-server-on-windows";
   body: string;
   collection: "notes";
   data: InferEntrySchema<"notes">
-} & { render(): Render[".md"] };
-"2015-01-24-check-git-status-recursively-on-windows.md": {
-	id: "2015-01-24-check-git-status-recursively-on-windows.md";
+} & { render(): Render[".mdx"] };
+"2015-01-24-check-git-status-recursively-on-windows.mdx": {
+	id: "2015-01-24-check-git-status-recursively-on-windows.mdx";
   slug: "check-git-status-recursively-on-windows";
   body: string;
   collection: "notes";
   data: InferEntrySchema<"notes">
-} & { render(): Render[".md"] };
-"2015-03-13-grunt-gulp-and-npm.md": {
-	id: "2015-03-13-grunt-gulp-and-npm.md";
+} & { render(): Render[".mdx"] };
+"2015-03-13-grunt-gulp-and-npm.mdx": {
+	id: "2015-03-13-grunt-gulp-and-npm.mdx";
   slug: "grunt-gulp-and-npm";
   body: string;
   collection: "notes";
   data: InferEntrySchema<"notes">
-} & { render(): Render[".md"] };
-"2015-05-20-git-workflow.md": {
-	id: "2015-05-20-git-workflow.md";
+} & { render(): Render[".mdx"] };
+"2015-05-20-git-workflow.mdx": {
+	id: "2015-05-20-git-workflow.mdx";
   slug: "git-workflow";
   body: string;
   collection: "notes";
   data: InferEntrySchema<"notes">
-} & { render(): Render[".md"] };
-"2015-05-21-git-troubleshooting.md": {
-	id: "2015-05-21-git-troubleshooting.md";
+} & { render(): Render[".mdx"] };
+"2015-05-21-git-troubleshooting.mdx": {
+	id: "2015-05-21-git-troubleshooting.mdx";
   slug: "git-troubleshooting";
   body: string;
   collection: "notes";
   data: InferEntrySchema<"notes">
-} & { render(): Render[".md"] };
-"2015-06-04-symfony-shibboleth-login-the-easy-way.md": {
-	id: "2015-06-04-symfony-shibboleth-login-the-easy-way.md";
+} & { render(): Render[".mdx"] };
+"2015-06-04-symfony-shibboleth-login-the-easy-way.mdx": {
+	id: "2015-06-04-symfony-shibboleth-login-the-easy-way.mdx";
   slug: "symfony-2-6-shibboleth-login-the-easy-way";
   body: string;
   collection: "notes";
   data: InferEntrySchema<"notes">
-} & { render(): Render[".md"] };
-"2015-09-07-pimple-3-container-interop.md": {
-	id: "2015-09-07-pimple-3-container-interop.md";
+} & { render(): Render[".mdx"] };
+"2015-09-07-pimple-3-container-interop.mdx": {
+	id: "2015-09-07-pimple-3-container-interop.mdx";
   slug: "container-interop-wrapper-for-pimple-3-0";
   body: string;
   collection: "notes";
   data: InferEntrySchema<"notes">
-} & { render(): Render[".md"] };
-"2015-12-09-contributing-to-github-projects.md": {
-	id: "2015-12-09-contributing-to-github-projects.md";
+} & { render(): Render[".mdx"] };
+"2015-12-09-contributing-to-github-projects.mdx": {
+	id: "2015-12-09-contributing-to-github-projects.mdx";
   slug: "contributing-to-a-github-project";
   body: string;
   collection: "notes";
   data: InferEntrySchema<"notes">
-} & { render(): Render[".md"] };
-"2015-12-12-setup-doctrine-for-zend-expressive.md": {
-	id: "2015-12-12-setup-doctrine-for-zend-expressive.md";
+} & { render(): Render[".mdx"] };
+"2015-12-12-setup-doctrine-for-zend-expressive.mdx": {
+	id: "2015-12-12-setup-doctrine-for-zend-expressive.mdx";
   slug: "how-to-setup-doctrine-for-zend-expressive";
   body: string;
   collection: "notes";
   data: InferEntrySchema<"notes">
-} & { render(): Render[".md"] };
-"2015-12-14-phpstorm-container-interop-code-completion.md": {
-	id: "2015-12-14-phpstorm-container-interop-code-completion.md";
+} & { render(): Render[".mdx"] };
+"2015-12-14-phpstorm-container-interop-code-completion.mdx": {
+	id: "2015-12-14-phpstorm-container-interop-code-completion.mdx";
   slug: "phpstorm-psr-11-container-interface-code-completion";
   body: string;
   collection: "notes";
   data: InferEntrySchema<"notes">
-} & { render(): Render[".md"] };
-"2015-12-29-zend-expressive-action-factory-one-for-all.md": {
-	id: "2015-12-29-zend-expressive-action-factory-one-for-all.md";
+} & { render(): Render[".mdx"] };
+"2015-12-29-zend-expressive-action-factory-one-for-all.mdx": {
+	id: "2015-12-29-zend-expressive-action-factory-one-for-all.mdx";
   slug: "zend-expressive-one-action-factory-for-all";
   body: string;
   collection: "notes";
   data: InferEntrySchema<"notes">
-} & { render(): Render[".md"] };
-"2015-12-30-psr7-abstract-action-factory-one-for-all.md": {
-	id: "2015-12-30-psr7-abstract-action-factory-one-for-all.md";
+} & { render(): Render[".mdx"] };
+"2015-12-30-psr7-abstract-action-factory-one-for-all.mdx": {
+	id: "2015-12-30-psr7-abstract-action-factory-one-for-all.mdx";
   slug: "one-abstract-action-factory-for-all";
   body: string;
   collection: "notes";
   data: InferEntrySchema<"notes">
-} & { render(): Render[".md"] };
-"2016-02-07-zend-expressive-console-cli-commands.md": {
-	id: "2016-02-07-zend-expressive-console-cli-commands.md";
+} & { render(): Render[".mdx"] };
+"2016-02-07-zend-expressive-console-cli-commands.mdx": {
+	id: "2016-02-07-zend-expressive-console-cli-commands.mdx";
   slug: "zend-expressive-console-cli-commands";
   body: string;
   collection: "notes";
   data: InferEntrySchema<"notes">
-} & { render(): Render[".md"] };
-"2017-12-03-phpstorm-phpunit-docker-compose-windows.md": {
-	id: "2017-12-03-phpstorm-phpunit-docker-compose-windows.md";
+} & { render(): Render[".mdx"] };
+"2017-12-03-phpstorm-phpunit-docker-compose-windows.mdx": {
+	id: "2017-12-03-phpstorm-phpunit-docker-compose-windows.mdx";
   slug: "running-phpunit-in-phpstorm-with-docker-compose-on-windows";
   body: string;
   collection: "notes";
   data: InferEntrySchema<"notes">
-} & { render(): Render[".md"] };
-"2018-08-26-cqrs-message-validation.md": {
-	id: "2018-08-26-cqrs-message-validation.md";
+} & { render(): Render[".mdx"] };
+"2018-08-26-cqrs-message-validation.mdx": {
+	id: "2018-08-26-cqrs-message-validation.mdx";
   slug: "cqrs-message-validation";
   body: string;
   collection: "notes";
   data: InferEntrySchema<"notes">
-} & { render(): Render[".md"] };
-"2019-09-24-from-jekyll-to-expressive-to-vue-to-hugo.md": {
-	id: "2019-09-24-from-jekyll-to-expressive-to-vue-to-hugo.md";
+} & { render(): Render[".mdx"] };
+"2019-09-24-from-jekyll-to-expressive-to-vue-to-hugo.mdx": {
+	id: "2019-09-24-from-jekyll-to-expressive-to-vue-to-hugo.mdx";
   slug: "from-jekyll-to-zend-expressive-to-vue-js-to-hugo";
   body: string;
   collection: "notes";
   data: InferEntrySchema<"notes">
-} & { render(): Render[".md"] };
-"2019-09-28-wsl2.md": {
-	id: "2019-09-28-wsl2.md";
+} & { render(): Render[".mdx"] };
+"2019-09-28-wsl2.mdx": {
+	id: "2019-09-28-wsl2.mdx";
   slug: "wsl-2-and-visual-studio-code";
   body: string;
   collection: "notes";
   data: InferEntrySchema<"notes">
-} & { render(): Render[".md"] };
-"2019-11-09-project-documentation-with-hugo.md": {
-	id: "2019-11-09-project-documentation-with-hugo.md";
+} & { render(): Render[".mdx"] };
+"2019-11-09-project-documentation-with-hugo.mdx": {
+	id: "2019-11-09-project-documentation-with-hugo.mdx";
   slug: "project-documentation-with-hugo-modules";
   body: string;
   collection: "notes";
   data: InferEntrySchema<"notes">
-} & { render(): Render[".md"] };
-"2020-10-29-about-workshops.md": {
-	id: "2020-10-29-about-workshops.md";
+} & { render(): Render[".mdx"] };
+"2020-10-29-about-workshops.mdx": {
+	id: "2020-10-29-about-workshops.mdx";
   slug: "about-the-value-of-workshops";
   body: string;
   collection: "notes";
   data: InferEntrySchema<"notes">
-} & { render(): Render[".md"] };
-"2021-09-15-vuejs-composition-api.md": {
-	id: "2021-09-15-vuejs-composition-api.md";
+} & { render(): Render[".mdx"] };
+"2021-09-15-vuejs-composition-api.mdx": {
+	id: "2021-09-15-vuejs-composition-api.mdx";
   slug: "vue-js-3-2-composition-api-setup-with-typescript";
   body: string;
   collection: "notes";
   data: InferEntrySchema<"notes">
-} & { render(): Render[".md"] };
-"2022-07-16-git-squash-branch.md": {
-	id: "2022-07-16-git-squash-branch.md";
+} & { render(): Render[".mdx"] };
+"2022-07-16-git-squash-branch.mdx": {
+	id: "2022-07-16-git-squash-branch.mdx";
   slug: "git-squash-all-commits-in-a-branch";
   body: string;
   collection: "notes";
   data: InferEntrySchema<"notes">
-} & { render(): Render[".md"] };
-"2022-12-04-advent-of-code.md": {
-	id: "2022-12-04-advent-of-code.md";
+} & { render(): Render[".mdx"] };
+"2022-12-04-advent-of-code.mdx": {
+	id: "2022-12-04-advent-of-code.mdx";
   slug: "advent-of-code";
   body: string;
   collection: "notes";
   data: InferEntrySchema<"notes">
-} & { render(): Render[".md"] };
+} & { render(): Render[".mdx"] };
+"2023-11-11-astro-islands-with-vue.mdx": {
+	id: "2023-11-11-astro-islands-with-vue.mdx";
+  slug: "astro-islands-with-vue";
+  body: string;
+  collection: "notes";
+  data: InferEntrySchema<"notes">
+} & { render(): Render[".mdx"] };
 };
 
 	};

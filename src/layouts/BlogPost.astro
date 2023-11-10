@@ -1,20 +1,20 @@
 ---
-import Layout from '@layouts/Layout.astro';
-import CoverImage from "@components/CoverImage.astro";
+import Layout from '~/layouts/Layout.astro';
+import CoverImage from '~/components/CoverImage.astro';
 import { format, formatISO } from 'date-fns';
 
 export interface Props {
-	content: {
-		title: string;
-		summary: string;
-		pubDate?: string;
-		updatedDate?: string;
-		heroImage?: string;
-	};
+  content: {
+    title: string;
+    summary: string;
+    pubDate?: string;
+    updatedDate?: string;
+    heroImage?: string;
+  };
 }
 
 const {
-	content: { title, pubDate, updatedDate, heroImage },
+  content: { title, pubDate, updatedDate, heroImage },
 } = Astro.props;
 
 const published = pubDate && new Date(pubDate);
@@ -23,13 +23,29 @@ const updated = updatedDate && new Date(updatedDate);
 
 <Layout>
   <article>
-    {heroImage && <div class="cover-image">
-      <CoverImage src={heroImage} alt={title} aspectRatio="21:9" />
-    </div>}
+    {
+      heroImage && (
+        <div class="cover-image">
+          <CoverImage src={heroImage} alt={title} aspectRatio="21:9" />
+        </div>
+      )
+    }
     <h1>{title}</h1>
     <div class="mb-3 text-disabled">
-      {published && <time datetime={formatISO(published, { representation: 'date' })}>Published: {format(published, 'PPP')}</time>}
-      {updated && <time datetime={formatISO(updated, { representation: 'date' })}>Modified: {format(updated, 'PPP')}</time>}
+      {
+        published && (
+          <time datetime={formatISO(published, { representation: 'date' })}>
+            Published: {format(published, 'PPP')}
+          </time>
+        )
+      }
+      {
+        updated && (
+          <time datetime={formatISO(updated, { representation: 'date' })}>
+            Modified: {format(updated, 'PPP')}
+          </time>
+        )
+      }
     </div>
     <slot />
   </article>

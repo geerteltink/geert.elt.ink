@@ -1,0 +1,22 @@
+---
+export type Props = {
+  type?: string;
+  title?: string;
+};
+---
+
+<div class="callout">
+  <div class="callout-title">
+    <div class="callout-icon"></div>
+    <div class="callout-title-inner">{Astro.props.title ?? Astro.props.type}</div>
+  </div>
+  <div class="callout-content">
+    <slot />
+  </div>
+</div>
+
+<style scoped>
+  .callout-title-inner::first-letter {
+    text-transform: capitalize;
+  }
+</style>
