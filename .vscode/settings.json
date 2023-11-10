@@ -1,0 +1,19 @@
+{
+  // define rulers to match the prettier config length of 100
+  "editor.rulers": [120],
+
+  // organize imports (removes unused), then eslint fix on save
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true,
+    "source.fixAll": true
+  },
+  "editor.formatOnSave": true,
+
+  // prefer .js extension on imports
+  "javascript.preferences.importModuleSpecifierEnding": "js",
+  "typescript.preferences.importModuleSpecifierEnding": "js",
+
+  // use local typescript version
+  "typescript.tsdk": "node_modules/typescript/lib"
+}
