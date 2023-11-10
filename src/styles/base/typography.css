@@ -120,7 +120,7 @@ ul {
 }
 
 blockquote {
-  max-inline-size: 48ch;
+  max-inline-size: 68ch;
   padding-left: var(--space-s);
   margin: 0 0 var(--space-s) var(--space-2xs);
 
