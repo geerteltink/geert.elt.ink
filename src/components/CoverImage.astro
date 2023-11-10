@@ -4,7 +4,9 @@ import { Image } from 'astro:assets';
 const { src, alt } = Astro.props;
 ---
 
-<Image src={src} alt={alt} widths={[400, 800, 1280, 1920]} sizes="100vw" />
+<div class="ratio ratio-21x9">
+  <Image src={src} alt={alt} widths={[400, 800, 1280, 1920]} sizes="100vw" />
+</div>
 
 <style>
   img,
