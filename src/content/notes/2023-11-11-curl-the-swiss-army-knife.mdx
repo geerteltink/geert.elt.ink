@@ -28,21 +28,21 @@ curl --header "Content-Type: application/json" \
 ## REST API Commands
 
 ```bash
-# GET
+# Get: GET
 curl --get https://example.com/users/123
 
-# POST
+# Create: POST
 curl --header "Content-Type: application/json" \
   --data '{"hello":"world"}' \
   https://example.com/users
 
-# PUT
+# Update: PUT
 curl --header "Content-Type: application/json" \
   --request PUT \
   --data '{"hello":"world"}' \
   https://example.com/users/123
 
-# DELETE
+# Remove: DELETE
 curl --request DELETE https://example.com/users/123
 ```
 
