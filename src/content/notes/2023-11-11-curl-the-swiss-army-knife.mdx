@@ -32,10 +32,15 @@ curl --header "Content-Type: application/json" \
 curl --get https://example.com/users/123
 
 # POST
-curl --header "Content-Type: application/json" --data '{"hello":"world"}' https://example.com/users
+curl --header "Content-Type: application/json" \
+  --data '{"hello":"world"}' \
+  https://example.com/users
 
 # PUT
-curl --header "Content-Type: application/json" --request PUT --data '{"hello":"world"}' https://example.com/users/123
+curl --header "Content-Type: application/json" \
+  --request PUT \
+  --data '{"hello":"world"}' \
+  https://example.com/users/123
 
 # DELETE
 curl --request DELETE https://example.com/users/123
