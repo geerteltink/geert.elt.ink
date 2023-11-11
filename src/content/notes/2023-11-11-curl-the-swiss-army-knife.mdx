@@ -1,0 +1,109 @@
+---
+title: "Using cURL to test your REST API"
+description: "cURL is like the Swiss army knife for REST API."
+slug: "curl-the-swiss-army-knife"
+published: "2023-11-11"
+coverImage: "~/assets/swiss-army-knife.png"
+coverImageAlt: "cURL the Swiss army knife"
+tags:
+  - "curl"
+  - "rest"
+  - "api"
+---
+
+Client URL ([cURL](https://curl.se/)) is a command line utility that supports data
+exchange between client and server via many protocols, including HTTP and HTTPS.
+
+## Setting the Content-Type
+
+When sending data the default Content-Type is `application/x-www-form-urlencoded` for cURL. The
+API is probably not accepting it. To send json you need to set the content-type to
+`application/json`.
+
+```bash
+curl --header "Content-Type: application/json" \
+  --request POST \
+  --data '{"username":"xyz", "password":"xyz"}' \
+  https://example.com/users
+```
+
+## REST API Commands
+
+```bash
+# Get: GET
+curl --get https://example.com/users/123
+
+# Create: POST
+curl --header "Content-Type: application/json" \
+  --data '{"hello":"world"}' \
+  https://example.com/users
+
+# Update: PUT
+curl --header "Content-Type: application/json" \
+  --request PUT \
+  --data '{"hello":"world"}' \
+  https://example.com/users/123
+
+# Remove: DELETE
+curl --request DELETE https://example.com/users/123
+```
+
+## Authorization
+
+Headers can be set with either the `-H` or `--header` option. For example you can set an
+authentication header including a Bearer token:
+
+```bash
+curl -H "Authorization: Bearer <JWT Access Token>" https://example.com/users
+```
+
+## Post Content of a File
+
+If you have a huge json payload, it is easier to place it in a file and let cURL upload the
+content directly.
+
+```bash
+curl --header "Content-Type: application/json" \
+  --request POST \
+  --data "@payload.json" \
+  https://example.com/users
+```
+
+cURL supports sending the raw text via files using the `--data` option together with using
+the `@filename` notation.
+
+## Using Certificates
+
+APIs often use SSL/TLS encryption for secure connections and protect data. To verify the SSL/TLS
+certificate presented by the server, use the --cacert, --cert, and --key options.
+
+`--cacert`: The path to the CA certificate to verify the server's certificate.
+`--cert`: The path to the client's SSL/TLS certificate, to identify the client.
+`--key`: The path to the client's private key, to authenticate the client.
+
+```bash
+curl --header "Content-Type: application/json" \
+  --cacert ca.pem --cert client.pem --key client.key \
+  --request POST \
+  --data "@payload.json" \
+  https://example.com/users
+```
+
+## Debugging the Request
+
+To figure out what is going on during the request you can view the request headers in the output
+with either `-v`, `--verbose`.
+
+To view the response headers in the output you can use `-i` or `--include`.
+
+```bash
+curl -v -i -H "Content-Type: application/json" -d "@payload.json" https://example.com/users
+```
+
+## Bonus: Testing Webhooks
+
+With [webhook.site](https://webhook.site/), you instantly get a unique, random URL and e-mail
+address. Everything that's sent to these addresses are shown instantly. With this, you can test
+and debug Webhooks and HTTP requests, as well as create your own workflows using the Custom Actions
+graphical editor or WebhookScript, a simple scripting language, to transform, validate and process
+HTTP requests in a variety of ways - without setting up and maintaining your own infrastructure.
