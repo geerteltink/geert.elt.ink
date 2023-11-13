@@ -1,21 +1,18 @@
 ---
-import Footer from '~/components/Footer.astro';
-import Header from '~/components/Header.astro';
-import HeadMeta from '~/components/HeadMeta.astro';
 import { ViewTransitions } from 'astro:transitions';
+import Footer from '~/components/Footer.astro';
+import HeadMeta, { type Props as HeadMetaProps } from '~/components/HeadMeta.astro';
+import Header from '~/components/Header.astro';
 
-interface Props {
-  title?: string | undefined;
-  description?: string | undefined;
-}
+export type Props = HeadMetaProps;
 
-const { title, description } = Astro.props;
+const { ...head } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <HeadMeta title={title} description={description} />
+    <HeadMeta {...head} />
     <ViewTransitions />
   </head>
   <body class="page">

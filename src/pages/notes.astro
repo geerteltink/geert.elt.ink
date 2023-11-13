@@ -1,6 +1,6 @@
 ---
-import Layout from '~/layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import Layout from '~/layouts/Layout.astro';
 
 const notes = (await getCollection('notes')).sort(
   (a, b) => b.data.published.valueOf() - a.data.published.valueOf()

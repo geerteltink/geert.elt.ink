@@ -1,26 +1,26 @@
 .ratio {
-    position: relative;
-    width: 100%;
+  position: relative;
+  width: 100%;
 }
 
 .ratio::before {
-    display: block;
-    padding-top: var(--bs-aspect-ratio);
-    content: "";
+  display: block;
+  padding-top: var(--bs-aspect-ratio);
+  content: '';
 }
 
-.ratio>* {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.ratio > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .ratio-21x9 {
-    --bs-aspect-ratio: calc(9 / 21 * 100%);
+  --bs-aspect-ratio: calc(9 / 21 * 100%);
 }
 
 .ratio-16x9 {
-    --bs-aspect-ratio: calc(9 / 16 * 100%);
+  --bs-aspect-ratio: calc(9 / 16 * 100%);
 }
