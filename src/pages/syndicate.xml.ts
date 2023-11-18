@@ -1,6 +1,9 @@
 import rss from '@astrojs/rss';
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
+import MarkdownIt from 'markdown-it';
+import sanitizeHtml from 'sanitize-html';
+const parser = new MarkdownIt();
 
 function sortPosts(a: { data: { published: Date } }, b: { data: { published: Date } }) {
   return Number(b.data.published) - Number(a.data.published);
@@ -29,9 +32,10 @@ export const GET: APIRoute = async (context) => {
     site: context.site!.href,
     items: posts.map((item) => ({
       title: item.data.title,
-      description: item.data.description,
       link: 'isCaseStudy' in item.data ? `/case-studies/${item.slug}` : `/notes/${item.slug}/`,
       pubDate: formatDate(item.data.published),
+      description: item.data.description,
+      content: sanitizeHtml(parser.render(item.body)),
     })),
     customData: customDataElements.join(''),
     xmlns: {
