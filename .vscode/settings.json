@@ -1,6 +1,6 @@
 {
-  // define rulers to match the prettier config length of 100
   "editor.rulers": [120],
+  "editor.tabSize": 2,
 
   // organize imports (removes unused), then eslint fix on save
   "editor.defaultFormatter": "esbenp.prettier-vscode",

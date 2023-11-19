@@ -30,6 +30,16 @@
   ],
   "redirects": [
     {
+      "source": "/sitemap.xml",
+      "destination": "https://geert.elt.ink/sitemap-index.xml",
+      "permanent": true
+    },
+    {
+      "source": "/index.xml",
+      "destination": "https://geert.elt.ink/sitemap-index.xml",
+      "permanent": true
+    },
+    {
       "source": "/atom.xml",
       "destination": "https://geert.elt.ink/feed.xml",
       "permanent": true
