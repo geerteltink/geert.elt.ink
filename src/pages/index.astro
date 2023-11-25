@@ -41,8 +41,15 @@ const notes = (await getCollection('notes')).sort(
 
 <style scoped>
   .notes {
-    max-width: 50%;
+    max-width: 100%;
   }
+
+  @media screen and (min-width: 896px) {
+    .notes {
+      max-width: 50%;
+    }
+  }
+
   .h3 {
     margin: 0.5rem 0;
     padding: 0.5rem;
