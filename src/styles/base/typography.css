@@ -122,7 +122,7 @@ blockquote {
 blockquote cite {
   display: block;
   font-weight: 500;
-  color: var(--text-low-emphasis);
+  color: var(--text-medium-emphasis);
   text-indent: var(--space-s);
   opacity: 0.5;
 }
