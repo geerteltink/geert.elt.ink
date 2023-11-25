@@ -1,4 +1,6 @@
-# https://geert.elt.ink/
+# My Digital Garden
+
+## https://geert.elt.ink/
 
 [![continuous-integration](https://github.com/geerteltink/geert.elt.ink/actions/workflows/continuous-integration.yml/badge.svg)](https://github.com/geerteltink/geert.elt.ink/actions/workflows/continuous-integration.yml)
 
