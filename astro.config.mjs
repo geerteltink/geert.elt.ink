@@ -5,15 +5,15 @@ import vue from '@astrojs/vue';
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-    site: 'https://geert.elt.ink',
-    integrations: [mdx(), sitemap(), vue()],
-    output: 'static',
-    adapter: vercel({
-        webAnalytics: {
-            enabled: true,
-        },
-        speedInsights: {
-            enabled: true,
-        },
-    }),
+  site: 'https://geert.elt.ink',
+  integrations: [mdx(), sitemap(), vue()],
+  output: 'static',
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+    },
+    speedInsights: {
+      enabled: true,
+    },
+  }),
 });

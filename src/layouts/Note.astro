@@ -1,52 +1,52 @@
 ---
-import { format, formatISO } from 'date-fns';
 import CoverImage from '~/components/CoverImage.astro';
+import RelativeDate from '~/components/RelativeDate.astro';
 import Layout from '~/layouts/Layout.astro';
 
 export interface Props {
-  content: {
-    title: string;
-    summary: string;
-    pubDate?: string;
-    updatedDate?: string;
-    heroImage?: string;
-  };
+  title: string;
+  description: string;
+  started: Date;
+  updated?: Date;
+  cover?: string;
 }
 
-const {
-  content: { title, pubDate, updatedDate, heroImage },
-} = Astro.props;
-
-const published = pubDate && new Date(pubDate);
-const updated = updatedDate && new Date(updatedDate);
+const { title, description, started, updated, cover } = Astro.props;
 ---
 
 <Layout>
   <article>
     {
-      heroImage && (
+      cover && (
         <div class="cover-image">
-          <CoverImage src={heroImage} alt={title} aspectRatio="21:9" />
+          <CoverImage src={cover} alt={title} aspectRatio="21:9" />
         </div>
       )
     }
-    <h1>{title}</h1>
-    <div class="mb-3 text-disabled">
-      {
-        published && (
-          <time datetime={formatISO(published, { representation: 'date' })}>
-            Published: {format(published, 'PPP')}
-          </time>
-        )
-      }
-      {
-        updated && (
-          <time datetime={formatISO(updated, { representation: 'date' })}>
-            Modified: {format(updated, 'PPP')}
-          </time>
-        )
-      }
-    </div>
+    <header>
+      <h1>
+        {title}
+      </h1>
+      <h2 class="text-medium-emphasis">
+        {description}
+      </h2>
+      <div class="mb-3 text-disabled">
+        {
+          started && (
+            <div>
+              Planted <RelativeDate date={started} />
+            </div>
+          )
+        }
+        {
+          updated && (
+            <div>
+              Last tended <RelativeDate date={updated} />
+            </div>
+          )
+        }
+      </div>
+    </header>
     <slot />
   </article>
 </Layout>
