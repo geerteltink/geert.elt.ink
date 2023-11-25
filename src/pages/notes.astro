@@ -9,6 +9,14 @@ const notes = (await getCollection('notes')).sort(
 ---
 
 <Layout title="Notes by Geert Eltink" description="My notes">
+  <header>
+    <h1>Notes</h1>
+    <h2 class="text-medium-emphasis">
+      Loose, unopinionated notes on things I don’t entirely understand yet.<br />
+       Notes are evolving over time and hopefully improving.
+    </h2>
+  </header>
+
   <div class="card-deck">
     {
       notes.map((note) => (

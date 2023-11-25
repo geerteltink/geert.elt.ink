@@ -1,0 +1,56 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '~/layouts/Layout.astro';
+
+const notes = (await getCollection('notes')).sort(
+  (a, b) => b.data.started.valueOf() - a.data.started.valueOf()
+);
+---
+
+<Layout title="Geert Eltink" description="My digital garden.">
+  <header transition:animate="slide">
+    <h1>
+      <strong>Geert</strong> loves everything about software engineering and leading teams.
+    </h1>
+    <h2 class="text-medium-emphasis">
+      Software architect, engineer, and team lead<br />
+       Currently software engineering at ottonova
+    </h2>
+  </header>
+
+  <br />
+  <br />
+
+  <div class="notes" transition:animate="slide">
+    <h2>Notes</h2>
+    <p>
+      Loose, unopinionated notes on things I don’t entirely understand yet. Notes are evolving over
+      time and hopefully improving.
+    </p>
+    <ul>
+      {
+        notes.slice(0, 5).map((note) => (
+          <li class="h3">
+            <a href={`/notes/${note.slug}`}>{note.data.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Layout>
+
+<style scoped>
+  .notes {
+    max-width: 50%;
+  }
+  .h3 {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--surface-02dp);
+    transition: all 0.3s ease-in-out 0s;
+  }
+  .h3:hover {
+    border-bottom: 1px solid var(--secondary-variant);
+    transform: scale3d(1.02, 1.02, 1.02);
+  }
+</style>

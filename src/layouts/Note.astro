@@ -23,24 +23,30 @@ const { title, description, started, updated, cover } = Astro.props;
         </div>
       )
     }
-    <h1>{title}</h1>
-    <h2>{description}</h2>
-    <div class="mb-3 text-disabled">
-      {
-        started && (
-          <div>
-            Planted <RelativeDate date={started} />
-          </div>
-        )
-      }
-      {
-        updated && (
-          <div>
-            Last tended <RelativeDate date={updated} />
-          </div>
-        )
-      }
-    </div>
+    <header>
+      <h1>
+        {title}
+      </h1>
+      <h2 class="text-medium-emphasis">
+        {description}
+      </h2>
+      <div class="mb-3 text-disabled">
+        {
+          started && (
+            <div>
+              Planted <RelativeDate date={started} />
+            </div>
+          )
+        }
+        {
+          updated && (
+            <div>
+              Last tended <RelativeDate date={updated} />
+            </div>
+          )
+        }
+      </div>
+    </header>
     <slot />
   </article>
 </Layout>
