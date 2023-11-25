@@ -2,8 +2,8 @@ import rss from '@astrojs/rss';
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 
-function sortPosts(a: { data: { published: Date } }, b: { data: { published: Date } }) {
-  return Number(b.data.published) - Number(a.data.published);
+function sortPosts(a: { data: { started: Date } }, b: { data: { started: Date } }) {
+  return Number(b.data.started) - Number(a.data.started);
 }
 
 function formatDate(date: Date) {
@@ -31,7 +31,7 @@ export const GET: APIRoute = async (context) => {
       title: item.data.title,
       description: item.data.description,
       link: 'isCaseStudy' in item.data ? `/case-studies/${item.slug}` : `/notes/${item.slug}/`,
-      pubDate: formatDate(item.data.published),
+      pubDate: formatDate(item.data.started),
     })),
     customData: customDataElements.join(''),
     xmlns: {

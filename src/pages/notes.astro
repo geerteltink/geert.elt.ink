@@ -1,26 +1,25 @@
 ---
 import { getCollection } from 'astro:content';
+import RelativeDate from '~/components/RelativeDate.astro';
 import Layout from '~/layouts/Layout.astro';
 
 const notes = (await getCollection('notes')).sort(
-  (a, b) => b.data.published.valueOf() - a.data.published.valueOf()
+  (a, b) => b.data.started.valueOf() - a.data.started.valueOf()
 );
 ---
 
-<Layout title="Notes" description="My notes">
+<Layout title="Notes by Geert Eltink" description="My notes">
   <section>
     <ul>
       {
         notes.map((note) => (
           <li>
-            <time datetime={note.data.published.toISOString()}>
-              {new Date(note.data.published).toLocaleDateString('en-us', {
-                year: 'numeric',
-                month: 'short',
-                day: 'numeric',
-              })}
-            </time>
-            <a href={`/notes/${note.slug}`}>{note.data.title}</a>
+            <h2>
+              <a href={`/notes/${note.slug}`}>{note.data.title}</a>
+            </h2>
+            <div>
+              <RelativeDate date={note.data.started} />
+            </div>
           </li>
         ))
       }
@@ -32,13 +31,5 @@ const notes = (await getCollection('notes')).sort(
   ul {
     list-style-type: none;
     padding: unset;
-  }
-  ul li {
-    display: flex;
-  }
-  ul li time {
-    flex: 0 0 130px;
-    font-style: italic;
-    color: #888;
   }
 </style>
