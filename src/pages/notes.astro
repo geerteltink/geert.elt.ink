@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import RelativeDate from '~/components/RelativeDate.astro';
+import Card from '~/components/Card.astro';
 import Layout from '~/layouts/Layout.astro';
 
 const notes = (await getCollection('notes')).sort(
@@ -9,27 +9,24 @@ const notes = (await getCollection('notes')).sort(
 ---
 
 <Layout title="Notes by Geert Eltink" description="My notes">
-  <section>
-    <ul>
-      {
-        notes.map((note) => (
-          <li>
-            <h2>
-              <a href={`/notes/${note.slug}`}>{note.data.title}</a>
-            </h2>
-            <div>
-              <RelativeDate date={note.data.started} />
-            </div>
-          </li>
-        ))
-      }
-    </ul>
-  </section>
+  <div class="card-deck">
+    {
+      notes.map((note) => (
+        <Card
+          href={`/notes/${note.slug}`}
+          title={note.data.title}
+          started={note.data.started}
+          type="note"
+        />
+      ))
+    }
+  </div>
 </Layout>
 
-<style>
-  ul {
-    list-style-type: none;
-    padding: unset;
+<style scoped>
+  .card-deck {
+    display: flex;
+    flex-direction: column;
+    flex-flow: row wrap;
   }
 </style>
