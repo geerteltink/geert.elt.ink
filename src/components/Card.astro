@@ -25,11 +25,9 @@ const { href, title, started, type } = Astro.props;
 
 <style scoped>
   .card {
-    margin: 0.5rem 0.5rem 1rem 0.5rem;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
+    padding: var(--space-3xs) var(--space-s);
+    border-radius: var(--border-radius-base);
     flex: 1 0 0%;
-    min-width: 100%;
     color: inherit;
   }
 
@@ -37,18 +35,6 @@ const { href, title, started, type } = Astro.props;
     transform: scale3d(1.02, 1.02, 1.02);
     background: var(--surface-02dp);
     box-shadow: var(--box-shadow-sm);
-  }
-
-  @media screen and (min-width: 512px) {
-    .card {
-      min-width: 42%;
-    }
-  }
-
-  @media screen and (min-width: 896px) {
-    .card {
-      min-width: 30%;
-    }
   }
 
   .card-title {
@@ -59,27 +45,9 @@ const { href, title, started, type } = Astro.props;
     color: var(--primary-variant);
   }
 
-  p {
-    margin-top: 0.75rem;
-    margin-bottom: 0;
-  }
-
   .card-meta {
     display: inline-block;
     transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
     color: var(--text-medium-emphasis);
-  }
-
-  .link-card:is(:hover, :focus-within) {
-    background-position: 0;
-  }
-
-  .link-card:is(:hover, :focus-within) h2 {
-    color: #4f39fa;
-  }
-
-  .link-card:is(:hover, :focus-within) h2 span {
-    will-change: transform;
-    transform: translateX(2px);
   }
 </style>

@@ -1,12 +1,13 @@
-/* @link https://utopia.fyi/grid/calculator?c=320,16,1.25,1200,20,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+/* @link https://utopia.fyi/grid/calculator?c=328,16,1.2,1240,20,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
 
 :root {
   --grid-max-width: 77.5rem;
-  --grid-gutter: var(--space-s-l, clamp(1rem, 0.4783rem + 2.6087vw, 2.5rem));
+  --grid-gutter: var(--space-s-l, clamp(1rem, 0.4605rem + 2.6316vw, 2.5rem));
   --grid-columns: 12;
 }
 
 .container {
+  width: 100%;
   max-width: var(--grid-max-width);
   padding-inline: var(--grid-gutter);
   margin-inline: auto;
@@ -25,100 +26,101 @@
     grid-gap: var(--grid-gutter);
   }
 
-  .grid>* {
+  .grid > * {
     grid-column: span 12;
   }
 
-  .grid>*+* {
+  .grid > * + * {
     margin-top: 0;
     margin-left: 0;
   }
 
   .grid--v-gap {
-    grid-gap: calc(2.25rem + 30 * ((100vw - 320 / 16 * 1rem) / 972)) calc(1.125rem + 26 * ((100vw - 320 / 16 * 1rem) / 972));
+    grid-gap: calc(2.25rem + 30 * ((100vw - 320 / 16 * 1rem) / 972))
+      calc(1.125rem + 26 * ((100vw - 320 / 16 * 1rem) / 972));
     grid-gap: var(--space-l-xl) var(--grid-gutter);
   }
 
   .grid--v-gap-l {
-    grid-gap: calc(2.25rem + 8 * ((100vw - 320 / 16 * 1rem) / 972)) calc(1.125rem + 26 * ((100vw - 320 / 16 * 1rem) / 972));
+    grid-gap: calc(2.25rem + 8 * ((100vw - 320 / 16 * 1rem) / 972))
+      calc(1.125rem + 26 * ((100vw - 320 / 16 * 1rem) / 972));
     grid-gap: var(--space-l) var(--grid-gutter);
   }
 
-  .grid--of-two-four>* {
+  .grid--of-two-four > * {
     grid-column: span 6;
   }
 
   @media screen and (min-width: 40rem) {
-
-    .grid--of-four>*,
-    .grid--of-three>* {
+    .grid--of-four > *,
+    .grid--of-three > * {
       grid-column: span 6;
     }
 
-    .grid--of-two-four>* {
+    .grid--of-two-four > * {
       grid-column: span 4;
     }
   }
 
   @media screen and (min-width: 50rem) {
-    .grid--swap> :nth-child(odd) {
+    .grid--swap > :nth-child(odd) {
       order: 1;
     }
 
-    .grid--of-two>* {
+    .grid--of-two > * {
       grid-column: span 6;
     }
 
-    .grid--of-three>* {
+    .grid--of-three > * {
       grid-column: span 4;
     }
 
-    .grid--of-four>*,
-    .grid--of-two-four>* {
+    .grid--of-four > *,
+    .grid--of-two-four > * {
       grid-column: span 3;
     }
 
-    .grid--7\/5> :nth-child(odd) {
+    .grid--7\/5 > :nth-child(odd) {
       grid-column: span 7;
     }
 
-    .grid--7\/5> :nth-child(2n + 2) {
+    .grid--7\/5 > :nth-child(2n + 2) {
       grid-column: span 5;
     }
 
-    .grid--8\/3> :nth-child(odd) {
+    .grid--8\/3 > :nth-child(odd) {
       grid-column: span 9;
     }
 
-    .grid--8\/3> :nth-child(odd)>* {
+    .grid--8\/3 > :nth-child(odd) > * {
       max-width: 784px;
     }
 
-    .grid--8\/3> :nth-child(2n + 2) {
+    .grid--8\/3 > :nth-child(2n + 2) {
       grid-column: span 3;
     }
 
-    .grid--8\/4> :nth-child(odd) {
+    .grid--8\/4 > :nth-child(odd) {
       grid-column: span 8;
     }
 
-    .grid--8\/4> :nth-child(2n + 2) {
+    .grid--8\/4 > :nth-child(2n + 2) {
       grid-column: span 4;
     }
 
-    .grid--9\/3> :nth-child(odd) {
+    .grid--9\/3 > :nth-child(odd) {
       grid-column: span 9;
     }
 
-    .grid--9\/3> :nth-child(2n + 2) {
+    .grid--9\/3 > :nth-child(2n + 2) {
       grid-column: span 3;
     }
 
-    .grid--10\/2> :nth-child(odd) {
+    .grid--10\/2 > :nth-child(odd) {
       grid-column: span 10;
     }
 
-    .grid--10\/2> :nth-child(2n + 2) {
+    .grid--10\/2 > :nth-child(2n + 2) {
       grid-column: span 2;
     }
   }

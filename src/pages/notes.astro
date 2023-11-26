@@ -12,12 +12,12 @@ const notes = (await getCollection('notes')).sort(
   <header>
     <h1>Notes</h1>
     <h2 class="text-medium-emphasis">
-      Loose, unopinionated notes on things I don’t entirely understand yet.<br />
-       Notes are evolving over time and hopefully improving.
+      Loose, unopinionated notes on things that interest me. Notes are evolving over time and
+      hopefully improve.
     </h2>
   </header>
 
-  <div class="card-deck">
+  <div class="grid grid--of-three">
     {
       notes.map((note) => (
         <Card
@@ -30,11 +30,3 @@ const notes = (await getCollection('notes')).sort(
     }
   </div>
 </Layout>
-
-<style scoped>
-  .card-deck {
-    display: flex;
-    flex-direction: column;
-    flex-flow: row wrap;
-  }
-</style>

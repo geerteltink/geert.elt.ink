@@ -18,7 +18,7 @@ pre {
   padding: 1em;
   margin: 2rem 0;
   overflow: auto;
-  border-radius: 0.3em;
+  border-radius: var(--border-radius-sm);
 }
 
 :not(pre) > code,
@@ -30,5 +30,5 @@ pre {
 :not(pre) > code {
   padding: 0.1em;
   white-space: normal;
-  border-radius: 0.3em;
+  border-radius: var(--border-radius-sm);
 }
