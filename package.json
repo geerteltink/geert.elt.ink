@@ -43,7 +43,7 @@
     "check-html-links": "^0.2.4",
     "eslint": "^8.53.0",
     "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-astro": "^0.29.1",
+    "eslint-plugin-astro": "^0.30.0",
     "eslint-plugin-prettier": "^5.0.1",
     "markdown-it": "^13.0.2",
     "markdownlint": "^0.31.1",
