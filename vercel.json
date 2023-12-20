@@ -28,116 +28,26 @@
       ]
     }
   ],
-  "redirects": [
+  "rewrites": [
     {
       "source": "/sitemap.xml",
-      "destination": "https://geert.elt.ink/sitemap-index.xml",
-      "permanent": true
+      "destination": "/sitemap-index.xml"
     },
     {
       "source": "/index.xml",
-      "destination": "https://geert.elt.ink/sitemap-index.xml",
-      "permanent": true
+      "destination": "/sitemap-index.xml"
     },
     {
       "source": "/atom.xml",
-      "destination": "https://geert.elt.ink/feed.xml",
-      "permanent": true
+      "destination": "/feed.xml"
     },
     {
       "source": "/rss.xml",
-      "destination": "https://geert.elt.ink/feed.xml",
-      "permanent": true
+      "destination": "/feed.xml"
     },
     {
       "source": "/blog/feed.xml",
-      "destination": "https://geert.elt.ink/feed.xml",
-      "permanent": true
-    },
-    {
-      "source": "/about-the-value-of-workshops",
-      "destination": "https://geert.elt.ink/notes/about-the-value-of-workshops/",
-      "permanent": true
-    },
-    {
-      "source": "/check-git-status-recursively-on-windows",
-      "destination": "https://geert.elt.ink/notes/check-git-status-recursively-on-windows/",
-      "permanent": true
-    },
-    {
-      "source": "/contributing-to-a-github-project",
-      "destination": "https://geert.elt.ink/notes/contributing-to-a-github-project/",
-      "permanent": true
-    },
-    {
-      "source": "/cqrs-message-validation",
-      "destination": "https://geert.elt.ink/notes/cqrs-message-validation/",
-      "permanent": true
-    },
-    {
-      "source": "/git-troubleshooting",
-      "destination": "https://geert.elt.ink/notes/git-troubleshooting/",
-      "permanent": true
-    },
-    {
-      "source": "/git-workflow",
-      "destination": "https://geert.elt.ink/notes/git-workflow/",
-      "permanent": true
-    },
-    {
-      "source": "/howto-update-teamspeak-3-on-debian",
-      "destination": "https://geert.elt.ink/notes/howto-update-teamspeak-3-on-debian/",
-      "permanent": true
-    },
-    {
-      "source": "/jekyll-atom-feed",
-      "destination": "https://geert.elt.ink/notes/jekyll-atom-feed/",
-      "permanent": true
-    },
-    {
-      "source": "/one-abstract-action-factory-for-all",
-      "destination": "https://geert.elt.ink/notes/one-abstract-action-factory-for-all/",
-      "permanent": true
-    },
-    {
-      "source": "/phpstorm-psr-11-container-interface-code-completion",
-      "destination": "https://geert.elt.ink/notes/phpstorm-psr-11-container-interface-code-completion/",
-      "permanent": true
-    },
-    {
-      "source": "/project-documentation-with-hugo-modules",
-      "destination": "https://geert.elt.ink/notes/project-documentation-with-hugo-modules/",
-      "permanent": true
-    },
-    {
-      "source": "/running-phpunit-in-phpstorm-with-docker-compose-on-windows",
-      "destination": "https://geert.elt.ink/notes/running-phpunit-in-phpstorm-with-docker-compose-on-windows/",
-      "permanent": true
-    },
-    {
-      "source": "/symfony-2-dynamic-router",
-      "destination": "https://geert.elt.ink/notes/symfony-2-dynamic-router/",
-      "permanent": true
-    },
-    {
-      "source": "/vuejs-32-composition-api-setup-with-typescript",
-      "destination": "https://geert.elt.ink/notes/vue-js-3-2-composition-api-setup-with-typescript/",
-      "permanent": true
-    },
-    {
-      "source": "/wsl-2-and-visual-studio-code",
-      "destination": "https://geert.elt.ink/notes/wsl-2-and-visual-studio-code/",
-      "permanent": true
-    },
-    {
-      "source": "/zend-expressive-console-cli-commands",
-      "destination": "https://geert.elt.ink/notes/zend-expressive-console-cli-commands/",
-      "permanent": true
-    },
-    {
-      "source": "/zend-expressive-one-action-factory-for-all",
-      "destination": "https://geert.elt.ink/notes/zend-expressive-one-action-factory-for-all/",
-      "permanent": true
+      "destination": "/feed.xml"
     }
   ]
 }
