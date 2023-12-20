@@ -31,7 +31,7 @@ const notes = (await getCollection('notes')).sort(
       {
         notes.slice(0, 5).map((note) => (
           <li class="h3">
-            <a href={`/notes/${note.slug}`}>{note.data.title}</a>
+            <a href={`/notes/${note.slug}/`}>{note.data.title}</a>
           </li>
         ))
       }

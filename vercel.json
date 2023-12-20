@@ -48,6 +48,74 @@
     {
       "source": "/blog/feed.xml",
       "destination": "/feed.xml"
+    },
+    {
+      "source": "/about-the-value-of-workshops",
+      "destination": "/notes/about-the-value-of-workshops/"
+    },
+    {
+      "source": "/check-git-status-recursively-on-windows",
+      "destination": "/notes/check-git-status-recursively-on-windows/"
+    },
+    {
+      "source": "/contributing-to-a-github-project",
+      "destination": "/notes/contributing-to-a-github-project/"
+    },
+    {
+      "source": "/cqrs-message-validation",
+      "destination": "/notes/cqrs-message-validation/"
+    },
+    {
+      "source": "/git-troubleshooting",
+      "destination": "/notes/git-troubleshooting/"
+    },
+    {
+      "source": "/git-workflow",
+      "destination": "/notes/git-workflow/"
+    },
+    {
+      "source": "/howto-update-teamspeak-3-on-debian",
+      "destination": "/notes/howto-update-teamspeak-3-on-debian/"
+    },
+    {
+      "source": "/jekyll-atom-feed",
+      "destination": "/notes/jekyll-atom-feed/"
+    },
+    {
+      "source": "/one-abstract-action-factory-for-all",
+      "destination": "/notes/one-abstract-action-factory-for-all/"
+    },
+    {
+      "source": "/phpstorm-psr-11-container-interface-code-completion",
+      "destination": "/notes/phpstorm-psr-11-container-interface-code-completion/"
+    },
+    {
+      "source": "/project-documentation-with-hugo-modules",
+      "destination": "/notes/project-documentation-with-hugo-modules/"
+    },
+    {
+      "source": "/running-phpunit-in-phpstorm-with-docker-compose-on-windows",
+      "destination": "/notes/running-phpunit-in-phpstorm-with-docker-compose-on-windows/"
+    },
+    {
+      "source": "/symfony-2-dynamic-router",
+      "destination": "/notes/symfony-2-dynamic-router/"
+    },
+    {
+      "source": "/vuejs-32-composition-api-setup-with-typescript",
+      "destination": "/notes/vue-js-3-2-composition-api-setup-with-typescript/"
+    },
+    {
+      "source": "/wsl-2-and-visual-studio-code",
+      "destination": "/notes/wsl-2-and-visual-studio-code/"
+    },
+    {
+      "source": "/zend-expressive-console-cli-commands",
+      "destination": "/notes/zend-expressive-console-cli-commands/"
+    },
+    {
+      "source": "/zend-expressive-one-action-factory-for-all",
+      "destination": "/notes/zend-expressive-one-action-factory-for-all/"
     }
   ]
 }
