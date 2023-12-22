@@ -23,8 +23,8 @@ const schema = {
   },
   headline: title,
   description: description,
-  datePublished: started.toISOString().substring(0, 10),
-  ...(updated && { dateModified: updated.toISOString().substring(0, 10) }),
+  datePublished: started.toISOString(),
+  ...(updated && { dateModified: updated.toISOString() }),
   ...(topics && { keywords: topics }),
   author: {
     '@type': 'Person',
