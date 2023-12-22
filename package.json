@@ -51,10 +51,12 @@
     "prettier": "^3.0.3",
     "prettier-plugin-astro": "^0.12.1",
     "sanitize-html": "^2.11.0",
-    "sharp": "^0.33.1",
     "stylelint": "^16.0.0",
     "stylelint-config-recess-order": "^4.3.0",
     "stylelint-config-recommended": "^14.0.0",
     "typescript": "^5.2.2"
-  }
+  },
+  "trustedDependencies": [
+    "sharp"
+  ]
 }
