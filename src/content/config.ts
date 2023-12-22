@@ -1,6 +1,6 @@
 import { defineCollection, z } from 'astro:content';
 
-const notes = defineCollection({
+const notesCollection = defineCollection({
   type: 'content',
   schema: ({ image }) =>
     z.object({
@@ -15,4 +15,4 @@ const notes = defineCollection({
 
 // Export a single `collections` object to register your collection(s)
 // This key should match your collection directory name in "src/content"
-export const collections = { notes };
+export const collections = { notes: notesCollection };

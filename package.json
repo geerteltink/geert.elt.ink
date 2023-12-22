@@ -14,7 +14,7 @@
     "lint:astro": "astro check",
     "lint:types": "tsc --noEmit",
     "lint:imports": "organize-imports-cli ./tsconfig.json",
-    "lint:eslint": "npx eslint . --report-unused-disable-directives --fix --cache",
+    "lint:eslint": "eslint . --report-unused-disable-directives --fix --cache",
     "lint:prettier": "prettier . --write --cache --list-different",
     "lint:md": "markdownlint src/**/*.mdx",
     "lint:css": "stylelint src/styles/**/*.css"

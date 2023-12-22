@@ -1,18 +1,14 @@
 ---
+import type { CollectionEntry } from 'astro:content';
 import CoverImage from '~/components/CoverImage.astro';
 import RelativeDate from '~/components/RelativeDate.astro';
 import Layout from '~/layouts/Layout.astro';
 
-export interface Props {
-  title: string;
-  description: string;
-  started: Date;
-  updated?: Date;
-  cover?: string;
-  topics?: string[];
+interface Props {
+  note: CollectionEntry<'notes'>;
 }
 
-const { title, description, started, updated, cover, topics } = Astro.props;
+const { note } = Astro.props;
 
 const schema = {
   '@context': 'https://schema.org',
@@ -21,11 +17,11 @@ const schema = {
     '@type': 'WebPage',
     '@id': new URL(Astro.request.url, Astro.site),
   },
-  headline: title,
-  description: description,
-  datePublished: started.toISOString(),
-  ...(updated && { dateModified: updated.toISOString() }),
-  ...(topics && { keywords: topics }),
+  headline: note.data.title,
+  description: note.data.description,
+  datePublished: note.data.started.toISOString(),
+  ...(note.data.updated && { dateModified: note.data.updated.toISOString() }),
+  ...(note.data.topics && { keywords: note.data.topics }),
   author: {
     '@type': 'Person',
     name: 'Geert Eltink',
@@ -36,37 +32,37 @@ const schema = {
 
 <Layout>
   <article>
-    {
-      cover && (
-        <div class="cover-image">
-          <CoverImage src={cover} alt={title} aspectRatio="21:9" />
-        </div>
-      )
-    }
     <header>
       <h1>
-        {title}
+        {note.data.title}
       </h1>
       <h2 class="text-medium-emphasis">
-        {description}
+        {note.data.description}
       </h2>
       <div class="mb-3 text-disabled">
         {
-          started && (
+          note.data.started && (
             <div>
-              Planted <RelativeDate date={started} />
+              Planted <RelativeDate date={note.data.started} />
             </div>
           )
         }
         {
-          updated && (
+          note.data.updated && (
             <div>
-              Last tended <RelativeDate date={updated} />
+              Last tended <RelativeDate date={note.data.updated} />
             </div>
           )
         }
       </div>
     </header>
+    {
+      note.data.cover && (
+        <div class="cover-image">
+          <CoverImage src={note.data.cover} alt={note.data.title} aspectRatio="21:9" />
+        </div>
+      )
+    }
     <slot />
   </article>
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />

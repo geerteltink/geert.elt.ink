@@ -14,12 +14,7 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<Note
-  title={entry.data.title}
-  description={entry.data.description}
-  started={entry.data.started}
-  updated={entry.data.updated}
->
+<Note note={entry}>
   <Content />
 </Note>
 
