@@ -9,9 +9,29 @@ export interface Props {
   started: Date;
   updated?: Date;
   cover?: string;
+  topics?: string[];
 }
 
-const { title, description, started, updated, cover } = Astro.props;
+const { title, description, started, updated, cover, topics } = Astro.props;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': new URL(Astro.request.url, Astro.site),
+  },
+  headline: title,
+  description: description,
+  datePublished: started.toISOString().substring(0, 10),
+  ...(updated && { dateModified: updated.toISOString().substring(0, 10) }),
+  ...(topics && { keywords: topics }),
+  author: {
+    '@type': 'Person',
+    name: 'Geert Eltink',
+    url: 'https://geert.elt.ink',
+  },
+};
 ---
 
 <Layout>
@@ -49,6 +69,7 @@ const { title, description, started, updated, cover } = Astro.props;
     </header>
     <slot />
   </article>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 </Layout>
 
 <style>
