@@ -1,11 +1,18 @@
 ---
 layout: "~/layouts/Layout.astro"
-title: "Right now, I am..."
+title: "The Present"
+description: "The things that keep me busy these days."
 pubDate: "1999-09-09"
 ---
 
-<h1>Right now, I am...</h1>
-<h2 class="text-medium-emphasis">Last updated: {"2022-07-17"}</h2>
+<h1>The Present</h1>
+<h2 class="text-medium-emphasis">Right now, I am...</h2>
+
+import RelativeDate from "~/components/RelativeDate.astro";
+
+<div class="mb-3 text-disabled">
+  Last tended <RelativeDate date={new Date("2022-07-17")} />
+</div>
 
 ## ... health insurance
 
