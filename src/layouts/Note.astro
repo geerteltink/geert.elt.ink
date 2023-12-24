@@ -30,7 +30,8 @@ const schema = {
 };
 ---
 
-<Layout>
+<Layout title={note.data.title} description={note.data.description}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(schema)} />
   <article>
     <header>
       <h1>
@@ -65,7 +66,6 @@ const schema = {
     }
     <slot />
   </article>
-  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 </Layout>
 
 <style>

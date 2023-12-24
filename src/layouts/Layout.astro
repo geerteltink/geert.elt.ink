@@ -14,6 +14,7 @@ const { ...head } = Astro.props;
   <head>
     <HeadMeta {...head} />
     <ViewTransitions />
+    <slot name="head" />
   </head>
   <body class="page">
     <Header />

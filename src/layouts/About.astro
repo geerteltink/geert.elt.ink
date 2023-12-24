@@ -1,0 +1,40 @@
+---
+import Layout from '~/layouts/Layout.astro';
+
+export type Props = {
+  frontmatter: {
+    title: string;
+    description: string;
+    started: Date;
+    updated: Date;
+  };
+};
+
+const { ...page } = Astro.props;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  dateCreated: new Date(page.frontmatter.started).toISOString(),
+  dateModified: new Date(page.frontmatter.updated).toISOString(),
+  mainEntity: {
+    '@type': 'Person',
+    name: 'Geert Eltink',
+    description:
+      'A versatile IT professional with expertise in development, design, architecture, and leadership.',
+    //image: 'https://example.com/avatars/ahuff23.jpg',
+    sameAs: [
+      'https://github.com/geerteltink',
+      'https://twitter.com/geerteltink',
+      'https://www.instagram.com/geerteltink',
+    ],
+  },
+};
+---
+
+<Layout title={page.frontmatter.title} description={page.frontmatter.description}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(schema)} />
+  <article>
+    <slot />
+  </article>
+</Layout>
