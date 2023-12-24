@@ -2,15 +2,29 @@
 import { getCollection } from 'astro:content';
 import Layout from '~/layouts/Layout.astro';
 
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Geert eltink',
+  url: 'https://geert.elt.ink/',
+  description:
+    'Geert is passionate about software engineering and leading teams. He has a strong background in software development and managing projects and people. He is also an excellent communicator and enjoys working with others to achieve common goals.',
+  dateCreated: new Date('1999-09-09').toISOString(),
+  dateModified: new Date().toISOString(),
+  about: {
+    '@type': 'Thing',
+    url: 'https://geert.elt.ink/about/',
+    name: 'The Story',
+  },
+};
+
 const notes = (await getCollection('notes')).sort(
   (a, b) => b.data.started.valueOf() - a.data.started.valueOf()
 );
 ---
 
-<Layout
-  title="Geert Eltink"
-  description="Geert is passionate about software engineering and leading teams. He has a strong background in software development and managing projects and people. He is also an excellent communicator and enjoys working with others to achieve common goals."
->
+<Layout title={schema.name} description={schema.description}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(schema)} />
   <header transition:animate="slide">
     <h1>I love everything about software engineering and leading teams.</h1>
     <h2 class="text-medium-emphasis">
