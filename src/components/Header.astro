@@ -1,6 +1,6 @@
 ---
 export interface Props extends astroHTML.JSX.AnchorHTMLAttributes {}
-
+import logo from '../../public/logo.svg';
 // const { href, class: className, ...props } = Astro.props;
 // const isActive = href === Astro.url.pathname;
 
@@ -13,16 +13,16 @@ const navLinks: { label: string; href: string }[] = [
 
 <header class="page-header pt-3">
   <nav class="container">
-    <ul class="flex flex-column flex-row-md flex-align-self-center">
+    <ul class="flex flex-row flex-align-self-center">
       <li class="flex-grow pr-3">
         <a
           class="text-decoration-none text-primary"
           href="/"
           aria-label="logo"
-          style="color: var(--primary);"
+          style="color: var(--primary); max-width: var(--step-4);"
+          title="Geert Eltink, Software engineer and architect"
         >
-          <div class="h2 text-bold">Geert Eltink</div>
-          <div class="h4">Software engineer and architect</div>
+          <img src={logo.src} width={logo.width} height={logo.height} alt="Geert Eltink logo" />
         </a>
       </li>
       {
@@ -56,6 +56,7 @@ const navLinks: { label: string; href: string }[] = [
     display: inline-block;
     text-decoration: none;
   }
+
   a.active {
     font-weight: bolder;
     text-decoration: underline;

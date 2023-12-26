@@ -4,23 +4,23 @@ const today = new Date();
 
 <footer>
   <div class="container">
-    <ul class="flex flex-column flex-row-md my-3">
-      <li class="pr-5">
+    <ul class="footer-menu">
+      <li>
         <a href="/notes/">The Notes</a>
       </li>
-      <li class="pr-5">
+      <li>
         <a href="/now/">The Present</a>
       </li>
-      <li class="pr-5">
+      <li>
         <a href="/about/">The Story</a>
       </li>
-      <li class="pr-5">
+      <li>
         <a href="https://github.com/geerteltink">GitHub</a>
       </li>
-      <li class="pr-5">
+      <li>
         <a href="https://twitter.com/geerteltink">Twitter</a>
       </li>
-      <li class="pr-5">
+      <li>
         <a href="https://www.instagram.com/geerteltink">Instagram</a>
       </li>
     </ul>
@@ -35,8 +35,18 @@ const today = new Date();
   </div>
 </footer>
 
-<style>
+<style scoped>
   footer {
+    margin-bottom: var(--space-m);
+  }
+
+  .footer-menu {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10ch, 1fr));
+    grid-gap: var(--space-s-l);
+    overflow: hidden;
+    margin-top: var(--space-m);
     margin-bottom: var(--space-m);
   }
 </style>
