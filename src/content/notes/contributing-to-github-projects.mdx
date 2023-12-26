@@ -3,12 +3,13 @@ title: "Contributing to a github project"
 description: "Keep your github fork in sync."
 slug: contributing-to-a-github-project
 started: "2015-12-09"
-updated: "2023-11-25"
+updated: "2023-11-26"
 topics:
   - "git"
 ---
 
-This guide is a mix of several other guides and my own experience. I'm just writing this down altogether so I can easily find the right commands.
+This guide is a mix of several other guides and my own experience. I'm just writing this down
+altogether so I can easily find the right commands.
 
 ## Setup forked project
 
@@ -38,7 +39,8 @@ git remote set-url --push upstream no_push
 
 ## Keeping Up-to-Date
 
-Periodically, you should update your fork or personal repository to match the upstream repository. Assuming you have setup your local repository per the instructions above, you can do the following:
+Periodically, you should update your fork or personal repository to match the upstream repository.
+Assuming you have setup your local repository per the instructions above, you can do the following:
 
 ```bash
 git checkout master
@@ -54,7 +56,9 @@ git push origin develop
 
 ## Working on a patch
 
-**The number one rule is to put each piece of work on its own branch.** If the project is using git-flow, then it will have both a master and a develop branch. The general rule is that if you are bug fixing, then branch from master and if you are adding a new feature then branch from develop.
+**The number one rule is to put each piece of work on its own branch.** If the project is using
+git-flow, then it will have both a master and a develop branch. The general rule is that if you are
+bug fixing, then branch from master and if you are adding a new feature then branch from develop.
 
 Create a branch for a hotfix to the master branch, mentioned in issue #1234.
 
@@ -70,7 +74,8 @@ Create a branch for a hotfix to the master branch.
 git checkout -b hotfix/<issue-that-needs-to-be-fixed>
 ```
 
-Create a branch for a feature to the develop branch or the master branch if there is no develop branch.
+Create a branch for a feature to the develop branch or the master branch if there is no develop
+branch.
 
 ```bash
 # Checkout develop branch and update upstream first
@@ -81,9 +86,10 @@ Time to start coding...
 
 ## Rebase PR
 
-Once in a while the code changed before the pull request is merged. You will be asked to rebase the the PR. What you
-need to do is update the master or develop branch as explained above. And after that checkout the hotfix or feature
-and rebase it to the master or develop branch, followed by pushing the changes.
+Once in a while the code changed before the pull request is merged. You will be asked to rebase the
+the PR. What you need to do is update the master or develop branch as explained above. And after
+that checkout the hotfix or feature and rebase it to the master or develop branch, followed by
+pushing the changes.
 
 ```bash
 # Update master or develop
@@ -98,18 +104,22 @@ git rebase --continue
 git push -f origin
 ```
 
-You probably get a "Updates were rejected because the tip of your current branch is behind" error. In that case
-use `git push -f` to force the new changes.
+You probably get a "Updates were rejected because the tip of your current branch is behind" error.
+In that case use `git push -f` to force the new changes.
 
 ## Create the PR
 
-To create a PR you need to push your branch to the origin remote and then press some buttons on GitHub.
+To create a PR you need to push your branch to the origin remote and then press some buttons on
+GitHub.
 
 ```bash
 git push -u origin hotfix/1234
 ```
 
-Usually on the forked project page in github, a green button shows up for comparing and creating the pull request. However if the official package is forked from your project, it's easier to go to the official package and press the green button there. The right base and headfork are then choosen for you.
+Usually on the forked project page in github, a green button shows up for comparing and creating the
+pull request. However if the official package is forked from your project, it's easier to go to the
+official package and press the green button there. The right base and headfork are then choosen for
+you.
 
 ## Resources
 

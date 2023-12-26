@@ -3,7 +3,7 @@ title: "Using cURL to test your REST API"
 description: "cURL is like the Swiss army knife for REST API."
 slug: "curl-the-swiss-army-knife"
 started: "2023-11-11"
-updated: "2023-11-25"
+updated: "2023-11-26"
 cover: "~/assets/swiss-army-knife.png"
 topics:
   - "curl"
@@ -11,14 +11,13 @@ topics:
   - "api"
 ---
 
-Client URL ([cURL](https://curl.se/)) is a command line utility that supports data
-exchange between client and server via many protocols, including HTTP and HTTPS.
+Client URL ([cURL](https://curl.se/)) is a command line utility that supports data exchange between
+client and server via many protocols, including HTTP and HTTPS.
 
 ## Setting the Content-Type
 
-When sending data the default Content-Type is `application/x-www-form-urlencoded` for cURL. The
-API is probably not accepting it. To send json you need to set the content-type to
-`application/json`.
+When sending data the default Content-Type is `application/x-www-form-urlencoded` for cURL. The API
+is probably not accepting it. To send json you need to set the content-type to `application/json`.
 
 ```bash
 curl --header "Content-Type: application/json" \
@@ -59,8 +58,8 @@ curl -H "Authorization: Bearer <JWT Access Token>" https://example.com/users
 
 ## Post Content of a File
 
-If you have a huge json payload, it is easier to place it in a file and let cURL upload the
-content directly.
+If you have a huge json payload, it is easier to place it in a file and let cURL upload the content
+directly.
 
 ```bash
 curl --header "Content-Type: application/json" \
@@ -69,17 +68,17 @@ curl --header "Content-Type: application/json" \
   https://example.com/users
 ```
 
-cURL supports sending the raw text via files using the `--data` option together with using
-the `@filename` notation.
+cURL supports sending the raw text via files using the `--data` option together with using the
+`@filename` notation.
 
 ## Using Certificates
 
 APIs often use SSL/TLS encryption for secure connections and protect data. To verify the SSL/TLS
 certificate presented by the server, use the --cacert, --cert, and --key options.
 
-`--cacert`: The path to the CA certificate to verify the server's certificate.
-`--cert`: The path to the client's SSL/TLS certificate, to identify the client.
-`--key`: The path to the client's private key, to authenticate the client.
+`--cacert`: The path to the CA certificate to verify the server's certificate. `--cert`: The path to
+the client's SSL/TLS certificate, to identify the client. `--key`: The path to the client's private
+key, to authenticate the client.
 
 ```bash
 curl --header "Content-Type: application/json" \
@@ -103,7 +102,7 @@ curl -v -i -H "Content-Type: application/json" -d "@payload.json" https://exampl
 ## Bonus: Testing Webhooks
 
 With [webhook.site](https://webhook.site/), you instantly get a unique, random URL and e-mail
-address. Everything that's sent to these addresses are shown instantly. With this, you can test
-and debug Webhooks and HTTP requests, as well as create your own workflows using the Custom Actions
+address. Everything that's sent to these addresses are shown instantly. With this, you can test and
+debug Webhooks and HTTP requests, as well as create your own workflows using the Custom Actions
 graphical editor or WebhookScript, a simple scripting language, to transform, validate and process
 HTTP requests in a variety of ways - without setting up and maintaining your own infrastructure.

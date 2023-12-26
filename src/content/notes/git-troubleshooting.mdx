@@ -3,7 +3,7 @@ title: "Git Troubleshooting"
 description: "Some ways to resolve git issues."
 slug: "git-troubleshooting"
 started: "2015-05-21"
-updated: "2023-11-25"
+updated: "2023-11-26"
 topics:
   - "git"
 ---
@@ -73,7 +73,10 @@ git commit --amend -a
 
 ## Pull before push
 
-Sometimes a push failed because the remote branch contains commits which you do not have locally. You need to pull these in first. However doing this with a normal `git pull` command, it creates an extra _merged branch_ commit. This is normal, but can get messy if it happens a lot. To prevent this, you need to _rebase_ your commits behind the new commits made by others when pulling.
+Sometimes a push failed because the remote branch contains commits which you do not have locally.
+You need to pull these in first. However doing this with a normal `git pull` command, it creates an
+extra _merged branch_ commit. This is normal, but can get messy if it happens a lot. To prevent
+this, you need to _rebase_ your commits behind the new commits made by others when pulling.
 
 ```bash
 git pull --rebase
@@ -101,7 +104,8 @@ git push origin [tag]
 
 ## Forced merge
 
-Force the merged branch as the new branch. This might prevent a lot of merge conflicts and force the release branch into the master branch.
+Force the merged branch as the new branch. This might prevent a lot of merge conflicts and force the
+release branch into the master branch.
 
 ```bash
 git merge --no-ff -s recursive -Xtheirs [branch]
@@ -109,7 +113,8 @@ git merge --no-ff -s recursive -Xtheirs [branch]
 
 ## Handling merge conflicts
 
-First you have to fix the merge conflicts. Use `git status` to check where the conflicts are. After that you can commit resolved conflicts.
+First you have to fix the merge conflicts. Use `git status` to check where the conflicts are. After
+that you can commit resolved conflicts.
 
 ```bash
 git add -A

@@ -12,12 +12,6 @@ module.exports = {
   plugins: ['prettier-plugin-astro'],
   overrides: [
     {
-      files: ['.*', '*.json', '*.md', '*.toml', '*.yml'],
-      options: {
-        useTabs: false,
-      },
-    },
-    {
       files: '*.astro',
       options: {
         parser: 'astro',
@@ -27,6 +21,7 @@ module.exports = {
       files: ['*.md', '*.mdx'],
       options: {
         singleQuote: false,
+        proseWrap: 'always',
       },
     },
   ],

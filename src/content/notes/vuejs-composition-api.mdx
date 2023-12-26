@@ -1,15 +1,18 @@
 ---
 title: "Vue.js 3.2 Composition API Setup with TypeScript"
-description: "If you have the opportunity to attend conferences, talks or a workshop, just go for it!"
+description:
+  "If you have the opportunity to attend conferences, talks or a workshop, just go for it!"
 slug: "vue-js-3-2-composition-api-setup-with-typescript"
 started: "2021-09-15"
-updated: "2023-11-25"
+updated: "2023-11-26"
 cover: "~/assets/logo-vuejs.png"
 topics:
   - "vue"
 ---
 
-Since Vue.js 3.2 you can use the `<script setup>` compile-time syntactic sugar for using Composition API inside Single File Components (SFCs). It is now the recommended syntax if you are using both SFCs and Composition API.
+Since Vue.js 3.2 you can use the `<script setup>` compile-time syntactic sugar for using Composition
+API inside Single File Components (SFCs). It is now the recommended syntax if you are using both
+SFCs and Composition API.
 
 It has some advantages:
 
@@ -18,9 +21,12 @@ It has some advantages:
 - runtime performance
 - better IDE type-inference performance
 
-What I like from it is that you don't need to return anything anymore. Top-level bindings are exposed to the template automatically, and the same goes for imports.
+What I like from it is that you don't need to return anything anymore. Top-level bindings are
+exposed to the template automatically, and the same goes for imports.
 
-I haven't found complete examples on how to use it with TypeScript. While playing with this new feature, I've created an example for testing. I'm just going to leave it here so it might help someone else too.
+I haven't found complete examples on how to use it with TypeScript. While playing with this new
+feature, I've created an example for testing. I'm just going to leave it here so it might help
+someone else too.
 
 ```js
 <script setup lang="ts">

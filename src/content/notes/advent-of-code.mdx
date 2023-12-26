@@ -3,24 +3,36 @@ title: "Advent of Code"
 description: "Participating in Advent of Code for the first time and learning a new language."
 slug: "advent-of-code"
 started: "2022-12-04"
-updated: "2023-11-25"
+updated: "2023-11-26"
 cover: "~/assets/advent-of-code.png"
 topics:
   - "advent-of-code"
   - "rust"
 ---
 
-The Advent of Code is an annual Advent calendar of small programming puzzles for a variety of skill sets and skill levels that can be solved in any programming language you like.
+The Advent of Code is an annual Advent calendar of small programming puzzles for a variety of skill
+sets and skill levels that can be solved in any programming language you like.
 
-A colleague of mine challenged me to participate in the advent of code this year. Well, not only me but the entire company. So far 11 are participating.
+A colleague of mine challenged me to participate in the advent of code this year. Well, not only me
+but the entire company. So far 11 are participating.
 
-My strengths are PHP and JavaScript, but I decided to use Go so I can take the opportunity and learn something new. I was divided between rust and Golang. After looking at some code and reading a few blog posts, my impression was that rust was too complicated. So Golang would be the one for me.
+My strengths are PHP and JavaScript, but I decided to use Go so I can take the opportunity and learn
+something new. I was divided between rust and Golang. After looking at some code and reading a few
+blog posts, my impression was that rust was too complicated. So Golang would be the one for me.
 
-Day 1 went pretty smoothly. I had to look up some language basics but within an hour I got something working. And surprisingly, I got the right answers. Day 2 went pretty much the same. I noticed the way I coded wasn't very clean. It felt like I was programming in basic again. For simple tasks, I would expect a function available out of the box, but after checking with a colleague, there was not. Day 3 was worse. It took me 2 hours to complete the task and a lot of lines of code.
+Day 1 went pretty smoothly. I had to look up some language basics but within an hour I got something
+working. And surprisingly, I got the right answers. Day 2 went pretty much the same. I noticed the
+way I coded wasn't very clean. It felt like I was programming in basic again. For simple tasks, I
+would expect a function available out of the box, but after checking with a colleague, there was
+not. Day 3 was worse. It took me 2 hours to complete the task and a lot of lines of code.
 
-During day 3, I looked at other solutions in rust. It was so much nicer, and I have seen solutions with only a few lines of code. Iterating over an array, sort it, get the max value and even get the sum of the top 3 values. All done in rust in a single line.
+During day 3, I looked at other solutions in rust. It was so much nicer, and I have seen solutions
+with only a few lines of code. Iterating over an array, sort it, get the max value and even get the
+sum of the top 3 values. All done in rust in a single line.
 
-So, it was time for me to swap strategies: try to complete the first day's task in rust. Since I had no clue where to start coding, I started with a cli tutorial. That got me started to set up a hello world cli app. Next up was understanding what others were doing.
+So, it was time for me to swap strategies: try to complete the first day's task in rust. Since I had
+no clue where to start coding, I started with a cli tutorial. That got me started to set up a hello
+world cli app. Next up was understanding what others were doing.
 
 ```rust
 pub fn main() {
@@ -33,9 +45,17 @@ pub fn main() {
 }
 ```
 
-This is the solution I found for the task of day 1. Where I could code the task in Golang without reading a tutorial, I have no idea how and if I could come up with something like that. I have an idea what it does, but that are quite a few parts in there that don’t mean anything to me. Motivated by how much better that solution looked than my Go version, I spend half a day working my way through the first 4 chapters of the [online Rust book](https://doc.rust-lang.org/book/).
+This is the solution I found for the task of day 1. Where I could code the task in Golang without
+reading a tutorial, I have no idea how and if I could come up with something like that. I have an
+idea what it does, but that are quite a few parts in there that don’t mean anything to me. Motivated
+by how much better that solution looked than my Go version, I spend half a day working my way
+through the first 4 chapters of the [online Rust book](https://doc.rust-lang.org/book/).
 
-Next up was writing a Rust version of the task of day 1 and helping out the elves calculate the total calories they are carrying once again. It took me an hour to complete it. The logic itself I wrote down pretty fast, however, rust is very strict with types, and half of the time was used to fix and convert types. It didn’t quite look like the solution I had in mind, but it worked, and I even included multiple functions and tests.
+Next up was writing a Rust version of the task of day 1 and helping out the elves calculate the
+total calories they are carrying once again. It took me an hour to complete it. The logic itself I
+wrote down pretty fast, however, rust is very strict with types, and half of the time was used to
+fix and convert types. It didn’t quite look like the solution I had in mind, but it worked, and I
+even included multiple functions and tests.
 
 ```rust
 static DAY: &'static str = "01";
@@ -109,12 +129,23 @@ mod tests {
 }
 ```
 
-Some basics I learned were to keep the main function slim, extract code into functions to make it more testable and share code between both parts of the task.
+Some basics I learned were to keep the main function slim, extract code into functions to make it
+more testable and share code between both parts of the task.
 
-Today I worked on the task of day 4. In less than an hour, my answers were accepted. The solution is written in rust and even some testing is in place. I know my code is far from optimized, it's my first try at Rust after all. At some point, I will be able to write code like the first solution someone else wrote, after gaining more experience.
+Today I worked on the task of day 4. In less than an hour, my answers were accepted. The solution is
+written in rust and even some testing is in place. I know my code is far from optimized, it's my
+first try at Rust after all. At some point, I will be able to write code like the first solution
+someone else wrote, after gaining more experience.
 
-What I learned from this is that you can learn rust, but you need to learn and understand the basics first and read a fair part of the manual. Golang on the other hand is pretty basic and you can jump right into it and get results fast. Out of the box, Golang is pretty limited and feels like programming in basic again. Rust on the other hand has a lot of functionality and feels like an advanced programming language.
+What I learned from this is that you can learn rust, but you need to learn and understand the basics
+first and read a fair part of the manual. Golang on the other hand is pretty basic and you can jump
+right into it and get results fast. Out of the box, Golang is pretty limited and feels like
+programming in basic again. Rust on the other hand has a lot of functionality and feels like an
+advanced programming language.
 
-So far, I completed all advent of code tasks, but let's see how long I can keep up. It seems the tasks increase in complexity over time.
+So far, I completed all advent of code tasks, but let's see how long I can keep up. It seems the
+tasks increase in complexity over time.
 
-I can recommend participating in the [Advent of code](https://adventofcode.com/) with your friends or colleagues. It’s also a perfect time to learn a language (so far, but let’s talk about that again when the complexity of the tasks increases).
+I can recommend participating in the [Advent of code](https://adventofcode.com/) with your friends
+or colleagues. It’s also a perfect time to learn a language (so far, but let’s talk about that again
+when the complexity of the tasks increases).
