@@ -1,0 +1,194 @@
+---
+title: "HEY Proton Mail"
+description: "An email service which respects your privacy and lets you take control of your inbox."
+slug: "hey-proton-mail"
+started: "2023-12-26"
+updated: "2023-11-26"
+topics:
+  - "email"
+  - "security"
+  - "pgp"
+  - "proton mail"
+  - "sieve"
+---
+
+For the past years I had connected my domain to privateemail. It's build on top of open-xchange and
+does the job. The user interface sucks big time and the mobile mail app seems to be taken out of the
+android play store.
+
+The best feature from privateemail is
+[sieve email filtering](https://datatracker.ietf.org/doc/html/rfc5228). You can write your own
+filtering rules, and as a developer it's fun to play with. I ended up writing rules to copy the
+multi inbox format from Gmail and pushed email into the social, updates, forums and promotions
+categories. The notifications in those categories were silenced, reducing the noise they create.
+
+I tried different ways to utilize privateemail, different clients, enabling the exchange feature
+(which didn't work that good), but at the end it became more a forwarding and smtp service to my
+gmail account.
+
+## Switching to Proton Mail
+
+I already had a Proton Mail account but haven't been using it for a long time. I never made the
+switch before, mainly because the mobile client does not support conversation view (the web client
+does). The renewal for privateemail was around the corner and I decided to let the subscription run
+out and switch to Proton Mail entirely, including connecting my custom domain to it.
+
+This is where the fun starts because Proton Mail supports sieve filtering. First thing I did was
+copying the Gmail multi inbox categories and wrote the filters for it. I noticed the social and
+forums categories were not used that much. Most emails you get are notifications and promotions, at
+least in my case.
+
+Searching on the web I found some info about the HEY workflow. So I digged a bit deeper into that.
+
+## The HEY Workflow
+
+HEY has a few folders: Inbox, The feed, Paper trail, and Screening. I'm not sure if the last one is
+a real folder but I use it in Proton Mail.
+
+**Inbox**
+
+In HEY it's called the Imbox, and yes, the typo is intended. This is your normal inbox where the
+real important mail comes in. I think that is why they called it like that.
+
+**The feed**
+
+This is your newsfeed for newsletters. Emails are added with a read flag, meaning that you do not
+get notifications or even see the counter. You can read those whenever you feel like it. Without the
+new email counter this folder is not messing with your workflow.
+
+**Paper trail**
+
+This is the place for receipts, confirmations, and other transactional emails. You don't need to
+read all of them, but can if you want.
+
+**Screening**
+
+This is the folder where email from unscreened email addresses are coming in. The idea behind the
+HEY workflow is that AI sucks. It is not smart enough (yet) to categorize email good enough. Their
+philosophy is that HI (Human Intelligence) can do a better job. So every new from address goes into
+here once and you decide what kind of email it is, and you pick one of the categories form above.
+HEY remembers this for you and will do this automatically for you next time.
+
+This workflow sparked my interest and you can even mimic it with sieve filtering.
+
+## HEY Screening Sieve Filter
+
+```
+require ["include", "environment", "variables", "relational", "comparator-i;ascii-numeric", "spamtest", "extlists", "fileinto", "imap4flags"];
+
+# Do not run this script on spam messages
+if allof (
+    environment :matches "vnd.proton.spam-threshold" "*",
+		spamtest :value "ge" :comparator "i;ascii-numeric" "${1}"
+) {
+    return;
+}
+
+# Ignore messages sent by myself: they will be stored in `Sent`
+if header :list "from" ":addrbook:myself"
+{
+  	#fileinto "sent";
+    return;
+}
+
+# The real important emails go directly to the Inbox
+if header :list "from" ":addrbook:personal?label=InboxGroup" {
+    fileinto "Inbox";
+}
+
+# Your newsfeed for newsletters
+elsif anyof (
+    header :list "from" ":addrbook:personal?label=TheFeedGroup",
+    address :matches "from" [
+				"newsletter@example.com",
+	    	"newsletter-two@example.com"
+    ],
+    exists "list-unsubscribe",
+    exists "x-campaign",
+    exists "x-campaignid",
+    exists "x-feedback-id",
+    exists "x-maillist-guid",
+    exists "x-maillist-id",
+    exists "x-feedback-id",
+    exists "x-rpcampaign",
+    exists "x-unsubscribe-web"
+) {
+    #addflag "\\\\Seen";
+    fileinto "The feed";
+}
+
+# The place for receipts, confirmations, and other transactional emails
+elsif anyof (
+    header :list "from" ":addrbook:personal?label=PaperTrailGroup",
+    address :matches "to" [
+	    	"prefix+*@my-domain.com"
+    ],
+    address :matches "from" [
+	    	"service@paypal.de"
+    ]
+) {
+    fileinto "Paper trail";
+}
+
+# File other emails for screening
+else {
+    fileinto "Screening";
+}
+```
+
+I don’t mark emails as seen in The Feed, so that I can easy see which newsletters I read or not.
+Since they are in a separate folder they don’t interfere with the important emails in your inbox.
+Every few days I will check that folder and see if there are unread newsletters.
+
+Also the headers are scanned for an unsubscribe mail as it usually indicates a newsletter.
+
+For the paper trail, an address list group is used to whitelist senders. This can also be automated
+in case you use something like subaddressing (`address :matches "to"…`), or you can explicitly add
+from emails in the filter `address :matches "from"...`.
+
+Everything that is not caught by then will end up in the Screening folder. There you can scan the
+incoming emails and add them to on of the methods above.
+
+If you have at least a plus subscription for Proton Mail, you can add your own custom domain. I have
+set it up in such way that I have a few mailboxes defined.
+
+## Keep spam under control
+
+I prefer to have a unique email address for each site. You could use subaddressing like
+`prefix+sdf3g5@my-domain.com`, or a catch-all address. In case of a catch-all address, you can
+create unique address for each website, e.g. `websitename.sdf3g5@my-domain.com`, where the second
+part is a random string of a few characters. A subaddress can be tracked, or so they say. The prefix
+part would always be the same. The second solution cannot be tracked, because it could be used by
+multiple persons, e.g. [duck.com](http://duck.com) or firefox relay.
+
+You still want to keep track of all the email addresses you created and used, in case a site got
+hacked and that email address is in the open. You can blacklist the to address.
+
+Another way is to whitelist only the emails you used. In that case add them to your sieve filters. I
+prefer the whitelisting so you don’t wake up in the morning and find out that someone was in a funny
+mood and sent you emails to 700 different address on your domain which got caught by the catch-all
+address.
+
+This sound like a lot of work, and it is. But there are tools like
+[simplelogin](https://simplelogin.io?slref=g33r7), which can generate these email addresses for you
+and have a dashboard where you can manage it.
+
+### Bonus Suspicious Filter
+
+You can do a lot more with sieve filters. For example you can tag all emails which are unsecure (not
+sent with encryption), or fail dkim or spf.
+
+```
+require ["include", "fileinto"];
+
+# Mark emails that failed basic anti-spoofing or did not use tls
+if anyof(
+      header :contains "Authentication-Results" ["dkim=fail", "spf=fail", "spf=none"],
+      header :is "x-pm-transfer-encryption" "none"
+) {
+    fileinto "Suspicious";
+}
+```
+
+And there you have it. An email service which respects your privacy and, with the help of sieve
+filters, it allows you to take control of your inbox and create less noise.
