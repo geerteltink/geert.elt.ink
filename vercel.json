@@ -2,7 +2,7 @@
   "trailingSlash": true,
   "headers": [
     {
-      "source": "/.well-known/openpgpkey",
+      "source": "/.well-known/openpgpkey(.*)",
       "headers": [
         {
           "key": "Access-Control-Allow-Origin",
@@ -14,7 +14,7 @@
       "source": "/.well-known/webfinger",
       "headers": [
         {
-          "key": "content-type",
+          "key": "Content-Type",
           "value": "application/activity+json"
         }
       ]
@@ -58,12 +58,7 @@
   ],
   "redirects": [
     {
-      "source": "/about-the-value-of-workshops",
-      "destination": "/notes/about-the-value-of-workshops/",
-      "permanent": true
-    },
-    {
-      "source": "/check-git-status-recursively-on-windows([^\/]+?)",
+      "source": "/check-git-status-recursively-on-windows/",
       "destination": "/notes/check-git-status-recursively-on-windows/",
       "permanent": true
     },
@@ -73,18 +68,8 @@
       "permanent": true
     },
     {
-      "source": "/cqrs-message-validation",
-      "destination": "/notes/cqrs-message-validation/",
-      "permanent": true
-    },
-    {
       "source": "/cqrs-message-validation/",
       "destination": "/notes/cqrs-message-validation/",
-      "permanent": true
-    },
-    {
-      "source": "/git-troubleshooting",
-      "destination": "/notes/git-troubleshooting/",
       "permanent": true
     },
     {
@@ -93,18 +78,8 @@
       "permanent": true
     },
     {
-      "source": "/git-workflow",
-      "destination": "/notes/git-workflow/",
-      "permanent": true
-    },
-    {
       "source": "/git-workflow/",
       "destination": "/notes/git-workflow/",
-      "permanent": true
-    },
-    {
-      "source": "/howto-update-teamspeak-3-on-debian",
-      "destination": "/notes/howto-update-teamspeak-3-on-debian/",
       "permanent": true
     },
     {
@@ -113,18 +88,8 @@
       "permanent": true
     },
     {
-      "source": "/jekyll-atom-feed",
-      "destination": "/notes/jekyll-atom-feed/",
-      "permanent": true
-    },
-    {
       "source": "/jekyll-atom-feed/",
       "destination": "/notes/jekyll-atom-feed/",
-      "permanent": true
-    },
-    {
-      "source": "/one-abstract-action-factory-for-all",
-      "destination": "/notes/one-abstract-action-factory-for-all/",
       "permanent": true
     },
     {
@@ -133,18 +98,8 @@
       "permanent": true
     },
     {
-      "source": "/phpstorm-psr-11-container-interface-code-completion",
-      "destination": "/notes/phpstorm-psr-11-container-interface-code-completion/",
-      "permanent": true
-    },
-    {
       "source": "/phpstorm-psr-11-container-interface-code-completion/",
       "destination": "/notes/phpstorm-psr-11-container-interface-code-completion/",
-      "permanent": true
-    },
-    {
-      "source": "/project-documentation-with-hugo-modules",
-      "destination": "/notes/project-documentation-with-hugo-modules/",
       "permanent": true
     },
     {
@@ -153,18 +108,8 @@
       "permanent": true
     },
     {
-      "source": "/running-phpunit-in-phpstorm-with-docker-compose-on-windows",
-      "destination": "/notes/running-phpunit-in-phpstorm-with-docker-compose-on-windows/",
-      "permanent": true
-    },
-    {
       "source": "/running-phpunit-in-phpstorm-with-docker-compose-on-windows/",
       "destination": "/notes/running-phpunit-in-phpstorm-with-docker-compose-on-windows/",
-      "permanent": true
-    },
-    {
-      "source": "/symfony-2-dynamic-router",
-      "destination": "/notes/symfony-2-dynamic-router/",
       "permanent": true
     },
     {
@@ -173,18 +118,8 @@
       "permanent": true
     },
     {
-      "source": "/vuejs-32-composition-api-setup-with-typescript",
-      "destination": "/notes/vue-js-3-2-composition-api-setup-with-typescript/",
-      "permanent": true
-    },
-    {
       "source": "/vuejs-32-composition-api-setup-with-typescript/",
       "destination": "/notes/vue-js-3-2-composition-api-setup-with-typescript/",
-      "permanent": true
-    },
-    {
-      "source": "/wsl-2-and-visual-studio-code",
-      "destination": "/notes/wsl-2-and-visual-studio-code/",
       "permanent": true
     },
     {
@@ -193,18 +128,8 @@
       "permanent": true
     },
     {
-      "source": "/zend-expressive-console-cli-commands",
-      "destination": "/notes/zend-expressive-console-cli-commands/",
-      "permanent": true
-    },
-    {
       "source": "/zend-expressive-console-cli-commands/",
       "destination": "/notes/zend-expressive-console-cli-commands/",
-      "permanent": true
-    },
-    {
-      "source": "/zend-expressive-one-action-factory-for-all",
-      "destination": "/notes/zend-expressive-one-action-factory-for-all/",
       "permanent": true
     },
     {
