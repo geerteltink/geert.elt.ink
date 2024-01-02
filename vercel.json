@@ -1,6 +1,15 @@
 {
   "headers": [
     {
+      "source": "/.well-known/openpgpkey",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
+    },
+    {
       "source": "/.well-known/webfinger",
       "headers": [
         {
