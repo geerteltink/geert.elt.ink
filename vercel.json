@@ -58,17 +58,12 @@
   ],
   "redirects": [
     {
-      "source": "/about-the-value-of-workshops*",
+      "source": "/about-the-value-of-workshops",
       "destination": "/notes/about-the-value-of-workshops/",
       "permanent": true
     },
     {
-      "source": "/check-git-status-recursively-on-windows",
-      "destination": "/notes/check-git-status-recursively-on-windows/",
-      "permanent": true
-    },
-    {
-      "source": "/check-git-status-recursively-on-windows/",
+      "source": "/check-git-status-recursively-on-windows([^\/]+?)",
       "destination": "/notes/check-git-status-recursively-on-windows/",
       "permanent": true
     },
