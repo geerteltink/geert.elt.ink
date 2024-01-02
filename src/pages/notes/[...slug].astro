@@ -3,23 +3,25 @@ import { getCollection } from 'astro:content';
 import Note from '~/layouts/Note.astro';
 
 export async function getStaticPaths() {
-  const notes = await getCollection('notes');
-  return notes.map((entry) => ({
+  const notes = (await getCollection('notes')).sort(
+    (a, b) => b.data.started.valueOf() - a.data.started.valueOf()
+  );
+  const totalNotes = notes.length;
+
+  return notes.map((entry, i) => ({
     params: { slug: entry.slug },
-    props: { entry },
+    props: {
+      entry,
+      previous: i + 1 === totalNotes ? null : notes[i + 1],
+      next: i === 0 ? null : notes[i - 1],
+    },
   }));
 }
 
-const { entry } = Astro.props;
+const { entry, previous, next } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<Note note={entry}>
+<Note note={entry} previous={previous} next={next}>
   <Content />
 </Note>
-
-<style>
-  .cover-image {
-    margin-bottom: 2rem;
-  }
-</style>

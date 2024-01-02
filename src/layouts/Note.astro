@@ -6,9 +6,11 @@ import Layout from '~/layouts/Layout.astro';
 
 interface Props {
   note: CollectionEntry<'notes'>;
+  previous?: CollectionEntry<'notes'>;
+  next?: CollectionEntry<'notes'>;
 }
 
-const { note } = Astro.props;
+const { note, previous, next } = Astro.props;
 
 const schema = {
   '@context': 'https://schema.org',
@@ -65,11 +67,43 @@ const schema = {
       )
     }
     <slot />
+    <footer>
+      <ul class="footer-menu">
+        {
+          previous ? (
+            <li>
+              <a href={`/notes/${previous.slug}/`}>&laquo; {previous.data.title}</a>
+            </li>
+          ) : null
+        }
+        {
+          next ? (
+            <li style="text-align: right;">
+              <a href={`/notes/${next.slug}/`}>{next.data.title} &raquo;</a>
+            </li>
+          ) : null
+        }
+      </ul>
+    </footer>
   </article>
 </Layout>
 
-<style>
+<style scoped>
   .cover-image {
     margin-bottom: 2rem;
+  }
+
+  footer {
+    margin-bottom: var(--space-m);
+  }
+
+  .footer-menu {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10ch, 1fr));
+    grid-gap: var(--space-s-l);
+    overflow: hidden;
+    margin-top: var(--space-m);
+    margin-bottom: var(--space-m);
   }
 </style>
