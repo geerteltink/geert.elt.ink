@@ -68,11 +68,6 @@
       "permanent": true
     },
     {
-      "source": "/contributing-to-a-github-project",
-      "destination": "/notes/contributing-to-a-github-project/",
-      "permanent": true
-    },
-    {
       "source": "/contributing-to-a-github-project/",
       "destination": "/notes/contributing-to-a-github-project/",
       "permanent": true
