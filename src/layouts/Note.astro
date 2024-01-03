@@ -36,27 +36,32 @@ const schema = {
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(schema)} />
   <article>
     <header>
-      <h1>
+      <h1 class="title">
         {note.data.title}
       </h1>
-      <h2 class="text-medium-emphasis">
+      <h2 class="sub-title text-medium-emphasis">
         {note.data.description}
       </h2>
-      <div class="mb-3 text-disabled">
-        {
-          note.data.started && (
-            <div>
-              Planted <RelativeDate date={note.data.started} />
-            </div>
-          )
-        }
-        {
-          note.data.updated && (
-            <div>
-              Last tended <RelativeDate date={note.data.updated} />
-            </div>
-          )
-        }
+      <div class="meta">
+        <ul class="meta-topics">
+          {note.data.topics?.map((topic) => <li class="meta-topic">{topic}</li>)}
+        </ul>
+        <div class="meta-dates">
+          {
+            note.data.started && (
+              <span>
+                Published <RelativeDate date={note.data.started} />
+              </span>
+            )
+          }
+          {
+            note.data.updated && (
+              <span>
+                Updated <RelativeDate date={note.data.updated} />
+              </span>
+            )
+          }
+        </div>
       </div>
     </header>
     {
@@ -89,8 +94,42 @@ const schema = {
 </Layout>
 
 <style scoped>
+  .sub-title {
+    padding: var(--space-s) 0 var(--space-l);
+    border-bottom: 1px solid var(--surface-24dp);
+  }
+
+  .meta {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    font-size: var(--step--1);
+    margin-bottom: var(--space-m);
+  }
+
+  .meta-topics {
+    list-style: none;
+    display: flex;
+    flex-flow: wrap;
+    max-width: 70%;
+    padding: 0px;
+    margin-top: var(--space-xs);
+  }
+
+  .meta-topic {
+    margin-right: var(--space-xs);
+    margin-bottom: var(--space-3xs);
+  }
+
+  .meta-dates {
+    margin-top: var(--space-xs);
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+
   .cover-image {
-    margin-bottom: 2rem;
+    margin-bottom: var(--space-m);
   }
 
   footer {
