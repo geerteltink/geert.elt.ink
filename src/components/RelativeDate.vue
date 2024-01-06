@@ -4,7 +4,8 @@ import { formatDistanceToNow, formatISO } from 'date-fns';
 const props = defineProps({
   date: {
     type: Date,
-    required: true,
+    required: false,
+    default: null,
   },
 });
 
@@ -16,7 +17,7 @@ const relativeDate = formatDistanceToNow(props.date, {
 </script>
 
 <template>
-  <time :datetime="isoDate">
+  <time :datetime="isoDate" v-if="date">
     {{ relativeDate }}
   </time>
 </template>
