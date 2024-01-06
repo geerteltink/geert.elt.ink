@@ -1,7 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import CoverImage from '~/components/CoverImage.astro';
-import RelativeDate from '~/components/RelativeDate.astro';
+import RelativeDate from '~/components/RelativeDate.vue';
 import Layout from '~/layouts/Layout.astro';
 
 interface Props {
@@ -49,16 +49,16 @@ const schema = {
         <div class="meta-dates">
           {
             note.data.started && (
-              <span>
-                Published <RelativeDate date={note.data.started} />
-              </span>
+              <div>
+                Published <RelativeDate date={note.data.started} client:visible />
+              </div>
             )
           }
           {
             note.data.updated && (
-              <span>
-                Updated <RelativeDate date={note.data.updated} />
-              </span>
+              <div>
+                Updated <RelativeDate date={note.data.updated} client:visible />
+              </div>
             )
           }
         </div>

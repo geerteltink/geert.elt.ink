@@ -1,5 +1,5 @@
 ---
-import RelativeDate from './RelativeDate.astro';
+import RelativeDate from './RelativeDate.vue';
 
 export interface Props {
   title: string;
@@ -18,7 +18,7 @@ const { href, title, started, type } = Astro.props;
     </h3>
     <div class="card-meta">
       <span>{type}</span> &bull;
-      <RelativeDate date={started} />
+      <RelativeDate date={started} client:visible />
     </div>
   </div>
 </a>
