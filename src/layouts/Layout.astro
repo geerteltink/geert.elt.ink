@@ -18,10 +18,8 @@ const { ...head } = Astro.props;
   </head>
   <body class="page">
     <Header />
-    <main class="page-main bg-background">
-      <div class="container">
-        <slot />
-      </div>
+    <main class="page-main bg-background container">
+      <slot />
     </main>
     <Footer />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-F62S13KXF9"></script>
