@@ -12,6 +12,7 @@ node_modules/
 .astro/
 .netlify
 .vercel
+tsconfig.tsbuildinfo
 
 # logs
 npm-debug.log*
