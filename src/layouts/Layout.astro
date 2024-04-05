@@ -3,6 +3,7 @@ import { ViewTransitions } from 'astro:transitions';
 import Footer from '~/components/Footer.astro';
 import HeadMeta, { type Props as HeadMetaProps } from '~/components/HeadMeta.astro';
 import Header from '~/components/Header.astro';
+import SpeedInsights from '@vercel/speed-insights/astro';
 
 export type Props = HeadMetaProps;
 
@@ -15,6 +16,7 @@ const { ...head } = Astro.props;
     <HeadMeta {...head} />
     <ViewTransitions />
     <slot name="head" />
+    <SpeedInsights />
   </head>
   <body class="page">
     <Header />
