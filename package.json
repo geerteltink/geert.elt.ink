@@ -1,6 +1,6 @@
 {
   "name": "geert.elt.ink",
-  "version": "5.2.4",
+  "version": "5.2.5",
   "description": "A web developer's playground.",
   "author": "Geert Eltink",
   "license": "MIT",
@@ -40,7 +40,7 @@
     "autoprefixer": "^10.4.19",
     "bun-types": "^1.1.4",
     "check-html-links": "^0.2.4",
-    "eslint": "^8.57.0",
+    "eslint": "^9.2.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-astro": "^0.34.0",
     "eslint-plugin-prettier": "^5.1.3",
