@@ -21,9 +21,8 @@
     },
     "strictNullChecks": true,
     "allowJs": true,
-    "jsx": "preserve",
-    "types": ["bun-types"]
+    "jsx": "preserve"
   },
-  "include": ["**/*", ".eslintrc.cjs", ".postcssrc.js", ".prettierrc.js", ".stylelintrc.js"],
+  "include": ["**/*"],
   "exclude": ["node_modules", "dist", "public"]
 }
