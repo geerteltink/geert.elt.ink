@@ -24,6 +24,6 @@
     "jsx": "preserve",
     "types": ["bun-types"]
   },
-  "include": ["**/*", ".eslintrc.cjs"],
+  "include": ["**/*", ".eslintrc.cjs", ".postcssrc.js", ".prettierrc.js", ".stylelintrc.js"],
   "exclude": ["node_modules", "dist", "public"]
 }
