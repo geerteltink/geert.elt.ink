@@ -74,13 +74,13 @@ This workflow sparked my interest and you can even mimic it with sieve filtering
 
 ## HEY Screening Sieve Filter
 
-```
+```text
 require ["include", "environment", "variables", "relational", "comparator-i;ascii-numeric", "spamtest", "extlists", "fileinto", "imap4flags"];
 
 # Do not run this script on spam messages
 if allof (
     environment :matches "vnd.proton.spam-threshold" "*",
-		spamtest :value "ge" :comparator "i;ascii-numeric" "${1}"
+    spamtest :value "ge" :comparator "i;ascii-numeric" "${1}"
 ) {
     return;
 }
@@ -88,7 +88,7 @@ if allof (
 # Ignore messages sent by myself: they will be stored in `Sent`
 if header :list "from" ":addrbook:myself"
 {
-  	#fileinto "sent";
+    #fileinto "sent";
     return;
 }
 
@@ -101,8 +101,8 @@ if header :list "from" ":addrbook:personal?label=InboxGroup" {
 elsif anyof (
     header :list "from" ":addrbook:personal?label=TheFeedGroup",
     address :matches "from" [
-				"newsletter@example.com",
-	    	"newsletter-two@example.com"
+        "newsletter@example.com",
+        "newsletter-two@example.com"
     ],
     exists "list-unsubscribe",
     exists "x-campaign",
@@ -122,10 +122,10 @@ elsif anyof (
 elsif anyof (
     header :list "from" ":addrbook:personal?label=PaperTrailGroup",
     address :matches "to" [
-	    	"prefix+*@my-domain.com"
+        "prefix+*@my-domain.com"
     ],
     address :matches "from" [
-	    	"service@paypal.de"
+        "service@paypal.de"
     ]
 ) {
     fileinto "Paper trail";
@@ -179,15 +179,15 @@ and have a dashboard where you can manage it.
 You can do a lot more with sieve filters. For example you can tag all emails which are unsecure (not
 sent with encryption), or fail dkim or spf.
 
-```
+```text
 require ["include", "fileinto"];
 
 # Mark emails that failed basic anti-spoofing or did not use tls
 if anyof(
-      header :contains "Authentication-Results" ["dkim=fail", "spf=fail", "spf=none"],
-      header :is "x-pm-transfer-encryption" "none"
+  header :contains "Authentication-Results" ["dkim=fail", "spf=fail", "spf=none"],
+  header :is "x-pm-transfer-encryption" "none"
 ) {
-    fileinto "Suspicious";
+  fileinto "Suspicious";
 }
 ```
 
