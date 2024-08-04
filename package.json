@@ -1,6 +1,6 @@
 {
   "name": "geert.elt.ink",
-  "version": "5.3.6",
+  "version": "5.3.7",
   "description": "A web developer's playground.",
   "author": "Geert Eltink",
   "license": "MIT",
@@ -26,19 +26,19 @@
     "@astrojs/sitemap": "^3.1.6",
     "@astrojs/vue": "^4.5.0",
     "@vercel/speed-insights": "^1.0.12",
-    "astro": "^4.12.2",
+    "astro": "^4.13.1",
     "date-fns": "^3.6.0",
-    "vue": "^3.4.34"
+    "vue": "^3.4.35"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.1",
     "@eslint/js": "^9.8.0",
     "@types/eslint__js": "^8.42.3",
     "@types/markdown-it": "^14.1.2",
-    "@types/node": "^22.0.2",
+    "@types/node": "^22.1.0",
     "@types/sanitize-html": "^2.11.0",
     "astro-eslint-parser": "^1.0.2",
-    "autoprefixer": "^10.4.19",
+    "autoprefixer": "^10.4.20",
     "check-html-links": "^0.2.4",
     "eslint": "^9.8.0",
     "eslint-config-prettier": "^9.1.0",
@@ -52,10 +52,10 @@
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.1",
     "sanitize-html": "^2.13.0",
-    "stylelint": "^16.7.0",
+    "stylelint": "^16.8.1",
     "stylelint-config-recess-order": "^5.0.1",
     "stylelint-config-recommended": "^14.0.1",
     "typescript": "^5.5.4",
-    "typescript-eslint": "^8.0.0-alpha.54"
+    "typescript-eslint": "^8.0.0"
   }
 }
