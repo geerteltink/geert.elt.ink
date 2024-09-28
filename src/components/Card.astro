@@ -5,10 +5,9 @@ export interface Props {
   title: string;
   href: string;
   started: Date;
-  type: string;
 }
 
-const { href, title, started, type } = Astro.props;
+const { href, title, started } = Astro.props;
 ---
 
 <a href={href} class="card">
@@ -17,7 +16,6 @@ const { href, title, started, type } = Astro.props;
       {title}
     </h3>
     <div class="card-meta">
-      <span>{type}</span> &bull;
       <RelativeDate date={started} client:visible />
     </div>
   </div>
