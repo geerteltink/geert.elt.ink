@@ -27,7 +27,7 @@
     "@astrojs/vue": "^4.5.1",
     "@vercel/speed-insights": "^1.0.12",
     "astro": "^4.15.8",
-    "date-fns": "^3.6.0",
+    "date-fns": "^4.1.0",
     "vue": "^3.5.8"
   },
   "devDependencies": {
@@ -46,7 +46,7 @@
     "eslint-plugin-prettier": "^5.2.1",
     "markdown-it": "^14.1.0",
     "markdownlint": "^0.35.0",
-    "markdownlint-cli": "^0.41.0",
+    "markdownlint-cli": "^0.42.0",
     "npm-run-all2": "^6.2.3",
     "organize-imports-cli": "^0.10.0",
     "prettier": "^3.3.3",
