@@ -16,6 +16,7 @@
     "lint:types": "tsc --noEmit",
     "lint:imports": "organize-imports-cli ./tsconfig.json",
     "lint:eslint": "eslint . --report-unused-disable-directives --fix --cache",
+    "lint:oxlint": "oxlint --config=./oxlintrc.json --ignore-path=.oxlintignore --format=github",
     "lint:prettier": "prettier . --write --cache --list-different",
     "lint:md": "markdownlint src/**/*.mdx",
     "lint:css": "stylelint src/styles/**/*.css"
@@ -49,6 +50,7 @@
     "markdownlint-cli": "^0.42.0",
     "npm-run-all2": "^6.2.3",
     "organize-imports-cli": "^0.10.0",
+    "oxlint": "^0.9.9",
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.1",
     "sanitize-html": "^2.13.0",
