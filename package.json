@@ -10,16 +10,17 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "test": "npm run build & run-p check-links lint:*",
+    "test": "npm run build & npm-run-all check-links lint:*",
     "check-links": "check-html-links dist",
+    "lint": "npm-run-all lint:*",
     "lint:astro": "astro check",
     "lint:types": "tsc --noEmit",
     "lint:imports": "organize-imports-cli ./tsconfig.json",
-    "lint:eslint": "eslint . --report-unused-disable-directives --fix --cache",
-    "lint:oxlint": "oxlint --config=./oxlintrc.json --ignore-path=.oxlintignore --format=github",
-    "lint:prettier": "prettier . --write --cache --list-different",
+    "lint:ox": "oxlint --config=./.oxlintrc.json --ignore-path=.oxlintignore -D correctness -D suspicious -D perf",
+    "lint:es": "eslint . --report-unused-disable-directives --fix --cache",
     "lint:md": "markdownlint src/**/*.mdx",
-    "lint:css": "stylelint src/styles/**/*.css"
+    "lint:css": "stylelint src/styles/**/*.css",
+    "lint:prettier": "prettier . --write --cache --list-different"
   },
   "dependencies": {
     "@astrojs/mdx": "^3.1.7",

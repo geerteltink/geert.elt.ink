@@ -18,8 +18,9 @@ jobs:
       - run: npm run lint:astro
       - run: npm run lint:types
       - run: npm run lint:imports
-      - run: npm run lint:eslint
-      - run: npm run lint:prettier
+      - run: npm run lint:ox
+      - run: npm run lint:es
       - run: npm run lint:md
       - run: npm run lint:css
+      - run: npm run lint:prettier
       - run: npm run check-links

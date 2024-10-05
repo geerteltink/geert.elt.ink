@@ -6,8 +6,8 @@ import Layout from '~/layouts/Layout.astro';
 
 interface Props {
   note: CollectionEntry<'notes'>;
-  previous?: CollectionEntry<'notes'> | null;
-  next?: CollectionEntry<'notes'> | null;
+  previous?: CollectionEntry<'notes'> | undefined;
+  next?: CollectionEntry<'notes'> | undefined;
 }
 
 const { note, previous, next } = Astro.props;

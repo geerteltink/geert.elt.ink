@@ -5,7 +5,7 @@ const props = defineProps({
   date: {
     type: Date,
     required: false,
-    default: null,
+    default: undefined,
   },
 });
 

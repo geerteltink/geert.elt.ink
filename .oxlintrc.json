@@ -1,0 +1,15 @@
+{
+  "env": {
+    "browser": true
+  },
+  "settings": {},
+  "rules": {
+    "eqeqeq": "error",
+    "import/no-cycle": "error",
+    "import/namespace": "error",
+    "eslint/no-unused-vars": "allow",
+    "eslint/eqeqeq": "error",
+    "eslint/sort-imports": "allow",
+    "unicorn/no-null": "error"
+  }
+}

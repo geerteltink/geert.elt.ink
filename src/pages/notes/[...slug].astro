@@ -12,8 +12,8 @@ export async function getStaticPaths() {
     params: { slug: entry.slug },
     props: {
       entry,
-      previous: i + 1 === totalNotes ? null : notes[i + 1],
-      next: i === 0 ? null : notes[i - 1],
+      previous: i + 1 === totalNotes ? undefined : notes[i + 1],
+      next: i === 0 ? undefined : notes[i - 1],
     },
   }));
 }

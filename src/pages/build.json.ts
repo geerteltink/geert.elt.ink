@@ -9,7 +9,7 @@ export function GET({ generator, site }: APIContext) {
         site: site,
         env: import.meta.env.MODE,
       },
-      null,
+      undefined,
       2
     )
   );
