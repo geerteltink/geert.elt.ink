@@ -2,13 +2,12 @@
 
 import jsLint from '@eslint/js';
 import json from '@eslint/json';
+import markdown from '@eslint/markdown';
 import astroParser from 'astro-eslint-parser';
 import astro from 'eslint-plugin-astro';
 import { dirname } from 'path';
 import tsLint from 'typescript-eslint';
 import { fileURLToPath } from 'url';
-
-import markdown from "@eslint/markdown";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -32,15 +31,15 @@ export default [
     },
   },
   {
-    files: ["**/*.md", "**/*.mdx"],
+    files: ['**/*.md', '**/*.mdx'],
     plugins: {
-      markdown
+      markdown,
     },
-    language: "markdown/commonmark",
+    language: 'markdown/commonmark',
     rules: {
-      "markdown/no-html": "off",
+      'markdown/no-html': 'off',
       'no-irregular-whitespace': 'off',
-    }
+    },
   },
   {
     ...jsLint.configs.recommended,
