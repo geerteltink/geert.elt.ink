@@ -2,7 +2,6 @@
   "editor.rulers": [120],
   "editor.tabSize": 2,
 
-  // organize imports (removes unused), then eslint fix on save
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
     "source.organizeImports": "explicit",
@@ -10,11 +9,9 @@
   },
   "editor.formatOnSave": true,
 
-  // prefer .js extension on imports
   "javascript.preferences.importModuleSpecifierEnding": "js",
   "typescript.preferences.importModuleSpecifierEnding": "js",
 
-  // use local typescript version
   "typescript.tsdk": "node_modules/typescript/lib",
   "[mdx]": {
     "editor.defaultFormatter": "unifiedjs.vscode-mdx"

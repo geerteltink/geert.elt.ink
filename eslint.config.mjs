@@ -1,29 +1,56 @@
 // @ts-check
 
-import eslint from '@eslint/js';
+import jsLint from '@eslint/js';
+import json from '@eslint/json';
 import astroParser from 'astro-eslint-parser';
 import astro from 'eslint-plugin-astro';
 import { dirname } from 'path';
-import tseslint from 'typescript-eslint';
+import tsLint from 'typescript-eslint';
 import { fileURLToPath } from 'url';
+
+import markdown from "@eslint/markdown";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-export default tseslint.config(
-  eslint.configs.recommended,
-  ...tseslint.configs.recommended,
-  ...tseslint.configs.recommendedTypeChecked,
+export default [
+  jsLint.configs.recommended,
+  ...tsLint.configs.recommended,
+  //...tsLint.configs.recommendedTypeChecked,
+
   {
     ignores: ['.git/**', '.github/**', '.astro/**', 'dist/**', 'node_modules/**', '**/*.d.ts'],
   },
   {
-    ignores: ['.astro', 'dist', 'node_modules'],
+    files: ['**/*.json'],
+    ignores: ['package-lock.json'],
+    language: 'json/json',
+    // @ts-expect-error: JSON config may not be typed correctly
+    ...json.configs.recommended,
+    rules: {
+      'no-irregular-whitespace': 'off',
+    },
+  },
+  {
+    files: ["**/*.md", "**/*.mdx"],
+    plugins: {
+      markdown
+    },
+    language: "markdown/commonmark",
+    rules: {
+      "markdown/no-html": "off",
+      'no-irregular-whitespace': 'off',
+    }
+  },
+  {
+    ...jsLint.configs.recommended,
+    files: ['**/*.{js,mjs,cjs,ts,mts,jsx,tsx}'],
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
       parserOptions: {
         project: './tsconfig.json',
+        parser: tsLint.parser,
         tsconfigRootDir: __dirname,
       },
     },
@@ -52,19 +79,20 @@ export default tseslint.config(
     },
   },
   {
+    ...astro.configs.recommended,
     files: ['*.astro'],
+    plugins: {
+      astro,
+    },
     languageOptions: {
       parser: astroParser,
       parserOptions: {
         extraFileExtensions: ['.astro'],
         tsconfigRootDir: process.cwd(),
         project: ['./tsconfig.json'],
-        parser: tseslint.parser,
+        parser: tsLint.parser,
         sourceType: 'module',
       },
-    },
-    plugins: {
-      astro,
     },
     rules: {
       'astro/no-deprecated-getentrybyslug': 'warn',
@@ -79,5 +107,5 @@ export default tseslint.config(
       'astro/prefer-split-class-list': 'error',
       'astro/valid-compile': 'error',
     },
-  }
-);
+  },
+];
