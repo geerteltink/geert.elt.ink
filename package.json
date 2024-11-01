@@ -16,7 +16,7 @@
     "lint:astro": "astro check",
     "lint:types": "tsc --noEmit",
     "lint:imports": "organize-imports-cli ./tsconfig.json",
-    "lint:ox": "oxlint --config=./.oxlintrc.json --ignore-path=.oxlintignore -D correctness -D suspicious -D perf",
+    "lint:ox": "oxlint --config=.oxlintrc.json --ignore-path=.oxlintignore",
     "lint:es": "eslint . --report-unused-disable-directives --fix --cache",
     "lint:md": "markdownlint src/**/*.mdx",
     "lint:css": "stylelint src/styles/**/*.css",
