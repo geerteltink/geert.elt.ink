@@ -75,6 +75,7 @@ export default [
       '@typescript-eslint/no-import-type-side-effects': 'warn',
       'no-empty': 'off',
       'no-undef': 'off',
+      'no-unused-vars': 'off',
     },
   },
   {
