@@ -49,7 +49,7 @@
     "eslint-plugin-astro": "^1.2.4",
     "eslint-plugin-prettier": "^5.2.1",
     "markdown-it": "^14.1.0",
-    "markdownlint": "^0.35.0",
+    "markdownlint": "^0.36.1",
     "markdownlint-cli": "^0.42.0",
     "npm-run-all2": "^7.0.1",
     "organize-imports-cli": "^0.10.0",
