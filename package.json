@@ -54,7 +54,7 @@
     "npm-run-all2": "^7.0.1",
     "organize-imports-cli": "^0.10.0",
     "oxlint": "^0.13.1",
-    "prettier": "^3.3.3",
+    "prettier": "^3.4.1",
     "prettier-plugin-astro": "^0.14.1",
     "sanitize-html": "^2.13.1",
     "stylelint": "^16.10.0",
