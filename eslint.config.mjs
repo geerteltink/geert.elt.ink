@@ -24,7 +24,6 @@ export default [
     files: ['**/*.json'],
     ignores: ['package-lock.json'],
     language: 'json/json',
-    // @ts-expect-error: JSON config may not be typed correctly
     ...json.configs.recommended,
     rules: {
       'no-irregular-whitespace': 'off',
