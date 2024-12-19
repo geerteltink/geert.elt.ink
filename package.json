@@ -1,6 +1,6 @@
 {
   "name": "geert.elt.ink",
-  "version": "5.3.40",
+  "version": "5.3.41",
   "description": "A web developer's playground.",
   "author": "Geert Eltink",
   "license": "MIT",
@@ -28,7 +28,7 @@
     "@astrojs/sitemap": "^3.2.1",
     "@astrojs/vue": "^5.0.1",
     "@vercel/speed-insights": "^1.1.0",
-    "astro": "^5.0.4",
+    "astro": "^5.0.8",
     "date-fns": "^4.1.0",
     "vue": "^3.5.13"
   },
