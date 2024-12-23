@@ -3,8 +3,8 @@
 import jsLint from '@eslint/js';
 import json from '@eslint/json';
 import markdown from '@eslint/markdown';
-import astroParser from 'astro-eslint-parser';
-import astro from 'eslint-plugin-astro';
+import * as astroParser from 'astro-eslint-parser';
+import * as astroPlugin from 'eslint-plugin-astro';
 import { dirname } from 'path';
 import tsLint from 'typescript-eslint';
 import { fileURLToPath } from 'url';
@@ -78,10 +78,10 @@ export default [
     },
   },
   {
-    ...astro.configs.recommended,
+    ...astroPlugin.configs.recommended,
     files: ['*.astro'],
     plugins: {
-      astro,
+      astro: astroPlugin,
     },
     languageOptions: {
       parser: astroParser,
