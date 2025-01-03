@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
+import { ClientRouter } from 'astro:transitions';
 import Footer from '~/components/Footer.astro';
 import HeadMeta, { type Props as HeadMetaProps } from '~/components/HeadMeta.astro';
 import Header from '~/components/Header.astro';
@@ -13,7 +13,7 @@ const { ...head } = Astro.props;
 <html lang="en">
   <head>
     <HeadMeta {...head} />
-    <ViewTransitions />
+    <ClientRouter />
     <slot name="head" />
   </head>
   <body class="page">
