@@ -39,7 +39,7 @@
     "@types/markdown-it": "^14.1.2",
     "@types/node": "^22.10.4",
     "@types/sanitize-html": "^2.13.0",
-    "astro-eslint-parser": "^1.1.0",
+    "astro-eslint-parser": "^1.2.1",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.17.0",
     "eslint-config-prettier": "^9.1.0",
