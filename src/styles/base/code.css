@@ -1,15 +1,15 @@
 code,
 pre {
   font-family: var(--font-monospace);
-  hyphens: none;
   line-height: 1.5;
   text-align: left;
+  word-spacing: normal;
+  hyphens: none;
   word-break: normal;
   word-wrap: normal;
   tab-size: 4;
   white-space: pre;
   background: none;
-  word-spacing: normal;
 }
 
 /* Code blocks */

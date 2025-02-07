@@ -31,7 +31,8 @@ h4 {
   hyphens: auto;
 
   /* Help prevent overflow of long words/names/URLs */
-  word-break: break-word;
+  word-break: normal;
+  overflow-wrap: anywhere;
 }
 
 html,
