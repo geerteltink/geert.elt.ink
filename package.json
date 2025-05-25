@@ -1,6 +1,6 @@
 {
   "name": "geert.elt.ink",
-  "version": "5.3.49",
+  "version": "5.3.50",
   "description": "A web developer's playground.",
   "author": "Geert Eltink",
   "license": "MIT",
@@ -47,7 +47,7 @@
     "markdown-it": "^14.1.0",
     "markdownlint": "^0.38.0",
     "markdownlint-cli": "^0.44.0",
-    "npm-run-all2": "^7.0.2",
+    "npm-run-all2": "^8.0.4",
     "organize-imports-cli": "^0.10.0",
     "oxlint": "^0.16.9",
     "prettier": "^3.5.3",
