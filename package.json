@@ -28,7 +28,7 @@
     "@astrojs/vue": "^5.1.0",
     "astro": "^5.10.1",
     "date-fns": "^4.1.0",
-    "vue": "^3.5.17"
+    "vue": "^3.5.18"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
