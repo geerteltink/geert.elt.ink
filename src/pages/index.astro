@@ -19,7 +19,8 @@ const schema = {
 };
 
 const notes = (await getCollection('notes')).sort(
-  (a, b) => b.data.started.valueOf() - a.data.started.valueOf()
+  (a: { data: { started: Date } }, b: { data: { started: Date } }) =>
+    b.data.started.valueOf() - a.data.started.valueOf()
 );
 ---
 
@@ -49,7 +50,7 @@ const notes = (await getCollection('notes')).sort(
     </p>
     <ul>
       {
-        notes.slice(0, 5).map((note) => (
+        notes.slice(0, 5).map((note: { slug: string; data: { title: string } }) => (
           <li class="h3">
             <a href={`/notes/${note.slug}/`}>{note.data.title}</a>
           </li>

@@ -8,7 +8,7 @@ export async function getStaticPaths() {
   );
   const totalNotes = notes.length;
 
-  return notes.map((entry, i) => ({
+  return notes.map((entry: any, i: number) => ({
     params: { slug: entry.slug },
     props: {
       entry,
