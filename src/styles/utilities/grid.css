@@ -22,8 +22,8 @@
   .grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-gap: calc(1.125rem + 26 * ((100vw - 320 / 16 * 1rem) / 972));
-    grid-gap: var(--grid-gutter);
+    gap: calc(1.125rem + 26 * ((100vw - 320 / 16 * 1rem) / 972));
+    gap: var(--grid-gutter);
   }
 
   .grid > * {
@@ -36,15 +36,15 @@
   }
 
   .grid--v-gap {
-    grid-gap: calc(2.25rem + 30 * ((100vw - 320 / 16 * 1rem) / 972))
+    gap: calc(2.25rem + 30 * ((100vw - 320 / 16 * 1rem) / 972))
       calc(1.125rem + 26 * ((100vw - 320 / 16 * 1rem) / 972));
-    grid-gap: var(--space-l-xl) var(--grid-gutter);
+    gap: var(--space-l-xl) var(--grid-gutter);
   }
 
   .grid--v-gap-l {
-    grid-gap: calc(2.25rem + 8 * ((100vw - 320 / 16 * 1rem) / 972))
+    gap: calc(2.25rem + 8 * ((100vw - 320 / 16 * 1rem) / 972))
       calc(1.125rem + 26 * ((100vw - 320 / 16 * 1rem) / 972));
-    grid-gap: var(--space-l) var(--grid-gutter);
+    gap: var(--space-l) var(--grid-gutter);
   }
 
   .grid--of-two-four > * {
