@@ -9,11 +9,8 @@ const props = defineProps({
   },
 });
 
-const isoDate = formatISO(props.date);
-
-const relativeDate = formatDistanceToNow(props.date, {
-  addSuffix: true,
-});
+const isoDate = props.date ? formatISO(props.date) : '';
+const relativeDate = props.date ? formatDistanceToNow(props.date, { addSuffix: true }) : '';
 </script>
 
 <template>

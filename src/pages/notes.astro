@@ -1,10 +1,12 @@
 ---
+import type { CollectionEntry } from 'astro:content';
 import { getCollection } from 'astro:content';
 import Card from '~/components/Card.astro';
 import Layout from '~/layouts/Layout.astro';
 
 const notes = (await getCollection('notes')).sort(
-  (a, b) => b.data.started.valueOf() - a.data.started.valueOf()
+  (a: CollectionEntry<'notes'>, b: CollectionEntry<'notes'>) =>
+    b.data.started.valueOf() - a.data.started.valueOf()
 );
 ---
 

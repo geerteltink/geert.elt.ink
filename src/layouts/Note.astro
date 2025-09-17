@@ -44,7 +44,7 @@ const schema = {
       </h2>
       <div class="meta">
         <ul class="meta-topics">
-          {note.data.topics?.map((topic) => <li class="meta-topic">{topic}</li>)}
+          {note.data.topics?.map((topic: string) => <li class="meta-topic">{topic}</li>)}
         </ul>
         <div class="meta-dates">
           {
