@@ -21,7 +21,7 @@ const customDataElements = [
 
 export const GET: APIRoute = async (context) => {
   const unsortedPosts = [...(await getCollection('notes'))];
-  const posts = unsortedPosts.sort((a, b) => sortPosts(a, b));
+  const posts = unsortedPosts.toSorted((a, b) => sortPosts(a, b));
 
   return rss({
     title: 'geert.elt.ink',

@@ -4,7 +4,7 @@ import { getCollection } from 'astro:content';
 import Card from '~/components/Card.astro';
 import Layout from '~/layouts/Layout.astro';
 
-const notes = (await getCollection('notes')).sort(
+const notes = (await getCollection('notes')).toSorted(
   (a: CollectionEntry<'notes'>, b: CollectionEntry<'notes'>) =>
     b.data.started.valueOf() - a.data.started.valueOf()
 );

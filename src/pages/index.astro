@@ -18,7 +18,7 @@ const schema = {
   },
 };
 
-const notes = (await getCollection('notes')).sort(
+const notes = (await getCollection('notes')).toSorted(
   (a: { data: { started: Date } }, b: { data: { started: Date } }) =>
     b.data.started.valueOf() - a.data.started.valueOf()
 );
