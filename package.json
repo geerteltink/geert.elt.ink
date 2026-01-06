@@ -49,15 +49,15 @@
     "markdownlint-cli": "^0.47.0",
     "npm-run-all2": "^8.0.4",
     "organize-imports-cli": "^0.10.0",
-    "oxlint": "^1.35.0",
+    "oxlint": "^1.36.0",
     "prettier": "^3.7.4",
     "prettier-plugin-astro": "^0.14.1",
     "sanitize-html": "^2.17.0",
     "stylelint": "^16.26.1",
-    "stylelint-order": "^7.0.0",
+    "stylelint-order": "^7.0.1",
     "stylelint-config-recess-order": "^7.4.0",
     "stylelint-config-recommended": "^17.0.0",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.50.1"
+    "typescript-eslint": "^8.51.0"
   }
 }
