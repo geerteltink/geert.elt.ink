@@ -12,7 +12,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-export default [
+const config = /** @type {any} */ ([
   jsLint.configs.recommended,
   ...tsLint.configs.recommended,
   //...tsLint.configs.recommendedTypeChecked,
@@ -107,4 +107,6 @@ export default [
       'astro/valid-compile': 'error',
     },
   },
-];
+]);
+
+export default config;
