@@ -22,7 +22,7 @@
     "lint:prettier": "prettier . --write --cache --list-different"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.14",
+    "@astrojs/mdx": "^5.0.0",
     "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.7.2",
     "@astrojs/vue": "^5.1.4",
