@@ -4,6 +4,9 @@ import vue from '@astrojs/vue';
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
+  experimental: {
+    rustCompiler: true,
+  },
   site: 'https://geert.elt.ink',
   integrations: [mdx(), sitemap(), vue()],
   output: 'static',
