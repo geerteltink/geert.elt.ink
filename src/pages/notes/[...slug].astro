@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import Note from '~/layouts/Note.astro';
 
 export async function getStaticPaths() {
@@ -9,7 +9,7 @@ export async function getStaticPaths() {
   const totalNotes = notes.length;
 
   return notes.map((entry: any, i: number) => ({
-    params: { slug: entry.slug },
+    params: { slug: entry.id },
     props: {
       entry,
       previous: i + 1 === totalNotes ? undefined : notes[i + 1],
@@ -19,7 +19,7 @@ export async function getStaticPaths() {
 }
 
 const { entry, previous, next } = Astro.props;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 ---
 
 <Note note={entry} previous={previous} next={next}>

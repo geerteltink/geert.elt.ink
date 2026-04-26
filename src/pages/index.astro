@@ -1,4 +1,5 @@
 ---
+import type { CollectionEntry } from 'astro:content';
 import { getCollection } from 'astro:content';
 import Layout from '~/layouts/Layout.astro';
 
@@ -19,7 +20,7 @@ const schema = {
 };
 
 const notes = (await getCollection('notes')).toSorted(
-  (a: { data: { started: Date } }, b: { data: { started: Date } }) =>
+  (a: CollectionEntry<'notes'>, b: CollectionEntry<'notes'>) =>
     b.data.started.valueOf() - a.data.started.valueOf()
 );
 ---
@@ -50,9 +51,9 @@ const notes = (await getCollection('notes')).toSorted(
     </p>
     <ul>
       {
-        notes.slice(0, 5).map((note: { slug: string; data: { title: string } }) => (
+        notes.slice(0, 5).map((note) => (
           <li class="h3">
-            <a href={`/notes/${note.slug}/`}>{note.data.title}</a>
+            <a href={`/notes/${note.id}/`}>{note.data.title}</a>
           </li>
         ))
       }

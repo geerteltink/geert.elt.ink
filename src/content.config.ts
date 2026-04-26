@@ -1,18 +1,6 @@
-import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
-
-const _notesCollection = defineCollection({
-  type: 'content',
-  schema: ({ image }) =>
-    z.object({
-      title: z.string(),
-      description: z.string(),
-      started: z.coerce.date(),
-      updated: z.coerce.date().optional(),
-      cover: image().optional(),
-      topics: z.array(z.string()).optional(),
-    }),
-});
+import { z } from 'astro/zod';
+import { defineCollection } from 'astro:content';
 
 const notesCollection = defineCollection({
   /* Retrieve all Markdown files in your notes directory and prevent

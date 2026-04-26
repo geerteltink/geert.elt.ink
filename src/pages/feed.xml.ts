@@ -30,7 +30,7 @@ export const GET: APIRoute = async (context) => {
     items: posts.map((item) => ({
       title: item.data.title,
       description: item.data.description,
-      link: 'isCaseStudy' in item.data ? `/case-studies/${item.slug}` : `/notes/${item.slug}/`,
+      link: 'isCaseStudy' in item.data ? `/case-studies/${item.id}` : `/notes/${item.id}/`,
       pubDate: formatDate(item.data.started),
     })),
     customData: customDataElements.join(''),

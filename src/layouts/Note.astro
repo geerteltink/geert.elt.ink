@@ -6,8 +6,8 @@ import Layout from '~/layouts/Layout.astro';
 
 interface Props {
   note: CollectionEntry<'notes'>;
-  previous?: CollectionEntry<'notes'> | undefined;
-  next?: CollectionEntry<'notes'> | undefined;
+  previous?: CollectionEntry<'notes'>;
+  next?: CollectionEntry<'notes'>;
 }
 
 const { note, previous, next } = Astro.props;
@@ -77,14 +77,14 @@ const schema = {
         {
           previous ? (
             <li>
-              <a href={`/notes/${previous.slug}/`}>&laquo; {previous.data.title}</a>
+              <a href={`/notes/${previous.id}/`}>&laquo; {previous.data.title}</a>
             </li>
           ) : null
         }
         {
           next ? (
             <li style="text-align: right;">
-              <a href={`/notes/${next.slug}/`}>{next.data.title} &raquo;</a>
+              <a href={`/notes/${next.id}/`}>{next.data.title} &raquo;</a>
             </li>
           ) : null
         }
