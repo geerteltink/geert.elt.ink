@@ -22,13 +22,13 @@
     "lint:prettier": "prettier . --write --cache --list-different"
   },
   "dependencies": {
-    "@astrojs/mdx": "^5.0.3",
+    "@astrojs/mdx": "^5.0.4",
     "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.7.2",
     "@astrojs/vue": "^6.0.1",
-    "astro": "^6.1.7",
+    "astro": "^6.1.9",
     "date-fns": "^4.1.0",
-    "vue": "^3.5.32"
+    "vue": "^3.5.33"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.8",
@@ -49,16 +49,16 @@
     "markdownlint-cli": "^0.48.0",
     "npm-run-all2": "^8.0.4",
     "organize-imports-cli": "^0.10.0",
-    "oxlint": "^1.60.0",
+    "oxlint": "^1.61.0",
     "prettier": "^3.8.3",
     "prettier-plugin-astro": "^0.14.1",
     "sanitize-html": "^2.17.3",
-    "stylelint": "^17.8.0",
+    "stylelint": "^17.9.0",
     "stylelint-order": "^7.0.1",
     "stylelint-config-recess-order": "^7.7.0",
     "stylelint-config-recommended": "^18.0.0",
     "stylelint-order": "^8.1.1",
-    "typescript": "^5.9.3",
-    "typescript-eslint": "^8.58.2"
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.59.0"
   }
 }
