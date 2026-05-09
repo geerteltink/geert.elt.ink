@@ -75,6 +75,7 @@ const config = /** @type {any} */ ([
       'no-empty': 'off',
       'no-undef': 'off',
       'no-unused-vars': 'off',
+      'no-underscore-dangle': ['error', { allow: ['__filename', '__dirname'] }],
     },
   },
   {
