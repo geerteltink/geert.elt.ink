@@ -22,34 +22,34 @@
     "lint:prettier": "prettier . --write --cache --list-different"
   },
   "dependencies": {
-    "@astrojs/mdx": "^5.0.6",
+    "@astrojs/mdx": "^6.0.1",
     "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.7.3",
     "@astrojs/vue": "^6.0.1",
     "astro": "^6.3.8",
-    "date-fns": "^4.3.0",
-    "vue": "^3.5.34"
+    "date-fns": "^4.4.0",
+    "vue": "^3.5.35"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
     "@eslint/js": "^10.0.1",
-    "@eslint/json": "^1.2.0",
+    "@eslint/json": "^2.0.0",
     "@eslint/markdown": "^8.0.2",
     "@types/markdown-it": "^14.1.2",
     "@types/node": "^25.9.1",
     "@types/sanitize-html": "^2.16.1",
     "astro-eslint-parser": "^1.4.0",
     "autoprefixer": "^10.5.0",
-    "eslint": "^10.4.0",
+    "eslint": "^10.4.1",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-astro": "^1.7.0",
-    "eslint-plugin-prettier": "^5.5.5",
+    "eslint-plugin-prettier": "^5.5.6",
     "markdown-it": "^14.2.0",
     "markdownlint": "^0.40.0",
     "markdownlint-cli": "^0.48.0",
     "npm-run-all2": "^9.0.1",
     "organize-imports-cli": "^1.0.2",
-    "oxlint": "^1.67.0",
+    "oxlint": "^1.68.0",
     "prettier": "^3.8.3",
     "prettier-plugin-astro": "^0.14.1",
     "sanitize-html": "^2.17.4",
@@ -58,6 +58,6 @@
     "stylelint-config-recommended": "^18.0.0",
     "stylelint-order": "^8.1.1",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.60.0"
+    "typescript-eslint": "^8.60.1"
   }
 }
