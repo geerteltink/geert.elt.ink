@@ -22,11 +22,11 @@
     "lint:prettier": "prettier . --write --cache --list-different"
   },
   "dependencies": {
-    "@astrojs/mdx": "^7.0.5",
+    "@astrojs/mdx": "^7.0.6",
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.3",
     "@astrojs/vue": "^7.0.2",
-    "astro": "^7.2.2",
+    "astro": "^7.2.3",
     "date-fns": "^4.4.0",
     "vue": "^3.5.41"
   },
@@ -49,7 +49,7 @@
     "markdownlint-cli": "^0.49.1",
     "npm-run-all2": "^9.0.3",
     "organize-imports-cli": "^1.0.2",
-    "oxlint": "^1.78.0",
+    "oxlint": "^1.79.0",
     "prettier": "^3.9.6",
     "prettier-plugin-astro": "^0.14.1",
     "sanitize-html": "^2.17.7",
