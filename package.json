@@ -1,6 +1,6 @@
 {
   "name": "geert.elt.ink",
-  "version": "5.3.56",
+  "version": "5.3.57",
   "description": "A web developer's playground.",
   "author": "Geert Eltink",
   "license": "MIT",
@@ -57,7 +57,7 @@
     "stylelint-config-recess-order": "^7.8.0",
     "stylelint-config-recommended": "^18.0.0",
     "stylelint-order": "^8.1.1",
-    "typescript": "^6.0.3",
+    "typescript": "^7.0.2",
     "typescript-eslint": "^8.68.0"
   },
   "allowScripts": {
