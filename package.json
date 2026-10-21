@@ -44,7 +44,7 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-astro": "^3.2.1",
     "eslint-plugin-prettier": "^5.5.7",
-    "markdown-it": "^15.0.2",
+    "markdown-it": "^15.0.3",
     "markdownlint": "^0.42.0",
     "markdownlint-cli": "^0.49.1",
     "npm-run-all2": "^9.0.3",
