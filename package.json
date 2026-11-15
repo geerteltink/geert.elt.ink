@@ -1,6 +1,6 @@
 {
   "name": "geert.elt.ink",
-  "version": "5.3.80",
+  "version": "5.3.81",
   "description": "A web developer's playground.",
   "author": "Geert Eltink",
   "license": "MIT",
@@ -50,7 +50,7 @@
     "npm-run-all2": "^9.0.4",
     "organize-imports-cli": "^1.0.2",
     "oxlint": "^1.93.0",
-    "prettier": "^3.10.0",
+    "prettier": "^3.10.1",
     "prettier-plugin-astro": "^1.1.2",
     "sanitize-html": "^2.18.2",
     "stylelint": "^17.16.0",
