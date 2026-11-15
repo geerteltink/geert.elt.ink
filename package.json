@@ -1,6 +1,6 @@
 {
   "name": "geert.elt.ink",
-  "version": "5.3.79",
+  "version": "5.3.80",
   "description": "A web developer's playground.",
   "author": "Geert Eltink",
   "license": "MIT",
@@ -22,10 +22,10 @@
     "lint:prettier": "prettier . --write --cache --list-different"
   },
   "dependencies": {
-    "@astrojs/mdx": "^8.1.4",
+    "@astrojs/mdx": "^8.1.5",
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.4",
-    "@astrojs/vue": "^7.1.4",
+    "@astrojs/vue": "^7.1.5",
     "astro": "^7.4.12",
     "date-fns": "^4.4.0",
     "vue": "^3.5.45"
@@ -50,9 +50,9 @@
     "npm-run-all2": "^9.0.4",
     "organize-imports-cli": "^1.0.2",
     "oxlint": "^1.93.0",
-    "prettier": "^3.9.10",
+    "prettier": "^3.10.0",
     "prettier-plugin-astro": "^1.1.2",
-    "sanitize-html": "^2.18.1",
+    "sanitize-html": "^2.18.2",
     "stylelint": "^17.16.0",
     "stylelint-config-recess-order": "^7.10.0",
     "stylelint-config-recommended": "^18.0.0",
